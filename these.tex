@@ -282,6 +282,9 @@ L'uniformité du premier échantillon est plus grand que le second
 
 \item[L'indice de Shannon] est un indicateur évaluant la probabilité que deux individus sélectionnées aléatoirement dans un échantillons donnée soient de la même espèces. La formule est la suivante.
 
+\item[Pipeline] 
+Il s'agit d'un outil informatique permettant de distribuer les différentes operations de calcul sur plusieurs processeurs en même temps. Pour illustrer ces propos, imaginons qu’un pipeline est une recette de cuisine, composé de plusieurs étapes successif. Sans parallélisation, un cuisinier doit attendre que chaque étape se termine avant de passer à la suivante. Faire fondre le beurre, puis dans un second temps battre les oeufs en neige ( Exécution synchrone). En parallélisant, le cuisinier peut faire plusieurs étapes en même temps. Battre les oeufs pendant que le beurre fondent. ( Exécution asynchrone). Maintenant, si l’on demande à 40 cuisiniers ( processeurs) de faire 188 gateaux, l’organisation des tâches devient complexe si l’on veut distribuer toutes les tâches de façon à maximiser les performances.
+
 \item[La courbe de rarefaction] est utilisé pour determiner si la profondeur de séquençage est suffisante pour caracterisé la diversité d’un échantillon.
 Pour génerer cette courbe, des groupes de reads de taille croissante (1…n) sont tiré aléatoirement sans remise. Pour chaque groupe en absisse le nombre d’OTU correspondant est reporté sur l’axe Y.
 Une courbe s’applatissant indique qu’une profondeur de séquençage plus grande, n’apporterai pas plus d’information. \citep{Dickson2014} and \citep{Beck}
@@ -313,7 +316,7 @@ La primocolonisation à \textit{Pseudomnas Aeruginosa} est difficilement detecta
 Puis survient le passage à la chronicité. \textit{Pseudomnas Aeruginosa} s'adapte à son milieu et s’installe à long terme. Il perd certain caractère de virulence, mais devient résistant au antibiotiques[@]. Son phénotype change. Il devient mucoïde en sécretant un film d’alginate qui le protège du système immunitaire. Les mécanismes sous jacent à cette transformation sont ingenieux. La forte densité en bactérie est résponsable d’activation de certain gène amenant au phénotype mucoïde par un processus appelé \textit{quorum sensing}[@]. un processus dans lequel chaque bactéries communique avec ses voisins via des signaux\footnote{On peut comparé ce processus à un système multiagent. comme un banc de poisson ou le comportement global dépend du comportement d’un individu}.
 Les génomes de \textit{Pseudomnas Aeruginosa} deviennent aussi hypermutable afin de présenter une plus grande diversité génétique au regard de la sélection naturelle\footnote{En biologie évolutif, il s'agit d'évolvabilité}. \\
 A ce stade le traitement antibiotique n’est plus curatif et l'evolution tend inexorablement vers un déclin de la fonction respiratoire.
-L'approche clinique est donc préventif. Elle  vise à éliminer \textit{Pseudomnas Aeruginosa} dès qu’il est détecté en culture. Une surveillance rapproché des patients avec un prélevement mensuel ou bimensuel est préconisé. La culture étant peu sensible, d’autres méthode détection peuvent être employé. La détection des anticorps anti-pyocianique par des méthodes elisa a montrer peu de …[]
+L'approche clinique est donc préventif. Elle  vise à éliminer \textit{Pseudomnas Aeruginosa} dès qu’il est détecté en culture. Une surveillance rapproché des patients avec un prélevement mensuel ou bimensuel est préconisé. La culture étant peu sensible, d���autres méthode détection peuvent être employé. La détection des anticorps anti-pyocianique par des méthodes elisa a montrer peu de …[]
 La PCR ciblé associant les protéines bactériennes \textit{OPRL1} , \textit{GYRB1} et \textit{ECFX1}  s’est montré plus sensible et plus spécifique que la culture[@]. \\
 En pratique, la colonisation chronique est défini lorsque 3 expectorations sont rendu positif en culture, successivement au cours d’un suivi mensuelle ou bimensuel[@].
 Une autre classification, celle de Lee a montrer une forte liaison clinico-biologique. Elle est composé de 4 groupes :  
@@ -332,9 +335,9 @@ On ne sait pas aujourd’hui pourquoi \textit{Pseudomnas Aeruginosa} s’install
 \item Le CFTR est un recepteur de Pyo pour les internalisé et les viré
 \item L’inflammation de de l’eopthelium augmente les metabolite qui permette de se developper.
 \item Alanine et lactta sont une source de carbonne pour le Pyo.
+\item Le microbiote influence la colonisation
 \end{itemize}
 
-Notre hypothèse est que le microbiote pulmonaire influence la colonisation à \textit{Pseudomnas Aeruginosa}. 
 
 
 
@@ -349,18 +352,16 @@ Notre hypothèse est que le microbiote pulmonaire influence la colonisation à \
 
 \subsection{Le microbiote pulmonaire}
 
-Bien qu’il soit en contacte avec le milieu exterieur, l’arbre réspiratoire (comprenant la traché, les bronches et les alvéole) a longtemps été considéré comme stérile avec les méthodes de culture classique. Il a fallu attendre l’avenement du séquençage haut débit pour les mettres en évidence. pulmonaire[ref Host-microorganism 1-3].
+Bien qu’il soit en contacte avec le milieu exterieur, l’arbre réspiratoire (comprenant la traché, les bronches et les alvéole) a longtemps été considéré comme stérile avec les méthodes de culture classique. Il a fallu attendre l’avenement du séquençage haut débit pour mettre en évidence le microbiote pulmonaire[ref Host-microorganism 1-3].
 Le microbiote pulmonaire, est beaucoup moins abondante que la flore digestif. Il est constituté d’une flore dynamique provenant essentiellement de l’air ambiant mais aussi du tube digestif via des microaspirations.[@]
 Le microbiote pulmonaire est dominée par le phylum des Firmicutes ( Streotpococcus) et des Bacteroidetes (Prevotella).[pie] Les genres retrouvé majoritairement sont Streptococcus, Prevotella, Fusobacteria, VBeillonella, Haemophilus, Neisseria et Porphyromonas.
 l’arbre réspiratoire étant en continuité direct avec les voies aérienne superieur, certain genre bactérien sont commun, comme Streptococcus, staph, Haemophilus et Moraxella. Tandis que d’autre genre comme corynebacterium et Dolosigranulum ne sont retrouvé qu’au niveau des voies aérienne superieur.
 
-Le microbiote est variable dans l’espace et le temps.
-Dans l’espace, suivant les régions préelevé du poumon. [differente zone, foyer inflammatoire]. Le poumon presente des régions variable en Oxygene et en Ph . Et certaine bactérie sont anaeobie stricte, et pas d’autre?
-
+Le microbiote varie dans l’espace et le temps. \\
+Dans l’espace, du fait de sa structure, certaine régions de l'arbre bronchique peuvent présenter des microbiote différent. Un prélèvement d'un foyer infectieux sera nécessairement différent d'un foyer sain. Le poumons présente également des différences physicochimiques selon la localisation pouvant selectionner certaine espèces. Les cavernes tuberculeuses par exemple, se trouve essentiellement dans le lobe supérieur en raison d'une concentration en oxygène plus élevé favorisant ce bacille aérobie stricte. (anaeobie stricte, et pas d’autre?)\\\
+Le microbiote varie dans le temps.... 
 Plusieurs études suggère une différence de microbiote entre patient sains et avec une atteinte réspiratoire chronique comme l’asthme, la BPCO et la mucovicidose [ Huang et all 2010].
-
 Plusieurs études suggère que certain microbiote sont associé à des pathologies comme l’asthme, la BPCO ou la mucovicidose. Le mécanisme sous jacent, théorie hygieniste, stipule que les bactéries stimule le Systeme immunitaire.
-
 propre a chaques individus
 variable dans le temps
 variable selon les localisation
@@ -369,35 +370,53 @@ les résident peramanent et les attack
 Liens avec les maladies :
 – hygeniste
 
-\subsection{Exploration du microbiote}
-\subsubsection{Stratégies en métagénomique}
-(http://bacterioweb.univ-fcomte.fr/bibliotheque/remic/08-Bronc.pdf) ==> A LIRE COOURS BACTERIO
+\subsection{Exploration du microbiote pulmonaire}
+%(http://bacterioweb.univ-fcomte.fr/bibliotheque/remic/08-Bronc.pdf) ==> A LIRE COOURS BACTERIO
 Le microbiote pulmonaire est explorer par le séquençage des ADNs bactériens présent dans un prélevement broncho-pulmonaire. Toutes les méthodes de recceuils sont possible, mais les prélevement protégé sont recommandé afin d’éviter une contamination par les voies superieurs.
-L’ADN est alors extrait …
-2 strategies de séquençages peuvent être employé:
-Le stratégie shotgun séquence l’ensemble du contenu en ADN présent dans l’échantillons après une fragmentation des ADNs. Les algorithmes bioniformatiques consistent ensuite à d’abord supprimer les ADNs humains. Puis à aligner ensemble les ADNs restant afin de reconstruire les génomes bactériens.
+Après extraction de l'ADN, 2 strategies de séquençages peuvent être employé: \\
+Le stratégie shotgun consiste à séquencer l'ensemble des ADNs présents dans l'échantillon sans discernement. Les séquences sont filtrer puis les génomes bactériens sont reconstruit par des méthodes bioinformatiques complexes. \\
+La deuxième stratégie est moins couteuse en terme d'analyse. Elle consiste à amplifier un gène assez variable pour pouvoir discriminer une espèces. Pour les bactérie il s'agit de l'ARN 16S. Il s'agit d'un ARN non codant participant à la structure de la petite sous unité des ribosomes bactériens. Il est composé de 1500 nucléotides et forment plusieurs boucles dans sa structures secondaires (Figure \ref{ARN16S}). 
+L'alignement des séquences d'ARN 16S entre plusieurs espèces met en évidence des régions constantes et variables Figure \ref{ARN16SVariation}). Les 9 régions variables appelé V1 à V9 peuvent être amplifié puis séquencer afin d'identifié l'espèce correspondante.
 
-consiste à amplifer une région d’ADN assez disscriminante pour identifier une espèces. Cette amplicon est ensuite séquencé. Les algorithmes bioinformatiques assigne alors à chaque reads son taxon approprié.
+\begin{figure}[ht]
+\begin{center}
+\includegraphics[scale=0.8]{img/ARN16S_variation.png}\hfill
+\end{center}
+\caption{région constante et variable de l'ARN 16S}
+\label{ARN16SVariation}
+\end{figure}
 
-La première stratégie est plus complexe d’un point de vue calculatoire que la seconde mais est beaucoup plus informatif. En effet en raison des transfert génétique horizontaux, la fonction du microbiote est plus lié aux gènes présents qu’au espèces présentes.
-La stratégie 16s reste une bonne alternative pour décrire les populations bactériennes.
+\begin{figure}[ht]
+\begin{center}
+\includegraphics[scale=0.8]{img/ARN_16S.png}\hfill
+\end{center}
+\caption{Structure secondaire de l'ARN 16S}
+\label{ARN16S}
+\end{figure}
 
-\subsubsection{ARN 16S}
+
+La première stratégie est plus informatif car elle séquence l'ensemble des génomes bactérien et permet de prédire la fonction d'un microbiote. En effet les transfert génétique horizontaux amènent à dissocié l'espèce de sa fonction. 2 bactéries d'une même espèce peuvent avoir des fonctions différentes. L'inférence fonctionnelle réalisé à partir du taxon bactérien est déconseillé.  
+La stratégie 16S reste une méthode simple pour décrire les populations bactériennes présentent. C'est cette dernière qui a été employé dans notre étude. 
 
 
+\subsection{Objectif de l'étude Mucobiome}
+L'objectif de notre étude est de savoir si le microbiote réspiratoire influence la primocolonisation à \textit{Pseudomnas Aeruginosa}. 
+Pour cela, nous avons suivit pendant 3 ans,  une cohorte de 47 patients atteints de mucovicidoses sans infection chroniques. 
+L'exploration de leurs microbiote par la stratégie 16S a été réalisé sur leurs ECBC dans le cadre de leurs suivi régulier. 
+A partir des données généré du séquençage, nous avons réalisé l'étude descriptive et analytique de leurs microbiotes en créant un pipeline bioinformatique dédié. 
 
 \section{Materiel et Méthodes}
 \subsection{Recueil des données}
 
 47 patients atteind de mucovicidoses ont été suivit sur 3 ans ( 2008-2011) dans une étude prospective multicentrique (Nantes,Brest,Roskoff) appelé mucobiome.
-La figure () montre la date des prélevements .
-La CPP VI-Ouest et le commité d’éthique du CHRU de Brest ont approuvé le protocole. Tous les patients ( ou les parents pour les mineurs) ont signé un consentement éclairé. Le protocole à fait l’objet d’une déclaration de biocollection à l’ARS et au MESR (n DC-2008-214).
-Dans le suivi planifié des patients, les crachats lavés des patients ont été receuillies lors des séances de kinésithérapie réspiratoire tous les 3 mois, suivant le calendrier des recommandations officielles. En pratique, sur l’ensemble de la cohorte suivie, l’intervalle median entre 2 consultations a été de 3.4 mois.
+Les dates de prélevement sont illustré dans la figure x.
+La CPP VI-Ouest et le commité d’éthique du CHRU de Brest ont approuvé le protocole. Tous les patients ( ou les parents pour les mineurs) ont signé un consentement éclairé. Le protocole à fait l’objet d’une déclaration de biocollection à l’ARS et au MESR (n DC-2008-214).\\
+les ECBC des patients ont été receuillies lors des séances de kinésithérapie réspiratoire tous les 3 mois, suivant le calendrier des recommandations officielles. En pratique, sur l’ensemble de la cohorte suivie, l’intervalle median entre 2 consultations a été de 3.4 mois.
 Les patients devaient avoir un genotypage CFTR et un test à la sueur positif. Les transplanté ont été exclus de l’études.
-Une culture positive à Pyo était un critère de non-inclusion. Si pendant l’étude, une culture revenait positif à Pyo, le patient était sortie de l’étude pour être réinclus 1 ans après en l’absence de colonisation chronique à Pyo. 15 patients ont été ainsi réinclus.
-Chaque patient était classé dans la categorie Free ou Never (Lee et all 2003). D’autres données ont été également recceuilli ( tableau).
-Au total , 188 échantillons ont été recueilli, soit en moyenne 4 échantillons par patients.
-Pour chaque échantillon, une culture a été réalisé en suivant les procédure standard [ref]. Une qPCR ciblant le Pyo a également été réalisé en combiant les marqueurs gyrB/ecfX designé au laboratoire[ref].
+Une culture positive à \textit{Pseudomnas Aeruginosa} était un critère de non-inclusion. Si pendant l’étude, une culture revenait positif à ce dernier, le patient était sortie de l’étude pour être réinclus 1 ans après en l’absence de colonisation chronique. 15 patients ont été ainsi réinclus.
+Chaque patient a été classé dans la categorie Free ou Never (Lee et all 2003). D’autres données ont été également recceuilli ( tableau).
+Au total , 188 échantillons ont été récolté, soit en moyenne 4 échantillons par patients.
+Pour chaque échantillon, une culture a été réalisé en suivant les procédure standard [ref]. Une qPCR ciblant le \textit{Pseudomnas Aeruginosa} a également été réalisé en combiant les marqueurs gyrB/ecfX designé au laboratoire[ref].
 
 \subsection{Extraction de l’ADN}
 
@@ -406,17 +425,35 @@ Les parois bactériennes ont été fragmenté par sonication. (DTTpar sonication
 Les extraits d’ADN ont été envoyé pour séquençage via un prestataire GATC.
 
 \subsection{Séquençage}
-
-La séquençage d’une région de l’ARN 16S a été réalisé sur Illumina MiSeq.
-La librarie a été crée en amplifant la région V3-V5 de l’ARN 16s à l’aide du couple d’amorces A B et du kit MiSeq Reagent Kits v3.
-Ce dernier permet de produire des reads pairé chevauchant de 300 pb chacun. Environ 25 millions de reads sont produit par run.
-En multiplexant à l’aide de 94 index, 2 runs ont permis de séquencer les 188 échantillons.
+La librarie \footnote{l'ensemble des fragments d'ADN à séquencer} a été produit en amplifiant la région V3-V5 à l’aide du couple d’amorces  \textit{forward(CCTACGGGAGGCAGCAG)} et \textit{reverse(CCGTCAATTCMTTTRAGT)} et du kit MiSeq Reagent Kits v3. \\
+La séquençage a été produit sur Illumina MiSeq. Cette technologie permet de lire deux séquences de 300pb d'un fragment d'ADN par ses deux extrémités. La figure \ref{illumina} montre le chevauchement de ces deux reads pairés qui permet de lire l'amplicon V3-V5 de 535pb. \\
+Environ 25 millions de reads sont produit par run. En multiplexant à l’aide de 94 index, 2 runs ont permis de séquencer les 188 échantillons.
 Au final 188 x 2 fichiers fastq ont été généré à l’issue du séquençage.
+
+\begin{figure}[ht]
+\begin{center}
+\includegraphics[scale=0.6]{img/illumina.png}\hfill
+\end{center}
+\caption{le couple de séquence de 300pb permet de recouvrir l'ensemble de la région V3-V5}
+\label{illumina}
+\end{figure}
+
 
 \subsection{Analyse bioinformatique}
 
-l’analyse des 188x2 fichiers fasq a été réalisé grâce un pipeline bioinformatique appelé “mucobiome” conçu et tester dans le cadre de cette thèse. Par rapport aux autres logiciel comme QIIME ou MOTHUR, le pipeline mucobiome est spécialisé dans l’analyse des données 16s et dépend de très peu de dépendance applicatives. Mais il est surtout beaucoup plus rapide, ceci en raison d’un très haut niveau de parallélisation permis grâce un Snakemake. Snakemake est un programme informatique permettant de distribuer les différentes operations de calcul du pipeline sur plusieurs processeurs en même temps. Pour illustrer ces propos, imaginons qu’un pipeline est une recette de cuisine, composé de plusieurs étapes successif. Sans parallélisation, un cuisinier doit attendre que chaque étape se termine avant de passer à la suivante. Faire fondre le beurre, puis dans un second temps battre les oeufs en neige ( Exécution synchrone). En parallélisant, le cuisinier peut faire plusieurs étapes en même temps. Battre les oeufs pendant que le beurre fondent. ( Exécution asynchrone). Maintenant, si l’on demande à 40 cuisiniers ( processeurs) de faire 188 gateaux, l’organisation des tâches devient complexe si l’on veut distribuer toutes les tâches de façon à maximiser les performances. C’est le problème que résout Snakemake en réalisant ce qu’on appelle un DAG ( Direct Acyclic Graph) .
-Le pipeline mucobiome prend comme entré, l’ensemble des fichiers brut de séquençage pour produire un seul fichier unique contenant la table des OTU et la taxonomie . L’ensemble des étapes est défini ci-dessous .
+l’analyse des 188 x 2 fichiers fastq a été réalisé grâce à un pipeline bioinformatique, appelé \textit{mucobiome}, conçu et tester dans le cadre de cette étude. Par rapport aux autres logiciels comme \textbf{QIIME} ou \textbf{MOTHUR}, le pipeline mucobiome est spécialisé dans l’analyse des données 16S. Il est également plus rapide en raison d’un très haut niveau de parallélisation permis grâce à  \textbf{Snakemake}. Cette outil modélise l'ensemble du pipeline sous forme d'un graphe direct acyclique (DAG) et le résoud afin d'optimiser le parallélisation. \\
+Le pipeline mucobiome prend en entrée, les 188 fichiers fastq provenant du séquençage et produit un fichier BIOM contenant la table des OTUs.
+
+FIGURE SIMPLE
+
+\begin{figure}[ht]
+\begin{center}
+\includegraphics[scale=0.4]{img/dag.jpg}\hfill
+\end{center}
+\caption{le graph du pipeline sur les 188 échantillons}
+\label{dag}
+\end{figure}
+
 
 \subsubsection{Pré-Traitement}
 
