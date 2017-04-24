@@ -648,7 +648,7 @@ Le core microbiota est défini comme l'ensemble des taxons retrouvé dans plus d
 Les abondances de \textit{Staphylococcus} et \textit{Haemophilus} sont faibles dans la plupart des échantillons. Mais pour quelque un, sont dominant. Les autres genre ont une abondance faible qui varie faiblement. Elles ne sont jamais retrouvé dominante.
 
 
-\begin{figure}[ht]
+\begin{figure}
 \begin{center}
 \includegraphics[scale=0.5]{img/all_table.png}\hfill
 \end{center}
@@ -657,7 +657,7 @@ Les abondances de \textit{Staphylococcus} et \textit{Haemophilus} sont faibles d
 \end{figure}
 
 
-\begin{figure}[ht]
+\begin{figure}[t]
 \begin{center}
 \includegraphics[scale=0.5]{img/core.png}\hfill
 \end{center}
@@ -667,7 +667,7 @@ Les abondances de \textit{Staphylococcus} et \textit{Haemophilus} sont faibles d
 
 
 
-\begin{figure}[ht]
+\begin{figure}[t]
 \begin{center}
 \includegraphics[scale=0.5]{img/variability.png}\hfill
 \end{center}
@@ -685,35 +685,6 @@ Les deux premiers graphiques montrent que les échantillons ont un nombre d’es
 Certains patients ont des richesses stables au court du temps. Le patient 25,26,74 conserve leurs richesses sur plus 5 prélèvements successifs. Le patient 20 et 69 présente une stabilité entrecoupée par des pics de diminution. La richesse du patient 8 diminue progressivement. Le patient 23, 232 et 248 ont des fluctuations chaotiques.
 Le graphique de shannon montre que pour un nombre d’espèces constant, leurs distributions varient dans le temps. Par exemple sur le graphique \ref{alphaObs}, le patient 223 contient un nombre de genres relativement stable. En revanche sur le graphique \ref{alphaShannon}, la variabilité de l’indice de shannon du patient 223 indique une distribution des espèces différente entre les échantillons. Seul le patient 26 conserve à la fois une richesse et une distribution stable au court du temps.
 
-\begin{figure}[h]
-\begin{center}
-\includegraphics[scale=0.80]{img/alpha_observed.png}\hfill
-\end{center}
-\caption{Evolution du nombre d'espèces par patient en fonction du temps}
-\label{alphaObs}
-\end{figure}
-
-
-\begin{figure}[h]
-\begin{center}
-\includegraphics[scale=0.80]{img/alpha_chao1.png}\hfill
-\end{center}
-\caption{Evolution de l'indice de Chao1 par patient en fonction du temps}
-\label{alphaChao1}
-\end{figure}
-
-\begin{figure}[h]
-\begin{center}
-\includegraphics[scale=0.80]{img/alpha_shannon.png}\hfill
-\end{center}
-\caption{Evolution de l'indice de Shanon par patient en fonction du temps}
-\label{alphaShannon}
-\end{figure}
-
-
-
-
-
 \subsection{Evolution des abondances}
 Les figures \ref{plotabundancegenre}, \ref{plotabundancephylum} et \ref{plotabundancecurve} nous montre l’évolution des abondances au cours du temps pour chaque patient. Ces graphiques nous permettent d’interpréter plus finement les graphiques d’alpha diversité précédente.
 Par exemple la faible richesse du patient 8 est liée à une dominance de \textit{Stenotrophomonas} sur les 4 échantillons.
@@ -725,7 +696,22 @@ La figure \ref{evolution43} illustre ces propos en montrant l'evolution des abon
 La figure du patient \ref{evolution54} est mis également à titre exemple, car elle montre l’apparition de \textit{Pseudomonas Aeruginosa}. \\
 L’ensemble des graphiques est disponible sur cette adresse.
 
-\begin{figure}[!h]
+\subsection{Corrélation entre genre }
+La figure \ref{correlation} montre les corrélations linéaires réalisées entre les genres du core microbiota. La corrélation la plus forte est entre Prevotella et Veillonella avec un coefficient de Pearson à 0.60 (p<0.5).  Streptococcus et Haemophilus evolue dans le sens inverse avec un coefficient à -0.41  (p<0.5). 
+ 
+
+\begin{figure}
+\begin{center}
+\includegraphics[scale=0.50]{img/small_correlation.png}\hfill
+\end{center}
+\caption{Corrélation des abondances entre les genres du core microbiota}
+\label{correlation}
+\end{figure}
+
+
+
+
+\begin{figure}
 \begin{center}
 \includegraphics[scale=0.60]{img/curve_043.png}\hfill
 \end{center}
@@ -733,7 +719,7 @@ L’ensemble des graphiques est disponible sur cette adresse.
 \label{evolution43}
 \end{figure}
 
-\begin{figure}[!h]
+\begin{figure}
 \begin{center}
 \includegraphics[scale=0.60]{img/curve_054.png}\hfill
 \end{center}
@@ -742,43 +728,30 @@ L’ensemble des graphiques est disponible sur cette adresse.
 \end{figure}
 
 
-\begin{figure}[h]
-\begin{center}
-\includegraphics[scale=0.60]{img/enfin_barplot_genus_norm.png}\hfill
-\end{center}
-\caption{Evolution des abondances par genre}
-\label{plotabundancegenre}
-\end{figure}
-
-\begin{figure}[h]
-\begin{center}
-\includegraphics[scale=0.60]{img/enfin_barplot_phylum_norm.png}\hfill
-\end{center}
-\caption{Evolution des abondances par phylum}
-\label{plotabundancephylum}
-\end{figure}
-
-
-\begin{figure}[h]
-\begin{center}
-\includegraphics[scale=0.40,angle=90]{img/evolution_abundance.png}\hfill
-\end{center}
-\caption{Evolution des abondances par genre}
-\label{plotabundancecurve}
-\end{figure}
-
-
-
-
-
 
 \subsection{Beta Diversité}
-La bêta diversité sur l’ensemble des échantillons a été réalisé par une méthode d’ordination de type PCA en utilisant les distances de Bray-curtis.
+La bêta diversité sur l’ensemble des échantillons a été réalisé par une méthode d’ordination de type PCA en utilisant les distances de Bray-curtis ( Figure \ref{ordination} et \ref{ordination2} ).
 2 axes principaux expliquent respectivement 28.5\% et 17.4\% de la variabilité.
-Certains échantillons d’un même patient sont très proches sur le graphique d’ordination . Le patient 69 et 003 ont des échantillons dont les points se confondent.
-Aucun des paramètres comme l’âge, le sexe, le poids et la catégorie n’as mis en évidence des groupes distincts de microbiote.
-Les principaux groupes retrouvés correspondent aux échantillons dominés par Neisseria, Haemophilus et Streptococcus.
-Analytiques
+Certains échantillons d’un même patient sont très proches sur le graphique d’ordination. Par exemple le patient 69 et 003 ont des échantillons dont les points se confondent.
+Aucun des paramètres comme âge, le sexe, le poids, la prise d'antibiotique et le type de mutation n’a mis en évidence des groupes distincts de microbiote. La variabilité est expliqué principalement par la dominance des genres Neisseria, Streptococcus et Haemophilus.
+La diversité des microbiotes des échantillons Free ont une diversité plus faible que les échantillons Never. 
+
+
+\begin{figure}
+\begin{center}
+\includegraphics[scale=0.60]{img/oordination_new.png}\hfill
+\end{center}
+\caption{Analyse multivarié ( PCA + Bray curtis) sur les 188 échantillons. Chaque point est un échantillon labelisé par l'identifiant du patient. A gauche les échantillons Free. A droite les échantillons Never. }
+\label{ordination}
+\end{figure}
+
+\begin{figure}
+\begin{center}
+\includegraphics[scale=0.40]{img/Capture.png}\hfill
+\end{center}
+\caption{Analyse multivarié ( PCA + Bray curtis) sur les 188 échantillons. Chaque point est un échantillon labelisé par l'identifiant du patient.}
+\label{ordination2}
+\end{figure}
 
 
 Discussion
@@ -789,6 +762,58 @@ On retrouve du corynébactérium …
 Conclusion
 
 
+
+
+\begin{figure}
+\begin{center}
+\includegraphics[scale=0.60]{img/enfin_barplot_genus_norm.png}\hfill
+\end{center}
+\caption{Evolution des abondances par genre}
+\label{plotabundancegenre}
+\end{figure}
+
+\begin{figure}
+\begin{center}
+\includegraphics[scale=0.60]{img/enfin_barplot_phylum_norm.png}\hfill
+\end{center}
+\caption{Evolution des abondances par phylum}
+\label{plotabundancephylum}
+\end{figure}
+
+
+\begin{figure}
+\begin{center}
+\includegraphics[scale=0.40,angle=90]{img/evolution_abundance.png}\hfill
+\end{center}
+\caption{Evolution des abondances par genre}
+\label{plotabundancecurve}
+\end{figure}
+
+
+\begin{figure}
+\begin{center}
+\includegraphics[scale=0.80]{img/alpha_observed.png}\hfill
+\end{center}
+\caption{Evolution du nombre d'espèces par patient en fonction du temps}
+\label{alphaObs}
+\end{figure}
+
+
+\begin{figure}
+\begin{center}
+\includegraphics[scale=0.80]{img/alpha_chao1.png}\hfill
+\end{center}
+\caption{Evolution de l'indice de Chao1 par patient en fonction du temps}
+\label{alphaChao1}
+\end{figure}
+
+\begin{figure}
+\begin{center}
+\includegraphics[scale=0.80]{img/alpha_shannon.png}\hfill
+\end{center}
+\caption{Evolution de l'indice de Shanon par patient en fonction du temps}
+\label{alphaShannon}
+\end{figure}
 
 
 
