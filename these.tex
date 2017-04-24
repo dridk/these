@@ -171,7 +171,7 @@ incluse dans la section intitulée «``GNU Free Documentation License''.»
 
 \section{Avant-propos}
 
-Depuis Pasteur, les micro-organismes ont toujours été perçus négativement, car associés aux maladies. La mise en évidence des agents pathogènes allant de la syphilis jusqu'aux grandes pestes n'a pas aidé ces êtres microscopiques à sortir de ce stéréotype. La médecine s'est donc naturellement orientée à les combattre plus qu'à les étudier.
+Depuis Pasteur, les bactéries ont toujours été perçus négativement, car associés aux maladies. La mise en évidence des agents pathogènes allant de la syphilis jusqu'aux grandes pestes n'a pas aidé ces êtres microscopiques à sortir de ce stéréotype. La médecine s'est donc naturellement orientée à les combattre plus qu'à les étudier.
 Aujourd'hui, personne ne peut nier que les traitements anti-infectieux ont permis l'amélioration de notre santé. 
 Les avancées majeures en ce qui concerne l'hygiène, la vaccination et les antibiotiques ont conduit à diminuer la prévalence des maladies infectieuses voir les faire disparaître. Cependant, la destruction systématique et massive des micro-organismes qui vivent et évoluent en nous depuis des milliers d'années pourrait bien être la cause de l'émergence de nouvelles maladies ( Figure \ref{hyigienisme}).
 
@@ -198,14 +198,14 @@ La colite à \textit{Clostridium Difficile} est un exemple de dysbiose avec une 
 Le microbiote amène donc à reconsidérer notre individualité. Nous ne sommes plus seulement un organisme multicellulaire composé d' un seul génome. Mais plutôt un écosystème ou les cellules eucaryotes et les micro-organismes vivent en symbiose. Cette relation n'étant pas figée dans le temps et pouvant varier entre le commensalisme, le parasitisme et le mutualisme. Les dernières études estiment que pour chaque individu il y a environ 30 billions de cellules humaines pour 39 billions de cellules microbiennes[@]. En associant les gènes bactériens, le génome d’un humain passe de 23 000  à 3,3 millions[@] de gènes avec toute la complexité des interactions que cela engendre[@]. Les scientifiques ont attribué le nom d’\textit{holobionte} à cet écosystème vivant. L'ensemble des génomes est appelé \textit{hologénome}. \\
 Il faut toutefois rester prudent quant au rôle donné aux microbiotes et éviter de tomber dans l'excès. Nombreuses sont les publications scientifiques qui se contredisent ou qui confondent corrélation et causalité. Ces publications ont même conduit à la création du hashtag humoristique sur Twitter: \textit{\#GutMicrobiomeAndRandomSomething}. 
 Les études sur le microbiote nécessitent d'être étayé par la métagénomique fonctionnelle afin de trouver des relations de cause à effet. Les corrélations doivent être réalisées sur des populations plus grandes avec un suivi dans le temps plus important. Les nouvelles technologies de séquençage haut débit vont dans ce sens en collectant toujours plus de données.\\
-Il est encore trop tôt pour dire si cette science va révolutionner la médecine de demain ou s’ il s'agit d'un effet de mode. Mais au regard de l'évolution biologique, il y a fort à parier dessus. Car, ne l'oublions pas, ce sont bien des anciennes bactéries, qui permettent à l'ensemble de nos cellules de respirer et que nous appelons maintenant des mitochondries.
+Il est encore trop tôt pour dire si cette science va révolutionner la médecine de demain ou s’ il s'agit d'un effet de mode. Mais au regard de l'évolution biologique, il y a fort à parier dessus. Car, ne l'oublions pas, ce sont bien des anciennes bactéries, qui permettent à l'ensemble de nos cellules de respirer et que nous appelons maintenant des mitochondries (Figure \ref{mitochondrie}). 
 
 \begin{figure}[ht]
 \begin{center}
 \includegraphics[scale=0.5]{img/mitochondrie.jpg}\hfill
 \end{center}
 \caption{La mitochondrie est l'exemple de symbiose ultime entre eucaryote et procaryote}
-\label{bach}
+\label{mitochondrie}
 \end{figure}
 
 
@@ -213,6 +213,7 @@ Il est encore trop tôt pour dire si cette science va révolutionner la médecin
 \newpage
 
 \section{Définition}
+\subsection{Termes utilisés en écologie}
 
 \begin{description}
   \item[Le microbiote] est l’ensemble des micro-organismes (bactéries, levures, champignons, virus) vivant dans un environnement donné.
@@ -227,7 +228,7 @@ De façon générale, le microbiome est associé aux génomes bactériens. Les t
 \item[La métagénomique] est une méthode d’étude du contenu en ADN présent dans un milieu grâce aux techniques de séquençage haut débit. Contrairement à la génomique qui s’intéresse au génome d’un individu, la métagénomique s’intéresse aux génomes d’une population d’individu.
 Dans son sens strict, la métagénomique correspond à l’étude de l’ensemble des séquences d'ADN. L’analyse d’un seul gène, comme celui de l’ARN 16s est associé à tort au terme métagénomique, mais son usage reste courant. On lui préférera le terme de \textbf{metagénétique}
 
-\item[Un read] est un terme bio-informatique désignant une séquence d’ADN issue d’un séquençage haut débit. Selon les technologies, les reads varient entre 150 et 300 paires de bases.
+
 
 \item[Un OTU] (\textit{Operational taxonomic Init}) est un terme utilisé en phylogénie, désignant un groupe d’individu proche faisant souvent référence à l’espèce dans la classification de Linée.
 En microbiologie, un OTU est défini par un groupe d’individu ayant une similarité dans leurs séquences d'ARN 16s supérieur à 97\%.
@@ -286,14 +287,35 @@ A = B
 A = B
 \end{equation}
 
-\item[Pipeline] 
-Un pipeline est un ensemble d'étapes de calcul informatique. Chaque étape prend en entrée des fichiers pour en produire des nouveaux dans sa sortie. On peut comparer cela aux étapes d'une recette de cuisine. Sans parallélisation, un cuisinier (le processeur) doit attendre de faire fondre le beurre avant de battre les œufs en neige ( Exécution synchrone). En parallélisant, le cuisinier peut réaliser plusieurs étapes en même temps. Battre les œufs pendant que le beurre fonde.( Exécution asynchrone). 
-Maintenant si l'objectif est de produire 188 gâteaux (188 analyses) et que l'on dispose de 64 cuisiniers ( 64 processeurs), l'organisation des tâches devient complexe si l'on veut maximiser le rendement. Pour cela, on dispose d'outils comme snakemake, qui permettent de générer un graphe des étapes( direct Acyclique Graph) et de trouver la meilleure façon d'optimiser les taches entre les différents cuisiniers (processeur). 
-
 
 \item[La courbe de raréfaction] est utilisé pour déterminer si la profondeur de séquençage est suffisante pour caractériser la diversité d’un échantillon.
 Pour générer cette courbe, des groupes de reads de taille croissante (1…n) sont tirés aléatoirement sans remise. Le groupe est reporté sur l'axe X et le nombre d’OTU correspondant est reporté sur l’axe Y.
 Une courbe s’aplatissant indique une bonne profondeur de séquençage \citep{Dickson2014} AMD \citep{Beck}
+
+\end{description}
+
+
+\subsection{Termes utilisés en bioinformatique}
+
+\begin{description}
+\item[Pipeline] 
+Un pipeline est un ensemble d'étapes de calcul informatique. Chaque étape prend en entrée des fichiers pour en produire des nouveaux dans sa sortie. On peut comparer cela aux étapes d'une recette de cuisine. Sans parallélisation, un cuisinier (le processeur) doit attendre de faire fondre le beurre avant de battre les œufs en neige ( Exécution synchrone). En parallélisant, le cuisinier peut réaliser plusieurs étapes en même temps. Battre les œufs pendant que le beurre fonde.( Exécution asynchrone). 
+Maintenant si l'objectif est de produire 188 gâteaux (188 analyses) et que l'on dispose de 64 cuisiniers ( 64 processeurs), l'organisation des tâches devient complexe si l'on veut maximiser le rendement. Pour cela, on dispose d'outils comme snakemake, qui permettent de générer un graphe des étapes( direct Acyclique Graph) et de trouver la meilleure façon d'optimiser les taches entre les différents cuisiniers (processeur). 
+
+\item{NGS} ... 
+
+\item[Un read] est un terme bio-informatique désignant une séquence d’ADN issue d’un séquençage haut débit. Selon les technologies, les reads varient entre 150 et 300 paires de bases.
+
+\item[librarie] ... 
+
+\item[Un fichier fastq] .....
+
+\item[Un fichier fasta] .....
+
+\item[Un fichier biom] .....
+
+\item[R] .....
+
 
 \end{description}
 
