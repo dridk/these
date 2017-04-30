@@ -16,10 +16,18 @@
 \usepackage{caption}
 \usepackage{svg}
 \usepackage{listings}
+
 \usepackage{eurosym}
 \usepackage{wrapfig}
 \usepackage{subfig}
 \usepackage[margin=2.7cm]{geometry}
+
+\usepackage{amsmath}
+\usepackage{caption}
+ 
+\DeclareCaptionType{mycapequ}[][List of equations]
+\captionsetup[mycapequ]{labelformat=empty}
+ 
     
 
     %%%%%%%%%%%%%%%%%%%%%%%%
@@ -216,46 +224,44 @@ Il est encore trop tôt pour dire si cette science va révolutionner la médecin
 \subsection{Termes utilisés en écologie}
 
 \begin{description}
-  \item[Le microbiote] est l’ensemble des micro-organismes (bactéries, levures, champignons, virus) vivant dans un environnement donné.
+\item[Le microbiote\cite{Eisen} ]est l’ensemble des micro-organismes (bactéries, levures, champignons, virus) vivant dans un environnement donné.
   
-\item[Le microbiome] s’emploie selon deux définitions. En français, le microbiome est l'environnement qui héberge le microbiote. Dans sa définition anglo-Saxonne, le microbiome fait référence à l’ensemble des génomes microbiens contenus dans un environnement. 
-De façon générale, le microbiome est associé aux génomes bactériens. Les termes de Virome et de Mycobiome sont utilisés pour les génomes viraux et mycosiques. 
-[def microbiomte http://www.microbe.net/2015/04/08/what-does-the-term-microbiome-mean-and-where-did-it-come-from-a-bit-of-a-surprise/]
-definition : https://storify.com/phylogenomics/microbiome-or-microbiota
+\item[Le microbiome\cite{Eisen}] est l'ensemble des génomes des micro-organismes provenant d'un environnement donné. Dans la plus part des cas, le microbiome fait référence aux bactéries seuls. on parle alors de virome et de mycobiome pour les virus et champignons.  
+
 \item[La biocénose] est le terme écologique dans un sens large désignant l'ensemble des organismes vivants dans un environnement appelé \textbf{Biotope}. Biocénose et biotope forment ensemble un \textbf{écosystème}.
 
 \item[Une symbiose] est une association durable entre deux organismes. Leurs relations peuvent être mutualiste, parasitaire ou commensale.
 
-\item[La métagénomique] est une méthode d’étude du contenu en ADN présent dans un milieu grâce aux techniques de séquençage haut débit. Contrairement à la génomique qui s’intéresse au génome d’un individu, la métagénomique s’intéresse aux génomes d’une population d’individus.
-Dans son sens strict, la métagénomique correspond à l’étude de l’ensemble des séquences d'ADN. L’analyse d’un seul gène, comme celui de l’ARN 16S est associé à tort au terme métagénomique, mais son usage reste courant. On lui préférera le terme de \textbf{metagénétique} ou métataxonomique.
 
-dominance
-
-\item[Un OTU] (\textit{Operational Taxonomic Unit}) est un terme utilisé en phylogénie, désignant un groupe d’individus proches faisant souvent référence à l’espèce dans la classification de Linné.
+\item[Un OTU] (\textit{Operational Taxonomic Unit}) est un terme utilisé en phylogénie pour désigner un groupe d’individus semblable. Un OTU est très souvent considéré comme le nom de l'espèce dans la classification de Linné.
 En microbiologie, un OTU est défini par un groupe de bactéries ayant une similarité dans leurs séquences d'ARN 16S supérieur à 97\%.
 
 \item[L'Abondance] absolu est le nombre de séquences d'ADN d'un OTU retrouvé dans un échantillon. 
-L’abondance relative est le pourcentage en séquences d'ADN d'un OTU retrouvé dans un échantillon. Ce dernier permet de rendre les échantillons comparables entre eux.
+L’abondance relative est l'expression en pourcentage de l'abondance absolu, afin de rendre les echantillons comparable entre eux.
 
-\item[La table des OTU] correspond à un tableau à double entrée contenant l’abondance par OTU  et par échantillon. Dans le tableau suivant, l'échantillon 1 contient 68\% de l'OTU 1.
+\item[La dominance] caractérise un OTU majoritaire dans un échantillon.
 
-\begin{figure}
+
+\item[La table des OTU] est la base de toutes analyses en écologie. Elle correspond à un tableau à double entrée contenant l’abondance par échantillon et par OTU. Dans le tableau \ref{OTUTABLE}, l'échantillon 1 contient 68\% de \textit{Staphylococcus Aureus}.
+
+\begin{figure}[h]
 \begin{center}
 \begin{tabular}{|l|c|c|c|c}
   \hline
    & échantillon 1 & échantillon 2 & échantillon 3  \\
   \hline
-  OTU 1 & 68\% & 12\% & 25\% \\
-  OTU 2 & 40\% & 24\% & 25\% \\
-  OTU 3 & 28\% & 64\% & 50\% \\
+  OTU 1(\textit{S.Aureus}) & 68\% & 12\% & 25\% \\
+  OTU 2(\textit{E.Coli})& 40\% & 24\% & 25\% \\
+  OTU 3(\textit{P.Aeruginosa}) & 28\% & 64\% & 50\% \\
 
   \hline
 \end{tabular}
 \end{center}
 \caption{La table des OTUs}
+\label{OTUTABLE}
 \end{figure}
 
-\item[La diversité alpha] est une mesure de biodiversité au sein d’un échantillon. Elle correspond à l’étude d’une colonne dans la table des OTUs. Plusieurs indicateurs de diversité alpha existent.
+\item[La diversité alpha] est une mesure de biodiversité au sein d’un échantillon. Elle correspond à l’étude d’une colonne dans la table des OTUs. La richesse, l'indice de Chao1, de Shannon et de Simpson sont des indices de diversité alpha.
 
 \item[La diversité bêta] est une analyse descriptive de la biodiversité entre plusieurs échantillons. Elle correspond à l’étude de l’ensemble de la table des OTUs. L’approche la plus courante est de réaliser une analyse multivariée par des méthodes d’ordination. Il s’agit de représenter un graphique à n dimensions, impossible à dessiner, en le projetant dans un espace à deux ou trois dimensions.
 
@@ -271,29 +277,49 @@ L'uniformité du premier échantillon est plus grande que la seconde
 échantillon 2 : 432 Streptoccus, 12 Escherichia 
 
 
-\item[L'indice Chao1] est une estimation de la richesse réelle (\textit{in vivo}) par rapport à la richesse observée (\textit{in vitro}). Cet indice part du principe que si l’échantillon contient beaucoup de singletons (OTU détecté une seule fois), il est fort probable que la richesse réelle soit plus grande que la richesse de l’échantillon. La formule est la suivante.
-\begin{equation}
-A = B
-\end{equation}
+\item[L'indice Chao1] est une estimation de la richesse réelle (\textit{in vivo}) par rapport à la richesse observée (\textit{in vitro}). Cet indice part du principe que si l’échantillon contient beaucoup de singletons (OTU détecté une seule fois), il est fort probable que la richesse réelle soit plus grande que la richesse de l’échantillon. La formule est la suivante:
+
+\begin{mycapequ}[!h]
+   \begin{equation}
+     Chao1 = S_{observed} + \frac{a^2}{2b}
+   \end{equation}
+      \caption{avec \textbf{S} la richesse observée, \textbf{a} le nombre de singleton et \textbf{b} le nombre de doubleton}
+\end{mycapequ}
 
 \item[L'indice de Shannon] est un indicateur évaluant à la fois la richesse et l’uniformité dans un échantillon. Il se calcule de la même façon que l’entropie de Shannon.
 
-\begin{equation}
-A = B
-\end{equation}
+\begin{mycapequ}[!h]
+   \begin{equation}
+     Shannon = \sum_{i=1}^Sp_{i}lnp_{i}
+   \end{equation}
+      \caption{avec \textbf{p} la fréquence d'un OTU parmi les \textbf{S} OTUs présents dans l'échantillon}
+\end{mycapequ}
 
-\item[L'indice de Simpson] est un indicateur évaluant la probabilité que deux individus sélectionnés aléatoirement dans un échantillon donné soient de la même espèce. La formule est la suivante.
+\item[L'indice de Simpson] est un indicateur évaluant la probabilité que deux individus sélectionnés aléatoirement dans un échantillon donné soient de la même espèce. L'indice est de sens contraire aux précédents. La formule est la suivante:
 
-\begin{equation}
-A = B
-\end{equation}
+\begin{mycapequ}[!h]
+   \begin{equation}
+     Simpson = 1 - \sum_{i=1}^Sp_{i}
+   \end{equation}
+      \caption{avec \textbf{p} la fréquence d'un OTU parmi les \textbf{S} OTUs présents dans l'échantillon}
+\end{mycapequ}
 
+\newpage
 
-\item[La courbe de raréfaction] est utilisée pour déterminer si la profondeur de séquençage est suffisante pour caractériser la diversité d’un échantillon.
-Pour générer cette courbe, des groupes de reads de taille croissante (1…n) sont tirés aléatoirement sans remise en jeu. Le groupe est reporté sur l'axe X et le nombre d’OTU correspondant est reporté sur l’axe Y.
-Une courbe s’aplatissant indique une bonne profondeur de séquençage \citep{Dickson2014} AMD \citep{Beck}
-Bille rouges vs Bille bleu . 
+\item[La courbe de raréfaction] est utilisée pour déterminer si la profondeur de séquençage est suffisante pour caractériser la diversité d’un échantillon. Pour comprendre imaginons un sac noir contenant des billes (reads) de différentes couleurs (espèces). Si seulement deux couleurs sont présente, une petite poigné de bille suffit pour évaluer la diversité. En revanche, avec plus de couleur il faudra une poignées plus importante. La courbe de raréfaction permet d'évaluer si cette poigné de bille est suffisamment représentative.
+Pour générer cette courbe, des groupes de reads de taille croissante (1..n) sont tirés aléatoirement depuis un échantillon. Le groupe est reporté sur l'axe X et la richesse du groupe est reporté sur l’axe Y.
+Une courbe s’aplatissant indique une bonne profondeur de séquençage ( Figure \ref{rarefaction_demo} ).
 \end{description}
+
+\begin{figure}[ht]
+\begin{center}
+\includegraphics[scale=0.5]{img/rarefaction_example.png}\hfill
+\end{center}
+\caption{Exemple de courbes de raréfactions. La courbe bleu témoigne d'un bon échantillonnage en s’aplatissant précocement. Plus de reads ne permettrait pas de découvrir de nouveau OTU contrairement à la courbe rouge. }
+\label{rarefaction_demo}
+\end{figure}
+
+
 
 
 \subsection{Termes utilisés en bioinformatique}
@@ -303,20 +329,21 @@ Bille rouges vs Bille bleu .
 Un pipeline est un ensemble d'étapes de calcul informatique. Chaque étape prend en entrée des fichiers pour en produire des nouveaux dans sa sortie. On peut comparer cela aux étapes d'une recette de cuisine. Sans parallélisation, un cuisinier (le processeur) doit attendre de faire fondre le beurre avant de battre les œufs en neige (exécution synchrone). En parallélisant, le cuisinier peut réaliser plusieurs étapes en même temps. Battre les œufs pendant que le beurre fond (exécution asynchrone). 
 Maintenant si l'objectif est de produire 188 gâteaux (188 analyses) et que l'on dispose de 64 cuisiniers (64 processeurs), l'organisation des tâches devient complexe si l'on veut maximiser le rendement. Pour cela, on dispose d'outils comme snakemake, qui permettent de générer un graphique des étapes (direct Acyclique Graph) et de trouver la meilleure façon d'optimiser les tâches entre les différents cuisiniers (processeur). 
 
-\item{NGS} ... 
+\item[NGS]( Next Generation sequencing ) désigne l'ensemble des séquenceurs de nouvelle génération permettant de séquencer un nombre très important de fragment d'ADN. 
+
+\item[La métagénomique] est une méthode d’étude du contenu en ADN présent dans un milieu grâce aux techniques de séquençage haut débit. Contrairement à la génomique qui s’intéresse au génome d’un individu, la métagénomique s’intéresse aux génomes d’une population d’individus.
+Dans son sens strict, la métagénomique correspond à l’étude de l’ensemble des séquences d'ADN. L’analyse d’un seul gène, comme celui de l’ARN 16S est associé à tort au terme métagénomique, mais son usage reste courant. On lui préférera le terme de \textbf{metagénétique} ou \textbf{métataxonomique}.
+
 
 \item[Un read] est un terme bio-informatique désignant une séquence d’ADN issue d’un séquençage haut débit. Selon les technologies, les reads varient entre 150 et 300 paires de bases.
 
-\item[librarie] ... 
+\item[Une librarie] est l'ensemble des fragments d'ADN préparés pour être séquencé. 
 
-\item[Un fichier fastq] .....
+\item[Score de qualité Phred] Le score de qualité Phred exprime la confiance que l'on porte au séquençage. Il est lié de façon logarithme à la probabilité d'erreur d'identification d'un nucléotide. Par exemple un score de 10 équivaut à une 1 erreur sur 100. Un score de 40 à 1 erreur sur 10000.
 
-\item[Un fichier fasta] .....
-
-\item[Un fichier biom] .....
-
-\item[R] .....
-
+\item[Un fichier fastq] contient les séquences des reads et leurs qualités par nucléotides exprimée en Phred Score.
+\item[Un fichier fasta] contient uniquement les séquences des reads. 
+\item[Un fichier biom] contient la table des OTUs
 
 \end{description}
 
