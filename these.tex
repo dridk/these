@@ -1,7 +1,7 @@
 \documentclass[12pt,a4paper]{article}
     % for Nature's style citations
 \usepackage[super]{natbib}
-\usepackage[utf8]{inputenc}
+\usepackage[utf8x]{inputenc}
 \usepackage[greek,francais]{babel}
 \usepackage[T1]{fontenc}
 \usepackage{graphicx}
@@ -56,7 +56,7 @@
     }
      
 
-
+\renewcommand{\thefootnote}{\roman{footnote}}
 \begin{document}
 
 
@@ -180,7 +180,7 @@ Les avancées majeures dans les domaines de l'hygiène, la vaccination et les an
 \begin{center}
 \includegraphics[scale=0.5]{img/allergie_infection.jpg}\hfill
 \end{center}
-\caption{Incidence des maladies infectieuses et auto-immunes en Europe au cours du temps. [@]}
+\caption{Incidence des maladies infectieuses et auto-immunes en Europe au cours du temps \cite{Bach2002}. }
 \label{hyigienisme}
 \end{figure}
 
@@ -190,12 +190,12 @@ Elles sont présentes partout et jouent le premier rôle dans le fonctionnement 
 Elles peuvent survivre dans les milieux les plus inhospitaliers. Les archées (anciennement archéobactéries) peuvent résister dans des environnements d'acidité et de température exceptionnellement élevées. On les retrouve dans les fonds océaniques où, privées de lumière, elles sont la seule source d'énergie pour la faune grâce à la chimiosynthèse à l'instar de la photosynthèse. L'étude des archées a par ailleurs apporté un éclairage nouveau sur l’origine des eucaryotes \footnote{Le génome des archées est composé d'introns comme chez les eucaryotes} et a fait faire un bond de géant à la biologie moléculaire \footnote{La Taq polymérase est une enzyme d'archée qui résiste à de hautes températures utilisées dans les PCR}.\\
 Le corps humain est lui aussi un environnement riche en bactéries. La majorité des bactéries a longtemps été indétectable par les méthodes de culture classiques. Mais à présent, nous savons que les régions anatomiques autrefois considérées stériles contiennent beaucoup de bactéries. 
 On les retrouve sur tous les territoires du corps exposés où elles se regroupent en communautés.
-La peau est colonisée par \textit{Propionibacterium}, \textit{Corynebacterium} et \textit{Staphylococcus} \citep{Beck}. Le vagin est colonisé essentiellement par \textit{Lactobacillus} et la bouche principalement par \textit{Streptococcus}\cite{Beck}.
-La muqueuse intestinale est colonisée par une "flore" bactérienne ou microbiote dominée par les anaérobies pouvant contribuer jusqu'à 0.2 kg au poids corporel \citep{Beck}. http://journals.plos.org/plosbiology/article?id=10.1371/journal.pbio.1002533
-En échange de son hospitalité, le microbiote contribue au bon fonctionnement de son hôte. Il aide à la digestion en dégradant par exemple les sucres du lait maternel chez le nouveau-né[@bifidus]. Il participe à la synthèse des vitamines essentielles (K, B12,B8)[@ref]. Il éduque notre système immunitaire et fait barrière à l'implantation de tout nouvel agent pathogène.
-Toute défaillance de notre microbiote ou \textit{dysbiose}, peut avoir des conséquences pour notre santé. La liste des affections associées est longue. On y retrouve la maladie de Crohn[@], la maladie coeliaque[@], le cancer de l’intestin[@], le syndrome du côlon irritable[@], l’obésité[@], le diabète de type 1[@], l’asthme[@], l’eczéma[@], la sclérose en plaque[@], la polyarthrite rhumatoïde[@], la maladie d’alzheimer[@] et même l’autisme[@]. \\
-Par exemple, la destruction du microbiote intestinale par des antibiotiques donne l'opportunité à \textit{Clostridium difficile} de s'installer et proliférer provoquant dans certains cas la colite pseudo-membraneuse  (souches toxinogènes). Un des traitements proposés en dépit de lignes de traitement antibiotique est la transplantation fécale visant à régénérer le microbiote du patient. \\
-Le microbiote nous amène donc à reconsidérer notre individualité. Nous ne sommes plus seulement un organisme multicellulaire composé d'un seul génome ; Mais plutôt un écosystème où cellules eucaryotes et micro-organismes vivent en symbiose. Cette relation n'étant pas figée dans le temps et pouvant varier entre le commensalisme, le parasitisme et le mutualisme. Des études récentes ont permis d'estimer pour un être humain le nombre  de cellules microbiennes à 39 milliards comparé aux 30 milliards de cellules humaines [@]. En associant les gènes bactériens, le génome d’un être humain passe de 23 000  à 3,3 millions de gènes [@] avec toute la complexité des interactions que cela engendre[@]. Les scientifiques ont nommé \textit{holobionte} cet écosystème vivant. L'ensemble des génomes est appelé \textit{hologénome}. \\
+La peau est colonisée par \textit{Propionibacterium}, \textit{Corynebacterium} et \textit{Staphylococcus} \cite{Yong2017}. Le vagin est colonisé essentiellement par \textit{Lactobacillus} et la bouche principalement par \textit{Streptococcus}\cite{Yong2017}.
+La muqueuse intestinale est colonisée par une "flore" bactérienne ou microbiote dominée par les anaérobies pouvant contribuer jusqu'à 0.2 kg au poids corporel \citep{Sender2016}.
+En échange de son hospitalité, le microbiote contribue au bon fonctionnement de son hôte. Il aide à la digestion en dégradant par exemple les sucres du lait maternel chez le nouveau-né \cite{Bode2012,Yong2017}. Il participe à la synthèse des vitamines essentielles (K, B12,B8)\cite{LeBlanc2013,Yong2017}. Il éduque notre système immunitaire et fait barrière à l'implantation de tout nouvel agent pathogène.
+Toute défaillance de notre microbiote ou \textit{dysbiose}, peut avoir des conséquences pour notre santé. La liste des affections associées est longue \cite{Yong2017}. On y retrouve la maladie de Crohn, la maladie coeliaque, le cancer de l’intestin, le syndrome du côlon irritable, l’obésité, le diabète de type 1, l’asthme, l’eczéma, la sclérose en plaque, la polyarthrite rhumatoïde, la maladie d’alzheimer et même l’autisme. \\
+Par exemple, la destruction du microbiote intestinale par des antibiotiques donne l'opportunité à la souche toxinogène de \textit{Clostridium difficile} de s'installer et provoquer la colite pseudo-membraneuse. Un des traitements proposés en dépit de lignes de traitement antibiotique est la transplantation fécale visant à régénérer le microbiote du patient. \\
+Le microbiote nous amène donc à reconsidérer notre individualité. Nous ne sommes plus seulement un organisme multicellulaire composé d'un seul génome ; Mais plutôt un écosystème où cellules eucaryotes et micro-organismes vivent en symbiose. Cette relation n'étant pas figée dans le temps et pouvant varier entre le commensalisme, le parasitisme et le mutualisme. Des études récentes ont permis d'estimer pour un être humain le nombre  de cellules microbiennes à 39 milliards comparé aux 30 milliards de cellules humaines \cite{Sender2016}. En associant les gènes bactériens, le génome d’un être humain passe de 23 000  à 3,3 millions de gènes \cite{Qin2010} avec toute la complexité des interactions que cela engendre. Les scientifiques ont nommé \textit{holobionte} cet écosystème vivant. L'ensemble des génomes est appelé \textit{hologénome}. \\
 Il faut toutefois rester prudent quant au rôle donné aux microbiotes et éviter de tomber dans l'excès. Nombreuses sont les publications scientifiques qui se contredisent ou qui confondent corrélation et causalité. Ces publications ont d'ailleurs conduit à la création du hashtag humoristique sur Twitter: \textit{\#GutMicrobiomeAndRandomSomething}. 
 Les études sur le microbiote doivent être étayées par des études fonctionnelles afin de trouver des relations de cause à effet. Les corrélations doivent être réalisées sur des populations plus grandes avec un suivi dans le temps plus conséquent. Les nouvelles technologies de séquençage haut débit vont dans ce sens en collectant toujours plus de données.\\
 Il est encore trop tôt pour dire si cette science va révolutionner la médecine ou s’ il s'agit d'un effet de mode. Au regard de l'évolution biologique et de l'importance du microbiote chez d'autre espèces, les paries sont ouverts. Ne l'oublions pas, ce sont d'anciennes bactéries, que nous appelons aujourd'hui des mitochondries (Figure \ref{mitochondrie}), qui permettent à l'ensemble de nos cellules de respirer. 
