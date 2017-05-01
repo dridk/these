@@ -226,23 +226,23 @@ Il est encore trop tôt pour dire si cette science va révolutionner la médecin
 \begin{description}
 \item[Le microbiote\cite{Eisen} ]est l’ensemble des micro-organismes (bactéries, levures, champignons, virus) vivant dans un environnement donné.
   
-\item[Le microbiome\cite{Eisen}] est l'ensemble des génomes des micro-organismes provenant d'un environnement donné. Dans la plus part des cas, le microbiome fait référence aux bactéries seuls. on parle alors de virome et de mycobiome pour les virus et champignons.  
+\item[Le microbiome\cite{Eisen}] est l'ensemble des génomes du microbiote. Le plus souvent le microbiome fait référence aux génomes bactériens seuls. On parle alors de virome et de mycobiome pour les virus et champignons.  
 
 \item[La biocénose] est le terme écologique dans un sens large désignant l'ensemble des organismes vivants dans un environnement appelé \textbf{Biotope}. Biocénose et biotope forment ensemble un \textbf{écosystème}.
 
 \item[Une symbiose] est une association durable entre deux organismes. Leurs relations peuvent être mutualiste, parasitaire ou commensale.
 
 
-\item[Un OTU] (\textit{Operational Taxonomic Unit}) est un terme utilisé en phylogénie pour désigner un groupe d’individus semblable. Un OTU est très souvent considéré comme le nom de l'espèce dans la classification de Linné.
+\item[Un OTU] (\textit{Operational Taxonomic Unit}) est un terme utilisé en phylogénie pour désigner un groupe d’individus semblable. Dans la majorité des cas, il s'agit de l'espèce dans la classification de Linné.
 En microbiologie, un OTU est défini par un groupe de bactéries ayant une similarité dans leurs séquences d'ARN 16S supérieur à 97\%.
 
-\item[L'Abondance] absolu est le nombre de séquences d'ADN d'un OTU retrouvé dans un échantillon. 
-L’abondance relative est l'expression en pourcentage de l'abondance absolu, afin de rendre les echantillons comparable entre eux.
+\item[L'abondance] absolue est le nombre d'individu d'un même OTU dans un échantillon. L'abondance est indirectement évalué en comptant le nombre de molécule d'ARN 16S. 
+L’abondance relative est l'expression en pourcentage de l'abondance absolu.
 
-\item[La dominance] caractérise un OTU majoritaire dans un échantillon.
+\item[La dominance] caractérise un OTU dont l'abondance est supérieur à 90\% dans un échantillon.
 
 
-\item[La table des OTU] est la base de toutes analyses en écologie. Elle correspond à un tableau à double entrée contenant l’abondance par échantillon et par OTU. Dans le tableau \ref{OTUTABLE}, l'échantillon 1 contient 68\% de \textit{Staphylococcus Aureus}.
+\item[La table des OTU] est à la base de toutes analyses en écologie. Elle correspond à un tableau à double entrée contenant l’abondance par échantillon et par OTU. Dans le tableau \ref{OTUTABLE}, l'abondance relative pour \textit{Staphylococcus Aureus} est de 68\%.
 
 \begin{figure}[h]
 \begin{center}
@@ -257,21 +257,21 @@ L’abondance relative est l'expression en pourcentage de l'abondance absolu, af
   \hline
 \end{tabular}
 \end{center}
-\caption{La table des OTUs}
+\caption{La table des OTUs : L'abondance relative de 3 espèces bactériennes pour 3 échantillons}
 \label{OTUTABLE}
 \end{figure}
 
-\item[La diversité alpha] est une mesure de biodiversité au sein d’un échantillon. Elle correspond à l’étude d’une colonne dans la table des OTUs. La richesse, l'indice de Chao1, de Shannon et de Simpson sont des indices de diversité alpha.
+\item[La diversité alpha] est une mesure de la biodiversité au sein \textbf{d’un} échantillon. Elle correspond à une colonne de la table des OTUs. La richesse, l'indice de Chao1, de Shannon et de Simpson sont des indices de diversité alpha.
 
-\item[La diversité bêta] est une analyse descriptive de la biodiversité entre plusieurs échantillons. Elle correspond à l’étude de l’ensemble de la table des OTUs. L’approche la plus courante est de réaliser une analyse multivariée par des méthodes d’ordination. Il s’agit de représenter un graphique à n dimensions, impossible à dessiner, en le projetant dans un espace à deux ou trois dimensions.
+\item[La diversité bêta] est une analyse descriptive de la biodiversité entre \textbf{plusieurs} échantillons. Elle correspond à l’ensemble de la table des OTUs. L’approche la plus courante est de réaliser une analyse multivariée par des méthodes d’ordination. Il s’agit de représenter un graphique à n dimensions, impossible à dessiner, en le projetant dans un espace à deux ou trois dimensions.
 
-\item[La richesse] est le nombre d’espèces présent dans un échantillon. Les deux échantillons suivant ont une richesse de 2.
+\item[La richesse] est le nombre d'OTU présent dans un échantillon. Les deux échantillons suivant ont une richesse de 2.
 
 échantillon 1  : 4 \textit{Streptoccus} , 4 \textit{Escherichia}  \\ 
 échantillon 2 : 432 \textit{Streptoccus}, 12 \textit{Escherichia} 
 
-\item[L'uniformité / équitabilité] indique si les espèces d’un échantillon sont réparties uniformément.
-L'uniformité du premier échantillon est plus grande que la seconde
+\item[L'uniformité / équitabilité] indique si les OTUs d’un échantillon sont réparties uniformément.
+L'uniformité du premier échantillon est plus grande que le second
 
 échantillon 1  : 50 Streptococus , 50 Escherichia  \\ 
 échantillon 2 : 432 Streptoccus, 12 Escherichia 
@@ -290,7 +290,7 @@ L'uniformité du premier échantillon est plus grande que la seconde
 
 \begin{mycapequ}[!h]
    \begin{equation}
-     Shannon = \sum_{i=1}^Sp_{i}lnp_{i}
+     Shannon = \sum_{i=1}^Sp_{i}ln(p_{i})
    \end{equation}
       \caption{avec \textbf{p} la fréquence d'un OTU parmi les \textbf{S} OTUs présents dans l'échantillon}
 \end{mycapequ}
@@ -327,7 +327,7 @@ Une courbe s’aplatissant indique une bonne profondeur de séquençage ( Figure
 \begin{description}
 \item[Pipeline] 
 Un pipeline est un ensemble d'étapes de calcul informatique. Chaque étape prend en entrée des fichiers pour en produire des nouveaux dans sa sortie. On peut comparer cela aux étapes d'une recette de cuisine. Sans parallélisation, un cuisinier (le processeur) doit attendre de faire fondre le beurre avant de battre les œufs en neige (exécution synchrone). En parallélisant, le cuisinier peut réaliser plusieurs étapes en même temps. Battre les œufs pendant que le beurre fond (exécution asynchrone). 
-Maintenant si l'objectif est de produire 188 gâteaux (188 analyses) et que l'on dispose de 64 cuisiniers (64 processeurs), l'organisation des tâches devient complexe si l'on veut maximiser le rendement. Pour cela, on dispose d'outils comme snakemake, qui permettent de générer un graphique des étapes (direct Acyclique Graph) et de trouver la meilleure façon d'optimiser les tâches entre les différents cuisiniers (processeur). 
+Maintenant si l'objectif est de produire 188 gâteaux (188 analyses) et que l'on dispose de 64 cuisiniers (64 processeurs), l'organisation des tâches devient complexe si l'on veut maximiser le rendement. Pour cela, on dispose d'outils comme \textit{Snakemake}\cite{Koster2012}, qui permettent de trouver la meilleure façon d'optimiser les tâches en construisant un Graphe orienté acyclique.
 
 \item[NGS]( Next Generation sequencing ) désigne l'ensemble des séquenceurs de nouvelle génération permettant de séquencer un nombre très important de fragment d'ADN. 
 
@@ -354,29 +354,29 @@ Dans son sens strict, la métagénomique correspond à l’étude de l’ensembl
 \section{Introduction}
 \subsection{La mucoviscidose}
 \subsubsection{Une maladie génétique}
-La mucoviscidose est une maladie génétique autosomique récessive grave qui frappe en France 1 naissance sur 5400 [@]. La Bretagne est la région la plus touchée avec une prévalence de 1/3000[@].
-La loi de Hardy Weinberg estime qu’en Bretagne 1 patient sur 25 est porteur de la mutation à l’état hétérozygotes[@Heterozygote davantage]. Cette haute prévalence s’explique probablement par un effet fondateur associé à un avantage sélectif pour les individus porteurs de l’allèle muté. \footnote{Plusieurs hypothèses ont été proposées, notamment lors des grandes épidémies de choléra en diminuant les pertes hydriques. D’autres suggèrent qu'il s'agit d'une pléiotropie antagoniste.[@]} \\
-Le gène CFTR impacté se situe sur le chromosome 7 en position q31.2. Il est constitué de 27 exons pour 250 188 [@] paires de bases. Il code pour un canal chlore AMP dépendant permettant les échanges des ions chlorures au niveau des membranes cellulaires[@]. Il est également impliqué dans le transport du thiocynate (SCN-) et des bicarbonates (HCO3-)[@]. \\
-On dénombre à ce jour 2017 mutations mises en cause dans la mucovicidoses[@]. La perte d’une phénylalanine en position 508 par délétion du triplet c.1521-1523delCTT (anciennement $\Delta$F508) cause à elle seule 80\% des mucoviscidoses.
+La mucoviscidose est une maladie génétique autosomique récessive grave qui frappe en France 1 naissance sur 5400\cite{Registredelamuco.org}. La Bretagne est la région la plus touchée avec une prévalence de 1/3000\cite{Registredelamuco.org}.
+La loi de Hardy Weinberg estime qu’en Bretagne 1 patient sur 25 est porteur de la mutation à l’état hétérozygotes. Cette haute prévalence s’explique probablement par un effet fondateur associé à un avantage sélectif pour les individus porteurs de l’allèle muté. \footnote{Plusieurs hypothèses ont été proposées, notamment lors des grandes épidémies de choléra en diminuant les pertes hydriques.]} 
+Le gène CFTR impacté se situe sur le chromosome 7 en position q31.2. Il est constitué de 27 exons pour 250 188\cite{OLeary2016} paires de bases. Il code pour un canal chlore AMP dépendant permettant les échanges des ions chlorures au niveau des membranes cellulaires. Il est également impliqué dans le transport du thiocynate (SCN-) et des bicarbonates (HCO3-)\cite{Quinton2001}. 
+On dénombre à ce jour 2017 mutations \cite{cftrdb} mises en cause dans la mucovicidoses. La perte d’une phénylalanine en position 508 par délétion du est triplet c.1521-1523delCTT (anciennement $\Delta$F508) cause à elle seule 80\% des mucoviscidoses\cite{cftrdb}.
 Ces mutations sont responsables d’une protéine défectueuse ou d’une absence de canaux sur les membranes cellulaires. \\
 Cliniquement, la mutation entraîne une insuffisance pancréatique exocrine et une infertilité par disparition des canaux déférents. Des signes digestifs, hépatiques et articulaires sont également retrouvés.
-L'atteinte de la fonction respiratoire est la plus bruyante. En effet au niveau de l’épithélium broncho-pulmonaire, l’absence d’un CFTR fonctionnel est à l’origine d’une déshydratation du mucus le rendant plus visqueux et empêche les cils bronchiques de jouer leurs rôles.[@]\\
-La forte prévalence de la maladie nécessite de réaliser un dépistage précoce chez tous les nouveaux nés (test de Gutri) afin d’adapter au plus tôt la prise en charge. Seul le test à la sueur permet de poser le diagnostic. Le dépistage prénatal basé sur l’ADN circulant est actuellement à l’étude[@]. Le traitement repose avant tout sur une prise en charge respiratoire (kinésithérapie, dorasse, antibiothérapie).
-Les recherches en thérapies génétiques sont encourageante[HAS].
-L’Ivacaftor est le seul traitement à ce jour qui agit directement sur le CFTR. Mais concerne uniquement certaine mutation rare comme la G551D.[has]La greffe pulmonaire est le dernier recours.
+L'atteinte de la fonction respiratoire est la plus bruyante. En effet au niveau de l’épithélium broncho-pulmonaire, l’absence d’un CFTR fonctionnel est responsable d’une déshydratation du mucus le rendant plus visqueux et empêche les cils bronchiques de jouer leurs rôles.\\
+La forte prévalence de la maladie nécessite de réaliser un dépistage précoce chez tous les nouveaux nés (test de Gutri) afin d’adapter au plus tôt la prise en charge. Seul le test à la sueur permet de poser le diagnostic. Le dépistage prénatal basé sur l’ADN circulant est actuellement à l’étude.\\   
+Le traitement repose avant tout sur une prise en charge respiratoire (kinésithérapie, dorasse, antibiothérapie). Les recherches en thérapies génétiques sont encourageante [@].
+\textit{L’Ivacaftor} est le seul traitement à ce jour qui agit directement sur le CFTR. Mais concerne uniquement certaine mutation rare comme la G551D. La greffe pulmonaire est le dernier recours.
 
 \subsubsection{Une maladie infectieuse}
 
-L’atteinte pulmonaire dans la mucoviscidose est caractérisée par des réactions inflammatoires qui dégrade progressivement la fonction respiratoire. Plusieurs pathogènes sont impliqués. Chez les jeunes enfants, \textit{Haemophilus influenza} et \textit{Staphilococcus Aureus} sont le plus souvent responsable. \textit{Burkolderia Cepace} et \textit{Stenotrophomonas Maltophilia} sont retrouvés parmi les sujets plus âgé.
-Mais c’est \textit{Pseudomonas Aeruginosa} qui caractérise l’atteinte pulmonaire dans la mucoviscidose en marquant un tournant décisif dans l’évolution de la maladie. Ce bacille aérobie stricte est un germe de l'environnement rarement retrouvé parmi les patients sains[@]. En revanche, dans la mucoviscidose, il est mis en évidence chez 60\%[@] des patients jeunes, et plus de 90\% des patients adultes[@].\\
-La primocolonisation à \textit{Pseudomnas Aeruginosa} est difficilement détectable, mais semble avoir lieu tôt dans l’enfance[@]. Il y a ensuite une phase de latence, variable entre les individus, marquée par des épisodes d’exacerbations et de rémissions. À ce moment, l’éradication[@] par des antibiotiques reste possible.
-Puis survient le passage à la chronicité. \textit{Pseudomnas Aeruginosa} s'adapte à son milieu et s’installe à long terme. Il perd certains caractères de virulence, mais devient résistant aux antibiotiques[@]. Son phénotype change. Il se transforme pour devenir mucoïde en sécrétant un film d’alginate qui le protège du système immunitaire. Les mécanismes sous-jacents à cette adaptation sont ingénieux. La forte densité en bactérie est responsable d’activation de certains gènes par un processus appelé \textit{quorum sensing}[@]. Un processus dans lequel chaque bactérie communique avec ses voisines par des signaux.
-Le génome de \textit{Pseudomnas Aeruginosa} devient aussi hyperpermutable afin de présenter une plus grande diversité génétique au regard de la sélection naturelle\footnote{En biologie évolutive, il s'agit d'évolvabilité}. \\
+L’atteinte pulmonaire dans la mucoviscidose est caractérisée par des réactions inflammatoires qui dégradent progressivement la fonction respiratoire. Plusieurs pathogènes sont impliqués. Chez les jeunes enfants\cite{Davies}, \textit{Haemophilus influenza} et \textit{Staphilococcus Aureus} sont le plus souvent responsable. \textit{Burkolderia Cepace} et \textit{Stenotrophomonas Maltophilia} sont retrouvés parmi les sujets plus âgé \cite{Davies}.
+Mais c’est \textit{Pseudomonas Aeruginosa} qui caractérise l’atteinte pulmonaire dans la mucoviscidose en marquant un tournant décisif dans l’évolution de la maladie. Ce bacille aérobie stricte est un germe de l'environnement rarement retrouvé parmi les patients sains[@]. En revanche, dans la mucoviscidose, il est mis en évidence chez 60\%\cite{LeBourgeois} des patients jeunes, et plus de 90\% des patients adultes\cite{LeBourgeois}.\\
+La primocolonisation à \textit{Pseudomnas Aeruginosa} est difficilement détectable, mais semble avoir lieu tôt dans l’enfance[@]. Il y a ensuite une phase de latence, variable entre les individus, marquée par des épisodes d’exacerbations et de rémissions. À ce moment, l’éradication par des antibiotiques reste possible.
+Puis survient le passage à la chronicité. \textit{Pseudomnas Aeruginosa} s'adapte à son milieu et s’installe à long terme. Il perd certains caractères de virulence, mais devient résistant aux antibiotiques\cite{LeBourgeois}. Son phénotype change. Il se transforme pour devenir mucoïde en sécrétant un film d’alginate qui le protège du système immunitaire. Les mécanismes sous-jacents à cette adaptation sont ingénieux. La forte densité en bactérie est responsable d’activation de certains gènes par un processus appelé \textit{quorum sensing}\cite{Ruimy2004}. Un processus dans lequel chaque bactérie communique avec ses voisines par des signaux chimiques.
+Le génome de \textit{Pseudomnas Aeruginosa} devient aussi hyperpermutable\cite{Davies} afin de présenter une plus grande diversité génétique au regard de la sélection naturelle\footnote{En biologie évolutive, il s'agit d'évolvabilité}. \\
 À ce stade, le traitement antibiotique n’est plus curatif et l'évolution tend inexorablement vers un déclin de la fonction respiratoire. \\
-L'approche clinique est donc préventive afin de retarder le passage à la chronicité. Elle vise à éliminer \textit{Pseudomnas Aeruginosa} dès qu'il est détecté en culture. Une surveillance rapprochée des patients avec un prélèvement mensuel ou bimensuel est préconisée selon l'HAS[@]. La culture étant peu sensible, d’autres méthodes d'identification peuvent être employées. La détection des anticorps anti-pyocyaniques par ELISA a montré peu de sensibilité [@].
-La PCR ciblée associant les protéines bactériennes \textit{OPRL1} , \textit{GYRB1} et \textit{ECFX1}  s’est montrée plus sensible et plus spécifique que la culture[@]. \\
-En pratique, la colonisation chronique est définie lorsque 3 expectorations sont rendues positives en culture, successivement au cours d’un suivi mensuel ou bimensuel[@].
-Une autre classification, celle de Lee a montré une forte liaison clinico-biologique. Elle est composée de 4 groupes :  
+L'approche clinique est donc préventive afin de retarder le passage à la chronicité. Elle vise à éliminer \textit{Pseudomnas Aeruginosa} dès qu'il est détecté en culture. Une surveillance rapprochée des patients avec un prélèvement mensuel ou bimensuel est préconisée selon l'HAS[@]. La culture étant peu sensible, d’autres méthodes d'identification peuvent être employées. La détection des anticorps anti-pyocyaniques par ELISA a montré peu de sensibilité \cite{Plesiat}.
+La PCR ciblée associant les protéines bactériennes \textit{OPRL1} , \textit{GYRB1} et \textit{ECFX1}  s’est montrée plus sensible et plus spécifique que la culture\cite{Vongthilath2017,LeGall} \\
+En pratique, la colonisation chronique est définie lorsque 3 expectorations sont rendues positives en culture, successivement au cours d’un suivi mensuel ou bimensuel \cite{LeBourgeois}.
+Une autre classification, celle de Lee\cite{Lee2003} a montré une forte liaison clinico-biologique. Elle est composée de 4 groupes :  
 \begin{description}
 \item[groupe chronique] > 50\% des cultures sont positives sur 12 mois
 \item[groupe intermédiaire] $\leq$ 50\% des cultures sont positives sur  12 mois
@@ -411,14 +411,13 @@ On ne sait pas aujourd’hui pourquoi \textit{Pseudomnas Aeruginosa} s’install
 
 \subsection{Le microbiote pulmonaire}
 
-Bien qu'il soit en contacte avec le milieu extérieur, l’arbre respiratoire (comprenant la trachée, les bronches et les alvéoles) a longtemps été considéré comme stérile avec les méthodes de culture classique. Il a fallu attendre l’avènement du séquençage haut débit pour mettre en évidence le microbiote pulmonaire[ref Host-microorganism 1-3].
-L'arbre respiratoire chez le foetus est stérile. Il se colonise comme l'intestin, à la naissance en traversant la filière génitale puis se différencie avec le temps. Il est beaucoup moins riche que le microbiote digestif.  Il est constitué d’une flore dynamique provenant de l’air ambiant, des voies supérieures,  mais aussi du tube digestif par des micro-aspirations.[@] Une étude à montrer une concordance entre le microbiote digestif et respiratoire[@ Dikson page4].
-En raison du flux d'air bidirectionnel, le microbiote respiratoire est aussi plus dynamique que le microbiote digestif.
+Bien qu'il soit en contacte avec le milieu extérieur, l’arbre respiratoire (comprenant la trachée, les bronches et les alvéoles) a longtemps été considéré stérile avec les méthodes de culture classique. Il a fallu attendre l’avènement du séquençage haut débit pour mettre en évidence le microbiote pulmonaire \cite{HoMan2017,Beck,Dicksonb}.\\
+L'arbre respiratoire chez le foetus\footnote{Un article récent critique l'idée d'un foetus stérile.} est stérile. Il se colonise comme l'intestin, à la naissance en traversant la filière génitale puis se différencie avec le temps. Il est beaucoup moins riche que le microbiote digestif mais plus dynamique en raison d'un flux aérien bidirectionnel.  Les bactéries du microbiotes proviennent de l’air ambiant, des voies supérieures,  mais aussi du tube digestif par des micro-aspirations \cite{Dickson}. Une étude à d'ailleurs montrer une concordance entre le microbiote digestif et respiratoire\cite{Dickson}.\\
 Le microbiote pulmonaire est dominé par le phylum des \textit{Firmicutes} (\textit{Streotpococcus}) et des \textit{Bacteroidetes} (\textit{Prevotella}). Les genres retrouvés majoritairement sont \textit{Streptococcus}, \textit{Prevotella}, \textit{Fusobacteria}, \textit{Veillonella}, \textit{Haemophilus}, \textit{Neisseria} et \textit{Porphyromonas}.
 L’arbre respiratoire étant en continuité direct avec les voies aériennes supérieur, certains genres bactériens sont communs, comme \textit{Streptococcus}, \textit{Staphylococcus}, \textit{Haemophilus} et \textit{Moraxella}. Tandis que d’autres genres comme \textit{Corynébactérium} et \textit{Dolosigranulum} ne sont retrouvés qu’au niveau du nez et de l'oropharynx. \\
 Le microbiote pulmonaire varie dans l’espace et le temps. \\
 Dans l’espace, du fait de sa structure, certaines régions de l'arbre bronchique peuvent présenter des microbiotes différents. Un prélèvement au niveau d'un foyer infectieux se distinguera nécessairement d'un foyer sain. Il existe également des différences physico-chimiques selon la région pouvant sélectionner des espèces. Les cavernes tuberculeuses par exemple se trouvent essentiellement dans le lobe supérieur en raison d'une concentration en oxygène plus élevé qui favorise ce bacille aérobie stricte. \\
-Le microbiome varie dans le temps... 
+Le microbiome varie dans le temps. Avec l'age la diversité diminue. 
 Declin de la diversité alpha avec l'age .... probablement a cause des exacerbations multiple et du traitement
 Le microbiote est variable entre les individus ... \\
 Le microbiote est corrélé à la pathologie respiratoire. Plusieurs études suggèrent une différence entre patients sains et patients asthmatiques, BPCO ou atteint de mucoviscidose ...... [@].
@@ -427,23 +426,23 @@ Il est par exemple demontré que chez les jeunes enfant, une diminution d'infect
 Chez les muco, augmentation de la richesse et diminution de la diversité 
 Chez les muco, augmentation des germes opportuniste par rapport au commensaux ( data mining paper)
 
-Le microbiote pulmonaire joue probablement le rôle de barrière vis à vis d'autre agent pathogène.  [@]
+Le microbiote pulmonaire joue probablement le rôle de barrière vis à vis d'autre agent pathogène. \cite{HoMan2017}
 
 \subsection{Exploration du microbiote pulmonaire}
 %(http://bacterioweb.univ-fcomte.fr/bibliotheque/remic/08-Bronc.pdf) ==> A LIRE COOURS BACTERIO
 
 \subsubsection{Méthode de prélèvement}
-Le microbiote respiratoire est exploré en séquençant l'ensemble des ADN présent dans un échantillon. 
+Le microbiote respiratoire est exploré en séquençant l'ADN des micro-organismes présent dans un échantillon. 
 Toutes les méthodes de recueils sont possibles, mais les prélèvements protégés (combicath, LBA) sont recommandés afin
 d’éviter une contamination par les voies supérieures. Dans le cas contraire (ECBC) on peut évaluer la qualité du prélèvement en comptant le nombre de cellules épithélium ( normalement bas ) et de polynucléaire ( normalement haut ) dans le poumon. La meilleure méthode de prélèvement étant le prélèvement in situ réalisable lors des greffes pulmonaires.
 
 \subsubsection{Séquençage haut débit}
 % Baisse du coup du sequencage ... %
-Grâce à son haut débit, Le séquençage de nouvelle génération permet de séquencer l'ensemble des ADN présent dans un échantillon respiratoire et ainsi déterminer sa composition en bactérie. À titre d'exemple, un séquenceur Sanger classique permet de lire des fragments d'ADN d'environ 800 pb parallélisable jusqu'à 96 fois en augmentant le nombre de capillaire sur la machine. 
-À l'inverse, un séquenceur de nouvelle génération lit des fragments plus courts de l'ordre de 150pb. Mais cette lecture peut être parallélisé jusqu'à 20 billions de fois en un seul run sur un illumina Novaseq. \\
+Le séquençage de nouvelle génération permet de séquencer de grande quantité d' ADN dans un échantillon et ainsi déterminer sa composition en bactérie. À titre d'exemple, un séquenceur Sanger classique permet de lire des fragments d'ADN d'environ 800 pb parallélisable jusqu'à 96 fois en augmentant le nombre de capillaire. 
+À l'inverse, un séquenceur de nouvelle génération lit des fragments plus courts de l'ordre de 150pb. Mais la parallélisation peut aller jusqu'à 20 billions de fois en un seul run sur un illumina Novaseq. \\
 2 stratégies de séquençages sont utilisées en écologie microbienne:  \\
 \textbf{La stratégie shogun} consiste à séquencer l'ensemble des  ADN présents dans l'échantillon sans discernement, que ce soit humain ou bactérien. Les séquences sont filtrées puis les génomes bactériens sont reconstruits par des méthodes bio-informatiques complexes. \\
-\textbf{La stratégie Amplicon} est moins coûteuse sur le plan de l'analyse. Il s'agit d'amplifier un gène uniquement bactérien et suffisamment variable pour discriminer une espèce. Pour les bactéries, il s'agit de l'ARN 16S.\\
+\textbf{La stratégie Amplicon} est moins coûteuse sur le plan de l'analyse. Elle consiste à séquencer un gène spécifiquement bactérien et suffisamment variable pour discriminer une espèce. Il s'agit du gène de l'ARN 16S.\\
 L'ARN 16S est un ARN non codant participant à la structure de la petite sous unité des ribosomes bactériens. Il est composé de 1500 nucléotides et forme plusieurs boucles dans sa structure secondaire (Figure \ref{ARN16S}). 
 L'alignement des séquences d'ARN 16S entre plusieurs espèces met en évidence des régions constantes et 9 régions variables (Figure \ref{ARN16SVariation}). Les régions constante permette de concevoir des amorces s'hybridant sur tous les ADNs bactériens. Les régions variables apportent la spécificité taxonomique permettant d'identifier l'espèce bactérienne.
 % Les études de [@] ont montrée que certaine région variable apportent plus de spécificité.
@@ -465,13 +464,13 @@ L'alignement des séquences d'ARN 16S entre plusieurs espèces met en évidence 
 \end{figure}
 
 
-En séquencant l'ensemble des génomes bactériens, la stratégie \textit{shotgun} est plus informative car elle permet de prédire la fonction d'un microbiote. En effet, les transferts génétiques horizontaux amènent à dissocier l'espèce de sa fonction. 2 bactéries d'une même espèce peuvent avoir des fonctions différentes. L'inférence fonctionnelle à partir de la deuxième stratégie est possible mais déconseillé[@].  
+En séquencant l'ensemble des génomes bactériens, la stratégie \textit{shotgun} est plus informative car elle permet de prédire la fonction d'un microbiote. En effet, les transferts génétiques horizontaux amènent à dissocier l'espèce de sa fonction. 2 bactéries d'une même espèce peuvent avoir des fonctions différentes. L'inférence fonctionnelle à partir de la deuxième stratégie est possible mais déconseillé.  
 La stratégie 16S reste toutefois une méthode simple pour décrire les populations bactériennes présentes. C'est cette stratégie qui a été utilisée dans notre étude. 
 
 
 
 \subsection{Objectif de l'étude Mucobiome}
-L'objectif de notre étude est de savoir si le microbiote respiratoire influence la primo colonisation à \textit{Pseudomnas Aeruginosa}. 
+L'objectif de notre étude est de savoir si dans la mucoviscidose, le microbiote respiratoire influence la colonisation à \textit{Pseudomnas Aeruginosa}. 
 Pour cela, nous avons suivi pendant 3 ans,  une cohorte de 47 patients atteints de mucoviscidoses sans infection chronique. 
 L'exploration de leurs microbiotes par la stratégie 16S a été réalisée à partir d'expectorations bronchiques obtenues dans le cadre de leurs suivis. 
 À partir des données générées par le séquençage, nous avons effectué l'étude descriptive et analytique de leurs microbiotes en créant un pipeline bio-informatique dédié. 
@@ -522,7 +521,7 @@ Environ 25 millions de reads sont produits par run MiSeq. En multiplexant à l�
 \subsection{Analyse bio-informatique}
 
 L’analyse des 188 pairs de fichiers fastq a été réalisé grâce à un pipeline bio-informatique, appelé \textit{mucobiome}, conçu et tester dans le cadre de cette étude. Par rapport aux autres logiciels comme \textbf{QIIME} ou \textbf{MOTHUR}, le pipeline mucobiome est spécialisé dans l’analyse des données 16S. Il est également plus rapide en raison d’un très haut niveau de parallélisation permis grâce à  \textbf{Snakemake}. Cet outil modélise l'ensemble du pipeline sous forme d'un graphe direct acyclique (DAG) et le résout afin d'optimiser la parallélisation. \\
-Le pipeline mucobiome prend en entrée, les 188 couples de fichiers fastq provenant du séquençage et produit un fichier BIOM contenant la table des OTUs. Les figures \ref{pipeline_trio} et \ref{dag} illustrent toutes les étapes du pipeline et sont décrites ci-dessous.
+Le pipeline mucobiome prend en entrée, les 188 couples de fichiers fastq provenant du séquençage et produit un fichier BIOM contenant la table des OTUs. Les figures \ref{pipeline_trio} et \ref{dag} illustrent toutes les étapes du pipeline qui sont décrites ci-dessous.
 
 
 
@@ -530,7 +529,7 @@ Le pipeline mucobiome prend en entrée, les 188 couples de fichiers fastq proven
 \begin{center}
 \includegraphics[scale=0.5]{img/pipeline_trio.png}\hfill
 \end{center}
-\caption{Graphe du pipeline simplifié sur 3 échantillons 1015, 1001 et 1003.\\ \textbf{merging}: Les reads pairs de 300 pb sont fusionnés  pour produire un fichier fastq contenant des reads de 535pb. \textbf{cleanning}: les reads de mauvaise qualité sont supprimés. \textbf{reversing}: les reads sont transformés en leurs séquences complémentaires pour pouvoir être alignés. \textbf{Trimming}: seule la séquence entre les primers V3-V5 est conservée. \textbf{dereplicating}: les séquences dupliquées sont retirées. \textbf{merging}: L'ensemble des séquences est regroupé dans un seul fichier. \textbf{Taxonomy assignent}: Les séquences sont alignées sur la base de données greengene. \textbf{create\_biom}: la table des OTU est créée }
+\caption{Graphe du pipeline simplifié sur 3 échantillons 1015, 1001 et 1003.\\ \textbf{merging}: Les reads pairs de 300 pb sont fusionnés  pour produire un fichier fastq contenant des reads de 535pb. \textbf{cleanning}: les reads de mauvaise qualité sont supprimés. \textbf{reversing}: les reads sont transformés en leurs séquences complémentaires pour pouvoir être alignés. \textbf{Trimming}: seule la séquence entre les primers V3-V5 est conservée. \textbf{dereplicating}: les séquences dupliquées sont retirées. \textbf{merging}: L'ensemble des séquences est regroupé dans un seul fichier. \textbf{Taxonomy assignement}: Les séquences sont alignées sur la base de données greengene. \textbf{create\_biom}: la table des OTU est créée }
 \label{pipeline_trio}
 \end{figure}
 
