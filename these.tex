@@ -196,7 +196,7 @@ Les avancées majeures dans les domaines de l'hygiène, la vaccination et les an
 Les méthodes récentes d'exploration de ce monde microscopique comme le séquençage haut débit ont permis aux bactéries de retrouver leurs lettres de noblesse.
 Elles sont présentes partout et jouent le premier rôle dans le fonctionnement des écosystèmes. Elles sont, par exemple, impliquées dans le cycle de l'azote et permettent à la biomasse d'absorber le diazote atmosphérique. Les bactéries sont ainsi la source primaire à laquelle les organismes puisent pour construire leurs protéines et leurs acides nucléiques.
 Elles peuvent survivre dans les milieux les plus inhospitaliers. Les archées (anciennement archéobactéries) peuvent résister dans des environnements d'acidité et de température exceptionnellement élevées. On les retrouve dans les fonds océaniques où, privées de lumière, elles sont la seule source d'énergie pour la faune grâce à la chimiosynthèse à l'instar de la photosynthèse. 
-Le corps humain est lui aussi un environnement riche en bactéries. Pour la plus part, elles ont longtemps été indétectable par les méthodes de culture classiques. Mais à présent, nous savons que les régions anatomiques autrefois considérées stériles contiennent beaucoup de bactéries. 
+Le corps humain est lui aussi un environnement riche en bactéries. La majorité des bactéries a longtemps été indétectable par les méthodes de culture classiques. Mais à présent, nous savons que les régions anatomiques autrefois considérées stériles contiennent beaucoup de bactéries. 
 On les retrouve sur tous les territoires du corps exposés où elles se regroupent en communautés.
 La peau est colonisée par \textit{Propionibacterium}, \textit{Corynebacterium} et \textit{Staphylococcus} \cite{Yong2017}. Le vagin est colonisé essentiellement par \textit{Lactobacillus} et la bouche principalement par \textit{Streptococcus}\cite{Yong2017}.
 La muqueuse intestinale est colonisée par une "flore" bactérienne ou microbiote dominée par les anaérobies pouvant contribuer jusqu'à 0.2 kg au poids corporel \citep{Sender2016}.
@@ -341,6 +341,22 @@ Dans son sens strict, la métagénomique correspond à l’étude de l’ensembl
 
 \item[Score de qualité Phred] Le score de qualité Phred exprime la confiance que l'on porte au séquençage. Il est lié de façon logarithme à la probabilité d'erreur d'identification d'un nucléotide. Par exemple un score de 10 équivaut à une 1 erreur sur 100. Un score de 40 à 1 erreur sur 10000.
 
+\item[Une ordination] est une analyse multivariée visant à décrire des objets caractérisés par plusieurs variables. Par exemple un échantillon est caractérisé par différentes abondances de bactéries. Il existe plusieurs méthode d'ordination. La plus connus étant l'analyse en composante principale (PCA) basé sur une matrice de covariances. En écologie l'analyse en Coordonnée principale ( PCoA ) est préférée. Elle se base sur une matrice de distances. Elle consiste à projeter des points d'un espace à n dimensions vers un espace visible en 2 dimensions.
+La figure \ref{pcoatuto} illustre ce principe avec un exemple à deux dimensions seulement. 
+
+
+\begin{figure}[!h]
+\begin{center}
+\includegraphics[scale=0.6]{img/pcoatuto.png}\hfill
+\end{center}
+\caption{Exemple d'une PCoA à deux dimensions. Chaques échantillons est assimilable à un point de coordonnées ( abondance A; abondance B ). Il est alors possible de calculer des distances entre les points. La plus connus étant la distance euclidienne. Mais d'autres existent comme la distance de Bray-Curtis. Sur cette figure, l’échantillon 1 et 2 sont ont des microbiotes proches car la distance d1 qui les sépare est petite. }
+\label{pcoatuto}
+\end{figure}
+
+
+\newpage
+
+
 \item[Un fichier fastq] contient les séquences des reads et leurs qualités par nucléotides exprimée en Phred Score.
 \item[Un fichier fasta] contient uniquement les séquences des reads. 
 \item[Un fichier biom] contient la table des OTUs
@@ -370,10 +386,10 @@ Le traitement repose avant tout sur une prise en charge respiratoire (kinésith�
 L’atteinte pulmonaire dans la mucoviscidose est caractérisée par des réactions inflammatoires qui dégradent progressivement la fonction respiratoire. Plusieurs pathogènes sont impliqués. Chez les jeunes enfants\cite{Davies}, \textit{Haemophilus influenza} et \textit{Staphilococcus Aureus} sont le plus souvent responsable. \textit{Burkolderia Cepace} et \textit{Stenotrophomonas Maltophilia} sont retrouvés parmi les sujets plus âgé \cite{Davies}.
 Mais c’est \textit{Pseudomonas Aeruginosa} qui caractérise l’atteinte pulmonaire dans la mucoviscidose en marquant un tournant décisif dans l’évolution de la maladie. Ce bacille aérobie stricte est un germe de l'environnement rarement retrouvé parmi les patients sains[@]. En revanche, dans la mucoviscidose, il est mis en évidence chez 60\%\cite{LeBourgeois} des patients jeunes, et plus de 90\% des patients adultes\cite{LeBourgeois}.\\
 La primocolonisation à \textit{Pseudomnas Aeruginosa} est difficilement détectable, mais semble avoir lieu tôt dans l’enfance[@]. Il y a ensuite une phase de latence, variable entre les individus, marquée par des épisodes d’exacerbations et de rémissions. À ce moment, l’éradication par des antibiotiques reste possible.
-Puis la colonisation devient chronique. \textit{Pseudomnas Aeruginosa} s'adapte à son milieu et s’installe à long terme. Il perd certains caractères de virulence, mais devient résistant aux antibiotiques\cite{LeBourgeois}. Son phénotype change. Il se transforme pour devenir mucoïde en sécrétant un film d’alginate qui le protège du système immunitaire. Les mécanismes sous-jacents à cette adaptation sont ingénieux. La forte densité en bactérie est responsable d’activation de certains gènes par un processus appelé \textit{quorum sensing}\cite{Ruimy2004}. Un processus dans lequel chaque bactérie communique avec ses voisines par des signaux chimiques.
-Le génome de \textit{Pseudomnas Aeruginosa} devient également hyperpermutable\cite{Davies} afin de présenter une plus grande diversité génétique au regard de la sélection naturelle\footnote{En biologie évolutive, il s'agit d'évolvabilité}. \\
+Puis survient le passage à la chronicité. \textit{Pseudomnas Aeruginosa} s'adapte à son milieu et s’installe à long terme. Il perd certains caractères de virulence, mais devient résistant aux antibiotiques\cite{LeBourgeois}. Son phénotype change. Il se transforme pour devenir mucoïde en sécrétant un film d’alginate qui le protège du système immunitaire. Les mécanismes sous-jacents à cette adaptation sont ingénieux. La forte densité en bactérie est responsable d’activation de certains gènes par un processus appelé \textit{quorum sensing}\cite{Ruimy2004}. Un processus dans lequel chaque bactérie communique avec ses voisines par des signaux chimiques.
+Le génome de \textit{Pseudomnas Aeruginosa} devient aussi hyperpermutable\cite{Davies} afin de présenter une plus grande diversité génétique au regard de la sélection naturelle\footnote{En biologie évolutive, il s'agit d'évolvabilité}. \\
 À ce stade, le traitement antibiotique n’est plus curatif et l'évolution tend inexorablement vers un déclin de la fonction respiratoire. \\
-L'approche clinique est donc préventive afin de retarder le passage à la chronicité. Elle vise à éliminer \textit{Pseudomnas Aeruginosa} dès qu'il est détecté en culture. Une surveillance rapprochée des patients avec un prélèvement mensuel ou bimensuel est préconisée selon l'HAS[@]. D’autres méthodes d'identification peuvent être employées. La détection des anticorps anti-pyocyaniques par ELISA a montré peu de sensibilité \cite{Plesiat}.
+L'approche clinique est donc préventive afin de retarder le passage à la chronicité. Elle vise à éliminer \textit{Pseudomnas Aeruginosa} dès qu'il est détecté en culture. Une surveillance rapprochée des patients avec un prélèvement mensuel ou bimensuel est préconisée selon l'HAS[@]. La culture étant peu sensible, d’autres méthodes d'identification peuvent être employées. La détection des anticorps anti-pyocyaniques par ELISA a montré peu de sensibilité \cite{Plesiat}.
 La PCR ciblée associant les protéines bactériennes \textit{OPRL1} , \textit{GYRB1} et \textit{ECFX1}  s’est montrée plus sensible et plus spécifique que la culture\cite{Vongthilath2017,LeGall} \\
 En pratique, la colonisation chronique est définie lorsque 3 expectorations sont rendues positives en culture, successivement au cours d’un suivi mensuel ou bimensuel \cite{LeBourgeois}.
 Une autre classification, celle de Lee\cite{Lee2003} a montré une forte liaison clinico-biologique. Elle est composée de 4 groupes :  
@@ -434,7 +450,7 @@ Le microbiote pulmonaire joue probablement le rôle de barrière vis à vis d'au
 \subsubsection{Méthode de prélèvement}
 Le microbiote respiratoire est exploré en séquençant l'ADN des micro-organismes présent dans un échantillon. 
 Toutes les méthodes de recueils sont possibles, mais les prélèvements protégés (combicath, LBA) sont recommandés afin
-d’éviter une contamination par les voies supérieures. Dans le cas contraire (ECBC) on peut évaluer la qualité du prélèvement en comptant le nombre de cellules épithéliale ( normalement bas ) et de polynucléaire ( normalement haut ) dans le poumon. La meilleure méthode de prélèvement étant le prélèvement in situ réalisable lors des greffes pulmonaires.
+d’éviter une contamination par les voies supérieures. Dans le cas contraire (ECBC) on peut évaluer la qualité du prélèvement en comptant le nombre de cellules épithélium ( normalement bas ) et de polynucléaire ( normalement haut ) dans le poumon. La meilleure méthode de prélèvement étant le prélèvement in situ réalisable lors des greffes pulmonaires.
 
 \subsubsection{Séquençage haut débit}
 % Baisse du coup du sequencage ... %
@@ -545,14 +561,14 @@ Le pipeline mucobiome prend en entrée, les 188 couples de fichiers fastq proven
 \subsection{Étape du pipeline}
 \subsubsection{Merging: Fusions des reads}\begin{center}\emph{ 2 fastq en entrée 1 fastq en sortie. } \end{center}
 
-La première étape du pipeline consiste à fusionner le couple de fichier fastq afin de produire un seul fichier contenant des plus longues séquences.
-Le programme \textbf{Flash}[@] a été utilisé avec les paramètres par défaut. À partir de deux fichiers fastq, ce dernier recherche le meilleur alignement et produit 1 fichier fastq contenant les reads fusionnés.
+La première étape du pipeline consiste à fusionner le couple de fichier fastq afin de produire un seul fichier contenant des plus longues séquences de 535pb correspondant à la région V3-V5 de l’ARN 16S.
+Le programme \textbf{Flash}[@] a été utilisé avec les paramètres par défaut. À partir de deux fichiers fastq, ce dernier recherche le meilleur alignement entre deux reads et produit 1 fichier fastq contenant les reads fusionnés.
 Une analyse qualitative des reads a été réalisée avec FastQt\citep{Beck} avant et après fusions.
 
 \subsubsection{Cleaning: Filtrage des qualités}\begin{center}\emph{1 fastq en entrée 1 fastq en sortie. } \end{center}
 
-Les données de séquençage haut débit peuvent contenir beaucoup d'erreurs. Il est important de supprimer les reads de mauvaise qualité pour gagner en spécificité.
-Le filtrage des reads de mauvaise qualité est réalisé avec le programme \textbf{sickle}. Son algorithme repose sur l'utilisation d'une fenêtre glissante de taille fixe. Cette fenêtre glisse le long de la séquence et à chaque pas calcule un score moyen de qualité. Si successivement le score moyen passe sous un certain seuil, le read est supprimé. Les paramètres utilisés sont ceux par défaut. Un score de 20 avec une fenêtre glissante de 20pb. 
+Les données de séquençage haut débit peuvent contenir beaucoup d'erreurs. Il est important de supprimer les reads de mauvaise qualité pour gagner en spécificité. ( expliquer la qualité).
+Le filtrage des reads de mauvaise qualité est réalisé avec le programme \textbf{sickle}. Son algorithme repose sur l'utilisation d'une fenêtre glissante de taille définie ( par défaut : 20 Pb). Cette fenêtre glisse le long de la séquence et pour chaque position calcule la moyenne des scores de qualité dans cette fenêtre. Si successivement le score moyen passe sous un certain seuil, le read est supprimé. Les paramètres utilisés sont ceux par défaut. Un score de 20 avec une fenêtre glissante de 20pb. 
 Une analyse qualitative des reads a été réalisée avec FastQt\citep{Beck} après le filtrage. 
 
 
@@ -580,15 +596,15 @@ Cette étape consiste à supprimer toutes les séquences doublons. En procédant
 
 \subsubsection{Assignement taxonomique} \begin{center}\emph{2 fasta en entrée,  1 fichier biom  en sortie. }\end{center} 
 
-L’assignement taxonomique consiste à labelliser chaque read à son taxon. Nous avons utilisé la stratégie \textit{close référence} dont le rôle est de comparer chaque read à une base de données avec un seuil de 97\% de similarité. Cet algorithme est de complexité N. C'est-à-dire que le temps de calcul est directement proportionnel à la taille de la base de donnée. La banque \textit{Greengene} version mai 2013  a été utilisé. Il s'agit d'un fichier fasta contenant 1 262 986 séquences et 203 452 OTUs. \\
+L’assignement taxonomique consiste à labelliser chaque read à son taxon. Nous avons utilisé la stratégie \textit{close référence} dont le rôle est de comparer chaque read à une base de données avec un seuil de 98\% de similarité. Cet algorithme est de complexité N. C'est-à-dire que le temps de calcul est directement proportionnel au nombre de reads testé. La base de données \textit{Greengene} version mai 2013  a été utilisé. Il s'agit d'un fichier fasta contenant 1 262 986 séquences et 203 452 OTUs. \\
 L'autre stratégie d'assignement \textit{de novo} n'a pas été utilisée. Cette dernière, de complexité $N^{2}$, consiste à comparer les reads entre eux pour former des groupes. Elle s'emploie de préférence pour détecter les bactéries absentes des bases de données. \\
 L'assignement taxonomique a été réalisé avec vsearch et sa fonction \textit{--usearch\_global}. 
 
-\subsubsection{Etude de la table des OTUs}
+\subsubsection{Analyse descriptive}
 L'analyse de la table des OTUs a été réalisée avec R et le package phyloseq. 
-Les OTUs ont été regroupé par genre bactérien.
-L'étude descriptive à été réalisé en calculant des indicateurs de diversité alpha et en produisant différents graphiques. 
-Le core microbiota a été calculé. Il est défini comme l'ensemble des taxons retrouvé dans plus de 50\% des échantillons avec une abondance supérieur à 0,1\%. Les categories Free et Never ont été comparé d'après leurs diversité alpha et par une analyse multivarié de leurs microbiome. 
+Les OTUs ont été regroupé agrégé par genre.
+la diversité globale et individuelle a été évalué à l'aide de plusieurs graphiques. L'ensemble des résultats est disponible à cette adresse : http://...  
+
 
 
 \section{Résultat}
@@ -676,8 +692,8 @@ Les trois phylums majoritaires sont \textit{Firmicute} ( 42.59\%) et \textit{Pro
 Le tableau de la figure \ref{alltable} résume l'ensemble des résultats en y associant la prévalence des genres bactériens parmi les 188 échantillons.
 Par exemple \textit{Streptococcus}, \textit{Neisseria}, \textit{Prevotella}, \textit{Granulicatella}, \textit{Gemella}, \textit{Veillonella} et \textit{Fusobacterium} sont très prévalent, car présents dans plus de 185 échantillons.
 D’autres sont dominantes. Il s’agit de \textit{Streptococcus}, \textit{Neisseria}, \textit{Haemophilus} et \textit{Staphyloccoccus}. \textit{Sténotrophomonas} et \textit{Achromobacter} sont retrouvées dans 64 et 8 échantillons respectivement. Pseudomonas est retrouvé dans 53 échantillons, dont un, au moins avec une abondance de 25.94\%. Burkholderia est retrouvé seulement dans 2 échantillons à moin de 1\%.\\
-Le core microbiota est constitué de 15 genres bactériens ( Figure \ref{core} ).
-Sa distribution est illustré sur la figure \ref{violon}.
+Le core microbiota est défini comme l'ensemble des taxons retrouvé dans plus de 50\% des échantillons avec une abondance supérieur à 0,1\%. Il est constitué de 15 genres bactériens ( Figure \ref{core} ).\\
+La distribution du core microbiota est illustré dans la figure \ref{violon}.
 \textit{Streptococcus} respecte grossièrement une distribution normale variant de la quasi-absence à la dominance avec une moyenne de 30\% par échantillon. Neisseria est le deuxième genre le plus abondant avec une moyenne de 18\%.
 Les abondances de \textit{Staphylococcus} et \textit{Haemophilus} sont faibles dans la plupart des échantillons. Mais pour quelque un, sont dominant. Les autres genres ont une abondance faible qui varie faiblement. Elles ne sont jamais retrouvé dominante.
 
@@ -716,7 +732,7 @@ Certains patients ont des richesses stables au court du temps. Le patient 25,26,
 L'indice de shannon montre que pour un richesse constante dans le temps, l'equitabilité est différente. Par exemple la richesse du patient 223 est stable sur le graphique \ref{alphaObs} mais son indice de shannon varie sur le graphique \ref{alphaShannon} témoignant d'une distribution différente des ses bactéries. Seul le patient 26 semble conserver à la fois une richesse et une équitabilité stable au court du temps.
 
 \subsubsection{Évolution des abondances}
-Les figures \ref{plotabundancegenre}, \ref{plotabundancephylum} et \ref{plotabundancecurve} montrent l’évolution des abondances au cours du temps pour chaque patient. Ces graphiques nous permettent d’interpréter plus finement les graphiques d’alpha diversité précédent.
+Les figures \ref{plotabundancegenre}, \ref{plotabundancephylum} et \ref{plotabundancecurve} montrent l’évolution des abondances au cours du temps pour chaque patient. Ces graphiques nous permettent d’interpréter plus finement les graphiques d’alpha diversité précédente.
 Par exemple la faible richesse du patient 8 est liée à une dominance de \textit{Stenotrophomonas} sur les 4 échantillons.
 La perte de diversité du 3ème prélèvement du patient 223 est causée par \textit{Neisseria} qui devient dominant à plus de 80\%.
 Le patient 3 montre une diminution progressive \textit{d’Haemophilus} parallèlement à une augmentation de \textit{Streptococcus}. \\
