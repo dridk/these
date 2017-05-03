@@ -361,7 +361,7 @@ La figure \ref{pcoatuto} illustre ce principe avec un exemple à deux dimensions
 \item[Un fichier fasta] contient uniquement les séquences des reads. 
 \item[Un fichier biom] contient la table des OTUs
 
-\end{description} 
+\end{description}
 
 \newpage
 
@@ -600,11 +600,8 @@ L’assignement taxonomique consiste à labelliser chaque read à son taxon. Nou
 L'autre stratégie d'assignement \textit{de novo} n'a pas été utilisée. Cette dernière, de complexité $N^{2}$, consiste à comparer les reads entre eux pour former des groupes. Elle s'emploie de préférence pour détecter les bactéries absentes des bases de données. \\
 L'assignement taxonomique a été réalisé avec vsearch et sa fonction \textit{--usearch\_global}. 
 
-\subsubsection{Analyse descriptive}
-L'analyse de la table des OTUs a été réalisée avec R et le package phyloseq. 
-Les OTUs ont été regroupé agrégé par genre.
-la diversité globale et individuelle a été évalué à l'aide de plusieurs graphiques. L'ensemble des résultats est disponible à cette adresse : http://...  
-
+\subsubsection{Analyse de la table des OTUs}
+L’analyse de la table des OTUs a été réalisée avec R et le package phyloseq. Les OTUsont été regroupé par genre bactérien. L’étude descriptive à été réalisé en calculant desindicateurs de diversité alpha et en produisant différents graphiques. Le core microbiotaa été calculé. Il est défini comme l’ensemble des taxons retrouvé dans plus de 50% deséchantillons avec une abondance supérieur à 0,1%. Les categories Free et Never ont étécomparé d’après leurs diversité alpha et par une analyse multivarié de leurs microbiom
 
 
 \section{Résultat}
