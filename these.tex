@@ -271,13 +271,13 @@ L’abondance relative est l'expression en pourcentage de l'abondance absolue.
 échantillon 2 : 432 \textit{Streptoccus}, 12 \textit{Escherichia} 
 
 \item[L'équitabilité] ( eveness )  indique si les OTUs d’un échantillon sont réparties uniformément.
-L'uniformité du premier échantillon est plus grande que le second
+L'équitabilité du premier échantillon est plus grande que le second
 
 échantillon 1  : 50 Streptococus , 50 Escherichia  \\ 
 échantillon 2 : 432 Streptoccus, 12 Escherichia 
 
 
-\item[L'indice Chao1] est une estimation de la richesse réelle (\textit{in vivo}) par rapport à la richesse observée (\textit{in vitro}). Cet indice part du principe que si l’échantillon contient beaucoup de singletons (OTU détecté une seule fois), il est fort probable que la richesse réelle soit plus grande que la richesse de l’échantillon. La formule est la suivante:
+\item[L'indice Chao1] est une estimation de la richesse réelle (\textit{in vivo}) par rapport à la richesse observée dans l'échantillon(\textit{in vitro}). Cet indice part du principe que si l’échantillon contient beaucoup de singletons (OTU détecté une seule fois), il est fort probable que la richesse réelle soit plus grande que la richesse de l’échantillon. La formule est la suivante:
 
 \begin{mycapequ}[!h]
    \begin{equation}
@@ -286,7 +286,7 @@ L'uniformité du premier échantillon est plus grande que le second
       \caption{avec \textbf{S} la richesse observée, \textbf{a} le nombre de singletons et \textbf{b} le nombre de doubletons}
 \end{mycapequ}
 
-\item[L'indice de Shannon] est un indicateur évaluant à la fois la richesse et l’uniformité dans un échantillon. Il se calcule de la même façon que l’entropie de Shannon.
+\item[L'indice de Shannon] est un indicateur évaluant à la fois la richesse et l'équitabilité dans un échantillon. Il se calcule de la même façon que l’entropie de Shannon.
 
 \begin{mycapequ}[!h]
    \begin{equation}
@@ -306,7 +306,7 @@ L'uniformité du premier échantillon est plus grande que le second
 
 \newpage
 
-\item[La courbe de raréfaction] est utilisée pour déterminer si la profondeur de séquençage est suffisante pour caractériser la diversité d’un échantillon. Pour comprendre imaginons un sac noir contenant des billes (reads) de différentes couleurs (espèces). Avec deux couleurs, une petite poignée ( un petit échantillon) de bille sera suffisante pour évaluer la diversité en couleur. Vous ne trouverez pas plus de couleur avec plus de bille dans votre main. En revanche, avec d'avantage de couleurs dans le sac, il faudra une poignées plus importante pour évaluer la diversité. La courbe de raréfaction permet d'évaluer si cette poignée de bille est suffisamment représentative.
+\item[La courbe de raréfaction] est utilisée pour déterminer si la profondeur de séquençage est suffisante pour caractériser la diversité d’un échantillon. Pour comprendre imaginons un sac noir contenant des billes (reads) de différentes couleurs (espèces). Avec deux couleurs, une petite poignée ( un petit échantillon) de bille sera suffisante pour évaluer la diversité. Vous ne trouverez pas de nouvelle couleur avec plus de bille dans votre main. En revanche, avec d'avantage de couleurs dans le sac, il faudra une poignées plus importante pour évaluer la diversité. La courbe de raréfaction permet d'évaluer si cette poignée de bille est suffisamment représentative.
 Pour générer cette courbe, des groupes de reads de taille croissante (1..n) sont tirés aléatoirement depuis l' échantillon. Le groupe est reporté sur l'axe X et le nombre d'OTU retrouvé dans ce groupe est reporté sur l’axe Y.
 Une courbe s’aplatissant indique une bonne profondeur de séquençage ( Figure \ref{rarefaction_demo} ).
 \end{description}
@@ -339,11 +339,21 @@ Dans son sens strict, la métagénomique correspond à l’étude de l’ensembl
 
 \item[Une librarie] est l'ensemble des fragments d'ADN préparés pour être séquencé. 
 
-\item[Score de qualité Phred] Le score de qualité Phred exprime la confiance que l'on porte au séquençage. Il est lié de façon logarithme à la probabilité d'erreur d'identification d'un nucléotide. Par exemple un score de 10 équivaut à une 1 erreur sur 100. Un score de 40 à 1 erreur sur 10000.
+\item[Score de qualité Phred] ou QScore exprime la confiance que l'on porte au séquençage. Il est lié de façon logarithme à la probabilité d'erreur d'identification d'un nucléotide.  Par exemple un score de 10 équivaut à une 1 erreur sur 100. Un score de 40 à 1 erreur sur 10000.
+
+
+\begin{mycapequ}[!h]
+   \begin{equation}
+    Q = -10 \ \log_{10} P 
+   \end{equation}
+      \caption{Le score Q est associé de façon logarithmique à la probabilité d'erreur P de s'être trompé en séquençant un nucléotide}
+\end{mycapequ}
+
+
+
 
 \item[Une ordination] est une analyse multivariée visant à décrire des objets caractérisés par plusieurs variables. Par exemple un échantillon est caractérisé par différentes abondances de bactéries. Il existe plusieurs méthode d'ordination. La plus connus étant l'analyse en composante principale (PCA) basé sur une matrice de covariances. En écologie l'analyse en Coordonnée principale ( PCoA ) est préférée. Elle se base sur une matrice de distances. Elle consiste à projeter des points d'un espace à n dimensions vers un espace visible en 2 dimensions.
 La figure \ref{pcoatuto} illustre ce principe avec un exemple à deux dimensions seulement. 
-
 
 \begin{figure}[!h]
 \begin{center}
@@ -352,14 +362,31 @@ La figure \ref{pcoatuto} illustre ce principe avec un exemple à deux dimensions
 \caption{Exemple d'une PCoA à deux dimensions. Chaques échantillons est assimilable à un point de coordonnées ( abondance A; abondance B ). Il est alors possible de calculer des distances entre les points. La plus connus étant la distance euclidienne. Mais d'autres existent comme la distance de Bray-Curtis. Sur cette figure, l’échantillon 1 et 2 sont ont des microbiotes proches car la distance d1 qui les sépare est petite. }
 \label{pcoatuto}
 \end{figure}
+\newpage
+
+\item[La distance de Bray-Curtis] est un indice de dissimilarité entre deux échantillons qui s'assimile à une distance entre 2 points dans un espace de taille n ( Figure \ref{pcoatuto} ). Plus la distance est grande et plus les deux échantillons sont dissemblable. La formule est la suivante : 
+
+\begin{mycapequ}[!h]
+   \begin{equation}
+    BC_{jk} = 1 - \frac{2\sum_{i=1}^{p}min(N_{ij},N_{ik})}{\sum_{i=1}^{p}(N_{ij} + N_{ik})} 
+   \end{equation}
+      \caption{Où Nij est l'abondance d'une  espèce i dans l'échantillon j et Nik l'abondance de la même espèce i dans l'échantillon k. Le terme min(.,.) correspond au minimum obtenu pour deux comptes sur les mêmes échantillons. Les sommes situés au numérateurs et dénominateur sont réalisées sur l'ensemble des espèces présentes dans les échantillons.}
+\end{mycapequ}
+
+
+
 
 
 \newpage
-
-
 \item[Un fichier fastq] contient les séquences des reads et leurs qualités par nucléotides exprimée en Phred Score.
-\item[Un fichier fasta] contient uniquement les séquences des reads. 
-\item[Un fichier biom] contient la table des OTUs
+
+\begin{figure}[!h]
+\begin{center}
+\includegraphics[scale=0.6]{img/fastq.jpg}\hfill
+\end{center}
+\caption{Exemple d'un read contenu dans un fichier fastq. Les scores de qualités sont encodés avec des symboles ASCII. Par exemple le quatorzième T  est associé au symbole « : » correspondant au score phred de 25, soit une probabilité de 0.003\% d'erreur.  }
+\label{fastq}
+\end{figure}
 
 \end{description}
 
@@ -780,8 +807,8 @@ Aucun des analyses tenant compte des paramètres biocliniquescolligés pendant l
 
 
 \subsection{Résultats analytiques}
-\subsubsection{Corrélation entre genre bactériens}
-La figure \ref{correlation} montre les corrélations linéaires réalisées entre les genres du core microbiota. La corrélation la plus forte est entre Prevotella et Veillonella avec un coefficient de Pearson à 0.60.  Streptococcus et Haemophilus evolue dans le sens inverse avec un coefficient à -0.41. 
+\subsubsection{Corrélation entre les genres bactériens}
+La figure \ref{correlation} montre les corrélations linéaires réalisées entre les genres du core microbiota. La corrélation la plus forte est entre \textit{Prevotella} et \textit{Veillonella} avec un coefficient de Pearson à 0.60.  \textit{Streptococcus} et \textit{Haemophilus} evoluent dans le sens inverse avec un coefficient à -0.41. 
  
 
 \begin{figure}
@@ -794,7 +821,7 @@ La figure \ref{correlation} montre les corrélations linéaires réalisées entr
 
 \subsubsection{Comparaison entre échantillons Free et Never}
 La figure \ref{compare} compare les indices de Shannon entre les échantillons Free et Never. Le T-test / ANOVA n'a pas montré de différence significative. (p-value > 0.05). \\
-La figure  \ref{pcoa} est une analyse multivarié discriminant les groupes Free et Never. Les échantillons Never ont plus de differences entre eux que les échantillons Free qui semble converger.  Les deux groupes sont significativement différent p-value < 0.001.
+La figure  \ref{pcoa} est une analyse multivarié discriminant les groupes Free et Never. Les échantillons Never ont plus de différences entre eux que les échantillons Free qui semblent converger.  Les deux groupes sont significativement différents p-value < 0.001.
 
 \begin{figure}[!h]
 \begin{center}
