@@ -359,7 +359,7 @@ La figure \ref{pcoatuto} illustre ce principe avec un exemple à deux dimensions
 \begin{center}
 \includegraphics[scale=0.6]{img/pcoatuto.png}\hfill
 \end{center}
-\caption{Exemple d'une PCoA à deux dimensions. Chaques échantillons est assimilable à un point de coordonnées ( abondance A; abondance B ). Il est alors possible de calculer des distances entre les points. La plus connus étant la distance euclidienne. Mais d'autres existent comme la distance de Bray-Curtis. Sur cette figure, l’échantillon 1 et 2 sont ont des microbiotes proches car la distance d1 qui les sépare est petite. }
+\caption{Représentation d'un échantillon ne contenant que deux espèces A et B dans un espace à deux dimensions. Chaques échantillons est assimilable à un point de coordonnées ( abondance A; abondance B ). Il est alors possible de calculer des distances entre les échantillons. La plus connus étant la distance euclidienne. Mais d'autres existent comme la distance de Bray-Curtis. Sur cette figure, l’échantillon 1 et 2 sont ont des microbiotes proches car la distance d1 qui les sépare est petite. Dans la réalité, il y a plus d'espèces donc plus de dimensions. Une PCoA consiste à réduire cette espace multidimensionnel en un espace 2D respectant les distances }
 \label{pcoatuto}
 \end{figure}
 \newpage
@@ -823,7 +823,7 @@ La figure \ref{correlation} montre les corrélations linéaires réalisées entr
 La figure \ref{compare} compare les indices de Shannon entre les échantillons Free et Never. Le T-test / ANOVA n'a pas montré de différence significative. (p-value > 0.05). \\
 La figure  \ref{pcoa} est une analyse multivarié discriminant les groupes Free et Never. Les échantillons Never ont plus de différences entre eux que les échantillons Free qui semblent converger.  Les deux groupes sont significativement différents p-value < 0.001.
 
-\begin{figure}[!h]
+\begin{figure}
 \begin{center}
 \includegraphics[scale=0.70]{img/compare.png}\hfill
 \end{center}
@@ -832,7 +832,7 @@ La figure  \ref{pcoa} est une analyse multivarié discriminant les groupes Free 
 \end{figure}
 
 
-\begin{figure}[!h]
+\begin{figure}[t]
 \begin{center}
 \includegraphics[scale=0.50]{img/pcoa.png}\hfill
 \end{center}
@@ -840,40 +840,57 @@ La figure  \ref{pcoa} est une analyse multivarié discriminant les groupes Free 
 \label{pcoa}
 \end{figure}
 
+\newpage
+\section{Discussion}
+\subsection{Pré-analytique}
+\subsubsection{Séquençage}
+La version 3 du kit MiSeq Reagent Kits permet de produire des reads plus long ( 300pb ) que dans sa version précedente ( 250pb ). Ceci afin d'augmenter la précision de l'assignement taxonomique ( Figure \ref{rnasens}). En contrepartie la qualité du séquençage est médiocre aux extremités avec des scores qui chutent en dessous de 20. À cause de cela, seulement 43\% de reads sont exploitable. 
+C'est un problème connu lié à la chimie du kit qu'illumina n'a toujours pas corrigé. Cependant en raison de la richesse modérée du microbiote pulmonaire, la profondeur de séquençage reste suffisante comme l'attestent les courbes de raréfaction. En utilisant des amorces ciblant d'autres régions, le chevauchement des reads pairés pourrait être plus important et éviterait ainsi de perdre des reads. 
 
+\begin{figure}[t]
+\begin{center}
+\includegraphics[scale=3]{img/zam.jpg}\hfill
+\end{center}
+\caption{Sensibilité de détection de la strategie 16S en fonction de la longueur des reads. ( Wang et al. Naïve Bayesian Classifier for Rapid Assignment of rRNA Sequences into the New Bacterial Taxonomy ) }
+\label{rnasens}
+\end{figure}
 
+\subsubsection{Pipeline}
+La stratégie close-reference utilisée dans le pipeline, a permis d'assigner le genre à plus 99\% des reads analysable. La majorité des genres bactéries du microbiote respiratoire est donc connue de la base de données \textit{greengene}.
+En revanche, la résolution taxonomique n 'atteint pas le rang de l'espèce. Il a en effet déjà été montré que les régions hypervariables prises isolément ne sont pas assez discriminantes \cite{Yang2016}. Les analyses en métagénomiques apportent ici un grand avantage en séquençant l'ensemble de l'ARN 16S \cite{Ranjan2016}.
+D'autre part, l'assignation taxonomique dépend d'une similarité fixé arbitrairement à 97\%. D'autres techniques de clusterisation permettent de s'affranchir de ce seuil. Il s'agit par exemple de la \textit{Maximum entropy clusterisation} \cite{Bobadilla2015}. 
+Enfin, la phylogénie des bactéries n'a pas été prise en compte dans l'étude. Elle permettrait de prendre de mesurer une distance phylogénétique entre les OTUs et comparer les échantillons. Un microbiote contenant 3 espèces proches n'est pas la même chose qu'un microbiote avec 3 espèces très éloignées. La distance UniFrac\ref{Lozupone2005} serait alors utilisée afin de remplacer la distance de Bray-Curtis. 
 
-\section{Discussion EN COURS}
-\subsection{Méthode de séquençage}
-La version 3 du kit MiSeq Reagent Kits produits des reads plus long ( 300pb ) que la version 2 ( 250pb ) afin d’augmenter la précision de l’assignement taxonomique. En contrepartie la qualité du séquençage est médiocre en 3’ avec des scores de qualité en dessous de 20. C’est un problème connu liée à la chimie du séquenceur qu’illumina se garde bien de cacher sur sa page web. Cependant, malgré les 43\% de reads analysables, la profondeur de séquençage reste suffisante comme l’atteste la courbe de rarefaction. \\
-La stratégie close-reference utilisé dans le pipeline n'a pas réussi à assigner les reads jusqu'au rang de l'espèce. Mais 99\% des reads ont reçu un assignement allant jusqu'au rang du genre. Cela signifie que la majorité des genres bactéries du microbiotes réspiratoires sont connues de \textit{greengene}. \\
-Cette stratégie reste cependant critiquable. En effet l'assignement dépend d’un pourcentage de simmiliarité de 97\% fixé arbitrairement. D’autre technique permettant de s’afranchir de ce seuil augmenterait probablement la résolution taxonomique. Par exemple la  Maximum entropy clusterisation. \\
-Enfin, la phylogénie des bactéries n’a pas été prise en compte dans l’étude. Au lieu d'utiliser la distance de Bray-Curtis, la distance phylogénétique ( methode UPGMA) aurait pu apporter plus d'information. 
+\subsection{Analytique}
+\subsubsection{Augmentation des Bactéroidetes}
+Nos résultats chez les patients mucoviscidoses montrent une augmentation des Protéobacteria aux dépens des Bactéroidetes. En effet chez le sujet sain, les propositions sont plutôt de 10\% de Protéobactéria et une proportion égale de 40\% pour les Bactéoridete et de Firmicutes. 
+Ceci corrobore les résultats de [@][@] retrouvant ces mêmes proportions dans la Mucoviscidose, l’asthme et la BPCO. Cet excès s’explique principalement par la dominance d’Haemophilus et de Neisseria. 
+\subsubsection{Infection et inflammation}
+Les principaux pathogènes associés à la mucoviscidose sont tous retrouvés avec une tendance à dominer les autres. Pourtant, aucun patient dans l'étude n'était en exacerbation. Ceci évoque l'absence de corrélation entre inflammation et colonisation proposées par (truc). 
 
-\subsection{Composition du microbiote pulmonaire dans la mucoviscidose}
-Chez un patient sain, les deux phylums majoritaires du microbiote pulmonaire sont les Bacteroidetes et les Firmicutes en proportion egal au alentour de 40\% et les Protéobactéries autour de 10\%. Nos résultats chez le patient mucovicidoses nous montre en revanche une augmentation des Protéobacteria au dépend des Bactéroidetes. Ceci corrobore les résultats de [@][@] retrouvant ces mêmes proportions dans la Mucoviscidose, l’asthme et la BPCO. Cette excès s’explique principalement par la dominance d’Haemophilus et de Neisseria, et dans dans une moindre mesure Stenotrophomonas.
-Les pathogènes associées à la mucovicidoses sont retrouvé et ont tendance à être dominant sans que les patients soient en exacerbations. Staphyloccocus,Haemophilus sont les plus fréquent. Stenotrophomonas et Achromobacter sont plus rarement retrouvé. Burkholderia est rare et peu abondant.
-Malgrès avoir sortie de l’étude tous les patients positifs sur la culture, On retrouve pseudomonas dans 53 échantillons sans jamais être dominant. Ceci confirme la faible sensibilité de la culture et montre l’interet d’autre méthode de diagnostique comme la PCR[@].
-On retrouve egalement des fortes abondances en anaérobies avec Prevotella et Veillonella. La corrélation forte retrouvé entre ces deux genre a été retrouvé dans l’étude de [@].
-Les résultats longitudinaux nous montre la dynamique et la complexité du microbiote réspiratoire. Aucun des donnée récoloté n’a mis en évidence un groupe particulier de microbiote. L’age n’a pas été corrélé à la présence d’haemophilus, ni à l’augmentation de diversité évoqué dans plusieurs papier. Probablement car beaucoup de patient avaient le même age. Les categories Free et Never n’a pas mis en évidence des groupes de microbiote distinct. Cependant les microbiotes des patients Never semble plus diversifié.
-En revanche pour un même patient, on retrouve des échantillons avec un microbiote très proche. Ceci nous ammène à penser, comme l’article de [@], que le microbiote dépend avant tout de l’individu. Et peut être de son génome, son histoire et de son immunité.
-L’analyse multivarié s’explique principalement par les grandes fluctuations d’abondance de Streptococcus, Neisseria et Haemophilus. En les ignorant, il reste une population plus stable et de plus faible abondance composé de Gemella, Granulicatella, Oribacterium, Veillonella, Fusobacterium, Leptotrichia et Capnocytophaga.
-Cette architecture evoque le modèle déjà décrit par [@]. Celui ci propose de décrire le microbiote pulmonaire comme la somme des populations entre les territoires sains et inflammatoire.
+\subsubsection{Présence de Pseudomonas}
+Malgré la sortie de l’étude de tous les patients positifs en culture,  P.aeruginosa est retrouvé dans 53 échantillons. Ceci confirme la faible sensibilité de la culture et montre l’intérêt d’autre méthode de diagnostic comme la PCR\cite{LeGall}.
+
+\subsubsection{Présence d'anaérobie}
+De fortes abondances en anaérobies  sont également retrouvées avec notamment Prevotella et Veillonella. La corrélation forte  entre ces deux genres a été retrouvée dans l’étude de [@]. La signification clinique de leurs présences est encore incertaine \cite{Tunney2008}. 
+
+\subsubsection{Dynamique du microbiote}
+Les résultats longitudinaux nous montrent la dynamique et la complexité du microbiote respiratoire. 
+Deux populations se distinguent. Une population stable que l'on peut qualifier de commensale et une population fluctuante et dominante. Ceci évoque le modèle attack-climax \cite{Conrad2013}. Les infections répétées des bactéries (population d'attaque) feraient le lit à l'émergence des bactéries déjà présentes ( population Vivax) comme \textit{Pseudomonas aeruginosa}.  
+
+\subsubsection{Patient Free et Never}
+Aucune des données récoltées n’a mis en évidence un groupe particulier de microbiote. L’âge n’a pas été corrélé à la présence d’haemophilus, ni à l’augmentation de diversité évoquée dans plusieurs papiers. Probablement, car les sujets de l'étude avaient des âges proches. La comparaison d'alpha diversité entre les patients Free et Never n'as pas relevé de différence significative. Il n'y a pas plus d'espèces dans l'une ou l'autre des catégories. 
+L'analyse multivariée s'explique principalement par les grandes fluctuations d'abondance de Streptococcus, Neisseria et Haemophilus. Elle montre également qu'il y a plus de microbiotes différents chez les patients Free que Nevers. Probablement causé par l'impacte du traitement anti-pyo.  \\
+Il semble donc ressortir de l'étude que le microbiote dépend avant tout du patient. La concordance de certains échantillons pour un même patient sur les graphiques d'ordination va dans ce sens.  [citation papier]
 
 \subsection{Limite de l'étude}
-Plusieurs point sont à prendre en considération dans l’analyse des résultats. Premièrement, les ADN séquencé proviennent d’expectoration bronchique ayant traversé les voies aériennes superieur. Une contamination est toujours possible, malgré les précautions prise.
-L’hétérogénéité du poumon pourrait également expliqué une différence entre deux échantillons. Il a cependant été montré [@] sur des prélevement insitu que le microbiote pulmonaire est homogène.
-Ensuite la stratégie 16S n’est pas parfaite. Certaines espèces peuvent ne pas être détécté par l’amplicon comme la montré l’étude de [@]. De plus, cette stratégie ne fait pas la distinction entre les ADNs de bactéries vivante ou morte.
-Enfin, notre étude ne prend pas en considération le virome et le myocbiome. Il est fort probable que ce sont les virus la cause des exacerbation en faisant le lit des surinfections bactériennes.
-
-
-
-
-
+Plusieurs points sont à prendre en considération pour critiquer la justesse des résultats. Premièrement, les ADN séquencés proviennent d'expectoration bronchique ayant traversé les voies aériennes supérieures. Une contamination est toujours possible. Elle est cependant assez réduite, car nous avons pris en considération le score cytologique de Bartlett.  
+Une différence entre deux échantillons d'un même patient pourrait s'expliquer par l'hétérogénéité du poumon. Il a cependant été montré [@] sur des prélèvements in situ que le microbiote pulmonaire est homogène.  
+Ensuite la stratégie 16S n'est pas parfaite. La détection varie en fonction des amorces utilisées (figure). Et d'autres espèces ne sont tout simplement pas amplifier par cette stratégie[@]. De plus, cette stratégie ne fait pas la distinction entre les ADNs de bactéries vivantes ou morte.  
 
 \begin{figure}
 \begin{center}
-\includegraphics[scale=0.60]{img/enfin_barplot_genus_norm.png}\hfill
+\includegraphics[scale=0.70]{img/enfin_barplot_genus_norm.png}\hfill
 \end{center}
 \caption{Evolution des abondances par genre}
 \label{plotabundancegenre}
@@ -881,7 +898,7 @@ Enfin, notre étude ne prend pas en considération le virome et le myocbiome. Il
 
 \begin{figure}
 \begin{center}
-\includegraphics[scale=0.60]{img/enfin_barplot_phylum_norm.png}\hfill
+\includegraphics[scale=0.70]{img/enfin_barplot_phylum_norm.png}\hfill
 \end{center}
 \caption{Evolution des abondances par phylum}
 \label{plotabundancephylum}
@@ -890,7 +907,7 @@ Enfin, notre étude ne prend pas en considération le virome et le myocbiome. Il
 
 \begin{figure}
 \begin{center}
-\includegraphics[scale=0.40,angle=90]{img/evolution_abundance.png}\hfill
+\includegraphics[scale=0.50,angle=90]{img/evolution_abundance.png}\hfill
 \end{center}
 \caption{Evolution des abondances par genre}
 \label{plotabundancecurve}
