@@ -320,7 +320,7 @@ Une courbe s’aplatissant indique une bonne profondeur de séquençage (Figure 
 
 \subsection{Termes utilisés en bioinformatique}
 
-\paragraph{Un pipeline} est un ensemble d'étapes de calcul informatique. Chaque étape prend en entrée des fichiers pour en produire des nouveaux dans sa sortie. On peut comparer cela aux étapes d'une recette de cuisine. Sans parallélisation, un cuisinier (le processeur) doit attendre de faire fondre le beurre avant de battre les œufs en neige (exécution synchrone). En parallélisant, le cuisinier peut réaliser plusieurs étapes en même temps. Battre les œufs pendant que le beurre fond (exécution asynchrone). 
+\paragraph{Un pipeline} est un ensemble d'étapes de calcul informatique. Chaque étape prend en entrée des fichiers pour en produire de nouveaux dans sa sortie. On peut comparer cela aux étapes d'une recette de cuisine. Sans parallélisation, un cuisinier (le processeur) doit attendre de faire fondre le beurre avant de battre les œufs en neige (exécution synchrone). En parallélisant, le cuisinier peut réaliser plusieurs étapes en même temps. Battre les œufs pendant que le beurre fond (exécution asynchrone). 
 Maintenant si l'objectif est de produire 188 gâteaux (188 analyses) et que l'on dispose de 64 cuisiniers (64 processeurs), l'organisation des tâches devient complexe si l'on veut maximiser le rendement. Pour cela, on dispose d'outils comme \textit{Snakemake}\cite{Koster2012}, qui permettent de trouver la meilleure façon d'optimiser les tâches en construisant ce qu'on appelle un graphe orienté acyclique.
 
 \paragraph{NGS}(Next Generation Sequencing) désigne l'ensemble des séquenceurs de nouvelle génération permettant de séquencer un nombre très important de fragments d'ADN. 
@@ -380,6 +380,7 @@ La figure \ref{pcoatuto} illustre ce principe avec un exemple à deux dimensions
 
 \paragraph{Le multiplexage} est utilisé pour pouvoir séquencer plusieurs échantillons différents dans une même librairie. Pour cela, les ADNs de chaque échantillon sont marqués avec une courte séquence nucléotidique appelée barcode ou index suivant la technologie. Lors de l'analyse bioinformatique, les données sont démultiplexés afin d'associer chaque read à son échantillon. 
 
+\paragraph{Un graphe} est un object mathématique défini par des nœuds (nodes) reliés par des arrêtes (edges). Les graphes permettent de répondre à diffèrent problème mathématique. Par exemple le problème des sept ponts de Königsberg, qui consiste à savoir s'il existe une promenade passant par 7 ponts une seul fois. La théorie des graphes est très utilisé en bioinformatique. 
 
 \newpage
 
@@ -481,7 +482,7 @@ d’éviter une contamination par les voies aériennes supérieures. En pratique
 
 \subsubsection{Séquençage haut débit}
 % Baisse du coup du sequencage ... %
-Le séquençage de nouvelle génération permet de séquencer de grande quantité d' ADN dans un échantillon et ainsi déterminer sa composition en bactéries ou autres micro-organismes. À titre d'exemple, un séquenceur Sanger classique permet de lire des fragments d'ADN d'environ 800 Pb parallélisable jusqu'à 96 fois en augmentant le nombre de capillaires. 
+Le séquençage de nouvelle génération permet de séquencer de grande quantité d' ADN dans un échantillon et ainsi déterminer sa composition en bactéries ou autres micro-organismes. À titre d'exemple, un séquenceur Sanger classique permet de lire des fragments d'ADN d'environ 800pb parallélisable jusqu'à 96 fois en augmentant le nombre de capillaires. 
 À l'inverse, un séquenceur de nouvelle génération lit des fragments plus courts de l'ordre de 150pb. Mais la parallélisation peut aller jusqu'à 20 milliards de fois en un seul run sur un Illumina Novaseq. \\
 2 stratégies de séquençages sont utilisées en écologie microbienne:  \\
 \textbf{La stratégie shotgun} consiste à séquencer l'ensemble des  ADN présents dans l'échantillon sans discernement, que ce soit humain ou bactérien. Les séquences sont filtrées puis les génomes bactériens sont reconstruits par des méthodes bio-informatiques complexes. \\
@@ -525,7 +526,7 @@ Le comité de protection des personnes (CPP VI-Ouest) et le comité d’éthique
 Les ECBC des patients ont été recueillies lors des séances de kinésithérapie respiratoire tous les 3 mois, suivant le calendrier des recommandations officielles. En pratique, sur l’ensemble de la cohorte suivie, l’intervalle médian entre 2 consultations a été de 3,4 mois.
 Les patients devaient avoir un génotypage CFTR et un test à la sueur positif. Les transplantés ont été exclus de l’étude.
 Pour être inclus, le patient devait être exempt de P. aeruginosa depuis au moins un an d’après les résultats de la culture bactérienne des expectorations. Le patient devait être en capacité d’expectorer spontanément (exclusion des prélèvements pharyngés).
-La première culture bactérienne positive à PA était le « endpoint » de l’étude. À cette étape le patient était sorti de l’étude pour être réinclus un an plus tard en cas de maintien de la négativité des cultures bactériennes obtenue par l’antibiothérapie d’éradication anti-P. aeruginosa. D’autres données clinico-biologiques ont également été recueillies. Au total, 756 expectorations ont été recueillies à l’issue de l’étude MUCOBIOME. Pour ce travail portant sur l’étude du microbiote broncho-pulmonaire, 188 ont été sélectionnées.
+La première culture bactérienne positive à PA était le « endpoint » de l’étude. À cette étape le patient était sorti de l’étude pour être réinclus un an plus tard en cas de maintien de la négativité des cultures bactériennes obtenue par l’antibiothérapie d’éradication anti-P. aeruginosa. D’autres données clinico-biologiques ont également été recueillies. Au total, 756 expectorations ont été recueillies à l’issue de l’étude MUCOBIOME. Pour ce travail portant sur l’étude du microbiote broncho-pulmonaire, 188 ont été sélectionnées dont 22 expectorations positives à PA.
 
 citer qq exemples de données (que tu exploiteras après) et préciser le score
 cytologique (à mettre dans les résultats : impact oui ou non sur les données du microbiote)
@@ -547,13 +548,13 @@ cytologique (à mettre dans les résultats : impact oui ou non sur les données 
 
 \subsection{Extraction de l’ADN}
 
-La procédure d'extraction des ADN des échantillons est détaillée dans la publication de Le Gal... Brièvement les échantillons ont été liquéfiés avec du Dithiotréitol(DTT). Les protéines ont été dégradées avec de la protéinase K.
+La procédure d'extraction des ADN des échantillons est détaillée dans la publication de  F.Gall\cite{LeGall}. Brièvement les échantillons ont été liquéfiés avec du Dithiotréitol(DTT). Les protéines ont été dégradées avec de la protéinase K.
 Les parois bactériennes ont été fragmentées par sonication. (DTT par sonication (Elamsonic S10, Singen, Germany). Après 10 min de centrifugation, L’ADN a été extrait à partir du culot à l'aide du kit QUIAamp DNA Minikit (Quagen).
 Les extraits d’ADN ont été envoyés pour séquençage par un prestataire GATC.
 
 \subsection{Séquençage}
 La librairie a été générée en amplifiant la région V3-V5 à l’aide du couple d’amorces forward CCTACGGGAGGCAGCAG et reverse CCGTCAATTCMTTTRAGT et du kit MiSeq Reagent Kits v3. \\
-Le séquençage a été réalisé sur Illumina MiSeq pour produire un couple de séquences chevauchantes de 300 Pb (Figure \ref{illumina}). Après fusion du couple, le séquençage permet de lire  535 Pb correspondants à la région V3-V5.\\
+Le séquençage a été réalisé sur Illumina MiSeq pour produire un couple de séquences chevauchantes de 300pb (Figure \ref{illumina}). Après fusion du couple, le séquençage permet de lire  535pb correspondants à la région V3-V5.\\
 Environ 25 millions de reads sont produits par run MiSeq. En multiplexant à l’aide de 94 index, les 188 échantillons ont été séquencés sur 2 runs pour produire 188 x 2 fichiers fastq.
 
 \begin{figure}[ht]
@@ -575,7 +576,7 @@ Le pipeline mucobiome prend en entrée, les 188 couples de fichiers fastq proven
 \begin{center}
 \includegraphics[scale=0.5]{img/pipeline_trio.png}\hfill
 \end{center}
-\caption{Graphe du pipeline simplifié sur 3 échantillons 1015, 1001 et 1003.\\ \textbf{merging}: Les reads pairs de 300 Pb sont fusionnés  pour produire un fichier fastq contenant des reads de 535pb. \textbf{cleanning}: les reads de mauvaise qualité sont supprimés. \textbf{reversing}: les reads sont transformés en leurs séquences complémentaires pour pouvoir être alignés. \textbf{Trimming}: seule la séquence entre les primers V3-V5 est conservée. \textbf{dereplicating}: les séquences dupliquées sont retirées. \textbf{merging}: L'ensemble des séquences est regroupé dans un seul fichier. \textbf{Taxonomy assignement}: Les séquences sont alignées sur la base de données greengene. \textbf{create\_biom}: la table des OTU est créée }
+\caption{Graphe du pipeline simplifié sur 3 échantillons 1015, 1001 et 1003.\\ \textbf{merging}: Les reads pairs de 300pb sont fusionnés  pour produire un fichier fastq contenant des reads de 535pb. \textbf{cleanning}: les reads de mauvaise qualité sont supprimés. \textbf{reversing}: les reads sont transformés en leurs séquences complémentaires pour pouvoir être alignés. \textbf{Trimming}: seule la séquence entre les primers V3-V5 est conservée. \textbf{dereplicating}: les séquences dupliquées sont retirées. \textbf{merging}: L'ensemble des séquences est regroupé dans un seul fichier. \textbf{Taxonomy assignement}: Les séquences sont alignées sur la base de données greengene. \textbf{create\_biom}: la table des OTU est créée }
 \label{pipeline_trio}
 \end{figure}
 
@@ -584,38 +585,42 @@ Le pipeline mucobiome prend en entrée, les 188 couples de fichiers fastq proven
 \begin{center}
 \includegraphics[scale=0.4]{img/dag.jpg}\hfill
 \end{center}
-\caption{le graphe du pipeline sur l'ensemble des échantillons}
+\caption{le graphe du pipeline sur l'ensemble des échantillons. Le tournesol montre le niveau de parallélisation nécessaire.}
 \label{dag}
 \end{figure}
 
-% +++ RELECTURE 
 \subsection{Étape du pipeline}
-\subsubsection{Merging: Fusions des reads}\begin{center}\emph{ 2 fastq en entrée 1 fastq en sortie. } \end{center}
+\subsubsection{Merging: Fusions des reads}
+\noindent\emph{ 2 fastq en entrée 1 fastq en sortie. }
 
 La première étape du pipeline consiste à fusionner le couple de fichiers fastq afin de produire un seul fichier contenant des plus longues séquences de 535pb correspondant à la région V3-V5 de l’ARN 16S.
-Le programme \textbf{Flash}[@] a été utilisé avec les paramètres par défaut. À partir de deux fichiers fastq, ce dernier recherche le meilleur alignement entre deux reads et produit 1 fichier fastq contenant les reads fusionnés.
-Une analyse qualitative des reads a été réalisée avec FastQt\citep{Beck} avant et après fusion.
+Le programme \textbf{Flash}\cite{Mago2011} a été utilisé avec les paramètres par défaut. À partir de deux fichiers fastq, ce dernier recherche le meilleur alignement entre deux reads et produit un fichier fastq contenant les reads fusionnés.
+Une analyse qualitative des reads a été réalisée avec \textbf{FastQt}\citep{Labsquareteam2017} avant et après fusion.
 
-\subsubsection{Cleaning: Filtrage des qualités}\begin{center}\emph{1 fastq en entrée 1 fastq en sortie. } \end{center}
+\subsubsection{Cleaning: Filtrage des qualités}
+\noindent\emph{1 fastq en entrée 1 fastq en sortie. } 
 
 Les données de séquençage haut débit peuvent contenir beaucoup d'erreurs. Il est important de supprimer les reads de mauvaise qualité pour gagner en spécificité. (expliquer la qualité).
-Le filtrage des reads de mauvaise qualité est réalisé avec le programme \textbf{sickle}. Son algorithme repose sur l'utilisation d'une fenêtre glissante de taille définie (par défaut : 20 Pb). Cette fenêtre glisse le long de la séquence et pour chaque position calcule la moyenne des scores de qualité dans cette fenêtre. Si successivement le score moyen passe sous un certain seuil, le read est supprimé. Les paramètres utilisés sont ceux par défaut. Un score de 20 avec une fenêtre glissante de 20pb. 
-Une analyse qualitative des reads a été réalisée avec FastQt\citep{Beck} après le filtrage. 
+Le filtrage des reads de mauvaise qualité est réalisé avec le programme \textbf{sickle}\cite{JoshiNA2011}. Son algorithme repose sur l'utilisation d'une fenêtre glissante de taille définie (par défaut : 20pb). Cette fenêtre glisse le long de la séquence et pour chaque position calcule la moyenne des scores de qualité dans cette fenêtre. Si successivement le score moyen passe sous un certain seuil, le read est supprimé. Les paramètres utilisés sont ceux par défaut. Un score de 20 avec une fenêtre glissante de 20pb. 
+Une analyse qualitative des reads a été réalisée avec \textbf{FastQt}\cite{Labsquareteam2017} après le filtrage. 
 
 
-\subsubsection{Reversing: Séquence complémentaire}\begin{center}\emph{1 fastq en entrée 1 fasta en sortie. } \end{center}
+\subsubsection{Reversing: Séquence complémentaire}
+\noindent\emph{1 fastq en entrée 1 fasta en sortie. } 
 
-Les reads produits par le séquenceur ne sont pas orientés dans le même sens que la base de données \textit{greengene}. Pour permettre l'alignement, les séquences ont été remplacées par leurs séquences complémentaires grâce au programme \textbf{seqtk}. 
+Les reads produits par le séquenceur ne sont pas orientés dans le même sens que la base de données \textit{greengene}\cite{DeSantis2006}. Pour permettre l'alignement, les séquences ont été remplacées par leurs séquences complémentaires grâce au programme \textbf{seqtk}\cite{H.Li}. 
 Par la même occasion les scores de qualités devenus inutiles sont supprimés. Les séquences sont sauvegardées dans un fichier fasta. 
 
-\subsubsection{Trimming: Suppression des primers} \begin{center}\emph{1 fasta en entrée 1 fasta en sortie. } \end{center}
+\subsubsection{Trimming: Suppression des primers} 
+\noindent\emph{1 fasta en entrée 1 fasta en sortie.} 
 
-Pour permettre un alignement parfait entre les reads et la base de données, les primers sont retirés et seule la séquence V3-V5 est conservée. Cette étape est réalisée aussi bien pour les données du séquençage que  la base de données greengene.  
-Le programme \textbf{cutadapts} est utilisé avec une tolérance de 0.1 par défaut. 
+Pour permettre un alignement parfait entre les reads et la base de données, les primers sont retirés et seule la séquence V3-V5 est conservée. Cette étape est réalisée aussi bien pour les données du séquençage que  la base de données \textit{greengene}.  
+Le programme \textbf{cutadapts}\cite{Martin2011} est utilisé avec une tolérance de 0.1 par défaut. 
 
-\subsubsection{dereplicating: Suppression des doublons}\begin{center}\emph{1 fasta en entrée 1 fasta en sortie. } \end{center}
+\subsubsection{dereplicating: Suppression des doublons}
+\noindent\emph{1 fasta en entrée 1 fasta en sortie. } 
 
-Cette étape consiste à supprimer toutes les séquences doublons. En procédant ainsi, on s'assure de ne pas répéter l'assignement taxonomique plusieurs fois sur des reads identiques. Le nombre de reads dupliqués est conservé pour être pris en considération lors du calcul des abondances. Il s'agit d'une étape d'optimisation permettant d'économiser en temps de calcul. La déréplication a été réalisée avec \textbf{vsearch} et sa fonction \textit{--derep\_fulllength }
+Cette étape consiste à supprimer toutes les séquences doublons. En procédant ainsi, on s'assure de ne pas répéter l'assignement taxonomique plusieurs fois sur des reads identiques. Le nombre de reads dupliqués est conservé pour être pris en considération lors du calcul des abondances. Il s'agit d'une étape d'optimisation permettant d'économiser en temps de calcul. La déréplication a été réalisée avec \textbf{vsearch}\cite{TorbjornRognes2015} et sa fonction \textit{--derep\_fulllength }
 
 \begin{figure}[ht]
 \begin{center}
@@ -625,22 +630,30 @@ Cette étape consiste à supprimer toutes les séquences doublons. En procédant
 \label{dereplication}
 \end{figure}
 
-\subsubsection{Assignement taxonomique} \begin{center}\emph{2 fasta en entrée,  1 fichier biom  en sortie. }\end{center} 
+\subsubsection{Assignement taxonomique} 
+\noindent\emph{2 fasta en entrée,  1 fichier biom  en sortie. }
 
-L’assignement taxonomique consiste à labelliser chaque read à son taxon. Nous avons utilisé la stratégie \textit{close référence} dont le rôle est de comparer chaque read à une base de données avec un seuil de 98\% de similarité. Cet algorithme est de complexité N. C'est-à-dire que le temps de calcul est directement proportionnel au nombre de reads testé. La base de données \textit{Greengene} version mai 2013  a été utilisé. Il s'agit d'un fichier fasta contenant 1 262 986 séquences et 203 452 OTUs. \\
+L’assignement taxonomique consiste à labelliser chaque read à son taxon. Nous avons utilisé la stratégie \textit{close référence} dont le rôle est de comparer chaque read à une base de données avec un seuil de 98\% de similarité. Cet algorithme est de complexité N. C'est-à-dire que le temps de calcul est directement proportionnel au nombre de reads testé. La base de données \textit{Greengene}\cite{DeSantis2006} version mai 2013  a été utilisé. Il s'agit d'un fichier fasta contenant 1 262 986 séquences et 203 452 OTUs. \\
 L'autre stratégie d'assignement \textit{de novo} n'a pas été utilisée. Cette dernière, de complexité $N^{2}$, consiste à comparer les reads entre eux pour former des groupes. Elle s'emploie de préférence pour détecter les bactéries absentes des bases de données. \\
-L'assignement taxonomique a été réalisé avec vsearch et sa fonction \textit{--usearch\_global}. 
+L'assignement taxonomique a été réalisé avec \textbf{vsearch} et sa fonction \textit{--usearch\_global}. 
 
 \subsubsection{Analyse de la table des OTUs}
-L’analyse de la table des OTUs a été réalisée avec R et le package phyloseq. Les OTUsont étaient regroupés par genre bactérien. L’étude descriptive à été réalisé en calculant desindicateurs de diversité alpha et en produisant différents graphiques. Le core microbiotaa été calculé. Il est défini comme l’ensemble des taxons retrouvé dans plus de 50% deséchantillons avec une abondance supérieur à 0,1%. Les categories Free et Never ont étécomparé d’après leurs diversité alpha et par une analyse multivarié de leurs microbiom
+L’analyse de la table des OTUs a été réalisée avec R et le package \textbf{phyloseq}\cite{McMurdie2013}. Les OTUs ont étaient regroupés par genre bactérien. La normalisation de la table des OTUs s'est fait en pondérant le nombre de reads au total. 
+L'abondance absolue et relative, la prévalence et la dominance de chaque genre a été mesuré. 
+Les diversité alpha de type Chao1 et Shannon, ont été mesuré sur tous les échantillons. L'evolution de ces indices a été représenté graphiquement dans le temps et par patient. 
+La diversité beta a été évaluer grâce une Analyse en Coordonnée Principale utilisant la distance de Bray-Curtis. 
+Le core microbiota\cite{VanderGast2011} a été calculé. Il est défini comme l’ensemble des taxons retrouvé dans plus de 50\% des échantillons avec une abondance supérieur à 0,1\%. 
+La corrélation entre les genres a été rechercher. 
+Les categories Free et Never ont été comparé d’après leurs diversité alpha et bêta. 
+
 
 
 \section{Résultat}
 \subsection{Séquençage et pipeline}
 \subsubsection{Données de séquençage}
-Après démultiplexage, 188 x 2 fichiers Fastq ont été générés soit 2 fichiers par échantillons.
+Après démultiplexage, 188 x 2 fichiers Fastq ont été générés soit deux fichiers par échantillons.
 La longueur des reads dans l'ensemble est de 301 paires de bases.
-Au total, 115 002 297 reads ont été produits sur 2 runs MiSeq (Figure \ref{readcount}). Avec en moyenne 616 900 reads par échantillon. Un minimum de 61 422 reads pour l’échantillon 2154 et un maximum de 1 071 188 pour l’échantillon 3165. 
+Au total, 115 002 297 reads ont été produits sur deux runs MiSeq (Figure \ref{readcount}). Avec en moyenne 616 900 reads par échantillon. Un minimum de 61 422 reads pour l’échantillon 2154 et un maximum de 1 071 188 pour l’échantillon 3165. 
 
 
 \begin{figure}[ht]
@@ -679,7 +692,7 @@ Au total seulement 49.24\% des reads sont conservés pour l'analyse (Figure \ref
 
 
 \subsubsection{Assignement taxonomique}
-99.88\% (4615960) des reads analysables ont reçu une assignation taxonomique pour 10517 OTUs \footnote{Pour chaque espèce, il y a plusieurs OTUs définis dans greengene} Correspondant à 54 genres bactériens (Figure \ref{readgenus}). 
+99.88\% (4615960) des reads analysables ont reçu une assignation taxonomique soit 10517 OTUs détéctés \footnote{Pour chaque espèce, il y a plusieurs OTUs définis dans greengene} correspondant à 54 genres bactériens (Figure \ref{readgenus}). 
 Le temps de calcul a été de 1 h 29 et a nécessité 40 cœurs et 20 gigaoctets de mémoire contre 21h de calcul sans l’optimisation par déréplication.
 
 
@@ -709,7 +722,7 @@ Dans l'ensemble elles s’aplatissent précocement, témoignant d’un bon nivea
 \begin{center}
 \includegraphics[scale=0.5]{img/phylum.png}\hfill
 \end{center}
-\caption{Phylum}
+\caption{Phylums retrouvés dans les 188 échantillons}
 \label{phylum}
 \end{figure}
 
@@ -720,8 +733,7 @@ Les deux phyla majoritaires sont \textit{Firmicute} (42.59\%) et \textit{Proteob
 Le tableau de la figure \ref{alltable} résume l'ensemble des résultats en y associant la prévalence des genres bactériens parmi les 188 échantillons.
 Par exemple \textit{Streptococcus}, \textit{Neisseria}, \textit{Prevotella}, \textit{Granulicatella}, \textit{Gemella}, \textit{Veillonella} et \textit{Fusobacterium} sont très prévalents, car présents dans plus de 185 échantillons.
 D’autres genres sont dominants. Il s’agit de \textit{Streptococcus}, \textit{Neisseria}, \textit{Haemophilus} et \textit{Staphyloccoccus}. \textit{Sténotrophomonas} et \textit{Achromobacter} sont retrouvées dans 64 et 8 échantillons respectivement. Pseudomonas est retrouvé dans 53 échantillons, dont un, au moins avec une abondance de 25.94\%. Burkholderia est retrouvé seulement dans deux échantillons à moins de 1\%.\\
-Le core microbiota\cite{VanderGast2011} est défini comme l'ensemble des taxons retrouvé dans plus de 50\% des échantillons avec une abondance supérieure à 0,1\%. Il est constitué de 15 genres bactériens (Figure \ref{core}).\\
-La distribution du core microbiota est illustrée dans la figure \ref{violon}.
+Le core microbiota est constitué de 15 genres bactériens (Figure \ref{core}). Sa distribution est illustrée dans la figure \ref{violon}.
 \textit{Streptococcus} respecte grossièrement une distribution normale variant de la quasi-absence à la dominance avec une moyenne de 30\% par échantillon. Neisseria est le deuxième genre le plus abondant avec une moyenne de 18\%.
 Les abondances de \textit{Staphylococcus} et \textit{Haemophilus} sont faibles dans la plupart des échantillons. Mais pour quelques échantillons, ces genres sont dominants. Les autres genres ont une abondance faible qui varie faiblement. Elles ne sont jamais retrouvées comme dominants.
 
@@ -730,7 +742,7 @@ Les abondances de \textit{Staphylococcus} et \textit{Haemophilus} sont faibles d
 \begin{center}
 \includegraphics[scale=0.4]{img/alld.png}\hfill
 \end{center}
-\caption{Nombre de reads et prévalence parmi les 188 échantillons.\\ Nombre de reads - pourcentage de reads - abondance moyenne - écart-type - abondance minimum - abondance maximum - prévalence (phrase?)}
+\caption{Nombre de reads - Moyenne des abondances relatives - écart-type des abondances relatives - plus petite abondance relative - plus grande abondance relative - Nombre d'échantillon ou le genre est présent - Nombre d'échantillon ou le genre est dominant}
 \label{alltable}
 \end{figure}
 
@@ -754,22 +766,20 @@ Les abondances de \textit{Staphylococcus} et \textit{Haemophilus} sont faibles d
 \end{figure}
 
 \subsubsection{Évolution de l'alpha diversité}
-Les figures \ref{alphaObs},\ref{alphaChao1} et \ref{alphaShannon} montrent l’évolution des diversités alpha par patient au cours du temps en utilisant les indices Chao1, Observed et Shannon. \\
+Les figures \ref{alphaObs},\ref{alphaChao1} et \ref{alphaShannon} en annexe, montrent l’évolution des diversités alpha par patient au cours du temps en utilisant les indices Chao1, Observed et Shannon. \\
 La richesse (Observed , Chao1) par patient varie de 10 à 40 genres bactériens. La richesse du patient 256 est faible. Celle du patient 26 élevée.
-Certains patients ont des richesses stables au court du temps. Les patients 25,26,74 conservent leurs richesses sur plus 5 prélèvements successifs. Les patients 20 et 69 présentent une stabilité globale entrecoupée par des pertes de biodiversité. La richesse du patient 8 diminue progressivement. Les patients 23, 232 et 248 ont des fluctuations plus chaotiques.
-L'indice de Shannon montre que pour un richesse constante dans le temps, l'équitabilité est différente. Par exemple la richesse du patient 223 est stable sur le graphique, \ref{alphaObs} mais son indice de shannon varie sur le graphique \ref{alphaShannon} témoignant d'une distribution différente de ses bactéries. Seul le patient 26 semble conserver à la fois une richesse et une équitabilité stables au court du temps.
+Certains patients ont des richesses stables au court du temps. Les patients 25,26,74 conservent leurs richesses sur plus de 5 prélèvements successifs. Les patients 20 et 69 présentent une stabilité globale entrecoupée par des pertes de biodiversité. La richesse du patient 8 diminue progressivement. Les patients 23, 232 et 248 ont des fluctuations plus chaotiques.
+L'indice de Shannon montre que pour un richesse constante dans le temps, l'équitabilité est différente. Par exemple la richesse du patient 223 est stable sur la figure \ref{alphaObs} mais son indice de shannon varie sur la figure \ref{alphaShannon} témoignant d'une distribution différente de ses bactéries. Seul le patient 26 semble conserver à la fois une richesse et une équitabilité stables au court du temps.
 
 \subsubsection{Évolution des abondances}
 Les figures \ref{plotabundancegenre}, \ref{plotabundancephylum} et \ref{plotabundancecurve} montrent l’évolution des abondances au cours du temps pour chaque patient. Ces graphiques nous permettent d’interpréter plus finement les graphiques d’alpha diversité précédente.
-Par exemple la faible richesse du patient 8 est liée à une dominance de \textit{Stenotrophomonas} sur les 4 échantillons.
+Par exemple la diminution de richesse du patient 8 est liée à la présence de \textit{Stenotrophomonas} sur les 4 échantillons.
 La perte de diversité du 3e prélèvement du patient 223 est causée par l'apparition de \textit{Neisseria} qui devient dominant.
 Le patient 3 montre une diminution progressive \textit{d’Haemophilus} parallèlement à une augmentation de \textit{Streptococcus}. \\
 Le patient 256 présente une dominance à \textit{Sténotrophomonas} sur l'ensemble de ses échantillons. \textit{Achromobacter} est dominant dans le premier échantillon du patient 211.
 D’autres montrent un phénomène de résilience. Par exemple, le patient 223 récupère un microbiote identique après une colonisation complète à \textit{Haemophilus}. \\
-Dans l’ensemble, il existe deux types de population bactérienne: une population de bactéries constantes et minoritaires(\textit{Fusobacterium}, \textit{Granulicatella}, \textit{Gemella}, \textit{Veiillonella}, \textit{Parvimonas},\textit{Leptotrichia},\textit{Oribacterium}, \textit{Capnoctophaga},\textit{Catonella}); une autre population de bactéries très fluctuantes dans le temps jouant alternativement le rôle de genre dominant ou au contraire du genre absent. (\textit{Haemophilus}, \textit{Streptococcus}, \textit{Neissera} et \textit{Prevotella}).
-La figure \ref{evolution43} illustre ces propos en montrant l'évolution des abondances du patient 43.
-La figure du patient \ref{evolution54} est mise également à titre exemple, car elle montre l’apparition de \textit{Pseudomonas aeruginosa}. \\
-MATERIEL ET METHODS = EXPLIQUER LA PCA 
+Dans l’ensemble, il existe deux types de population bactérienne: une population de bactéries constantes et minoritaires (\textit{Fusobacterium}, \textit{Granulicatella}, \textit{Gemella}, \textit{Veillonella}, \textit{Parvimonas}, \textit{Leptotrichia},\textit{Oribacterium}, \textit{Capnoctophaga},\textit{Catonella}); une autre population de bactéries très fluctuantes dans le temps jouant alternativement le rôle de genre dominant ou au contraire du genre absent. (\textit{Haemophilus}, \textit{Streptococcus}, \textit{Neissera} et \textit{Prevotella}).
+La figure \ref{evolution43} zoom sur le patient 43 pour montrer ces deux populations. La figure du patient \ref{evolution54} est mise également à titre exemple, car elle montre l’apparition de \textit{Pseudomonas aeruginosa}. \\
 
 \begin{figure}
 \begin{center}
@@ -791,7 +801,8 @@ MATERIEL ET METHODS = EXPLIQUER LA PCA
 La bêta diversité sur l’ensemble des échantillons a été réalisé par une méthode d’ordination de type PCoA en utilisant les distances de Bray-Curtis (Figure \ref{ordination},\ref{ordination2} et \ref{pcoa}).
 2 axes principaux expliquent respectivement 28.5\% et 17.4\% de la variabilité.
 Certains échantillons d’un même patient sont très proches sur le graphique d’ordination. Par exemple le patient 69 et 003 ont des échantillons dont les points se confondent.
-Aucune des analyses tenant compte des paramètres biocliniquescolligés pendant l'étude MUCOBIOME comme âge, le sexe, le poids, la prise d'antibiotique et le type de mutation du gène \textit{CFTR} n’a mis en évidence des groupes distincts de microbiote. La variabilité est expliquée principalement par la dominance des genres Neisseria, Streptococcus et Haemophilus comme le montre la figure \ref{ordination2}.
+Aucune des analyses tenant compte des paramètres biocliniques colligés pendant l'étude MUCOBIOME comme âge, le sexe, le poids, la prise d'antibiotique et le type de mutation du gène \textit{CFTR} n’a mis en évidence des groupes distincts de microbiote. Le score cytologique n'a pas non plus montrer de différence. 
+La variabilité est expliquée principalement par la dominance des genres \textit{Neisseria}, \textit{Streptococcus} et \textit{Haemophilus} comme le montre la figure \ref{ordination2}.
 
 \begin{figure}
 \begin{center}
@@ -810,10 +821,10 @@ Aucune des analyses tenant compte des paramètres biocliniquescolligés pendant 
 \end{figure}
 
 \subsubsection{Présence de P.aeruginosa}
- + Malgré l'absence de culture positive à P.aeruginosa parmi les prélèvements, l'ADNr 16S de Pseudomonas est détecté dans 48 échantillons. Dans la majorité des cas, l'abondance relative est faible. Sur les 48, 39 ont une abondance relative en dessous de 3\%. L'abondance maximum est retrouvé dans le dernier échantillon du patient 10 à 27.4\%. 
- + Le tableau \ref{pyopcr} compare le nombre d'échantillons détecté positif en PCR avec la présence d'ARN 16S. 
-  
-  \begin{table}[h]
+Sur les 188 échantillons, 22 étaient positifs à \textit{P.aeruginosa} en culture.  l'ADNr 16S de Pseudomonas est détecté dans 48 échantillons. Dans la majorité des cas, l'abondance relative est faible. Sur les 48, 39 ont une abondance relative en dessous de 3\%. L'abondance la plus forte est de 27,4\% et correspond au "end point" positif en culture du patient 10.
+Les tableaux \ref{pyopcr} et \ref{pyoculture} comparent le nombre d'échantillons contenant de l'ADNr de P.aeruginosa avec la PCR et la culture. 
+   
+  \begin{table}[!h]
       \centering
       \begin{tabular}{r|c|c}
            & PCR Négatif  & PCR Positif \\
@@ -825,6 +836,19 @@ Aucune des analyses tenant compte des paramètres biocliniquescolligés pendant 
       \caption{Concordance entre la présence d'ADNr 16S de Pyo et sa détection en PCR OPRL}
       \label{pyopcr}
   \end{table}
+ 
+  \begin{table}[!h]
+      \centering
+      \begin{tabular}{r|c|c}
+           & Culture Négatif  & Culture Positif \\
+           \hline
+           16S absent & 163 & 9 \\
+           16S present & 3 & 13   \\
+      \end{tabular}
+      \caption{Concordance entre la présence d'ADNr 16S de Pyo et sa détection en culture}
+      \label{pyoculture}
+  \end{table} 
+ 
  
 \subsection{Résultats analytiques}
 \subsubsection{Corrélation entre les genres bactériens}
@@ -864,7 +888,7 @@ La figure  \ref{pcoa} est une analyse multivariée discriminant les groupes Free
 \section{Discussion}
 \subsection{Production des données}
 \subsubsection{Séquençage}
-La version 3 du kit MiSeq Reagent Kit permet de produire des reads plus long (300 pb) que dans sa version précedente (250pb). Ceci afin d'augmenter la précision de l'assignation taxonomique (Figure \ref{rnasens}). En contrepartie la qualité du séquençage est médiocre aux extrêmités avec des scores qui chutent en dessous de 20. À cause de cela, seulement 43\% de reads sont exploitables. 
+La version 3 du kit MiSeq Reagent Kit permet de produire des reads plus long (300pb) que dans sa version précedente (250pb). Ceci afin d'augmenter la précision de l'assignation taxonomique (Figure \ref{rnasens}). En contrepartie la qualité du séquençage est médiocre aux extrêmités avec des scores qui chutent en dessous de 20. À cause de cela, seulement 43\% de reads sont exploitables. 
  +C'est un problème connu lié à la chimie du kit que Illumina n'a pas corrigé à ce jour. Cependant, en raison de la richesse modérée du microbiote pulmonaire, la profondeur de séquençage reste suffisante comme l'attestent les courbes de raréfaction. En utilisant des amorces ciblant d'autres régions de l'ADNr 16S, le chevauchement des reads pairés pourrait être plus important et éviterait ainsi la perte des reads. 
 
 \begin{figure}[t]
