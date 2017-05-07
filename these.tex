@@ -888,10 +888,16 @@ La figure  \ref{pcoa} est une analyse multivariée discriminant les groupes Free
 \section{Discussion}
 \subsection{Production des données}
 \subsubsection{Séquençage}
-La version 3 du kit MiSeq Reagent Kit permet de produire des reads plus long (300pb) que dans sa version précedente (250pb). Ceci afin d'augmenter la précision de l'assignation taxonomique (Figure \ref{rnasens}). En contrepartie la qualité du séquençage est médiocre aux extrêmités avec des scores qui chutent en dessous de 20. À cause de cela, seulement 43\% de reads sont exploitables. 
- +C'est un problème connu lié à la chimie du kit que Illumina n'a pas corrigé à ce jour. Cependant, en raison de la richesse modérée du microbiote pulmonaire, la profondeur de séquençage reste suffisante comme l'attestent les courbes de raréfaction. En utilisant des amorces ciblant d'autres régions de l'ADNr 16S, le chevauchement des reads pairés pourrait être plus important et éviterait ainsi la perte des reads. 
+La version 3 du kit MiSeq Reagent Kit permet de produire des reads plus long (300pb) que dans la version précédente (250pb). Ceci afin d'augmenter la précision de l'assignation taxonomique (Figure \ref{rnasens}). En contrepartie la qualité du séquençage est médiocre aux extrêmités avec des scores qui chutent en dessous de 20. À cause de cela, seulement 43\% de reads sont exploitables. 
+C'est un problème connu lié à la chimie du kit que Illumina n'a pas corrigé à ce jour. La profondeur de séquençage reste toutefois suffisante comme l'attestent les courbes de raréfaction. En utilisant d'autres amorces ciblant des régions d'ADNr 16S différente, nous pourrions augmenter la taille du chevauchement pour gagner en profondeur mais en diminuant la taille des reads. \\  
+Les séquenceurs de 3ème générations comme le Mini Ion (Oxford Nanopore) ou le PacBio (Pacific Bioscience) apporteraient un avantage certain. Ces derniers sont capable de produire des reads très long ( 10 000pb en moyenne) et pourraient facilement séquencer l'intégralité de l'ARN 16S. De plus, contrairement à l'Illumina, il n'y a pas d'amplification des fragments lors du séquençage qui biaise l'estimation des abondances. Les fragments d'ADN sont directement lu (Technologie SMS: Single Molecule Sequencing). 
+La qualité des reads sont en revanche de mauvaise qualité. Magrè cela, deux études\cite{Wagner2016,Benitez-Paez2016} ont déjà montré que leurs résolution taxonomique atteind facilement celui de l’espèce.
 
-\begin{figure}[t]
+
+
+
+
+\begin{figure}
 \begin{center}
 \includegraphics[scale=3]{img/zam.jpg}\hfill
 \end{center}
@@ -900,10 +906,15 @@ La version 3 du kit MiSeq Reagent Kit permet de produire des reads plus long (30
 \end{figure}
 
 \subsubsection{Pipeline}
-La stratégie close-reference utilisée dans le pipeline a permis d'assigner jusqu'au genre bactérien plus de 99\% des reads analysables. La majorité des genres bactéries du microbiote respiratoire mucoviscidosique est donc connue de la base de données \textit{greengene}.
- +En revanche, la résolution taxonomique n'atteint pas le rang de l'espèce. Il a en effet déjà été montré que les régions hypervariables prises isolément ne sont pas assez discriminantes \cite{Yang2016}. Les analyses en métagénomiques apporteraient l'avantage de séquencer l'ensemble de l'ADNr 16S \cite{Ranjan2016}
-D'autre part, l'assignation taxonomique dépend d'une similarité fixée arbitrairement à 97\%. D'autres techniques de clusterisation permettent de s'affranchir de ce seuil. Il s'agit par exemple de la \textit{Maximum entropy clusterisation} \cite{Bobadilla2015}. 
-Enfin, la phylogénie des bactéries n'a pas été prise en compte dans l'étude. Elle permettrait de mesurer une distance phylogénétique entre les OTUs et comparer les échantillons. Un microbiote contenant 3 espèces proches n'est pas la même chose qu'un microbiote contenant 3 espèces très éloignées. Pour ce faire, il serait intéressant d'utiliser la distance UniFrac\cite{Lozupone2005} en complément de la distance de Bray-Curtis. 
+La stratégie close-reference utilisée dans le pipeline mucobiome a permis d'assigner jusqu'au niveau du genre, plus de 99\% des reads analysées. La base de donnée \textit{greengene} est donc assez exhaustif pour analyser le microbiote réspiratoire car tous les genres sont connus. 
+En revanche, La résolution taxonomique n'atteint pas le rang de l'espèce. Il a en effet déjà été montré que les régions hypervariables prises isolément ne sont pas assez discriminantes \cite{Yang2016}. Deux espèces peuvent par exemple varier d'un seul nucléotide dans une région hypervariable.  
+D'autre part, l'assignation taxonomique dépend d'une similarité fixée arbitrairement à 97\%. D'autres algorithmes permettent de s'affranchir de ce seuil. Il s'agit par exemple de la clusterisation par calcul d'entropie maxium \textit{Maximum entropy clusterisation} \cite{Bobadilla2015}. 
+
+\subsubsection{Methode d'analyse}
+Parmi les analyses de bêta diversité, seul l'analyse en coordonnée principale a été présenté en utilisant la distance de Bray-Curtis.
+Nous avions également réalisé d'autre ordination qui n'ont pas été concluente. Par exemple en changer le type de distance ou en utilisant un positionnement multidimensionnel (MDS) au la place de la PCoA. \\
+Il serait intéressant de prendre en compte la proximité phylogénétique des bactéries. Un microbiote contenant trois bactéries proches n'est pas la même chose qu'un microbiote contenant trois bactéries très éloignés.
+La distance UniFrac\cite{Lozupone2005} pourrait alors remplacer la distance de Bray-Curtis en prenant en considération la phylogénie des bactéries.
 
 
 %[https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5382435/]
