@@ -28,14 +28,13 @@
 \DeclareCaptionType{mycapequ}[][List of equations]
 \captionsetup[mycapequ]{labelformat=empty}
  
-    
-
+\usepackage[compact]{titlesec}
+\titlespacing{\paragraph}{0pt}{10pt}{.5em}[]
     %%%%%%%%%%%%%%%%%%%%%%%%
     %%%%% MISE EN PAGE %%%%%
     %%%%%%%%%%%%%%%%%%%%%%%%
     %Interligne à 1.5
     \onehalfspacing
-
 
 
 
@@ -223,26 +222,24 @@ Il est encore trop tôt pour dire si cette science va révolutionner la médecin
 \section{Définition}
 \subsection{Termes utilisés en écologie}
 
-\begin{description}
-\item[Le microbiote\cite{Eisen} ]est l’ensemble des micro-organismes (bactéries, levures, champignons, virus) vivant dans un environnement donné.
-  
-\item[Le microbiome\cite{Eisen}] est l'ensemble des génomes du microbiote. Le plus souvent le microbiome fait référence aux génomes bactériens seuls. On parle alors de virome et de mycobiome pour les virus et champignons respectivement.
+\paragraph{Le microbiote\cite{Eisen}} est l’ensemble des micro-organismes (bactéries, levures, champignons, virus) vivant dans un environnement donné.
+\paragraph{Le microbiome\cite{Eisen}} est l'ensemble des génomes du microbiote. Le plus souvent le microbiome fait référence aux génomes bactériens seuls. On parle alors de virome et de mycobiome pour les virus et champignons respectivement.
 
-\item[La biocénose] est le terme écologique dans un sens large désignant l'ensemble des organismes vivants dans un environnement appelé \textbf{biotope}. Biocénose et biotope forment ensemble un \textbf{écosystème}.
+\paragraph{La biocénose} est le terme écologique dans un sens large désignant l'ensemble des organismes vivants dans un environnement appelé \textbf{biotope}. Biocénose et biotope forment ensemble un \textbf{écosystème}.
 
-\item[Une symbiose] est une association durable entre deux organismes. Leurs relations peuvent être mutualiste, parasitaire ou commensale.
+\paragraph{Une symbiose} est une association durable entre deux organismes. Leurs relations peuvent être mutualiste, parasitaire ou commensale.
 
 
-\item[L'OTU] (\textit{Operational Taxonomic Unit}) est un terme utilisé en phylogénie pour désigner un groupe d’individus semblable. Dans la majorité des cas, il s'agit de l'espèce dans la classification de Linné.
+\paragraph{L'OTU}(\textit{Operational Taxonomic Unit}) est un terme utilisé en phylogénie pour désigner un groupe d’individus semblable. Dans la majorité des cas, il s'agit de l'espèce dans la classification de Linné.
 En microbiologie, un OTU est défini par un groupe de bactéries ayant une similarité dans leurs séquences d'ADNr 16S supérieur à 97\%.
 
-\item[L'abondance] absolu est le nombre d'individus d'un même OTU dans un échantillon. L'abondance est indirectement évaluée en comptant le nombre de molécules d'ADNr 16S. 
+\paragraph{L'abondance} absolu est le nombre d'individus d'un même OTU dans un échantillon. L'abondance est indirectement évaluée en comptant le nombre de molécules d'ADNr 16S. 
 L’abondance relative est l'expression en pourcentage de l'abondance absolue.
 
-\item[La dominance] caractérise un OTU dont l'abondance est supérieure à 90\% dans un échantillon.
+\paragraph{La dominance} caractérise un OTU dont l'abondance est supérieure à 90\% dans un échantillon.
 
 
-\item[La table des OTU] est à la base de toutes analyses en écologie. Elle correspond à un tableau à double entrée contenant l’abondance par échantillon et par OTU. Dans le tableau \ref{OTUTABLE}, l'abondance relative pour \textit{Staphylococcus aureus} est de 68\%.
+\paragraph{La table des OTU} est à la base de toutes analyses en écologie. Elle correspond à un tableau à double entrée contenant l’abondance par échantillon et par OTU. Dans le tableau \ref{OTUTABLE}, l'abondance relative pour \textit{Staphylococcus aureus} est de 68\%.
 
 \begin{figure}[h]
 \begin{center}
@@ -261,23 +258,27 @@ L’abondance relative est l'expression en pourcentage de l'abondance absolue.
 \label{OTUTABLE}
 \end{figure}
 
-\item[La diversité alpha] est une mesure de la biodiversité au sein d’un échantillon. Elle correspond à l'analyse d'une colonne de la table des OTUs. La richesse, l'indice de Chao1, de Shannon et de Simpson sont des indices de diversité alpha.
+\paragraph{La diversité alpha} est une mesure de la biodiversité au sein d’un échantillon. Elle correspond à l'analyse d'une colonne de la table des OTUs. La richesse, l'indice de Chao1, de Shannon et de Simpson sont des indices de diversité alpha.
 
-\item[La diversité bêta] est une analyse descriptive de la biodiversité entre plusieurs échantillons. Elle correspond à l'analyse de l’ensemble de la table des OTUs. L’approche la plus courante est de réaliser une analyse multivariée par des méthodes d’ordination. Il s’agit de représenter un graphique à n dimensions, impossible à représenter, en le projetant dans un espace à deux ou trois dimensions.
+\paragraph{La diversité bêta} est une analyse descriptive de la biodiversité entre plusieurs échantillons. Elle correspond à l'analyse de l’ensemble de la table des OTUs. L’approche la plus courante est de réaliser une analyse multivariée par des méthodes d’ordination. Il s’agit de représenter un graphique à n dimensions, impossible à représenter, en le projetant dans un espace à deux ou trois dimensions.
 
-\item[La richesse] (richness) est le nombre d'OTU présent dans un échantillon. Les deux échantillons suivants ont la même richesse (2), mais pas les mêmes abondances.
+\paragraph{La richesse}(richness) est le nombre d'OTU présent dans un échantillon. Les deux échantillons suivants ont la même richesse (2), mais pas les mêmes abondances.
 
-échantillon 1  : 4 \textit{Streptoccus} , 4 \textit{Escherichia}  \\ 
-échantillon 2 : 432 \textit{Streptoccus}, 12 \textit{Escherichia} 
+\begin{description}
+\item[échantillon 1]  : 4 \textit{Streptoccus} , 4 \textit{Escherichia}
+\item[échantillon 2]  : 432 \textit{Streptoccus}, 12 \textit{Escherichia} 
+\end{description}
 
-\item[L'équitabilité] (eveness)  indique si les OTUs d’un échantillon sont réparties uniformément.
+\paragraph{L'équitabilité}(eveness) indique si les OTUs d’un échantillon sont réparties uniformément.
 L'équitabilité du premier échantillon est plus grande que le second
 
-échantillon 1  : 50 Streptococus , 50 Escherichia  \\ 
-échantillon 2 : 432 Streptoccus, 12 Escherichia 
+\begin{description}
+\item[échantillon 1]  : 50 Streptococus , 50 Escherichia 
+\item[échantillon 2]  : 432 Streptoccus, 12 Escherichia 
+\end{description}
 
 
-\item[L'indice Chao1] est une estimation de la richesse réelle (\textit{in vivo}) par rapport à la richesse observée dans l'échantillon (\textit{in vitro}). Cet indice part du principe que si l’échantillon contient beaucoup de singletons (OTU détecté une seule fois), il est fort probable que la richesse réelle soit plus grande que la richesse de l’échantillon. La formule est la suivante:
+\paragraph{L'indice Chao1}est une estimation de la richesse réelle (\textit{in vivo}) par rapport à la richesse observée dans l'échantillon (\textit{in vitro}). Cet indice part du principe que si l’échantillon contient beaucoup de singletons (OTU détecté une seule fois), il est fort probable que la richesse réelle soit plus grande que la richesse de l’échantillon. La formule est la suivante:
 
 \begin{mycapequ}[!h]
    \begin{equation}
@@ -286,7 +287,7 @@ L'équitabilité du premier échantillon est plus grande que le second
       \caption{avec \textbf{S} la richesse observée, \textbf{a} le nombre de singletons et \textbf{b} le nombre de doubletons}
 \end{mycapequ}
 
-\item[L'indice de Shannon] est un indicateur évaluant à la fois la richesse et l'équitabilité dans un échantillon. Il se calcule de la même façon que l’entropie de Shannon.
+\paragraph{L'indice de Shannon} est un indicateur évaluant à la fois la richesse et l'équitabilité dans un échantillon. Il se calcule de la même façon que l’entropie de Shannon.
 
 \begin{mycapequ}[!h]
    \begin{equation}
@@ -295,7 +296,7 @@ L'équitabilité du premier échantillon est plus grande que le second
       \caption{avec \textbf{p} la fréquence d'un OTU parmi les \textbf{S} OTUs présents dans l'échantillon}
 \end{mycapequ}
 
-\item[L'indice de Simpson] est un indicateur évaluant la probabilité que deux individus sélectionnés aléatoirement dans un échantillon donné soient de la même espèce. L'indice est de sens contraire aux précédents. La formule est la suivante:
+\paragraph{L'indice de Simpson}est un indicateur évaluant la probabilité que deux individus sélectionnés aléatoirement dans un échantillon donné soient de la même espèce. L'indice est de sens contraire aux précédents. La formule est la suivante:
 
 \begin{mycapequ}[!h]
    \begin{equation}
@@ -304,12 +305,10 @@ L'équitabilité du premier échantillon est plus grande que le second
       \caption{avec \textbf{p} la fréquence d'un OTU parmi les \textbf{S} OTUs présents dans l'échantillon}
 \end{mycapequ}
 
-\newpage
-
-\item[La courbe de raréfaction] est utilisée pour déterminer si la profondeur de séquençage est suffisante pour caractériser la diversité d’un échantillon. Pour comprendre, imaginons un sac noir contenant des billes (reads) de différentes couleurs (espèces). Avec deux couleurs dans le sac, une petite poignée (un petit échantillon) de billes sera suffisante pour évaluer la diversité. Vous ne trouverez pas de nouvelle couleur avec plus de billes dans votre main. En revanche, avec davantage de couleurs dans le sac, il faudra une poignée plus importante pour évaluer la diversité. La courbe de raréfaction permet d'évaluer si cette poignée de bille est suffisamment représentative.
+\paragraph{La courbe de raréfaction}est utilisée pour déterminer si la profondeur de séquençage est suffisante pour caractériser la diversité d’un échantillon. Pour comprendre, imaginons un sac noir contenant des billes (reads) de différentes couleurs (espèces). Avec deux couleurs dans le sac, une petite poignée (un petit échantillon) de billes sera suffisante pour évaluer la diversité. Vous ne trouverez pas de nouvelle couleur avec plus de billes dans votre main. En revanche, avec davantage de couleurs dans le sac, il faudra une poignée plus importante pour évaluer la diversité. La courbe de raréfaction permet d'évaluer si cette poignée de bille est suffisamment représentative.
 Pour générer cette courbe, des groupes de reads de taille croissante (1..n) sont tirés aléatoirement depuis l' échantillon. Le groupe est reporté sur l'axe X et le nombre d'OTU retrouvé dans ce groupe est reporté sur l’axe Y.
 Une courbe s’aplatissant indique une bonne profondeur de séquençage (Figure \ref{rarefaction_demo}).
-\end{description}
+
 
 \begin{figure}[ht]
 \begin{center}
@@ -319,27 +318,22 @@ Une courbe s’aplatissant indique une bonne profondeur de séquençage (Figure 
 \label{rarefaction_demo}
 \end{figure}
 
-
-
-
 \subsection{Termes utilisés en bioinformatique}
 
-\begin{description}
-\item[Pipeline] 
-Un pipeline est un ensemble d'étapes de calcul informatique. Chaque étape prend en entrée des fichiers pour en produire des nouveaux dans sa sortie. On peut comparer cela aux étapes d'une recette de cuisine. Sans parallélisation, un cuisinier (le processeur) doit attendre de faire fondre le beurre avant de battre les œufs en neige (exécution synchrone). En parallélisant, le cuisinier peut réaliser plusieurs étapes en même temps. Battre les œufs pendant que le beurre fond (exécution asynchrone). 
+\paragraph{Un pipeline} est un ensemble d'étapes de calcul informatique. Chaque étape prend en entrée des fichiers pour en produire des nouveaux dans sa sortie. On peut comparer cela aux étapes d'une recette de cuisine. Sans parallélisation, un cuisinier (le processeur) doit attendre de faire fondre le beurre avant de battre les œufs en neige (exécution synchrone). En parallélisant, le cuisinier peut réaliser plusieurs étapes en même temps. Battre les œufs pendant que le beurre fond (exécution asynchrone). 
 Maintenant si l'objectif est de produire 188 gâteaux (188 analyses) et que l'on dispose de 64 cuisiniers (64 processeurs), l'organisation des tâches devient complexe si l'on veut maximiser le rendement. Pour cela, on dispose d'outils comme \textit{Snakemake}\cite{Koster2012}, qui permettent de trouver la meilleure façon d'optimiser les tâches en construisant ce qu'on appelle un graphe orienté acyclique.
 
-\item[NGS](Next Generation Sequencing) désigne l'ensemble des séquenceurs de nouvelle génération permettant de séquencer un nombre très important de fragments d'ADN. 
+\paragraph{NGS}(Next Generation Sequencing) désigne l'ensemble des séquenceurs de nouvelle génération permettant de séquencer un nombre très important de fragments d'ADN. 
 
-\item[La métagénomique] est une méthode d’étude du contenu en ADN présent dans un milieu grâce aux techniques de séquençage haut débit. Contrairement à la génomique qui s’intéresse au génome d’un individu, la métagénomique s’intéresse aux génomes d’une population d’individus.
+\paragraph{La métagénomique} est une méthode d’étude du contenu en ADN présent dans un milieu grâce aux techniques de séquençage haut débit. Contrairement à la génomique qui s’intéresse au génome d’un individu, la métagénomique s’intéresse aux génomes d’une population d’individus.
 Dans son sens strict, la métagénomique correspond à l’étude de l’ensemble des séquences d'ADN. L’analyse d’un seul gène, comme celui de l’ARN 16S est associé à tort au terme métagénomique, mais son usage reste courant. On lui préférera le terme de \textbf{métagénétique} ou \textbf{métataxonomique}.
 
 
-\item[Un read] est un terme bio-informatique désignant une séquence d’ADN issue d’un séquençage haut débit. Selon les technologies, les reads varient entre 150 et 300 paires de bases.
+\paragraph{Un read} est un terme bio-informatique désignant une séquence d’ADN issue d’un séquençage haut débit. Selon les technologies, les reads varient entre 150 et 300 paires de bases.
 
-\item[Une librairie] est l'ensemble des fragments d'ADN préparés pour être séquencés. 
+\paragraph{Une librairie} est l'ensemble des fragments d'ADN préparés pour être séquencés. 
 
-\item[Score de qualité Phred] ou QScore exprime la confiance que l'on porte au séquençage. Il est lié de façon logarithmique à la probabilité d'erreur d'identification d'un nucléotide.  Par exemple un score de 10 équivaut à une 1 erreur sur 100. Un score de 40 à 1 erreur sur 10000.
+\paragraph{Score de qualité Phred} ou QScore exprime la confiance que l'on porte au séquençage. Il est lié de façon logarithmique à la probabilité d'erreur d'identification d'un nucléotide.  Par exemple un score de 10 équivaut à une 1 erreur sur 100. Un score de 40 à 1 erreur sur 10000.
 
 
 \begin{mycapequ}[!h]
@@ -352,7 +346,7 @@ Dans son sens strict, la métagénomique correspond à l’étude de l’ensembl
 
 
 
-\item[Une ordination] est une analyse multivariée visant à décrire des objets caractérisés par plusieurs variables. Par exemple un échantillon est caractérisé par différentes abondances de bactéries. Il existe plusieurs méthodes d'ordination. La plus connue étant l'Analyse en Composantes Principales (PCA) basée sur une matrice de covariances. En écologie l'Analyse en Coordonnées Principales (PCoA) est préférée. Elle se base sur une matrice de distances. Elle consiste à projeter des points d'un espace à n dimensions vers un espace visible en 2 dimensions.
+\paragraph{Une ordination} est une analyse multivariée visant à décrire des objets caractérisés par plusieurs variables. Par exemple un échantillon est caractérisé par différentes abondances de bactéries. Il existe plusieurs méthodes d'ordination. La plus connue étant l'Analyse en Composantes Principales (PCA) basée sur une matrice de covariances. En écologie l'Analyse en Coordonnées Principales (PCoA) est préférée. Elle se base sur une matrice de distances. Elle consiste à projeter des points d'un espace à n dimensions vers un espace visible en 2 dimensions.
 La figure \ref{pcoatuto} illustre ce principe avec un exemple à deux dimensions seulement. 
 
 \begin{figure}[!h]
@@ -364,7 +358,7 @@ La figure \ref{pcoatuto} illustre ce principe avec un exemple à deux dimensions
 \end{figure}
 \newpage
 
-\item[La distance de Bray-Curtis] est un indice de dissimilarité entre deux échantillons qui s'assimile à une distance entre 2 points dans un espace de taille n (Figure \ref{pcoatuto}). Plus la distance est grande et plus les deux échantillons sont dissemblables. La formule est la suivante : 
+\paragraph{La distance de Bray-Curtis} est un indice de dissimilarité entre deux échantillons qui s'assimile à une distance entre 2 points dans un espace de taille n (Figure \ref{pcoatuto}). Plus la distance est grande et plus les deux échantillons sont dissemblables. La formule est la suivante : 
 
 \begin{mycapequ}[!h]
    \begin{equation}
@@ -374,7 +368,7 @@ La figure \ref{pcoatuto} illustre ce principe avec un exemple à deux dimensions
 \end{mycapequ}
 
 
-\item[Un fichier fastq] contient les séquences des reads et leurs qualités par nucléotides exprimés en Phred Score. Chaque read est représenté par 4 lignes dans un fichier textuelle (Figure \ref{fastq}). Ces fichiers sont produit par le séquençage haut-débit. 
+\paragraph{Un fichier fastq} contient les séquences des reads et leurs qualités par nucléotides exprimés en Phred Score. Chaque read est représenté par 4 lignes dans un fichier textuelle (Figure \ref{fastq}). Ces fichiers sont produit par le séquençage haut-débit. 
 
 \begin{figure}[!h]
 \begin{center}
@@ -384,9 +378,8 @@ La figure \ref{pcoatuto} illustre ce principe avec un exemple à deux dimensions
 \label{fastq}
 \end{figure}
 
-\item[Le multiplexage] est utilisé pour pouvoir séquencer plusieurs échantillons différents dans une même librairie. Pour cela, les ADNs de chaque échantillon sont marqués avec une courte séquence nucléotidique appelée barcode ou index suivant la technologie. Lors de l'analyse bioinformatique, les données sont démultiplexés afin d'associer chaque read à son échantillon. 
+\paragraph{Le multiplexage} est utilisé pour pouvoir séquencer plusieurs échantillons différents dans une même librairie. Pour cela, les ADNs de chaque échantillon sont marqués avec une courte séquence nucléotidique appelée barcode ou index suivant la technologie. Lors de l'analyse bioinformatique, les données sont démultiplexés afin d'associer chaque read à son échantillon. 
 
-\end{description}
 
 \newpage
 
@@ -396,28 +389,28 @@ La figure \ref{pcoatuto} illustre ce principe avec un exemple à deux dimensions
 \subsection{La mucoviscidose}
 \subsubsection{Une maladie génétique}
 La mucoviscidose est une maladie génétique autosomique récessive grave qui frappe en France 1 naissance sur 5400\cite{Registredelamuco.org}. La Bretagne est la région la plus touchée avec une prévalence de 1/3000\cite{Registredelamuco.org}.
-La loi de Hardy Weinberg estime qu’en Bretagne 1 patient sur 25 est porteur de la mutation à l’état hétérozygote. Cette haute prévalence s’explique probablement par un effet fondateur associé à un avantage sélectif pour les individus porteurs de l’allèle muté. \footnote{Plusieurs hypothèses ont été proposées, notamment lors des grandes épidémies de choléra en diminuant les pertes hydriques.]} 
+La loi de Hardy Weinberg estime qu’en Bretagne 1 patient sur 25 est porteur de la mutation à l’état hétérozygote. Cette haute prévalence s’explique probablement par un effet fondateur associé à un avantage sélectif pour les individus porteurs de l’allèle muté\footnote{Plusieurs hypothèses ont été proposées, notamment lors des grandes épidémies de choléra en diminuant les pertes hydriques.]}. 
 Le gène \textit{CFTR} impacté se situe sur le chromosome 7 en position q31.2. Il est constitué de 27 exons pour 250 188\cite{OLeary2016} paires de bases. Il code pour un canal chlore AMP dépendant permettant les échanges des ions chlorures au niveau des membranes cellulaires. Il est également impliqué dans le transport du thiocynate (SCN-) et des bicarbonates (HCO3-)\cite{Quinton2001}. 
 On dénombre à ce jour 2017 mutations \cite{cftrdb} mises en cause dans la mucoviscidose. La perte d’une phénylalanine en position 508 par délétion du est triplet c.1521-1523delCTT (anciennement $\Delta$F508) cause à elle seule 80\% des mucoviscidoses\cite{cftrdb}.
 Ces mutations sont responsables d’une protéine défectueuse ou d’une absence de canaux sur les membranes cellulaires. \\
 Cliniquement, la mutation entraîne une insuffisance pancréatique exocrine et une infertilité par disparition des canaux déférents. Des signes digestifs, hépatiques et articulaires sont également retrouvés.
-L'atteinte de la fonction respiratoire est la plus bruyante. En effet au niveau de l’épithélium broncho-pulmonaire, l’absence d’un CFTR fonctionnel est responsable d’une déshydratation du mucus le rendant plus visqueux et empêche les cils bronchiques de jouer leurs rôles.\\
-La forte prévalence de la maladie nécessite de réaliser un dépistage précoce chez tous les nouveau-nés (test de Gutri) afin d’adapter au plus tôt la prise en charge. Seul le test à la sueur permet de poser le diagnostic. Le dépistage prénatal basé sur l’ADN circulant est actuellement à l’étude.\\   
-Le traitement repose avant tout sur une prise en charge respiratoire (kinésithérapie, dornase \footnote{Est une DNase qui fluidifie les sécrétions trop riches en ADN provenant de l'afflux des neutrophiles in situ et de leur apoptose prématurée}, antibiothérapie). Les recherches en thérapies génétiques sont encourageantes [@].
+L'atteinte de la fonction respiratoire est la plus bruyante cliniquement. En effet au niveau de l’épithélium broncho-pulmonaire, l’absence d’un \textit{CFTR} fonctionnel est responsable d’une déshydratation du mucus le rendant plus visqueux et empêche les cils bronchiques de jouer leurs rôles.\\
+La forte prévalence de la maladie nécessite de réaliser un dépistage précoce chez tous les nouveau-nés (test de Gutri) afin d’adapter au plus tôt la prise en charge. Seul le test à la sueur permet de poser le diagnostic. Le dépistage prénatal basé sur l’ADN circulant est actuellement à l’étude\cite{Guissart2017}.\\   
+Le traitement repose avant tout sur une prise en charge respiratoire (kinésithérapie, dornase \footnote{Est une DNase qui fluidifie les sécrétions trop riches en ADN provenant de l'afflux des neutrophiles in situ et de leur apoptose prématurée}, antibiothérapie). Les recherches en thérapies génétiques sont encourageantes \cite{Montier2004}.
 Les traitements correcteurs/potentiateurs de la protéine CFTR, comme l'\textit{ivacaftor} sont les seuls traitements curateurs. Mais concerne uniquement certaines mutations rares comme la G551D. La greffe pulmonaire est le dernier recours.
 
 \subsubsection{Une maladie infectieuse et inflammatoire}
 
-L’atteinte pulmonaire dans la mucoviscidose est caractérisée par des réactions inflammatoires qui dégradent progressivement la fonction respiratoire. Cette inflammation est la conséquence d'un afflux excessif de polynucléaire avec libération de médiateur[@] en réponse à une agression microbienne. Plusieurs pathogènes sont impliqués. Chez les jeunes enfants\cite{Davies}, \textit{Haemophilus influenza} et \textit{Staphylococcus aureus} sont le plus souvent responsable. \textit{Burkolderia cepacia complex} et \textit{Stenotrophomonas maltophilia} sont retrouvés parmi les sujets plus âgés \cite{Davies}.
-Mais c’est \textit{Pseudomonas aeruginosa} qui caractérisent l’atteinte pulmonaire dans la mucoviscidose en marquant un tournant décisif dans l’évolution de la maladie. Ce bacille aérobie stricte est une bactérie de l'environnement rarement retrouvé parmi les patients sains[@]. En revanche, dans la mucoviscidose, il est mis en évidence chez 60\%\cite{LeBourgeois} des patients jeunes, et plus de 90\% des patients adultes\cite{LeBourgeois}.\\
-La primocolonisation à \textit{Pseudomnas aeruginosa} est difficilement détectable, mais semble avoir lieu tôt dans l’enfance[@]. Il y a ensuite une phase de latence, variable entre les individus, marque par des épisodes d’exacerbations et de rémissions. À ce moment, l’éradication par des antibiotiques reste possible.
+L’atteinte pulmonaire dans la mucoviscidose est caractérisée par des réactions inflammatoires qui dégradent progressivement la fonction respiratoire. Cette inflammation est la conséquence d'un afflux excessif de polynucléaire avec libération de médiateur\cite{Heijerman2005} probablement en réponse à une agression microbienne. Plusieurs pathogènes sont impliqués. Chez les jeunes enfants\cite{Davies}, \textit{Haemophilus influenza} et \textit{Staphylococcus aureus} sont le plus souvent responsable. \textit{Burkolderia cepacia complex} et \textit{Stenotrophomonas maltophilia} sont retrouvés parmi les sujets plus âgés \cite{Davies}.
+Mais c’est \textit{Pseudomonas aeruginosa} qui caractérisent l’atteinte pulmonaire dans la mucoviscidose en marquant un tournant décisif dans l’évolution de la maladie. Ce bacille aérobie stricte est une bactérie de l'environnement rarement retrouvé parmi les patients sains\cite{Plesiat}. En revanche, dans la mucoviscidose, il est mis en évidence\cite{LeBourgeois}  chez 60\%des patients jeunes, et plus de 90\% des patients adulte.\\
+La primocolonisation à \textit{Pseudomnas aeruginosa} est difficilement détectable, mais elle semble avoir lieu tôt dans l’enfance[@]. Il y a ensuite une phase de latence, variable entre les individus, marque par des épisodes d’exacerbations et de rémissions. À ce moment, l’éradication par des antibiotiques reste possible.
 Puis survient le passage à la chronicité. \textit{Pseudomnas aeruginosa} s'adapte à son milieu et s’installe à long terme. Il perd certains caractères de virulence, mais devient résistant aux antibiotiques\cite{LeBourgeois}. Son phénotype change. Il se transforme pour devenir mucoïde en sécrétant un film d’alginate qui le protège du système immunitaire. Les mécanismes sous-jacents à cette adaptation sont ingénieux. La forte densité en bactérie est responsable d’activation de certains gènes par un processus appelé \textit{quorum sensing}\cite{Ruimy2004}. Un processus dans lequel chaque bactérie communique avec ses voisines par des signaux chimiques.
-Le génome de \textit{Pseudomnas aeruginosa} devient aussi hyperpermutable\cite{Davies} afin de présenter une plus grande diversité génétique au regard de la sélection naturelle\footnote{En biologie évolutive, il s'agit d'évolvabilité}. \\
+Le génome de \textit{Pseudomnas aeruginosa} devient aussi hyperpermutable\cite{Davies} pour présenter une plus grande diversité génétique au regard de la sélection naturelle\footnote{En biologie évolutive, il s'agit d'évolvabilité} et donc évoluer plus rapidement. \\
 À ce stade, le traitement antibiotique n’est plus curatif et l'évolution tend inexorablement vers un déclin de la fonction respiratoire. \\
-L'approche clinique est donc préventive afin de retarder le passage à la chronicité. Elle vise à éliminer \textit{Pseudomnas aeruginosa} dès qu'il est détecté en culture. Une surveillance rapprochée des patients avec un prélèvement mensuel ou bimensuel est préconisée selon l'HAS[@]. La culture étant peu sensible, d’autres méthodes d'identification peuvent être employées. La détection des anticorps anti-pyocyaniques par ELISA a montré peu de sensibilité \cite{Plesiat}.
-La PCR ciblée associant les protéines bactériennes \textit{OPRL1} , \textit{GYRB1} et \textit{ECFX1}  s’est montrée plus sensible et plus spécifique que la culture\cite{LeGall} \\
+L'approche clinique est donc préventive afin de retarder le passage à la chronicité. Elle vise à éliminer \textit{Pseudomnas aeruginosa} dès qu'il est détecté en culture grâce à une surveillance rapprochée \cite{LeBourgeois}. La culture étant peu sensible, d’autres méthodes d'identification peuvent être employées. La détection des anticorps anti-pyocyaniques par ELISA a montré peu de sensibilité \cite{Plesiat}.
+La PCR ciblée associant les protéines bactériennes \textit{OPRL1} , \textit{GYRB1} et \textit{ECFX1}  s’est montrée plus sensible et plus spécifique que la culture\cite{LeGall}. \\
 En pratique, la colonisation chronique est définie lorsque 3 expectorations sont rendues positives en culture, successivement au cours d’un suivi mensuel ou bimensuel \cite{LeBourgeois}.
-Une autre classification, celle de Lee\cite{Lee2003} a montré une forte liaison clinico-biologique. Elle est composée de 4 groupes (Tableau \ref{lee}):  
+Une autre classification, celle de Lee\cite{Lee2003} définie 4 groupes (Tableau \ref{lee}):  
 
  \begin{table}[h]
      \centering
@@ -440,20 +433,20 @@ Une autre classification, celle de Lee\cite{Lee2003} a montré une forte liaison
 On ne sait pas aujourd’hui pourquoi \textit{Pseudomnas aeruginosa} s’installe préférentiellement chez les patients atteints de mucoviscidose. Plusieurs hypothèses ont été proposées:
 
 \textbf{Déshydratation du mucus}\cite{Davies}:
-La mutation CFTR serait responsable d'un mucus plus visqueux et moins épais associé à une la perte de fonction des cils bronchiques. Les bactéries seraient alors piégées dans ce mucus pour être exposées plus longtemps à l'épithélium respiratoire et ainsi déclencher une réponse inflammatoire. 
+La mutation \textit{CFTR} serait responsable d'un mucus plus visqueux et moins épais associé à une la perte de fonction des cils bronchiques. Les bactéries seraient alors piégées dans ce mucus pour être exposées plus longtemps à l'épithélium respiratoire et ainsi déclencher une réponse inflammatoire. 
 
 \textbf{Augmentation de salinité}\cite{Davies}:
 L'augmentation de la salinité du mucus aurait pour conséquence de désactiver des peptites antimicrobiens présents comme les beta-defensines, lysozymes ou les lactoferrines.
 
-\textbf{Adhérence de Pseudomonas}\cite{Davies}:
-Pseudomonas serait un ligand nature des cellules portant la protéine CFTR. Après internalisation la bactérie serait détruite. 
+\textbf{Adhérence aux cellules}\cite{Davies}:
+\textit{P.aeruginosa} serait un ligand nature des cellules portant la protéine \textit{CFTR} non muté. Après internalisation la bactérie serait détruite. 
 
 \textbf{Création d'un milieu favorable}:
-L'inflammation précédant la colonisation à P.aeruginosa créerait un milieu favorable. 
-Par exemple la production d'alanine et de lactate \cite{Boulette2009} est une source de carbone metabolisable par P.aeruginosa. 
+L'inflammation précède la colonisation à \textit{P.aeruginosa} et crée un milieu favorable. 
+Par exemple la production d'alanine et de lactate \cite{Boulette2009} est une source de carbone metabolisable par \textit{P.aeruginosa}. 
 
 \textbf{Stimulation du système immunitaire}:
-P.aeruginosa stimulerait le système immunitaire de façon à éliminer tous ses concurrents et ainsi se développer seul dans sa niche écologique.
+\textit{P.aeruginosa} stimulerait le système immunitaire de façon à éliminer tous ses concurrents et ainsi se développer seul dans sa niche écologique.
 
 \textbf{Une anomalie du microbiote \cite{HoMan2017}}:
 Le microbiote jouerait le rôle de barrière à agents pathogènes. Une dysbiose permettrait à Pseudomonas aeruginosa de s'installer. 
@@ -463,7 +456,7 @@ Le microbiote jouerait le rôle de barrière à agents pathogènes. Une dysbiose
 \begin{center}
 \includegraphics[scale=0.8]{img/chronic.png}\hfill
 \end{center}
-\caption{Infection pulmonaire à pyo dans la mucoviscidose. ref []}
+\caption{Infection pulmonaire à P.aeruginosa dans la mucoviscidose (P.Plésiat 2003\cite{Plesiat}).}
 \label{bach}
 \end{figure}
 
@@ -475,8 +468,8 @@ L'arbre respiratoire chez le foetus\footnote{Un article récent critique l'idée
 Le microbiote pulmonaire est dominé par le phylum des \textit{Firmicutes} (\textit{Streptococcus}) et des \textit{Bacteroidetes} (\textit{Prevotella}). Les genres retrouvés majoritairement sont \textit{Streptococcus}, \textit{Prevotella}, \textit{Fusobacteria}, \textit{Veillonella}, \textit{Haemophilus}, \textit{Neisseria} et \textit{Porphyromonas}.
 L’arbre respiratoire étant en continuité direct avec les voies aériennes supérieur, certains genres bactériens sont communs, comme \textit{Streptococcus}, \textit{Staphylococcus}, \textit{Haemophilus} et \textit{Moraxella}. Tandis que d’autres genres comme \textit{Corynebacterium} et \textit{Dolosigranulum} ne sont retrouvés qu’au niveau du nez et de l'oropharynx. \\
 Le microbiote pulmonaire est dynamique. Il peut varier dans l'espace à cause de la structure irrégulière de l'arbre bronchique. Un prélèvement au niveau d'un foyer infectieux par exemple, se distinguera nécessairement d'un foyer sain. Il existe également des gradients physico-chimiques qui selon la région peuvent sélectionner des espèces. Les cavernes tuberculeuses par exemple se trouvent essentiellement dans le lobe supérieur en raison d'une concentration en oxygène plus élevée qui favorise ce bacille aérobie stricte. D'autres études \cite{Frayman2017,Coburn2015} ont montré que la diversité diminue avec l'âge ou encore que la structure du microbiote change avec une exposition tabagique. 
-Enfin les pathologies respiratoires\cite{HoMan2017} sont une autre source de variabilité. Il est par exemple démontré dans la mucoviscidose qu'il y une augmentation de richesse et une diminution de diversité. L'asthme et la BPCO sont également associés à des anomalies du microbiote pumonaire[@].  \\
-Cependant il semble que ce soit l'individu lui-même  qui soit la principale source de variabilité avant tout autre facteurs\cite{Whelan2017}. C'est-à-dire que l'environnement et le génome d'un individu sont les principaux déterminants du microbiote pulmonaire.
+Enfin les pathologies respiratoires\cite{HoMan2017} sont une autre source de variabilité. Il est par exemple démontré dans la mucoviscidose qu'il y une augmentation de richesse et une diminution de diversité. L'asthme et la BPCO sont également associés à des anomalies du microbiote pumonaire\cite{Dicksona,Nguyen2015}.  \\
+Cependant il semble que ce soit l'individu lui-même  qui soit la principale source de variabilité avant tout autres facteurs\cite{Whelan2017}. C'est-à-dire que l'environnement et le génome d'un individu sont les principaux déterminants du microbiote pulmonaire.
 
 \subsection{Exploration du microbiote pulmonaire}
 %(http://bacterioweb.univ-fcomte.fr/bibliotheque/remic/08-Bronc.pdf) ==> A LIRE COOURS BACTERIO
@@ -489,21 +482,13 @@ d’éviter une contamination par les voies aériennes supérieures. En pratique
 \subsubsection{Séquençage haut débit}
 % Baisse du coup du sequencage ... %
 Le séquençage de nouvelle génération permet de séquencer de grande quantité d' ADN dans un échantillon et ainsi déterminer sa composition en bactéries ou autres micro-organismes. À titre d'exemple, un séquenceur Sanger classique permet de lire des fragments d'ADN d'environ 800 Pb parallélisable jusqu'à 96 fois en augmentant le nombre de capillaires. 
-À l'inverse, un séquenceur de nouvelle génération lit des fragments plus courts de l'ordre de 150pb. Mais la parallélisation peut aller jusqu'à 20 milliards de fois en un seul run sur un illumina Novaseq. \\
+À l'inverse, un séquenceur de nouvelle génération lit des fragments plus courts de l'ordre de 150pb. Mais la parallélisation peut aller jusqu'à 20 milliards de fois en un seul run sur un Illumina Novaseq. \\
 2 stratégies de séquençages sont utilisées en écologie microbienne:  \\
 \textbf{La stratégie shotgun} consiste à séquencer l'ensemble des  ADN présents dans l'échantillon sans discernement, que ce soit humain ou bactérien. Les séquences sont filtrées puis les génomes bactériens sont reconstruits par des méthodes bio-informatiques complexes. \\
 \textbf{La stratégie Amplicon} est moins coûteuse sur le plan de l'analyse. Elle consiste à séquencer un gène spécifiquement bactérien et suffisamment variable pour discriminer une espèce. Il s'agit du gène de l'ARN 16S.\\
-L'ARN 16S est un ARN non codant participant à la structure de la petite sous unité des ribosomes bactériens. Il est composé de 1500 nucléotides et forme plusieurs boucles dans sa structure secondaire (Figure \ref{ARN16S}). 
-L'alignement des séquences d'ARN 16S entre plusieurs espèces met en évidence des régions constantes et 9 régions variables (Figure \ref{ARN16SVariation}). Les régions constantes permettent de concevoir des amorces s'hybridant sur tous les ADNs bactériens. Les régions variables apportent la spécificité taxonomique permettant d'identifier l'espèce bactérienne.
+L'ARN 16S est un ARN non codant participant à la structure de la petite sous unité des ribosomes bactériens. Il est composé de 1542 nucléotides et forme plusieurs boucles dans sa structure secondaire (Figure \ref{ARN16S}). 
+L'alignement des séquences d'ADNr 16S entre plusieurs espèces met en évidence des régions constantes et 9 régions variables (Figure \ref{ARN16SVariation}). Les régions constantes permettent de concevoir des amorces s'hybridant sur tous les ADNs bactériens. Les régions variables apportent la spécificité taxonomique permettant d'identifier l'espèce bactérienne.
 % Les études de [@] ont montrée que certaine région variable apportent plus de spécificité.
-
-\begin{figure}[ht]
-\begin{center}
-\includegraphics[scale=0.8]{img/ARN16S_variation.png}\hfill
-\end{center}
-\caption{Régions constantes et variables de l'ADNr 16S}
-\label{ARN16SVariation}
-\end{figure}
 
 \begin{figure}[ht]
 \begin{center}
@@ -513,6 +498,13 @@ L'alignement des séquences d'ARN 16S entre plusieurs espèces met en évidence 
 \label{ARN16S}
 \end{figure}
 
+\begin{figure}[ht]
+\begin{center}
+\includegraphics[scale=0.8]{img/ARN16S_variation.png}\hfill
+\end{center}
+\caption{Régions constantes et variables de l'ADNr 16S}
+\label{ARN16SVariation}
+\end{figure}
 
 En séquençant l'ensemble des génomes bactériens, la stratégie \textit{shotgun} est plus informative, car elle permet de prédire la fonction d'un microbiote. En effet, les transferts génétiques horizontaux amènent à dissocier l'espèce de sa fonction. Deux bactéries d'une même espèce peuvent avoir des fonctions différentes. L'inférence fonctionnelle à partir de la deuxième stratégie est possible, mais déconseillée.  
 La stratégie 16S reste toutefois une méthode simple pour décrire les populations bactériennes présentes. C'est cette stratégie qui a été utilisée dans notre étude. 
@@ -521,7 +513,7 @@ La stratégie 16S reste toutefois une méthode simple pour décrire les populati
 
 \subsection{Objectif de l'étude Mucobiome}
 L'objectif général de l'étude MUCOBIOME est de savoir si dans la mucoviscidose, le microbiote respiratoire influence la colonisation à \textit{Pseudomnas aeruginosa}. 
-Pour cela, nous avons suivi pendant 3 ans,  une cohorte de 47 patients atteints de mucoviscidoses exempts de Pseudomonas aeruginosa depuis au moins 1 an.
+Pour cela, nous avons suivi pendant 3 ans,  une cohorte de 47 patients atteints de mucoviscidoses exempts de \textit{Pseudomonas aeruginosa} depuis au moins 1 an.
 L'exploration de leur microbiote par la stratégie 16S a été réalisée à partir d'expectorations bronchiques obtenues dans le cadre de leurs suivis longitudinal. 
 À partir des données générées par le séquençage, nous avons effectué l'étude descriptive et analytique de leurs microbiotes en créant un pipeline bio-informatique dédié. L'objectif principal de ce travail a été la mise au point et l'évaluation de ce pipeline à façon pour l'étude MUCOBIOME.
 
