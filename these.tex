@@ -44,8 +44,8 @@
     \lhead{Thèse de médecine }
     \chead{UBO}
     \rhead{Sacha SCHUTZ}
-    \lfoot{truc}
-    \rfoot{2015/2016}
+    \lfoot{CHU Brest}
+    \rfoot{2016/2017}
      
      
     %%%%%%%%%%
@@ -188,7 +188,7 @@ Les avancées majeures dans les domaines de l'hygiène, la vaccination et les an
 \begin{center}
 \includegraphics[scale=0.5]{img/allergie_infection.jpg}\hfill
 \end{center}
-\caption{Incidence des maladies infectieuses et auto-immunes en Europe au cours du temps \cite{Bach2002}. }
+\caption{Incidence des maladies infectieuses et auto-immunes en Europe au cours de 50 ans \cite{Bach2002}. }
 \label{hyigienisme}
 \end{figure}
 
@@ -558,7 +558,7 @@ Les parois bactériennes ont été fragmentées par sonication. (DTT par sonicat
 Les extraits d’ADN ont été envoyés pour séquençage par un prestataire GATC.
 
 \subsection{Séquençage}
-La librairie a été générée en amplifiant la région V3-V5 à l’aide du couple d’amorces  \textit{forward(CCTACGGGAGGCAGCAG)} et \textit{reverse(CCGTCAATTCMTTTRAGT)} et du kit MiSeq Reagent Kits v3. \\
+La librairie a été générée en amplifiant la région V3-V5 à l’aide du couple d’amorces forward CCTACGGGAGGCAGCAG et reverse CCGTCAATTCMTTTRAGT et du kit MiSeq Reagent Kits v3. \\
 Le séquençage a été réalisé sur Illumina MiSeq pour produire un couple de séquences chevauchantes de 300 Pb (Figure \ref{illumina}). Après fusion du couple, le séquençage permet de lire  535 Pb correspondants à la région V3-V5.\\
 Environ 25 millions de reads sont produits par run MiSeq. En multiplexant à l’aide de 94 index, les 188 échantillons ont été séquencés sur 2 runs pour produire 188 x 2 fichiers fastq.
 
@@ -815,7 +815,23 @@ Aucune des analyses tenant compte des paramètres biocliniquescolligés pendant 
 \label{ordination2}
 \end{figure}
 
-
+\subsubsection{Présence de P.aeruginosa}
+ + Malgré l'absence de culture positive à P.aeruginosa parmi les prélèvements, l'ADNr 16S de Pseudomonas est détecté dans 48 échantillons. Dans la majorité des cas, l'abondance relative est faible. Sur les 48, 39 ont une abondance relative en dessous de 3\%. L'abondance maximum est retrouvé dans le dernier échantillon du patient 10 à 27.4\%. 
+ + Le tableau \ref{pyopcr} compare le nombre d'échantillons détecté positif en PCR avec la présence d'ARN 16S. 
+  
+  \begin{table}[h]
+      \centering
+      \begin{tabular}{r|c|c}
+           & PCR Négatif  & PCR Positif \\
+           \hline
+           16S absent & 141 & 31 \\
+           16S present & 1 & 15   \\
+           
+      \end{tabular}
+      \caption{Concordance entre la présence d'ADNr 16S de Pyo et sa détection en PCR OPRL}
+      \label{pyopcr}
+  \end{table}
+ 
 \subsection{Résultats analytiques}
 \subsubsection{Corrélation entre les genres bactériens}
 La figure \ref{correlation} montre les corrélations linéaires réalisées entre les genres du core microbiota. La corrélation la plus forte est entre \textit{Prevotella} et \textit{Veillonella} avec un coefficient de Pearson à 0.60.  \textit{Streptococcus} et \textit{Haemophilus} évoluent dans le sens inverse avec un coefficient à -0.41. 
@@ -854,8 +870,8 @@ La figure  \ref{pcoa} est une analyse multivariée discriminant les groupes Free
 \section{Discussion}
 \subsection{Production des données}
 \subsubsection{Séquençage}
-La version 3 du kit MiSeq Reagent Kits permet de produire des reads plus long (300pb) que dans sa version précédente (250pb). Ceci afin d'augmenter la précision de l'assignement taxonomique (Figure \ref{rnasens}). En contrepartie la qualité du séquençage est médiocre aux extrémités avec des scores qui chutent en dessous de 20. À cause de cela, seulement 43\% de reads sont exploitable. 
-C'est un problème connu lié à la chimie du kit qu'illumina n'a toujours pas corrigé. Cependant en raison de la richesse modérée du microbiote pulmonaire, la profondeur de séquençage reste suffisante comme l'attestent les courbes de raréfaction. En utilisant des amorces ciblant d'autres régions, le chevauchement des reads pairés pourrait être plus important et éviterait ainsi de perdre des reads. 
+La version 3 du kit MiSeq Reagent Kit permet de produire des reads plus long (300 pb) que dans sa version précedente (250pb). Ceci afin d'augmenter la précision de l'assignation taxonomique (Figure \ref{rnasens}). En contrepartie la qualité du séquençage est médiocre aux extrêmités avec des scores qui chutent en dessous de 20. À cause de cela, seulement 43\% de reads sont exploitables. 
+ +C'est un problème connu lié à la chimie du kit que Illumina n'a pas corrigé à ce jour. Cependant, en raison de la richesse modérée du microbiote pulmonaire, la profondeur de séquençage reste suffisante comme l'attestent les courbes de raréfaction. En utilisant des amorces ciblant d'autres régions de l'ADNr 16S, le chevauchement des reads pairés pourrait être plus important et éviterait ainsi la perte des reads. 
 
 \begin{figure}[t]
 \begin{center}
@@ -866,17 +882,18 @@ C'est un problème connu lié à la chimie du kit qu'illumina n'a toujours pas c
 \end{figure}
 
 \subsubsection{Pipeline}
-La stratégie close-référence utilisée dans le pipeline, a permis d'assigner le genre à plus 99\% des reads analysable. La majorité des genres bactéries du microbiote respiratoire est donc connue de la base de données \textit{greengene}.
-En revanche, la résolution taxonomique n'atteint pas le rang de l'espèce. Il a en effet déjà été montré que les régions hypervariables prises isolément ne sont pas assez discriminantes \cite{Yang2016}. Les analyses en métagénomiques apporteraient l' avantage de séquencer l'ensemble de l'ADNr 16S \cite{Ranjan2016}.
+La stratégie close-reference utilisée dans le pipeline a permis d'assigner jusqu'au genre bactérien plus de 99\% des reads analysables. La majorité des genres bactéries du microbiote respiratoire mucoviscidosique est donc connue de la base de données \textit{greengene}.
+ +En revanche, la résolution taxonomique n'atteint pas le rang de l'espèce. Il a en effet déjà été montré que les régions hypervariables prises isolément ne sont pas assez discriminantes \cite{Yang2016}. Les analyses en métagénomiques apporteraient l'avantage de séquencer l'ensemble de l'ADNr 16S \cite{Ranjan2016}
 D'autre part, l'assignation taxonomique dépend d'une similarité fixée arbitrairement à 97\%. D'autres techniques de clusterisation permettent de s'affranchir de ce seuil. Il s'agit par exemple de la \textit{Maximum entropy clusterisation} \cite{Bobadilla2015}. 
-Enfin, la phylogénie des bactéries n'a pas été prise en compte dans l'étude. Elle permettrait de mesurer une distance phylogénétique entre les OTUs et comparer les échantillons. Un microbiote contenant 3 espèces proches n'est pas la même chose qu'un microbiote contenant 3 espèces très éloignées. La distance UniFrac\cite{Lozupone2005} serait alors utilisée pour remplacer la distance de Bray-Curtis. 
+Enfin, la phylogénie des bactéries n'a pas été prise en compte dans l'étude. Elle permettrait de mesurer une distance phylogénétique entre les OTUs et comparer les échantillons. Un microbiote contenant 3 espèces proches n'est pas la même chose qu'un microbiote contenant 3 espèces très éloignées. Pour ce faire, il serait intéressant d'utiliser la distance UniFrac\cite{Lozupone2005} en complément de la distance de Bray-Curtis. 
+
 
 %[https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5382435/]
 % to gut microbiota, the ‘core' airway microbiota in healthy lungs is predominantly %comprised of the phyla Bacteroidetes, Firmicutes and Proteobacteria, followed by %lesser proportions of Actinobacteria.28, 32, 33 
 
 \subsection{Analyse des données}
 \subsubsection{Augmentation des Bactéroidetes}
-Nos résultats chez les patientes mucoviscidoses montrent une augmentation des \textit{Protéobacteria} aux dépens des \textit{Bacteroidetes}. En effet chez le sujet sain, les propositions sont plutôt de 10\% de \textit{Proteobactéria} et une proportion égale de 40\% pour les \textit{Bactéoridete} et de \textit{Firmicutes}[@]. 
+Nos résultats chez les patients mucoviscidosiques montrent une augmentation des \textit{Proteobacteria} (31.48\%) aux dépens des \textit{Bacteroidetes} (11.11\%). En effet chez le sujet sain, les propositions sont plutôt de 10\% de \textit{Proteobactéria} et une proportion égale de 40\% pour les \textit{Bactéoridete} et de \textit{Firmicutes}[@]. 
 Ceci corrobore les résultats de [@][@] retrouvant ces mêmes proportions dans la Mucoviscidose, l’asthme et la BPCO. Cet excès s’explique principalement par la dominance d’\textit{Haemophilus} et de \textit{Neisseria}. 
 \subsubsection{Infection et inflammation}
 Les principaux pathogènes associés à la mucoviscidose sont tous retrouvés avec une tendance à dominer les autres. Pourtant, aucun patient dans l'étude n'était en exacerbation. L'absence de corrélation entre infection et inflammation est proposée dans l'article de [@] (Tirouvanziam2000). Selon cette hypothèse, ce serait l'inflammation qui précède la colonisation.  
@@ -891,14 +908,14 @@ Une autre hypothèse, celle de Whelan \cite{Whelan2015} suggère que la composit
 \end{figure}
 
 \subsubsection{Présence de \textit{Pseudomonas}}
-Malgré la sortie de l’étude de tous les patients positifs en culture,  \textit{P.aeruginosa} est retrouvé dans 53 échantillons. Ceci confirme la faible sensibilité de la culture et montre l’intérêt d’autre méthode de diagnostic comme la PCR\cite{LeGall}.
+Malgré l'absence d'échantillon positif en culture, l'ADNr 16S de \textit{P.aeruginosa} est retrouvé dans 53 échantillons . Ceci confirme la faible sensibilité de la culture et montre l’intérêt d’autre méthode de diagnostic comme la PCR\cite{LeGall}.
 
 \subsubsection{Présence d'anaérobie}
 De fortes abondances en anaérobies  sont également retrouvées avec notamment \textit{Prevotella} et \textit{Veillonella}. La corrélation forte  entre ces deux genres a été retrouvée dans l’étude de [@]. La signification clinique de leurs présences est encore incertaine \cite{Tunney2008}. 
 
 \subsubsection{Dynamique du microbiote}
-Les résultats longitudinaux nous montrent la dynamique et la complexité du microbiote respiratoire. Et surtout la très grande variabilité inter-individuel dans la composition des microbiotes, qui confirme plusieurs études \cite{Coburn2015}.  \\
-Les deux populations qui se distinguent évoquent le modèle attack-climax \cite{Conrad2013}. . Une population d'attaque (attack population) ferait le lit à l'émergence des bactéries présentes en faible abondance (climax population) comme \textit{Pseudomonas aeruginosa}.  
+Les résultats longitudinaux nous montrent la dynamique et la complexité du microbiote respiratoire, et surtout la très grande variabilité inter-individuelle dans la composition des microbiotes, comme précédemment démontré dans  plusieurs études \cite{Coburn2015}.  \\
+ +La population stable et fluctuante que nous avons identifier évoquent le modèle attack-climax \cite{Conrad2013}. . Une population d'attaque (Attack) par exemple Haemophilus, ferait le lit à l'émergence des bactéries présentes en faible abondance (Climax) comme \textit{Pseudomonas aeruginosa}.  
 
 \subsubsection{Patient Free et Never}
 Aucune des données récoltées n’a mis en évidence un groupe particulier de microbiote. L’âge n’a pas été corrélé à la présence d’\textit{Haemophilus}, ni à l’augmentation de diversité évoquée dans plusieurs papiers. Probablement, car les sujets de l'étude avaient des âges proches. La comparaison d'alpha diversité entre les patients Free et Never n'as pas relevé de différence significative. Il n'y a pas plus d'espèces dans l'une ou l'autre des catégories. 
@@ -910,8 +927,7 @@ Microbial communities were highly individual in composition and stability, usual
 \subsection{Limite de l'étude}
 Plusieurs points sont à prendre en considération pour critiquer la justesse des résultats. Premièrement, les ADN séquencés proviennent d'expectoration bronchique ayant traversé les voies aériennes supérieures. Une contamination est toujours possible. Elle est cependant assez réduite, car nous avons pris en considération le score cytologique de Bartlett.  
 Une différence entre deux échantillons d'un même patient pourrait s'expliquer par l'hétérogénéité du poumon. Il a cependant été montré [@] sur des prélèvements in situ que le microbiote pulmonaire est homogène.  
-Ensuite la stratégie 16S n'est pas parfaite[@]. La détection varie en fonction des amorces utilisées (figure). Et d'autres espèces ne sont tout simplement pas amplifier par cette stratégie[@]. De plus, cette stratégie ne fait pas la distinction entre les ADNs de bactéries vivantes ou morte.  
-
+Ensuite la stratégie 16S n'est pas parfaite[@]. La détection varie en fonction des amorces utilisées (figure). Et d'autres espèces ne sont tout simplement pas amplifiées par cette stratégie[@]. De plus, cette stratégie ne fait pas la distinction entre les ADNs de bactéries vivantes ou mortes.  
 \begin{figure}
 \begin{center}
 \includegraphics[scale=0.70]{img/enfin_barplot_genus_norm.png}\hfill
