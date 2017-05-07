@@ -179,21 +179,21 @@ incluse dans la section intitulée «``GNU Free Documentation License''.»
 
 \section{Avant-propos}
 
-Depuis Pasteur, les bactéries ont toujours été associées aux maladies. La mise en évidence des agents pathogènes comme la syphilis ou la peste n'a pas aidé à sortir de ce stéréotype. La médecine les a donc longtemps considérés comme l'ennemie à combattre plutôt qu'un allié. 
-Aujourd'hui, personne ne peut nier que les traitements anti-infectieux ont diminuer la morbidité des maladies infectieuses.
-Les avancées majeures dans les domaines de l'hygiène, la vaccination et les antibiotiques ont conduit à faire diminuer la prévalence des maladies infectieuses voire à les faire disparaître. Cependant, la destruction systématique et massive des micro-organismes qui font partie de nous depuis des milliers d'années pourrait bien être la cause de l'émergence de nouvelles maladies (Figure \ref{hyigienisme}).
+Depuis Pasteur, les bactéries ont toujours été associées aux maladies. La mise en évidence des agents pathogènes comme la syphilis ou la peste n'a pas aidé à tordre le cou de ce stéréotype. La médecine les a donc longtemps considérés comme l'ennemie à combattre plutôt qu'un allié. 
+Aujourd'hui, personne ne peut nier que les traitements anti-infectieux ont diminué la morbidité des maladies infectieuses.
+Les avancées majeures dans les domaines de l'hygiène, la vaccination et les antibiotiques ont conduit à faire diminuer la prévalence des maladies infectieuses voire à les faire disparaître. Cependant, la destruction systématique et massive des micro-organismes qui font partie de nous depuis des milliers d'années pourrait bien être la cause de l'émergence de nouvelles maladies\cite{Bach2002} (Figure \ref{hyigienisme}).
 
 
 \begin{figure}[ht]
 \begin{center}
 \includegraphics[scale=0.5]{img/allergie_infection.jpg}\hfill
 \end{center}
-\caption{Incidence des maladies infectieuses et auto-immunes en Europe au cours de 50 ans \cite{Bach2002}. }
+\caption{Incidence des maladies infectieuses et auto-immunes en Europe au cours de 50 ans. }
 \label{hyigienisme}
 \end{figure}
 
 
-Les méthodes récentes d'exploration de ce monde microscopique comme le séquençage haut débit ont permis aux bactéries de retrouver leurs lettres de noblesse.
+Les méthodes récentes d'exploration de ce monde microscopique comme le séquençage haut-débit ont permis aux bactéries de retrouver leurs lettres de noblesse.
 Elles sont présentes partout et jouent le premier rôle dans le fonctionnement des écosystèmes. Elles sont, par exemple, impliquées dans le cycle de l'azote et permettent à la biomasse d'absorber le diazote atmosphérique. Les bactéries sont ainsi la source primaire à laquelle les organismes puisent pour construire leurs protéines et leurs acides nucléiques.
 Elles peuvent survivre dans les milieux les plus inhospitaliers. Les Archées (anciennement archéobactéries) peuvent résister dans des environnements d'acidité et de température exceptionnellement élevées ou faibles. On les retrouve dans les fonds océaniques où, privées de lumière, elles sont la seule source d'énergie pour la faune grâce à la chimiosynthèse à l'instar de la photosynthèse. 
 Le corps humain est lui aussi un environnement riche en bactéries. La majorité des bactéries a longtemps été indétectable par les méthodes de cultures classiques. Mais à présent, nous savons que les régions anatomiques autrefois considérées stériles contiennent beaucoup de bactéries. 
@@ -261,9 +261,9 @@ L’abondance relative est l'expression en pourcentage de l'abondance absolue.
 \label{OTUTABLE}
 \end{figure}
 
-\item[La diversité alpha] est une mesure de la biodiversité au sein d’un échantillon. Elle correspond à une colonne de la table des OTUs. La richesse, l'indice de Chao1, de Shannon et de Simpson sont des indices de diversité alpha.
+\item[La diversité alpha] est une mesure de la biodiversité au sein d’un échantillon. Elle correspond à l'analyse d'une colonne de la table des OTUs. La richesse, l'indice de Chao1, de Shannon et de Simpson sont des indices de diversité alpha.
 
-\item[La diversité bêta] est une analyse descriptive de la biodiversité entre plusieurs échantillons. Elle correspond à l’ensemble de la table des OTUs. L’approche la plus courante est de réaliser une analyse multivariée par des méthodes d’ordination. Il s’agit de représenter un graphique à n dimensions, impossible à dessiner, en le projetant dans un espace à deux ou trois dimensions.
+\item[La diversité bêta] est une analyse descriptive de la biodiversité entre plusieurs échantillons. Elle correspond à l'analyse de l’ensemble de la table des OTUs. L’approche la plus courante est de réaliser une analyse multivariée par des méthodes d’ordination. Il s’agit de représenter un graphique à n dimensions, impossible à représenter, en le projetant dans un espace à deux ou trois dimensions.
 
 \item[La richesse] (richness) est le nombre d'OTU présent dans un échantillon. Les deux échantillons suivants ont la même richesse (2), mais pas les mêmes abondances.
 
@@ -306,7 +306,7 @@ L'équitabilité du premier échantillon est plus grande que le second
 
 \newpage
 
-\item[La courbe de raréfaction] est utilisée pour déterminer si la profondeur de séquençage est suffisante pour caractériser la diversité d’un échantillon. Pour comprendre, imaginons un sac noir contenant des billes (reads) de différentes couleurs (espèces). Avec deux couleurs, une petite poignée (un petit échantillon) de bille sera suffisante pour évaluer la diversité. Vous ne trouverez pas de nouvelle couleur avec plus de billes dans votre main. En revanche, avec davantage de couleurs dans le sac, il faudra une poignée plus importante pour évaluer la diversité. La courbe de raréfaction permet d'évaluer si cette poignée de bille est suffisamment représentative.
+\item[La courbe de raréfaction] est utilisée pour déterminer si la profondeur de séquençage est suffisante pour caractériser la diversité d’un échantillon. Pour comprendre, imaginons un sac noir contenant des billes (reads) de différentes couleurs (espèces). Avec deux couleurs dans le sac, une petite poignée (un petit échantillon) de billes sera suffisante pour évaluer la diversité. Vous ne trouverez pas de nouvelle couleur avec plus de billes dans votre main. En revanche, avec davantage de couleurs dans le sac, il faudra une poignée plus importante pour évaluer la diversité. La courbe de raréfaction permet d'évaluer si cette poignée de bille est suffisamment représentative.
 Pour générer cette courbe, des groupes de reads de taille croissante (1..n) sont tirés aléatoirement depuis l' échantillon. Le groupe est reporté sur l'axe X et le nombre d'OTU retrouvé dans ce groupe est reporté sur l’axe Y.
 Une courbe s’aplatissant indique une bonne profondeur de séquençage (Figure \ref{rarefaction_demo}).
 \end{description}
@@ -327,7 +327,7 @@ Une courbe s’aplatissant indique une bonne profondeur de séquençage (Figure 
 \begin{description}
 \item[Pipeline] 
 Un pipeline est un ensemble d'étapes de calcul informatique. Chaque étape prend en entrée des fichiers pour en produire des nouveaux dans sa sortie. On peut comparer cela aux étapes d'une recette de cuisine. Sans parallélisation, un cuisinier (le processeur) doit attendre de faire fondre le beurre avant de battre les œufs en neige (exécution synchrone). En parallélisant, le cuisinier peut réaliser plusieurs étapes en même temps. Battre les œufs pendant que le beurre fond (exécution asynchrone). 
-Maintenant si l'objectif est de produire 188 gâteaux (188 analyses) et que l'on dispose de 64 cuisiniers (64 processeurs), l'organisation des tâches devient complexe si l'on veut maximiser le rendement. Pour cela, on dispose d'outils comme \textit{Snakemake}\cite{Koster2012}, qui permettent de trouver la meilleure façon d'optimiser les tâches en construisant un graphe orienté acyclique.
+Maintenant si l'objectif est de produire 188 gâteaux (188 analyses) et que l'on dispose de 64 cuisiniers (64 processeurs), l'organisation des tâches devient complexe si l'on veut maximiser le rendement. Pour cela, on dispose d'outils comme \textit{Snakemake}\cite{Koster2012}, qui permettent de trouver la meilleure façon d'optimiser les tâches en construisant ce qu'on appelle un graphe orienté acyclique.
 
 \item[NGS](Next Generation Sequencing) désigne l'ensemble des séquenceurs de nouvelle génération permettant de séquencer un nombre très important de fragments d'ADN. 
 
@@ -359,7 +359,7 @@ La figure \ref{pcoatuto} illustre ce principe avec un exemple à deux dimensions
 \begin{center}
 \includegraphics[scale=0.6]{img/pcoatuto.png}\hfill
 \end{center}
-\caption{Représentation de plusieurs échantillons ne contenant que deux espèces A et B. Chaque échantillon est assimilable à un point de coordonnées (abondance A; abondance B). Il est alors possible de calculer des distances entre les échantillons. La plus connue étant la distance euclidienne. Mais d'autres existent comme la distance de Bray-Curtis. Sur cette figure, les échantillons 1 et 2 sont ont des microbiotes proches, car la distance d1 qui les sépare est petite. Dans la réalité, il y a plus d'espèces donc plus de dimensions. Une PCoA consiste à réduire cet espace multidimensionnelle en un espace 2D respectant les distances. }
+\caption{Représentation de plusieurs échantillons ne contenant que deux espèces A et B. Chaque échantillon est assimilable à un point de coordonnées (abondance A; abondance B). Il est alors possible de calculer des distances entre les échantillons. La plus connue étant la distance euclidienne. Mais d'autres existent comme la distance de Bray-Curtis. Sur cette figure, les échantillons 1 et 2 sont ont des microbiotes proches, car la distance d1 qui les sépare est petite. Dans la réalité, il y a plus d'espèces donc plus de dimensions. Une PCoA consiste à réduire cet espace multidimensionnelle en un espace 2D qui respecte les distances entre les points. }
 \label{pcoatuto}
 \end{figure}
 \newpage
@@ -374,7 +374,7 @@ La figure \ref{pcoatuto} illustre ce principe avec un exemple à deux dimensions
 \end{mycapequ}
 
 
-\item[Un fichier fastq] contient les séquences des reads et leurs qualités par nucléotides exprimés en Phred Score.
+\item[Un fichier fastq] contient les séquences des reads et leurs qualités par nucléotides exprimés en Phred Score. Chaque read est représenté par 4 lignes dans un fichier textuelle (Figure \ref{fastq}). Ces fichiers sont produit par le séquençage haut-débit. 
 
 \begin{figure}[!h]
 \begin{center}
@@ -383,6 +383,8 @@ La figure \ref{pcoatuto} illustre ce principe avec un exemple à deux dimensions
 \caption{Exemple d'un read contenu dans un fichier fastq. Les scores de qualités sont encodés avec des symboles ASCII. Par exemple le quatorzième T  est associé au symbole « : » correspondant au score phred de 25, soit une probabilité de 0.003\% d'erreur.  }
 \label{fastq}
 \end{figure}
+
+\item[Le multiplexage] est utilisé pour pouvoir séquencer plusieurs échantillons différents dans une même librairie. Pour cela, les ADNs de chaque échantillon sont marqués avec une courte séquence nucléotidique appelée barcode ou index suivant la technologie. Lors de l'analyse bioinformatique, les données sont démultiplexés afin d'associer chaque read à son échantillon. 
 
 \end{description}
 
