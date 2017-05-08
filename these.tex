@@ -405,7 +405,7 @@ Les traitements correcteurs/potentiateurs de la protéine CFTR, comme l'\textit{
 L’atteinte pulmonaire dans la mucoviscidose est caractérisée par des réactions inflammatoires qui dégradent progressivement la fonction respiratoire. Cette inflammation est la conséquence d'un afflux excessif de polynucléaire avec libération de médiateur\cite{Heijerman2005} probablement en réponse à une agression microbienne. Plusieurs pathogènes sont impliqués. Chez les jeunes enfants\cite{Davies}, \textit{Haemophilus influenza} et \textit{Staphylococcus aureus} sont le plus souvent responsable. \textit{Burkolderia cepacia complex} et \textit{Stenotrophomonas maltophilia} sont retrouvés parmi les sujets plus âgés \cite{Davies}.
 Mais c’est \textit{Pseudomonas aeruginosa} qui caractérisent l’atteinte pulmonaire dans la mucoviscidose en marquant un tournant décisif dans l’évolution de la maladie. Ce bacille aérobie stricte est une bactérie de l'environnement rarement retrouvé parmi les patients sains\cite{Plesiat}. En revanche, dans la mucoviscidose, il est mis en évidence\cite{LeBourgeois}  chez 60\%des patients jeunes, et plus de 90\% des patients adulte.\\
 La primocolonisation à \textit{Pseudomnas aeruginosa} est difficilement détectable, mais elle semble avoir lieu tôt dans l’enfance[@]. Il y a ensuite une phase de latence, variable entre les individus, marque par des épisodes d’exacerbations et de rémissions. À ce moment, l’éradication par des antibiotiques reste possible.
-Puis survient le passage à la chronicité. \textit{Pseudomnas aeruginosa} s'adapte à son milieu et s’installe à long terme. Il perd certains caractères de virulence, mais devient résistant aux antibiotiques\cite{LeBourgeois}. Son phénotype change. Il se transforme pour devenir mucoïde en sécrétant un film d’alginate qui le protège du système immunitaire. Les mécanismes sous-jacents à cette adaptation sont ingénieux. La forte densité en bactérie est responsable d’activation de certains gènes par un processus appelé \textit{quorum sensing}\cite{Ruimy2004}. Un processus dans lequel chaque bactérie communique avec ses voisines par des signaux chimiques.
+Puis survient le passage à la chronicité. \textit{Pseudomnas aeruginosa} s'adapte à son milieu et s’installe à long terme. Il perd certains caractères de virulence, mais devient résistant aux antibiotiques\cite{LeBourgeois}. Son phénotype change. Il se transforme pour devenir mucoïde en sécrétant un film d’alginate qui le protège du système immunitaire. Les mécanismes sous-jacents à cette adaptation sont ingénieux. La forte densité en bactérie est responsable d’activation de certains gènes par un processus appelé \textit{quorum sensing}\cite{Sandoz2007}. Un processus dans lequel chaque bactérie communique avec ses voisines par des signaux chimiques.
 Le génome de \textit{Pseudomnas aeruginosa} devient aussi hyperpermutable\cite{Davies} pour présenter une plus grande diversité génétique au regard de la sélection naturelle\footnote{En biologie évolutive, il s'agit d'évolvabilité} et donc évoluer plus rapidement. \\
 À ce stade, le traitement antibiotique n’est plus curatif et l'évolution tend inexorablement vers un déclin de la fonction respiratoire. \\
 L'approche clinique est donc préventive afin de retarder le passage à la chronicité. Elle vise à éliminer \textit{Pseudomnas aeruginosa} dès qu'il est détecté en culture grâce à une surveillance rapprochée \cite{LeBourgeois}. La culture étant peu sensible, d’autres méthodes d'identification peuvent être employées. La détection des anticorps anti-pyocyaniques par ELISA a montré peu de sensibilité \cite{Plesiat}.
@@ -888,14 +888,10 @@ La figure  \ref{pcoa} est une analyse multivariée discriminant les groupes Free
 \section{Discussion}
 \subsection{Production des données}
 \subsubsection{Séquençage}
-La version 3 du kit MiSeq Reagent Kit permet de produire des reads plus long (300pb) que dans la version précédente (250pb). Ceci afin d'augmenter la précision de l'assignation taxonomique (Figure \ref{rnasens}). En contrepartie la qualité du séquençage est médiocre aux extrêmités avec des scores qui chutent en dessous de 20. À cause de cela, seulement 43\% de reads sont exploitables.
+La version 3 du kit MiSeq Reagent Kit produit des reads plus long (300pb) que dans la version précédente (250pb) afin d'augmenter la précision de l'assignation taxonomique (Figure \ref{rnasens}). En contrepartie la qualité du séquençage est médiocre aux extrêmités avec des scores qui chutent en dessous de 20. À cause de cela, seulement 43\% de reads sont exploitables.
 C'est un problème connu lié à la chimie du kit que Illumina n'a pas corrigé à ce jour. La profondeur de séquençage reste toutefois suffisante comme l'attestent les courbes de raréfaction. En utilisant d'autres amorces ciblant des régions d'ADNr 16S différente, nous pourrions augmenter la taille du chevauchement pour gagner en profondeur mais en diminuant la taille des reads. \\
-Les séquenceurs de 3ème générations comme le Mini Ion (Oxford Nanopore) ou le PacBio (Pacific Bioscience) apporteraient un avantage certain. Ces derniers sont capable de produire des reads très long ( 10 000pb en moyenne) et pourraient facilement séquencer l'intégralité de l'ARN 16S. De plus, contrairement à l'Illumina, il n'y a pas d'amplification des fragments lors du séquençage qui biaise l'estimation des abondances. Les fragments d'ADN sont directement lu (Technologie SMS: Single Molecule Sequencing).
-La qualité des reads sont en revanche de mauvaise qualité. Magrè cela, deux études\cite{Wagner2016,Benitez-Paez2016} ont déjà montré que leurs résolution taxonomique atteind facilement celui de l’espèce.
-
-
-
-
+Les séquenceurs de 3ème générations comme le Mini Ion (Oxford Nanopore) ou le PacBio (Pacific Bioscience) apporteraient un avantage certain. Ces derniers sont capable de produire des reads très long ( 10 000pb en moyenne) et pourraient facilement séquencer l'intégralité de l'ARN 16S. De plus, contrairement à Illumina, les fragments d'ADN sont directement lu (Technologie SMS: Single Molecule Sequencing) evitant ainsi tout biais d'amplification pouvant surévaluer les abondances.
+La qualité des reads de ces séquenceurs de 3ème génération sont en revanche de mauvaise qualité. Malgré cela, deux études\cite{Wagner2016,Benitez-Paez2016} ont déjà montré que leurs résolutions taxonomiques atteinds facilement celui de l’espèce.
 
 \begin{figure}
 \begin{center}
@@ -907,13 +903,24 @@ La qualité des reads sont en revanche de mauvaise qualité. Magrè cela, deux �
 
 \subsubsection{Pipeline}
 La stratégie close-reference utilisée dans le pipeline mucobiome a permis d'assigner jusqu'au niveau du genre, plus de 99\% des reads analysées. La base de donnée \textit{greengene} est donc assez exhaustif pour analyser le microbiote réspiratoire car tous les genres sont connus.
-En revanche, La résolution taxonomique n'atteint pas le rang de l'espèce. Il a en effet déjà été montré que les régions hypervariables prises isolément ne sont pas assez discriminantes \cite{Yang2016}. Deux espèces peuvent par exemple varier d'un seul nucléotide dans une région hypervariable.
-D'autre part, l'assignation taxonomique dépend d'une similarité fixée arbitrairement à 97\%. D'autres algorithmes permettent de s'affranchir de ce seuil. Il s'agit par exemple de la clusterisation par calcul d'entropie maxium \textit{Maximum entropy clusterisation} \cite{Bobadilla2015}.
+En revanche, La résolution taxonomique n'atteint pas le rang de l'espèce. Il a en effet déjà été montré que les régions hypervariables prises isolément ne sont pas assez discriminantes \cite{Yang2016}. Deux espèces différentes peuvent par exemple varier d'un seul nucléotide dans une région hypervariable.
+D'autre part, notre assignation taxonomique dépend d'une similarité fixée arbitrairement à 97\%. D'autres algorithmes permettent de s'affranchir de ce seuil. Il s'agit par exemple de la clusterisation par calcul d'entropie minimum (Figure \ref{entropy}).
+
+
+\begin{figure}
+\begin{center}
+\includegraphics[scale=0.7]{img/entropy.png}\hfill
+\end{center}
+\caption{Principe de la décomposition par entropie minimum. Etape 1: les reads sont alignés. L'entropie H est calculé pour chaque position nucléotidique. Etape 2: La position ayant la plus forte entropie est utilisé pour discriminer deux groupes. Etape 3 : Le processus est répété jusqu'à atteindre une entropie totale de 0 }
+\label{entropy}
+\end{figure}
+
+
 
 \subsubsection{Methode d'analyse}
 Parmi les analyses de bêta diversité, seul l'analyse en coordonnée principale a été présenté en utilisant la distance de Bray-Curtis.
 Nous avions également réalisé d'autre ordination qui n'ont pas été concluente. Par exemple en changer le type de distance ou en utilisant un positionnement multidimensionnel (MDS) au la place de la PCoA. \\
-Il serait intéressant de prendre en compte la proximité phylogénétique des bactéries. Un microbiote contenant trois bactéries proches n'est pas la même chose qu'un microbiote contenant trois bactéries très éloignés.
+Par ailleurs, la proximité phylogénétique des bactéries n'a pas été pris en compte. Un microbiote contenant trois bactéries proches n'est pas la même chose qu'un microbiote contenant trois bactéries très éloignés.
 La distance UniFrac\cite{Lozupone2005} pourrait alors remplacer la distance de Bray-Curtis en prenant en considération la phylogénie des bactéries.
 
 
@@ -922,8 +929,17 @@ La distance UniFrac\cite{Lozupone2005} pourrait alors remplacer la distance de B
 
 \subsection{Analyse des données}
 \subsubsection{Augmentation des Bactéroidetes}
-Nos résultats chez les patients mucoviscidosiques montrent une augmentation des \textit{Proteobacteria} (31.48\%) aux dépens des \textit{Bacteroidetes} (11.11\%). En effet chez le sujet sain, les propositions sont plutôt de 10\% de \textit{Proteobactéria} et une proportion égale de 40\% pour les \textit{Bactéoridete} et de \textit{Firmicutes}[@].
-Ceci corrobore les résultats de [@][@] retrouvant ces mêmes proportions dans la Mucoviscidose, l’asthme et la BPCO. Cet excès s’explique principalement par la dominance d’\textit{Haemophilus} et de \textit{Neisseria}.
+Par rapport au sujet sain, nos résultats chez les patients mucoviscidosiques montrent une augmentation des \textit{Proteobacteria} (31.48\%) aux dépens des \textit{Bacteroidetes} (11.11\%). Ainsi qu'une augmentation des \textit{Actinobacteria} (7.41\%). Ces résultats sont en accord avec ceux présentés dans la meta-analyse de \textit{Nature}\cite{Marsland2014} retrouvant ces proportions dans la Mucoviscidose, l'asthme et la BPCO. Cet excès s’explique principalement par la dominance d’\textit{Haemophilus} et de \textit{Neisseria}.
+
+\begin{figure}[h]
+\begin{center}
+\includegraphics[scale=0.70]{img/micromuco.png}\hfill
+\end{center}
+\caption{Modèle de Whelan et Surette \cite{Whelan2015}}
+\label{micromuco}
+\end{figure}
+
+
 \subsubsection{Infection et inflammation}
 Les principaux pathogènes associés à la mucoviscidose sont tous retrouvés avec une tendance à dominer les autres. Pourtant, aucun patient dans l'étude n'était en exacerbation. L'absence de corrélation entre infection et inflammation est proposée dans l'article de [@] (Tirouvanziam2000). Selon cette hypothèse, ce serait l'inflammation qui précède la colonisation.
 Une autre hypothèse, celle de Whelan \cite{Whelan2015} suggère que la composition du microbiote pulmonaire provenant d'un crachat serait l'addition entre une population venant des territoires pulmonaires sains et une autre des territoires inflammatoires. Ce modèle expliquerait la variation inter échantillon que nous retrouvons.
