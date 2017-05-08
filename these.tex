@@ -318,7 +318,7 @@ Une courbe s’aplatissant indique une bonne profondeur de séquençage (Figure 
 \label{rarefaction_demo}
 \end{figure}
 
-\subsection{Termes utilisés en bioinformatique}
+\subsection{Termes utilisés en bio-informatique}
 
 \paragraph{Un pipeline} est un ensemble d'étapes de calcul informatique. Chaque étape prend en entrée des fichiers pour en produire de nouveaux dans sa sortie. On peut comparer cela aux étapes d'une recette de cuisine. Sans parallélisation, un cuisinier (le processeur) doit attendre de faire fondre le beurre avant de battre les œufs en neige (exécution synchrone). En parallélisant, le cuisinier peut réaliser plusieurs étapes en même temps. Battre les œufs pendant que le beurre fond (exécution asynchrone).
 Maintenant si l'objectif est de produire 188 gâteaux (188 analyses) et que l'on dispose de 64 cuisiniers (64 processeurs), l'organisation des tâches devient complexe si l'on veut maximiser le rendement. Pour cela, on dispose d'outils comme \textit{Snakemake}\cite{Koster2012}, qui permettent de trouver la meilleure façon d'optimiser les tâches en construisant ce qu'on appelle un graphe orienté acyclique.
@@ -378,9 +378,9 @@ La figure \ref{pcoatuto} illustre ce principe avec un exemple à deux dimensions
 \label{fastq}
 \end{figure}
 
-\paragraph{Le multiplexage} est utilisé pour pouvoir séquencer plusieurs échantillons différents dans une même librairie. Pour cela, les ADNs de chaque échantillon sont marqués avec une courte séquence nucléotidique appelée barcode ou index suivant la technologie. Lors de l'analyse bioinformatique, les données sont démultiplexées afin d'associer chaque read à son échantillon.
+\paragraph{Le multiplexage} est utilisé pour pouvoir séquencer plusieurs échantillons différents dans une même librairie. Pour cela, les ADNs de chaque échantillon sont marqués avec une courte séquence nucléotidique appelée barcode ou index suivant la technologie. Lors de l'analyse bio-informatique, les données sont démultiplexées afin d'associer chaque read à son échantillon.
 
-\paragraph{Un graphe} est un object mathématique défini par des nœuds (nodes) reliés par des arrêtes (edges). Les graphes permettent de répondre à diffèrent problème mathématique. Par exemple le problème des sept ponts de Königsberg, qui consiste à savoir s'il existe une promenade passant par 7 ponts une seul fois. La théorie des graphes est très utilisée en bioinformatique.
+\paragraph{Un graphe} est un object mathématique défini par des nœuds (nodes) reliés par des arrêtes (edges). Les graphes permettent de répondre à diffèrent problème mathématique. Par exemple le problème des sept ponts de Königsberg, qui consiste à savoir s'il existe une promenade passant par 7 ponts une seul fois. La théorie des graphes est très utilisée en bio-informatique.
 
 \newpage
 
@@ -411,7 +411,7 @@ Puis survient le passage à la chronicité. \textit{Pseudomnas aeruginosa} s'ada
 Le génome de \textit{Pseudomnas aeruginosa} devient aussi hyperpermutable\cite{Davies} pour présenter une plus grande diversité génétique au regard de la sélection naturelle\footnote{En biologie évolutive, il s'agit d'évolvabilité} et donc évoluer plus rapidement. \\
 À ce stade, le traitement antibiotique n’est plus curatif et l'évolution tend inexorablement vers un déclin de la fonction respiratoire. \\
 L'approche clinique est donc préventive afin de retarder le passage à la chronicité. Elle vise à éliminer \textit{Pseudomnas aeruginosa} dès qu'il est détecté en culture grâce à une surveillance rapprochée \cite{LeBourgeois}. La culture étant peu sensible, d’autres méthodes d'identification peuvent être employées. La détection des anticorps anti-pyocyaniques par ELISA a montré peu de sensibilité \cite{Plesiat}.
-La PCR ciblée associant les protéines bactériennes \textit{OPRL1}, \textit{GYRB1} et \textit{ECFX1}  s’est montrée plus sensible et plus spécifique que la culture\cite{LeGall}. \\
+La PCR ciblée associant les protéines bactériennes \textit{oprL}, \textit{gyrB} et \textit{ecfX}  s’est montrée plus sensible et plus spécifique que la culture\cite{LeGall}. \\
 En pratique, la colonisation chronique est définie lorsque 3 expectorations sont rendues positives en culture, successivement au cours d’un suivi mensuel ou bimensuel \cite{LeBourgeois}.
 Une autre classification, celle de Lee\cite{Lee2003} définit 4 groupes (Tableau \ref{lee}):
 
@@ -439,7 +439,7 @@ On ne sait pas aujourd’hui pourquoi \textit{Pseudomnas aeruginosa} s’install
 La mutation \textit{CFTR} serait responsable d'un mucus plus visqueux et moins épais associé à une la perte de fonction des cils bronchiques. Les bactéries seraient alors piégées dans ce mucus pour être exposées plus longtemps à l'épithélium respiratoire et ainsi déclencher une réponse inflammatoire.
 
 \textbf{Augmentation de salinité}\cite{Davies}:
-L'augmentation de la salinité du mucus aurait pour conséquence de désactiver des peptites antimicrobiens présents comme les beta-defensines, lysozymes ou les lactoferrines.
+L'augmentation de la salinité du mucus aurait pour conséquence de désactiver des peptites antimicrobiens présents comme les bêta-defensines, lysozymes ou les lactoferrines.
 
 \textbf{Adhérence aux cellules}\cite{Davies}:
 \textit{P.aeruginosa} serait un ligand nature des cellules portant la protéine CFTR non mutée. Après internalisation la bactérie serait détruite.
@@ -771,7 +771,7 @@ Les abondances de \textit{Staphylococcus} et \textit{Haemophilus} sont faibles d
 Les figures \ref{alphaObs},\ref{alphaChao1} et \ref{alphaShannon} en annexe, montrent l’évolution des diversités alpha par patient au cours du temps en utilisant les indices Chao1, Observed et Shannon. \\
 La richesse (Observed , Chao1) par patient varie de 10 à 40 genres bactériens. La richesse du patient 256 est faible. Celle du patient 26 élevée.
 Certains patients ont des richesses stables au court du temps. Les patients 25,26,74 conservent leurs richesses sur plus de 5 prélèvements successifs. Les patients 20 et 69 présentent une stabilité globale entrecoupée par des pertes de biodiversité. La richesse du patient 8 diminue progressivement. Les patients 23, 232 et 248 ont des fluctuations plus chaotiques.
-L'indice de Shannon montre que pour un richesse constante dans le temps, l'équitabilité est différente. Par exemple la richesse du patient 223 est stable sur la figure \ref{alphaObs} mais son indice de shannon varie sur la figure \ref{alphaShannon} témoignant d'une distribution différente de ses bactéries. Seul le patient 26 semble conserver à la fois une richesse et une équitabilité stables au court du temps.
+L'indice de Shannon montre que pour un richesse constante dans le temps, l'équitabilité est différente. Par exemple la richesse du patient 223 est stable sur la figure, \ref{alphaObs} mais son indice de shannon varie sur la figure \ref{alphaShannon} témoignant d'une distribution différente de ses bactéries. Seul le patient 26 semble conserver à la fois une richesse et une équitabilité stables au court du temps.
 
 \subsubsection{Évolution des abondances}
 Les figures \ref{plotabundancegenre}, \ref{plotabundancephylum} et \ref{plotabundancecurve} montrent l’évolution des abondances au cours du temps pour chaque patient. Ces graphiques nous permettent d’interpréter plus finement les graphiques d’alpha diversité précédente.
@@ -829,20 +829,20 @@ Les tableaux \ref{pyopcr} et \ref{pyoculture} comparent le nombre d'échantillon
   \begin{table}[!h]
       \centering
       \begin{tabular}{r|c|c}
-           & PCR Négatif  & PCR Positif \\
+           & PCR négative  & PCR positive \\
            \hline
            16S absent & 141 & 31 \\
            16S present & 1 & 15   \\
 
       \end{tabular}
-      \caption{Concordance entre la présence d'ADNr 16S de Pyo et sa détection en PCR OPRL}
+      \caption{Concordance entre la présence d'ADNr 16S de Pseudomonas et sa détection en PCR oprL}
       \label{pyopcr}
   \end{table}
 
   \begin{table}[!h]
       \centering
       \begin{tabular}{r|c|c}
-           & Culture Négatif  & Culture Positif \\
+           & Culture négative  & Culture positive \\
            \hline
            16S absent & 163 & 9 \\
            16S present & 3 & 13   \\
@@ -890,10 +890,10 @@ La figure  \ref{pcoa} est une analyse multivariée discriminant les groupes Free
 \section{Discussion}
 \subsection{Production des données}
 \subsubsection{Séquençage}
-La version 3 du kit MiSeq Reagent Kit produit des reads plus long (300pb) que dans la version précédente (250pb) afin d'augmenter la précision de l'assignation taxonomique (Figure \ref{rnasens}). En contrepartie la qualité du séquençage est médiocre aux extrêmités avec des scores qui chutent en dessous de 20. À cause de cela, seulement 43\% de reads sont exploitables.
-C'est un problème connu lié à la chimie du kit que Illumina n'a pas corrigé à ce jour. La profondeur de séquençage reste toutefois suffisante comme l'attestent les courbes de raréfaction. En utilisant d'autres amorces ciblant des régions d'ADNr 16S différente, nous pourrions augmenter la taille du chevauchement pour gagner en profondeur mais en diminuant la taille des reads. \\
-Les séquenceurs de 3ème générations comme le Mini Ion (Oxford Nanopore) ou le PacBio (Pacific Bioscience) apporteraient un avantage certain. Ces derniers sont capable de produire des reads très long ( 10 000pb en moyenne) et pourraient facilement séquencer l'intégralité de l'ARN 16S. De plus, contrairement à Illumina, les fragments d'ADN sont directement lu (Technologie SMS: Single Molecule Sequencing) evitant ainsi tout biais d'amplification pouvant surévaluer les abondances.
-La qualité des reads de ces séquenceurs de 3ème génération sont en revanche de mauvaise qualité. Malgré cela, deux études\cite{Wagner2016,Benitez-Paez2016} ont déjà montré que leurs résolutions taxonomiques atteinds facilement celui de l’espèce.
+La version 3 du kit MiSeq Reagent Kit produit des reads plus longs (300pb) que dans la version précédente (250pb) afin d'augmenter la précision de l'assignation taxonomique (Figure \ref{rnasens}). En contrepartie la qualité du séquençage est médiocre aux extrémités avec des scores qui chutent en dessous de 20. À cause de cela, seulement 43\% de reads sont exploitables.
+C'est un problème connu lié à la chimie du kit que Illumina n'a pas corrigé à ce jour. La profondeur de séquençage reste toutefois suffisante comme l'attestent les courbes de raréfaction. En utilisant d'autres amorces ciblant des régions d'ADNr 16S différente, nous pourrions augmenter la taille du chevauchement pour gagner en profondeur, mais en diminuant la taille des reads. \\
+Les séquenceurs de 3e générations comme le Mini Ion (Oxford Nanopore) ou le PacBio (Pacific Bioscience) apporteraient un avantage certain. Ces derniers sont capables de produire des reads très longs ( 10 000pb en moyenne) et pourraient facilement séquencer l'intégralité de l'ARN 16S. De plus, contrairement à Illumina, les fragments d'ADN sont directement lus (Technologie SMS: Single Molecule Sequencing) évitant ainsi tout biais d'amplification pouvant surévaluer les abondances.
+La qualité des reads de ces séquenceurs de 3e génération est en revanche de mauvaise qualité. Malgré cela, deux études\cite{Wagner2016,Benitez-Paez2016} ont déjà montré que leurs résolutions taxonomiques atteignent facilement celui de l’espèce.
 
 \begin{figure}
 \begin{center}
@@ -904,8 +904,8 @@ La qualité des reads de ces séquenceurs de 3ème génération sont en revanche
 \end{figure}
 
 \subsubsection{Pipeline}
-La stratégie close-reference utilisée dans le pipeline mucobiome a permis d'assigner jusqu'au niveau du genre, plus de 99\% des reads analysées. La base de donnée \textit{Greengene} est donc assez exhaustif pour analyser le microbiote réspiratoire car tous les genres sont connus.
-En revanche, La résolution taxonomique n'atteint pas le rang de l'espèce. Il a en effet déjà été montré que les régions hypervariables prises isolément ne sont pas assez discriminantes \cite{Yang2016}. Deux espèces peuvent par exemple varier d'un seul nucléotide dans une région hypervariable.
+La stratégie close-reference utilisée dans le pipeline mucobiome a permis d'assigner jusqu'au niveau du genre, plus de 99\% des reads analysés. La base de données \textit{Greengene} est donc assez exhaustive pour analyser le microbiote respiratoire, car tous les genres sont connus.
+En revanche, la résolution taxonomique n'atteint pas le rang de l'espèce. Il a en effet déjà été montré que les régions hypervariables prises isolément ne sont pas assez discriminantes \cite{Yang2016}. Deux espèces peuvent par exemple varier d'un seul nucléotide dans une région hypervariable.
 D'autre part, l'assignation taxonomique dépend d'une similarité fixée arbitrairement à 97\%. D'autres algorithmes permettent de s'affranchir de ce seuil. Il s'agit par exemple de la clusterisation par calcul d'entropie maxium \textit{Maximum entropy clusterisation} \cite{Bobadilla2015}.
 
 
@@ -913,13 +913,13 @@ D'autre part, l'assignation taxonomique dépend d'une similarité fixée arbitra
 \begin{center}
 \includegraphics[scale=0.7]{img/entropy.png}\hfill
 \end{center}
-\caption{Principe de la décomposition par entropie minimum. Etape 1: les reads sont alignés. L'entropie H est calculé pour chaque position nucléotidique. Etape 2: La position ayant la plus forte entropie est utilisé pour discriminer deux groupes. Etape 3 : Le processus est répété jusqu'à atteindre une entropie totale de 0 }
+\caption{Principe de la décomposition par entropie minimum. Étape 1: les reads sont alignés. L'entropie H est calculée pour chaque position nucléotidique. Étape 2: La position ayant la plus forte entropie est utilisée pour discriminer deux groupes. Étape 3 : Le processus est répété jusqu'à atteindre une entropie totale de 0 }
 \label{entropy}
 \end{figure}
-\subsubsection{Methode d'analyse}
-Parmi les analyses de bêta diversité, seul l'analyse en coordonnées principales a été présenté en utilisant la distance de Bray-Curtis.
-Nous avions également réalisé d'autre ordination qui n'ont pas été concluente. Par exemple en changer le type de distance ou en utilisant un positionnement multidimensionnel (MDS) au la place de la PCoA. \\
-Par ailleurs, la proximité phylogénétique des bactéries n'a pas été pris en compte. Un microbiote contenant trois bactéries proches n'est pas la même chose qu'un microbiote contenant trois bactéries très éloignés.
+\subsubsection{Méthode d'analyse}
+Parmi les analyses de bêta diversité, seule l'analyse en coordonnées principales a été présentée en utilisant la distance de Bray-Curtis.
+Nous avions également réalisé d'autres ordinations qui n'ont pas été concluantes. Par exemple en changer le type de distance ou en utilisant un positionnement multidimensionnel (MDS) au lieu de la PCoA. \\
+Par ailleurs, la proximité phylogénétique des bactéries n'a pas été prise en compte. Un microbiote contenant trois bactéries proches n'est pas la même chose qu'un microbiote contenant trois bactéries très éloignées.
 La distance UniFrac\cite{Lozupone2005} pourrait alors remplacer la distance de Bray-Curtis en prenant en considération la phylogénie des bactéries.
 
 
@@ -927,51 +927,43 @@ La distance UniFrac\cite{Lozupone2005} pourrait alors remplacer la distance de B
 % to gut microbiota, the ‘core' airway microbiota in healthy lungs is predominantly %comprised of the phyla Bacteroidetes, Firmicutes and Proteobacteria, followed by %lesser proportions of Actinobacteria.28, 32, 33
 
 \subsection{Analyse des données}
-\subsubsection{Augmentation des Bactéroidetes}
-Par rapport au sujet sain, nos résultats chez les patients mucoviscidosiques montrent une augmentation des \textit{Proteobacteria} (31.48\%) aux dépens des \textit{Bacteroidetes} (11.11\%). Ainsi qu'une augmentation des \textit{Actinobacteria} (7.41\%). Ces résultats sont en accord avec ceux présentés dans la meta-analyse de \textit{Nature}\cite{Marsland2014} retrouvant ces proportions dans la Mucoviscidose, l'asthme et la BPCO. Cet excès s’explique principalement par la dominance d’\textit{Haemophilus} et de \textit{Neisseria}.
+\subsubsection{Principaux phylums}
+Par rapport aux données chez les sujets sains \cite{Marsland2014}, nos résultats chez les patients mucoviscidosiques montrent une augmentation des \textit{Proteobacteria} (31.48\%) aux dépens des \textit{Bacteroidetes} (11.11\%). Et dans une moindre mesure, une augmentation des \textit{Actinobacteria} (7.41\%). Ces résultats sont en accord avec ceux présentés dans la meta-analyse de \textit{Nature} retrouvant ces proportions dans la Mucoviscidose, l'asthme et la BPCO. Cet excès s’explique principalement par la dominance d’\textit{Haemophilus} et de \textit{Neisseria}.  
+Par ailleurs, une large proportion d’anaérobies sont retrouvés, avec notamment   \textit{Prevotella} et \textit{Veillonella}. La corrélation forte entre ces deux genres ( coefficient de Pearson = 0.60) a été décrite dans le microbiote intestinal\cite{Dlugosz2015}. La signification clinique de la  présence des anaérobies est encore incertaine \cite{Tunney2008}.
 
-\begin{figure}[h]
-\begin{center}
-\includegraphics[scale=0.70]{img/micromuco.png}\hfill
-\end{center}
-\caption{Modèle de Whelan et Surette \cite{Whelan2015}}
-\label{micromuco}
-\end{figure}
-
-
-\subsubsection{Infection et inflammation}
-Les principaux pathogènes associés à la mucoviscidose sont tous retrouvés avec une tendance à dominer les autres. Pourtant, aucun patient dans l'étude n'était en exacerbation. L'absence de corrélation entre infection et inflammation est proposée dans l'article de [@] (Tirouvanziam2000). Selon cette hypothèse, ce serait l'inflammation qui précède la colonisation.
-Une autre hypothèse, celle de Whelan \cite{Whelan2015} suggère que la composition du microbiote pulmonaire provenant d'un crachat serait l'addition entre une population venant des territoires pulmonaires sains et une autre des territoires inflammatoires. Ce modèle expliquerait la variation inter échantillon que nous retrouvons.
-
-\begin{figure}[h]
-\begin{center}
-\includegraphics[scale=0.60]{img/lung_region.png}\hfill
-\end{center}
-\caption{Modèle de Whelan et Surette \cite{Whelan2015}}
-\label{lungregion}
-\end{figure}
+\subsubsection{Dominance des pathogènes}
+Les autres pathogènes associés à la mucoviscidose sont tous retrouvés (\textit{Haemophilus}, \textit{Staphylococcus}, \textit{Burkholderia}, \textit{Stenotrophomonas}) et ont tendance à dominer les autres. Pourtant, la majorité des échantillons proviennent de patients sans détérioration clinique. Ceci remet en cause l'idée selon laquelle l'infection bactérienne soit à l'origine des exacerbations. En effet, plusieurs études \cite{Tirouvanziam2000,Heijerman2005} ont montré qu'il peut y avoir exacerbations sans infection et inversement. Une des hypothèses suggère que l'anomalie du \textit{CFTR} soit directement responsable d'un terrain pro-inflammatoire.
 
 \subsubsection{Présence de \textit{Pseudomonas}}
-Malgré l'absence d'échantillon positif en culture, l'ADNr 16S de \textit{P.aeruginosa} est retrouvé dans 53 échantillons . Ceci confirme la faible sensibilité de la culture et montre l’intérêt d’autre méthode de diagnostic comme la PCR\cite{LeGall}.
-
-\subsubsection{Présence d'anaérobie}
-De fortes abondances en anaérobies  sont également retrouvées avec notamment \textit{Prevotella} et \textit{Veillonella}. La corrélation forte  entre ces deux genres a été retrouvée dans l’étude de [@]. La signification clinique de leurs présences est encore incertaine \cite{Tunney2008}.
-
-\subsubsection{Dynamique du microbiote}
-Les résultats longitudinaux nous montrent la dynamique et la complexité du microbiote respiratoire, et surtout la très grande variabilité inter-individuelle dans la composition des microbiotes, comme précédemment démontré dans  plusieurs études \cite{Coburn2015}.  \\
- +La population stable et fluctuante que nous avons identifier évoquent le modèle attack-climax \cite{Conrad2013}. . Une population d'attaque (Attack) par exemple Haemophilus, ferait le lit à l'émergence des bactéries présentes en faible abondance (Climax) comme \textit{Pseudomonas aeruginosa}.
+Sur les 188 échantillons, 22 étaient positifs en culture à \textit{Pseudomonas aeruginosa} correspondant aux endpoints de l'étude. En considérant arbitrairement la méthode 16S comme un gold standard, les tableaux \ref{pyopcr} et \ref{pyoculture} nous permettons de mesurer la sensibilité et la spécificité de la PCR et la culture. 
+Ainsi la PCR oprL est très sensible et peu spécifique  avec un seul vrai négatif pour 31 faux positifs. 
+La culture est en revanche très spécifique avec 9 faux positifs. 
+Ces résultats confirment les résultats déjà décrits au laboratoire{\cite{LeGall} avec les marqueurs oprL et la nécessité de coupler une PCR plus spécifique avec les marqueurs gyrB/ecfX. \\
+Ces résultats doivent être nuancé, car la résolution taxonomique de notre méthode s'arrête au genre \textit{Pseudomonas} et non à l'espèce \textit{Pseudomonas aeruginosa}.
 
 \subsubsection{Patient Free et Never}
-Aucune des données récoltées n’a mis en évidence un groupe particulier de microbiote. L’âge n’a pas été corrélé à la présence d’\textit{Haemophilus}, ni à l’augmentation de diversité évoquée dans plusieurs papiers. Probablement, car les sujets de l'étude avaient des âges proches. La comparaison d'alpha diversité entre les patients Free et Never n'as pas relevé de différence significative. Il n'y a pas plus d'espèces dans l'une ou l'autre des catégories.
-L'analyse multivariée s'explique principalement par les grandes fluctuations d'abondance de \textit{Streptococcus}, \textit{Neisseria} et \textit{Haemophilus}. Elle montre également qu'il y a plus de microbiotes différents chez les patients Free que Nevers. Probablement causé par l'impacte du traitement anti-pyo.  \\
-Il semble donc ressortir de l'étude que le microbiote dépend avant tout du patient et va dans le sens du papier de [@]. La concordance de certains échantillons pour un même patient sur les graphiques d'ordination va dans ce sens.
-https://www.ncbi.nlm.nih.gov/pubmed/28170403 => individu pas de diff significative
-Microbial communities were highly individual in composition and stability, usually with limited diversity and often containing multiple pathogens. When compared to DNA sequencing, microbial culture had restricted sensitivity in identifying common pathogens such as Pseudomonas aeruginosa, Haemophilus influenzae, Moraxella catarrhalis. With some exceptions, community characteristics showed poor correlations with clinical features including underlying disease, antibiotic use and exacerbations, with the subject showing the strongest association with community structure. When present, the pathogens mucoid Pseudomonas aeruginosa and Haemophilus influenzae may also shape the structure of the rest of the microbial community.
+Les patients selon leur appartenance aux catégories Never et Free\cite{Lee2003}, qui permettent de distinguer les patients selon leur anamnèse vis-à-vis de P. aeruginosa (totalement exempts ou colonisation datant d'au moins 1 an), n'ont pas montré de différence statistiquement significative, ni dans leur diversité alpha ni dans la composition de leur microbiote. 
+Il semble donc ressortir de l'étude que le microbiote dépend avant tout du sens.
+ 
+\subsubsection{Hétérogénéité des microbiotes}
+Nos résultats de diversité alpha et bêta montrent la grande variabilité du microbiote respiratoire. Ils sont différents entre les patients et changent rapidement au cours du temps. Aucune des données recueillies ( Sexe, Âge, Poids, IMC , type de mutation, Score cytologique, prise d'antibiotique) n'a permis de distinguer des catégories de microbiote. Il est assez étonnant que même la prise d'antibiotique ne permette de distinguer des groupes. Ceci s'explique probablement par la capacité de résilience, c'est-à-dire une capacité de revenir vers un état précédent ultérieur au traitement. Il semble donc que ce soit l'individu lui-même la principale source de variabilité. La proximité, sur le graphique d'ordination, de certains échantillons d'un même patient va dans ce sens. 
 
-\subsection{Limite de l'étude}
-Plusieurs points sont à prendre en considération pour critiquer la justesse des résultats. Premièrement, les ADN séquencés proviennent d'expectoration bronchique ayant traversé les voies aériennes supérieures. Une contamination est toujours possible. Elle est cependant assez réduite, car nous avons pris en considération le score cytologique de Bartlett.
-Une différence entre deux échantillons d'un même patient pourrait s'expliquer par l'hétérogénéité du poumon. Il a cependant été montré [@] sur des prélèvements in situ que le microbiote pulmonaire est homogène.
-Ensuite la stratégie 16S n'est pas parfaite[@]. La détection varie en fonction des amorces utilisées (figure). Et d'autres espèces ne sont tout simplement pas amplifiées par cette stratégie[@]. De plus, cette stratégie ne fait pas la distinction entre les ADNs de bactéries vivantes ou mortes.
+\section{Limite de l'étude}
+Plusieurs points sont à prendre en considération pour critiquer la justesse des résultats. Premièrement, les ADN séquencés proviennent d'expectoration bronchique ayant traversé les voies aériennes supérieures. Une contamination est toujours possible. Le score cytologique de Bartlett, n'a pas permis de discriminer des contaminations de l'oropharynx. Mais la présence de Corynebacterium dans certains échantillons est évocatrice. 
+De plus, la stratégie 16S ne fait la distinction entre des bactéries mortes et vivantes biaisant ce qui biaise encore l'estimation des abondances. 
+Dans l'idéal il faudrait réaliser des prélèvements invasifs assez difficiles à mettre en pratique. Une autre idée serait de réaliser parallèlement à l'ECBC l'analyse d'un prélèvement de l'oropharynx pour calculer un différentiel. \\
+D'un point de vue du recueil, l'analyse longitudinale ne contient pas assez d'échantillons ( en moyenne 3 échantillons par patient sur 3 ans). Et comme nous avons pu le voir, l'hétérogénéité du microbiote rend difficilement comparables les patients entre eux. Il serait intéressant d'augmenter la résolution temporelle, en augmentant le nombre d'échantillons par patient. 
+Enfin les nouvelles technologies de séquençage évoqué plus haut, seraient idéales pour atteindre le niveau taxonomique de l'espèce. 
+
+
+\section{Conclusion}
+Le séquençage de l'ARN 16S a été réalisé sur 188 expectorations bronchiques de patient atteint de mucoviscidose avec un pipeline bio-informatique dédié. Malgré la faible qualité du séquençage, plus de 99\% des reads ont reçu une assignation taxonomique atteignant le rang du genre. L'augmentation des Proteobacteria évoqués dans d'autres études est retrouvée. 
+Les analyses de diversités ont montré une grande hétérogénéité des microbiotes entre les patients et une variabilité dans le temps. 
+Ni les données contextuelles ni les catégories de Lee n'ont montré une différence significative en termes de diversité. 
+Une étude longitudinale avec une résolution temporelle plus importante serait intéressante pour évaluer la cinétique du microbiote. Les séquenceurs de troisième génération permettraient l'assignation taxonomique jusqu'à l'espèce.
+Enfin d'autres approches seraient intéressantes pour évaluer la fonction du microbiote et aussi l'impactent du Virome respiratoire. La métagénomique fonctionnelle ou encore la PCR digitale apporterait ces éléments de réponse au prix de calcul informatique parfois très élevé.
+
+
 \begin{figure}
 \begin{center}
 \includegraphics[scale=0.70]{img/enfin_barplot_genus_norm.png}\hfill
@@ -1024,20 +1016,12 @@ Ensuite la stratégie 16S n'est pas parfaite[@]. La détection varie en fonction
 \end{figure}
 
 
-\section{Conclusion}
-- Resumé
--Il faut faire une étude longitudinale, car la variabilité inter individuelle empèche des analyses comparative.
-- Metagenomique
--Virome  : bcp plus nombreux
-etatranscriptomics (analysis of mRNA transcripts), metaproteomics (analysis of proteins) and metabolomics (analysis of metabolites) have also proved beneficial in understanding the functional complexity of host–microbe interactions.
-DIGITAL PCR
-INFECTION VIRAL
 
-%file:///home/sacha/T%C3%A9l%C3%A9chargements/10.1183@13993003.02086-2016.pdf
-In addition, studies characterising the airway microbiome following antibiotic treatment have shown a
-remarkable resistance of bacterial communities to change over time in these patients [57, 59, 60];
-antibiotic treatments primarily result in a reduction in bacterial diversity, but this effect disappears after
-some weeks, with the recovery of the previous microbial composition [57]
+%%file:///home/sacha/T%C3%A9l%C3%A9chargements/%10.1183@13993003.02086-2016.pdf
+%In addition, studies characterising the airway microbiome following %antibiotic treatment have shown a
+%remarkable resistance of bacterial communities to change over time in these %patients [57, 59, 60];
+%antibiotic treatments primarily result in a reduction in bacterial %diversity, but this effect disappears after
+%some weeks, with the recovery of the previous microbial composition [57]
 
 \newpage
 
