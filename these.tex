@@ -196,7 +196,7 @@ Les méthodes récentes d'exploration de ce monde microscopique comme le séquen
 Elles sont présentes partout et jouent le premier rôle dans le fonctionnement des écosystèmes. Elles sont, par exemple, impliquées dans le cycle de l'azote et permettent à la biomasse d'absorber le diazote atmosphérique. Les bactéries sont ainsi la source primaire à laquelle les organismes puisent pour construire leurs protéines et leurs acides nucléiques.
 Elles peuvent survivre dans les milieux les plus inhospitaliers. Les archées (anciennement archéobactéries) peuvent résister dans des environnements d'acidité et de température exceptionnellement élevées ou faibles. On les retrouve dans les fonds océaniques où, privées de lumière, elles sont la seule source d'énergie pour la faune grâce à la chimiosynthèse à l'instar de la photosynthèse.
 Le corps humain est lui aussi un environnement riche en bactéries. La majorité des bactéries a longtemps été indétectable par les méthodes de cultures classiques. Mais à présent, nous savons que les régions anatomiques autrefois considérées stériles contiennent beaucoup de bactéries.
-On les retrouve sur tous les territoires du corps exposé où elles se regroupent en communautés.
+On les retrouve sur tous les muqueuses et épithéliums du corps où elles se regroupent en communautés.
 La peau est colonisée par \textit{Propionibacterium}, \textit{Corynebacterium} et \textit{Staphylococcus} \cite{Yong2017}. Le vagin est colonisé essentiellement par \textit{Lactobacillus} et la bouche principalement par \textit{Streptococcus}\cite{Yong2017}.
 La muqueuse intestinale est colonisée par une "flore" bactérienne ou microbiote dominé par les anaérobies pouvant contribuer jusqu'à 0,2 kg au poids corporel \citep{Sender2016}.
 En échange notre hospitalité, le microbiote contribue au bon fonctionnement de son hôte. Il aide à la digestion en dégradant par exemple les sucres du lait maternel chez le nouveau-né \cite{Bode2012,Yong2017}. Il participe à la synthèse des vitamines essentielles (K, B12, B9)\cite{LeBlanc2013,Yong2017}. Il éduque notre système immunitaire et fait barrière à l'implantation de tout nouvel agent pathogène.
@@ -230,16 +230,16 @@ Il est encore trop tôt pour dire si cette science va révolutionner la médecin
 \paragraph{Une symbiose} est une association durable entre deux organismes. Leurs relations peuvent être mutualiste, parasitaire ou commensale.
 
 
-\paragraph{L'OTU}(\textit{Operational Taxonomic Unit}) est un terme utilisé en phylogénie pour désigner un groupe d’individus semblable. Dans la majorité des cas, il s'agit de l'espèce dans la classification de Linné.
-En microbiologie, un OTU est défini par un groupe de bactéries ayant une similarité dans leurs séquences d'ADNr 16S supérieur à 97\%.
+\paragraph{L'OTU}(\textit{Operational Taxonomic Unit}) est un terme utilisé en phylogénie pour désigner un groupe d’individus semblables. Dans la majorité des cas, il s'agit de l'espèce dans la classification de Linné.
+En microbiologie, un OTU est défini par un groupe de bactéries ayant une similarité dans leurs séquences d'ADNr 16S supérieur ou égal à 97\%.
 
-\paragraph{L'abondance} absolu est le nombre d'individus d'un même OTU dans un échantillon. L'abondance est indirectement évaluée en comptant le nombre de molécules d'ADNr 16S.
+\paragraph{L'abondance} absolue est le nombre d'individus d'un même OTU dans un échantillon. L'abondance est indirectement évaluée en comptant le nombre de molécules d'ADNr 16S.
 L’abondance relative est l'expression en pourcentage de l'abondance absolue.
 
 \paragraph{La dominance} caractérise un OTU dont l'abondance est supérieure à 90\% dans un échantillon.
 
 
-\paragraph{La table des OTU} est à la base de toutes analyses en écologie. Elle correspond à un tableau à double entrée contenant l’abondance par échantillon et par OTU. Dans le tableau \ref{OTUTABLE}, l'abondance relative pour \textit{Staphylococcus aureus} est de 68\%.
+\paragraph{La table des OTUs} est à la base de toutes analyses en écologie. Elle correspond à un tableau à double entrée contenant l’abondance par échantillon et par OTU. Dans le tableau \ref{OTUTABLE}, l'abondance relative pour \textit{Staphylococcus aureus} est de 68\%.
 
 \begin{figure}[h]
 \begin{center}
@@ -247,9 +247,9 @@ L’abondance relative est l'expression en pourcentage de l'abondance absolue.
   \hline
    & échantillon 1 & échantillon 2 & échantillon 3  \\
   \hline
-  OTU 1 (\textit{S.aureus}) & 68\% & 12\% & 25\% \\
-  OTU 2 (\textit{E.coli})& 40\% & 24\% & 25\% \\
-  OTU 3 (\textit{P.aeruginosa}) & 28\% & 64\% & 50\% \\
+  OTU 1 (\textit{S. aureus}) & 68\% & 12\% & 25\% \\
+  OTU 2 (\textit{E. coli})& 40\% & 24\% & 25\% \\
+  OTU 3 (\textit{P. aeruginosa}) & 28\% & 64\% & 50\% \\
 
   \hline
 \end{tabular}
@@ -260,21 +260,21 @@ L’abondance relative est l'expression en pourcentage de l'abondance absolue.
 
 \paragraph{La diversité alpha} est une mesure de la biodiversité au sein d’un échantillon. Elle correspond à l'analyse d'une colonne de la table des OTUs. La richesse, l'indice de Chao1, de Shannon et de Simpson sont des indices de diversité alpha.
 
-\paragraph{La diversité bêta} est une analyse descriptive de la biodiversité entre plusieurs échantillons. Elle correspond à l'analyse de l’ensemble de la table des OTUs. L’approche la plus courante est de réaliser une analyse multivariée par des méthodes d’ordination. Il s’agit de représenter un graphique à n dimensions, impossible à représenter, en le projetant dans un espace à deux ou trois dimensions.
+\paragraph{La diversité bêta} est une analyse descriptive de la biodiversité entre plusieurs échantillons. Elle correspond à l'analyse de l’ensemble de la table des OTUs. L’approche la plus courante est de réaliser une analyse multivariée par des méthodes d’ordination. Il s’agit de représenter un graphique à n dimensions, impossible à représenter dans toutes ses dimensions, en le projetant dans un espace à deux ou trois dimensions.
 
-\paragraph{La richesse}(richness) est le nombre d'OTU présent dans un échantillon. Les deux échantillons suivants ont la même richesse (2), mais pas les mêmes abondances.
+\paragraph{La richesse}(richness) est le nombre d'OTUs présents dans un échantillon. Les deux échantillons suivants ont la même richesse (2), mais pas les mêmes abondances.
 
 \begin{description}
 \item[échantillon 1]  : 4 \textit{Streptoccus} , 4 \textit{Escherichia}
 \item[échantillon 2]  : 432 \textit{Streptoccus}, 12 \textit{Escherichia}
 \end{description}
 
-\paragraph{L'équitabilité}(eveness) indique si les OTUs d’un échantillon sont réparties uniformément.
-L'équitabilité du premier échantillon est plus grande que le second
+\paragraph{L'équitabilité}(evenness) indique si les OTUs d’un échantillon sont répartis uniformément.
+L'équitabilité du premier échantillon est plus grande que celle du second.
 
 \begin{description}
-\item[échantillon 1]  : 50 Streptococus , 50 Escherichia
-\item[échantillon 2]  : 432 Streptoccus, 12 Escherichia
+\item[échantillon 1]  : 50 \textit{Streptococcus} , 50 \textit{Escherichia}
+\item[échantillon 2]  : 432 \textit{Streptococcus}, 12 \textit{Escherichia}
 \end{description}
 
 
@@ -305,8 +305,8 @@ L'équitabilité du premier échantillon est plus grande que le second
       \caption{avec \textbf{p} la fréquence d'un OTU parmi les \textbf{S} OTUs présents dans l'échantillon}
 \end{mycapequ}
 
-\paragraph{La courbe de raréfaction}est utilisée pour déterminer si la profondeur de séquençage est suffisante pour caractériser la diversité d’un échantillon. Pour comprendre, imaginons un sac noir contenant des billes (reads) de différentes couleurs (espèces). Avec deux couleurs dans le sac, une petite poignée (un petit échantillon) de billes sera suffisante pour évaluer la diversité. Vous ne trouverez pas de nouvelle couleur avec plus de billes dans votre main. En revanche, avec davantage de couleurs dans le sac, il faudra une poignée plus importante pour évaluer la diversité. La courbe de raréfaction permet d'évaluer si cette poignée de bille est suffisamment représentative.
-Pour générer cette courbe, des groupes de reads de taille croissante (1..n) sont tirés aléatoirement depuis l'échantillon. Le groupe est reporté sur l'axe X et le nombre d'OTU retrouvé dans ce groupe est reporté sur l’axe Y.
+\paragraph{La courbe de raréfaction}est utilisée pour déterminer si la profondeur de séquençage est suffisante pour caractériser la diversité d’un échantillon. Pour comprendre, imaginons un sac noir contenant des billes (reads) de différentes couleurs (espèces). Avec deux couleurs dans le sac, une petite poignée (un petit échantillon) de billes sera suffisante pour évaluer la diversité. Vous ne trouverez pas de nouvelle couleur avec plus de billes dans votre main. En revanche, avec d'avantage de couleurs dans le sac, il faudra une poignée plus importante pour évaluer la diversité. La courbe de raréfaction permet d'évaluer si cette poignée de billes est suffisamment représentative.
+Pour générer cette courbe, des groupes de reads de taille croissante (1..n) sont tirés aléatoirement depuis l'échantillon. Le groupe est reporté sur l'axe X et le nombre d'OTUs retrouvé dans ce groupe est reporté sur l’axe Y.
 Une courbe s’aplatissant indique une bonne profondeur de séquençage (Figure \ref{rarefaction_demo}).
 
 
@@ -326,7 +326,7 @@ Maintenant si l'objectif est de produire 188 gâteaux (188 analyses) et que l'on
 \paragraph{NGS}(Next Generation Sequencing) désigne l'ensemble des séquenceurs de nouvelle génération permettant de séquencer un nombre très important de fragments d'ADN.
 
 \paragraph{La métagénomique} est une méthode d’étude du contenu en ADN présent dans un milieu grâce aux techniques de séquençage haut débit. Contrairement à la génomique qui s’intéresse au génome d’un individu, la métagénomique s’intéresse aux génomes d’une population d’individus.
-Dans son sens strict, la métagénomique correspond à l’étude de l’ensemble des séquences d'ADN. L’analyse d’un seul gène, comme celui de l’ARN 16S est associé à tort au terme métagénomique, mais son usage reste courant. On lui préférera le terme de \textbf{métagénétique} ou \textbf{métataxonomique}.
+Dans son sens strict, la métagénomique correspond à l’étude de l’ensemble des séquences d'ADN. L’analyse d’un seul gène, comme celui de l’ARNr 16S est associé à tort au terme métagénomique, mais son usage reste courant. On lui préférera le terme de \textbf{métagénétique} ou \textbf{métataxonomique}.
 
 
 \paragraph{Un read} est un terme bio-informatique désignant une séquence d’ADN issue d’un séquençage haut débit. Selon les technologies, les reads varient entre 150 et 300 paires de bases.
@@ -340,7 +340,7 @@ Dans son sens strict, la métagénomique correspond à l’étude de l’ensembl
    \begin{equation}
     Q = -10 \ \log_{10} P
    \end{equation}
-      \caption{Le score Q est associé de façon logarithmique à la probabilité d'erreur P de s'être trompé en séquençant un nucléotide}
+      \caption{Le score Q est associé de façon logarithmique à la probabilité d'erreur P de s'être trompé en séquençant un nucléotide}.
 \end{mycapequ}
 
 
@@ -715,7 +715,7 @@ Dans l'ensemble elles s’aplatissent précocement, témoignant d’un bon nivea
 \begin{center}
 \includegraphics[scale=0.5]{img/rarefaction.png}\hfill
 \end{center}
-\caption{Courbe de raréfaction}
+\caption{Courbe de raréfaction pour les 188 échantillons. }
 \label{rarefaction}
 \end{figure}
 
@@ -735,7 +735,7 @@ Les deux phyla majoritaires sont \textit{Firmicute} (42.59\%) et \textit{Proteob
 Le tableau de la figure \ref{alltable} résume l'ensemble des résultats en y associant la prévalence des genres bactériens parmi les 188 échantillons.
 Par exemple \textit{Streptococcus}, \textit{Neisseria}, \textit{Prevotella}, \textit{Granulicatella}, \textit{Gemella}, \textit{Veillonella} et \textit{Fusobacterium} sont très prévalents, car présents dans plus de 185 échantillons.
 D’autres genres sont dominants. Il s’agit de \textit{Streptococcus}, \textit{Neisseria}, \textit{Haemophilus} et \textit{Staphyloccoccus}. \textit{Sténotrophomonas} et \textit{Achromobacter} sont retrouvées dans 64 et 8 échantillons respectivement. Pseudomonas est retrouvé dans 53 échantillons, dont un, au moins avec une abondance de 25.94\%. Burkholderia est retrouvé seulement dans deux échantillons à moins de 1\%.\\
-Le core microbiota est constitué de 15 genres bactériens (Figure \ref{core}). Sa distribution est illustrée dans la figure \ref{violon}.
+Le core microbiota est constitué de 14 genres bactériens (Figure \ref{core}). Sa distribution est illustrée dans la figure \ref{violon}.
 \textit{Streptococcus} respecte grossièrement une distribution normale variant de la quasi-absence à la dominance avec une moyenne de 30\% par échantillon. Neisseria est le deuxième genre le plus abondant avec une moyenne de 18\%.
 Les abondances de \textit{Staphylococcus} et \textit{Haemophilus} sont faibles dans la plupart des échantillons. Mais pour quelques échantillons, ces genres sont dominants. Les autres genres ont une abondance faible qui varie faiblement. Elles ne sont jamais retrouvées comme dominants.
 
@@ -744,7 +744,7 @@ Les abondances de \textit{Staphylococcus} et \textit{Haemophilus} sont faibles d
 \begin{center}
 \includegraphics[scale=0.4]{img/alld.png}\hfill
 \end{center}
-\caption{Nombre de reads - Moyenne des abondances relatives - écart-type des abondances relatives - plus petite abondance relative - plus grande abondance relative - Nombre d'échantillon ou le genre est présent - Nombre d'échantillon ou le genre est dominant}
+\caption{Résumé détaillé de l'assignation taxonomique des reads. \textbf{Legende:} Nombre de reads - Moyenne des abondances relatives - écart-type des abondances relatives - plus petite abondance relative - plus grande abondance relative - Nombre d'échantillon ou le genre est présent - Nombre d'échantillon ou le genre est dominant}
 \label{alltable}
 \end{figure}
 
@@ -806,20 +806,22 @@ Certains échantillons d’un même patient sont très proches sur le graphique 
 Aucune des analyses tenant compte des paramètres biocliniques colligés pendant l'étude MUCOBIOME comme âge, le sexe, le poids, la prise d'antibiotique et le type de mutation du gène \textit{CFTR} n’a mis en évidence des groupes distincts de microbiote. Le score cytologique n'a pas non plus montrer de différence.
 La variabilité est expliquée principalement par la dominance des genres \textit{Neisseria}, \textit{Streptococcus} et \textit{Haemophilus} comme le montre la figure \ref{ordination2}.
 
-\begin{figure}
-\begin{center}
-\includegraphics[scale=0.60]{img/oordination_new.png}\hfill
-\end{center}
-\caption{Analyse en coordonnées principales sur les 188 échantillons en utilisant les distances de Bray-curtis. Chaque point est un échantillon labellisé par l'identifiant du patient. À gauche les échantillons Free. À droite les échantillons Never. }
-\label{ordination}
-\end{figure}
 
 \begin{figure}
 \begin{center}
-\includegraphics[scale=0.40]{img/Capture.png}\hfill
+\includegraphics[scale=0.50]{img/Capture.png}\hfill
 \end{center}
-\caption{Analyse en coordonnées principales sur les 188 échantillons. La variabilité s'explique principalement par \textit{Haemophilus}, \textit{Streptococcus} et \textit{Neisseria}}
+\caption{Analyse en coordonnées principales sur les 188 échantillons en utilisant les distances de Bray-curtis. Chaque point est un échantillon labellisé par l'identifiant du patient. La variabilité s'explique principalement par \textit{Haemophilus}, \textit{Streptococcus} et \textit{Neisseria}}
 \label{ordination2}
+\end{figure}
+
+
+\begin{figure}
+\begin{center}
+\includegraphics[scale=0.62]{img/oordination_new.png}\hfill
+\end{center}
+\caption{Analyse en coordonnées principales sur les 188 échantillons en utilisant les distances de Bray-curtis. A gauche les échantillons Free, a droite les échantillons Never. Le sexe est mis en couleur à titre indicatif.}
+\label{ordination}
 \end{figure}
 
 \subsubsection{Présence de P.aeruginosa}
@@ -913,7 +915,7 @@ D'autre part, l'assignation taxonomique dépend d'une similarité fixée arbitra
 \begin{center}
 \includegraphics[scale=0.7]{img/entropy.png}\hfill
 \end{center}
-\caption{Principe de la décomposition par entropie minimum. Étape 1: les reads sont alignés. L'entropie H est calculée pour chaque position nucléotidique. Étape 2: La position ayant la plus forte entropie est utilisée pour discriminer deux groupes. Étape 3 : Le processus est répété jusqu'à atteindre une entropie totale de 0 }
+\caption{Principe de la décomposition par entropie minimum\cite{Bobadilla2015}. Étape 1: les reads sont alignés. L'entropie H est calculée pour chaque position nucléotidique. Étape 2: La position ayant la plus forte entropie est utilisée pour discriminer deux groupes. Étape 3 : Le processus est répété jusqu'à atteindre une entropie totale de 0 }
 \label{entropy}
 \end{figure}
 \subsubsection{Méthode d'analyse}
@@ -943,25 +945,24 @@ Ces résultats doivent être nuancé, car la résolution taxonomique de notre m�
 
 \subsubsection{Patient Free et Never}
 Les patients selon leur appartenance aux catégories Never et Free\cite{Lee2003}, qui permettent de distinguer les patients selon leur anamnèse vis-à-vis de P. aeruginosa (totalement exempts ou colonisation datant d'au moins 1 an), n'ont pas montré de différence statistiquement significative, ni dans leur diversité alpha ni dans la composition de leur microbiote. 
-Il semble donc ressortir de l'étude que le microbiote dépend avant tout du sens.
  
 \subsubsection{Hétérogénéité des microbiotes}
 Nos résultats de diversité alpha et bêta montrent la grande variabilité du microbiote respiratoire. Ils sont différents entre les patients et changent rapidement au cours du temps. Aucune des données recueillies ( Sexe, Âge, Poids, IMC , type de mutation, Score cytologique, prise d'antibiotique) n'a permis de distinguer des catégories de microbiote. Il est assez étonnant que même la prise d'antibiotique ne permette de distinguer des groupes. Ceci s'explique probablement par la capacité de résilience, c'est-à-dire une capacité de revenir vers un état précédent ultérieur au traitement. Il semble donc que ce soit l'individu lui-même la principale source de variabilité. La proximité, sur le graphique d'ordination, de certains échantillons d'un même patient va dans ce sens. 
 
 \section{Limite de l'étude}
 Plusieurs points sont à prendre en considération pour critiquer la justesse des résultats. Premièrement, les ADN séquencés proviennent d'expectoration bronchique ayant traversé les voies aériennes supérieures. Une contamination est toujours possible. Le score cytologique de Bartlett, n'a pas permis de discriminer des contaminations de l'oropharynx. Mais la présence de Corynebacterium dans certains échantillons est évocatrice. 
-De plus, la stratégie 16S ne fait la distinction entre des bactéries mortes et vivantes biaisant ce qui biaise encore l'estimation des abondances. 
+De plus, la stratégie 16S ne fait la distinction entre des bactéries mortes et vivantes ce qui biaise encore l'estimation des abondances. 
 Dans l'idéal il faudrait réaliser des prélèvements invasifs assez difficiles à mettre en pratique. Une autre idée serait de réaliser parallèlement à l'ECBC l'analyse d'un prélèvement de l'oropharynx pour calculer un différentiel. \\
 D'un point de vue du recueil, l'analyse longitudinale ne contient pas assez d'échantillons ( en moyenne 3 échantillons par patient sur 3 ans). Et comme nous avons pu le voir, l'hétérogénéité du microbiote rend difficilement comparables les patients entre eux. Il serait intéressant d'augmenter la résolution temporelle, en augmentant le nombre d'échantillons par patient. 
 Enfin les nouvelles technologies de séquençage évoqué plus haut, seraient idéales pour atteindre le niveau taxonomique de l'espèce. 
 
 
 \section{Conclusion}
-Le séquençage de l'ARN 16S a été réalisé sur 188 expectorations bronchiques de patient atteint de mucoviscidose avec un pipeline bio-informatique dédié. Malgré la faible qualité du séquençage, plus de 99\% des reads ont reçu une assignation taxonomique atteignant le rang du genre. L'augmentation des Proteobacteria évoqués dans d'autres études est retrouvée. 
+Le séquençage de l'ADNr 16S a été réalisé sur 188 expectorations bronchiques de patient atteint de mucoviscidose avec un pipeline bio-informatique dédié. Malgré la faible qualité du séquençage, plus de 99\% des reads ont reçu une assignation taxonomique atteignant le rang du genre. L'augmentation des \textit{Proteobacteria} évoqués dans d'autres études est retrouvée. 
 Les analyses de diversités ont montré une grande hétérogénéité des microbiotes entre les patients et une variabilité dans le temps. 
 Ni les données contextuelles ni les catégories de Lee n'ont montré une différence significative en termes de diversité. 
 Une étude longitudinale avec une résolution temporelle plus importante serait intéressante pour évaluer la cinétique du microbiote. Les séquenceurs de troisième génération permettraient l'assignation taxonomique jusqu'à l'espèce.
-Enfin d'autres approches seraient intéressantes pour évaluer la fonction du microbiote et aussi l'impactent du Virome respiratoire. La métagénomique fonctionnelle ou encore la PCR digitale apporterait ces éléments de réponse au prix de calcul informatique parfois très élevé.
+Enfin d'autres approches seraient intéressantes pour évaluer la fonction du microbiote et aussi l'impactent du virome respiratoire. La métagénomique fonctionnelle ou encore la PCR digitale apporterait ces éléments de réponse au prix de calcul informatique parfois très élevé.
 
 
 \begin{figure}
@@ -1026,7 +1027,7 @@ Enfin d'autres approches seraient intéressantes pour évaluer la fonction du mi
 \newpage
 
 
-\bibliographystyle{plain}
+\bibliographystyle{ieeetr}
 \bibliography{biblio}
 
 \end{document}
