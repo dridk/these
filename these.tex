@@ -224,8 +224,8 @@ Il est encore trop tôt pour dire si cette science va révolutionner la médecin
 \paragraph{L'OTU}(\textit{Operational Taxonomic Unit}) est un terme utilisé en phylogénie pour désigner un groupe d’individus semblables. Dans la majorité des cas, il s'agit de l'espèce dans la classification de Linné.
 En microbiologie, un OTU est défini par un groupe de bactéries ayant une similarité dans leurs séquences d'ADNr 16S supérieur ou égal à 97 \%.
 
-\paragraph{L'abondance} absolue est le nombre d'individus d'un même OTU dans un échantillon. L'abondance est indirectement évaluée en comptant le nombre de molécules d'ADNr 16S.
-L’abondance relative est l'expression en pourcentage de l'abondance absolue.
+\paragraph{L'abondance} absolue est le nombre de reads d'un même OTU dans un échantillon. 
+L’abondance relative est l'expression en pourcentage de l'abondance absolue. Cet indice est indirectement liée au nombre d'individu d'un même OTU constituant le microbiote.
 
 \paragraph{La dominance} caractérise un OTU dont l'abondance est supérieure à 90 \% dans un échantillon.
 
@@ -239,7 +239,7 @@ L’abondance relative est l'expression en pourcentage de l'abondance absolue.
    & échantillon 1 & échantillon 2 & échantillon 3  \\
   \hline
   OTU 1 (\textit{S. aureus}) & 68 \% & 12 \% & 25 \% \\
-  OTU 2 (\textit{E. coli})& 40 \% & 24 \% & 25\% \\
+  OTU 2 (\textit{E. coli})& 40 \% & 24 \% & 25 \% \\
   OTU 3 (\textit{P. aeruginosa}) & 28 \% & 64 \% & 50 \% \\
 
   \hline
@@ -383,7 +383,7 @@ La figure \ref{pcoatuto} illustre ce principe avec un exemple à deux dimensions
 La mucoviscidose est une maladie génétique autosomique récessive grave qui frappe en France 1 naissance sur 5400\cite{Registredelamuco.org}. La Bretagne est la région la plus touchée avec une prévalence de 1/3000\cite{Registredelamuco.org}.
 La loi de Hardy Weinberg estime qu’en Bretagne 1 patient sur 25 est porteur de la mutation à l’état hétérozygote. Cette haute prévalence s’explique probablement par un effet fondateur associé à un avantage sélectif pour les individus porteurs de l’allèle muté\footnote{Plusieurs hypothèses ont été proposées, notamment celle de la diminution des pertes hydriques chez les sujets hétérozygotes lors des grandes épidémies de choléra.}.
 Le gène \textit{CFTR} impacté se situe sur le chromosome 7 en position q31.2. Il est constitué de 27 exons pour 250 188\cite{OLeary2016} paires de bases. Il code un canal chlore AMP dépendant permettant les échanges des ions chlorures au niveau des membranes cellulaires. Il est également impliqué dans le transport du thiocynate (SCN-) et des bicarbonates (HCO3-)\cite{Quinton2001}.
-On dénombre à ce jour 2017 mutations \cite{cftrdb} mises en cause dans la mucoviscidose. La perte d’une phénylalanine en position 508 par délétion du triplet c.1521-1523delCTT (anciennement $\Delta$F508) cause à elle seule 80\% des mucoviscidoses\cite{cftrdb}.
+On dénombre à ce jour 2017 mutations \cite{cftrdb} mises en cause dans la mucoviscidose. La perte d’une phénylalanine en position 508 par délétion du triplet c.1521-1523delCTT (anciennement $\Delta$F508) cause à elle seule 80 \% des mucoviscidoses\cite{cftrdb}.
 Ces mutations sont responsables d’une protéine défectueuse ou d’une absence de canaux sur les membranes cellulaires. \\
 Cliniquement, la mutation entraîne une insuffisance pancréatique exocrine et une infertilité par disparition des canaux déférents. Des signes digestifs, hépatiques et articulaires sont également retrouvés.
 L'atteinte de la fonction respiratoire est la plus bruyante cliniquement. En effet, au niveau de l’épithélium broncho-pulmonaire, l’absence d’un CFTR fonctionnel est responsable d’une déshydratation du mucus le rendant plus visqueux et empêchant les cils bronchiques de jouer leurs rôles.\\
@@ -395,7 +395,7 @@ Les traitements correcteurs/potentiateurs de la protéine CFTR, comme l'\textit{
 
 L’atteinte pulmonaire dans la mucoviscidose est caractérisée par des réactions inflammatoires qui dégradent progressivement la fonction respiratoire. Cette inflammation est la conséquence d'un afflux excessif de polynucléaires avec libération de médiateurs\cite{Heijerman2005} probablement en réponse à une agression microbienne. Plusieurs pathogènes sont impliqués. Chez les jeunes enfants\cite{Davies}, \textit{Haemophilus influenzae} et \textit{Staphylococcus aureus} sont le plus souvent responsable. \textit{Burkholderia cepacia complex} et \textit{Stenotrophomonas maltophilia} sont retrouvés parmi les sujets plus âgés \cite{Davies}.
 
-Mais c’est \textit{Pseudomonas aeruginosa} qui caractérise l’atteinte pulmonaire dans la mucoviscidose en marquant un tournant décisif dans l’évolution de la maladie. Ce bacille aérobie strict est une bactérie de l'environnement rarement retrouvée parmi les sujets sains\cite{Plesiat}. En revanche, dans la mucoviscidose, il est mis en évidence\cite{LeBourgeois} chez 60\% des patients jeunes et chez plus de 90\% des patients adultes.\\
+Mais c’est \textit{Pseudomonas aeruginosa} qui caractérise l’atteinte pulmonaire dans la mucoviscidose en marquant un tournant décisif dans l’évolution de la maladie. Ce bacille aérobie strict est une bactérie de l'environnement rarement retrouvée parmi les sujets sains\cite{Plesiat}. En revanche, dans la mucoviscidose, il est mis en évidence\cite{LeBourgeois} chez 60 \% des patients jeunes et chez plus de 90 \% des patients adultes.\\
 La primocolonisation à \textit{P. aeruginosa} est difficilement détectable, mais elle semble avoir lieu tôt dans l’enfance[@]. Il y a ensuite une phase de latence, variable entre les individus, marquée par des épisodes d’exacerbations et de rémissions. À ce moment, l’éradication par des antibiotiques reste possible.
 Puis survient le passage à la chronicité. \textit{P. aeruginosa} s'adapte à son milieu et s’installe à long terme. Il perd certains caractères de virulence, mais devient résistant aux antibiotiques\cite{LeBourgeois}. Son phénotype change. Il se transforme pour devenir mucoïde en sécrétant un film d’alginate qui le protège du système immunitaire. Les mécanismes sous-jacents à cette adaptation sont ingénieux. La forte densité en bactéries est responsable de l’activation de certains gènes par un processus appelé \textit{quorum sensing}\cite{Ruimy2004}. Dans ce processus, chaque bactérie communique avec ses voisines par des signaux chimiques.
 
@@ -410,9 +410,9 @@ Une autre classification, celle de Lee\cite{Lee2003} définit 4 groupes (Tableau
      \centering
      \begin{tabular}{|c|c|}
       \hline
-          \textbf{chronique} & > 50\% des cultures sont positives sur 12 mois \\
+          \textbf{chronique} & > 50 \% des cultures sont positives sur 12 mois \\
          \hline
-         \textbf{intermédiaire} & $\leq$ 50\% des cultures sont positives sur  12 mois\\
+         \textbf{intermédiaire} & $\leq$ 50 \% des cultures sont positives sur  12 mois\\
           \hline
           \textbf{Free} & Cultures négatives sur 12 mois, avec des antécédents de positivité à \textit{P. aeruginosa}\\
          \hline
@@ -626,7 +626,7 @@ Cette étape consiste à supprimer toutes les séquences doublons. En procédant
 \subsubsection{Assignation taxonomique}
 \noindent\emph{2 fasta en entrée,  1 fichier biom  en sortie. }
 
-L’assignement taxonomique consiste à labelliser chaque read à son taxon. Nous avons utilisé la stratégie \textit{close référence} dont le rôle est de comparer chaque read à une base de données avec un seuil de 98\% de similarité. Cet algorithme est de complexité N. C'est-à-dire que le temps de calcul est directement proportionnel au nombre de reads testé. La base de données \textit{Greengene}\cite{DeSantis2006} version mai 2013  a été utilisée. Il s'agit d'un fichier fasta contenant 1 262 986 séquences et 203 452 OTUs. \\
+L’assignement taxonomique consiste à labelliser chaque read à son taxon. Nous avons utilisé la stratégie \textit{close référence} dont le rôle est de comparer chaque read à une base de données avec un seuil de 98 \% de similarité. Cet algorithme est de complexité N. C'est-à-dire que le temps de calcul est directement proportionnel au nombre de reads testé. La base de données \textit{Greengene}\cite{DeSantis2006} version mai 2013  a été utilisée. Il s'agit d'un fichier fasta contenant 1 262 986 séquences et 203 452 OTUs. \\
 L'autre stratégie d'assignation \textit{de novo} n'a pas été utilisée. Cette dernière, de complexité $N^{2}$, consiste à comparer les reads entre eux pour former des groupes. Elle s'emploie de préférence pour détecter les bactéries absentes des bases de données. \\
 L'assignation taxonomique a été réalisé avec \textbf{vsearch} et sa fonction \textit{--usearch\_global}.
 
@@ -635,7 +635,7 @@ L’analyse de la table des OTUs a été réalisée avec R et le package \textbf
 Les abondances absolue et relative, la prévalence, la dominance et la courbe de raréfaction ont été mesurées pour chaque échantillon.
 Les diversités alpha de type Chao1 et Shannon ont été mesurées sur tous les échantillons. L'évolution de ces indices a été représentée graphiquement dans le temps et par patient.
 La diversité bêta a été évaluée grâce une Analyse en Coordonnées Principales utilisant la distance de Bray-Curtis.
-Le core microbiota\cite{VanderGast2011} a été calculé. Il est défini comme l’ensemble des taxons retrouvé dans plus de 50\% des échantillons avec une abondance supérieure à 0,1\%.
+Le core microbiota\cite{VanderGast2011} a été calculé. Il est défini comme l’ensemble des taxons retrouvé dans plus de 50 \% des échantillons avec une abondance supérieure à 0,1 \%.
 La corrélation entre les genres a été recherchée.
 Les catégories Free et Never ont été comparées d’après leurs diversités alpha et bêta.
 
@@ -660,9 +660,9 @@ Au total, 115 002 297 reads ont été produits sur deux runs MiSeq (Figure \ref{
 
 \subsubsection{Qualité des reads}
 La figure \ref{fastqt} montre la qualité typique d'un fichier fastq produit par le séquenceur. Une baisse de qualité importante est observée à hauteur du 250e nucléotide. Tous les fichiers fastq présentaient le même profil.
-À cause de cette baisse de qualité, x\% des reads pairs n'ont pas pu être fusionnés.
+À cause de cette baisse de qualité, x \% des reads pairs n'ont pas pu être fusionnés.
 L'étape de filtrage a permis de ramener la qualité médiane au-dessus de 20 (Figure \ref{fastqt_after}).
-Au total, seulement 49.24\% des reads ont été conservés pour l'analyse (Figure \ref{readcount}) avec des bornes allant de 37,30\% à 61,13\%.
+Au total, seulement 49.24 \% des reads ont été conservés pour l'analyse (Figure \ref{readcount}) avec des bornes allant de 37,30 \% à 61,13 \%.
 
 
 
@@ -685,7 +685,7 @@ Au total, seulement 49.24\% des reads ont été conservés pour l'analyse (Figur
 
 
 \subsubsection{Assignation taxonomique}
-99.88\% (4615960) des reads analysables ont reçu une assignation taxonomique soit 10517 OTUs détectés \footnote{Pour chaque espèce, il y a plusieurs OTUs définis dans \textit{Greengene}} correspondant à 54 genres bactériens (Figure \ref{readgenus}).
+99.88 \% (4615960) des reads analysables ont reçu une assignation taxonomique soit 10517 OTUs détectés \footnote{Pour chaque espèce, il y a plusieurs OTUs définis dans \textit{Greengene}} correspondant à 54 genres bactériens (Figure \ref{readgenus}).
 Le temps de calcul a été de 1 h 29 et a nécessité 40 cœurs et 20 gigaoctets de mémoire contre 21h de calcul sans l’optimisation par déréplication.
 
 
@@ -722,12 +722,12 @@ Dans l'ensemble elles s’aplatissent précocement, témoignant d’un bon nivea
 \subsection{Résultats descriptifs}
 \subsubsection{Composition du microbiote}
 Cinquante-quatre genres (Figure \ref{readgenus}) et sept phylums (Figure \ref{phylum}) bactériens sont retrouvés dans l'ensemble des échantillons analysés.
-Les deux phyla majoritaires sont \textit{Firmicute} (42.59\%) et \textit{Proteobacteria} (31.48\%). Parmi les \textit{Firmicutes} majoritaires, on retrouve \textit{Streptococcus} et \textit{Staphylococcus}. Au sein des \textit{Proteobacteria}, \textit{Neisseria} et \textit{Haemophilus} sont les genres les plus abondants.
+Les deux phyla majoritaires sont \textit{Firmicute} (42.59 \%) et \textit{Proteobacteria} (31.48 \%). Parmi les \textit{Firmicutes} majoritaires, on retrouve \textit{Streptococcus} et \textit{Staphylococcus}. Au sein des \textit{Proteobacteria}, \textit{Neisseria} et \textit{Haemophilus} sont les genres les plus abondants.
 Le tableau de la figure \ref{alltable} résume l'ensemble des résultats en y associant la prévalence des genres bactériens parmi les 188 échantillons.
 Par exemple \textit{Streptococcus}, \textit{Neisseria}, \textit{Prevotella}, \textit{Granulicatella}, \textit{Gemella}, \textit{Veillonella} et \textit{Fusobacterium} sont très prévalents, car présents dans plus de 185 échantillons.
-D’autres genres sont dominants. Il s’agit de \textit{Streptococcus}, \textit{Neisseria}, \textit{Haemophilus} et \textit{Staphyloccoccus}. \textit{Stenotrophomonas} et \textit{Achromobacter} sont retrouvées dans 64 et 8 échantillons respectivement. \textit{Pseudomonas} est retrouvé dans 53 échantillons, dont un, au moins avec une abondance de 25.94\%. \textit{Burkholderia} est retrouvé seulement dans deux échantillons à moins de 1\%.\\
+D’autres genres sont dominants. Il s’agit de \textit{Streptococcus}, \textit{Neisseria}, \textit{Haemophilus} et \textit{Staphyloccoccus}. \textit{Stenotrophomonas} et \textit{Achromobacter} sont retrouvées dans 64 et 8 échantillons respectivement. \textit{Pseudomonas} est retrouvé dans 53 échantillons, dont un, au moins avec une abondance de 25.94 \%. \textit{Burkholderia} est retrouvé seulement dans deux échantillons à moins de 1 \%.\\
 Le core microbiota est constitué de 14 genres bactériens (Figure \ref{core}). Sa distribution est illustrée dans la figure \ref{violon}.
-\textit{Streptococcus} respecte grossièrement une distribution normale variant de la quasi-absence à la dominance avec une moyenne de 30\% par échantillon. \textit{Neisseria} est le deuxième genre le plus abondant avec une moyenne de 18\%.
+\textit{Streptococcus} respecte grossièrement une distribution normale variant de la quasi-absence à la dominance avec une moyenne de 30 \% par échantillon. \textit{Neisseria} est le deuxième genre le plus abondant avec une moyenne de 18 \%.
 Les abondances de \textit{Staphylococcus} et \textit{Haemophilus} sont faibles dans la plupart des échantillons. Mais pour quelques échantillons, ces genres sont dominants. Les autres genres ont une abondance faible qui varie faiblement. Ils ne sont jamais retrouvés comme dominants.
 
 
@@ -792,7 +792,7 @@ La figure \ref{evolution43} zoome sur le patient 43 pour montrer ces deux popula
 
 \subsubsection{Bêta Diversité}
 La bêta diversité sur l’ensemble des échantillons a été réalisée par une méthode d’ordination de type PCoA en utilisant les distances de Bray-Curtis (Figure \ref{ordination},\ref{ordination2} et \ref{pcoa}).
-Les deux axes principaux expliquent respectivement 28.5\% et 17.4\% de la variabilité.
+Les deux axes principaux expliquent respectivement 28.5 \% et 17.4 \% de la variabilité.
 Certains échantillons d’un même patient sont très proches sur le graphique d’ordination. Par exemple le patient 69 et 003 ont des échantillons dont les points se confondent.
 Aucune des analyses tenant compte des paramètres biocliniques colligés pendant l'étude MUCOBIOME comme l'âge, le sexe, le poids, la prise d'antibiotique et le type de mutation du gène \textit{CFTR} n’a mis en évidence des groupes distincts de microbiote. Le score cytologique n'a pas non plus montré de différence.
 La variabilité est expliquée principalement par la dominance des genres \textit{Neisseria}, \textit{Streptococcus} et \textit{Haemophilus} comme le montre la figure \ref{ordination2}.
@@ -816,7 +816,7 @@ La variabilité est expliquée principalement par la dominance des genres \texti
 \end{figure}
 
 \subsubsection{Présence de P. aeruginosa}
-Sur les 188 échantillons, 22 étaient positifs à \textit{P.aeruginosa} en culture. L'ADNr 16S de Pseudomonas est détecté dans 48 échantillons. Dans la majorité des cas, l'abondance relative est faible. Sur les 48 échantillons, 39 ont une abondance relative en dessous de 3\%. L'abondance la plus forte est de 27,4\% et correspond au "end point" positif en culture du patient 10.
+Sur les 188 échantillons, 22 étaient positifs à \textit{P.aeruginosa} en culture. L'ADNr 16S de Pseudomonas est détecté dans 48 échantillons. Dans la majorité des cas, l'abondance relative est faible. Sur les 48 échantillons, 39 ont une abondance relative en dessous de 3 \%. L'abondance la plus forte est de 27,4 \% et correspond au "end point" positif en culture du patient 10.
 Les tableaux \ref{pyopcr} et \ref{pyoculture} comparent le nombre d'échantillons arborant des reads ADNr 16S de \textit{P.aeruginosa} avec ceux détectés par qPCR (données de l'étude de Héry-Arnaud et al., 2017) et par culture.
 
   \begin{table}[!h]
@@ -883,7 +883,7 @@ La figure  \ref{pcoa} est une analyse multivariée discriminant les groupes Free
 \section{Discussion}
 \subsection{Production des données}
 \subsubsection{Séquençage}
-La version 3 du kit MiSeq Reagent Kit produit des reads plus longs (300 pb) que dans la version précédente (250 pb) afin d'augmenter la précision de l'assignation taxonomique (Figure \ref{rnasens}). En contrepartie la qualité du séquençage est médiocre aux extrémités avec des scores qui chutent en dessous de 20. À cause de cela, seulement 43\% de reads sont exploitables.
+La version 3 du kit MiSeq Reagent Kit produit des reads plus longs (300 pb) que dans la version précédente (250 pb) afin d'augmenter la précision de l'assignation taxonomique (Figure \ref{rnasens}). En contrepartie la qualité du séquençage est médiocre aux extrémités avec des scores qui chutent en dessous de 20. À cause de cela, seulement 43 \% de reads sont exploitables.
 C'est un problème connu lié à la chimie du kit que Illumina n'a pas corrigé à ce jour. La profondeur de séquençage reste toutefois suffisante comme l'attestent les courbes de raréfaction. En utilisant d'autres amorces ciblant des régions de l'ADNr 16S différentes, nous pourrions augmenter la taille du chevauchement pour gagner en profondeur, mais en diminuant la longueur des reads. \\
 Les séquenceurs de 3e générations comme le Mini Ion (Oxford Nanopore) ou le PacBio (Pacific Bioscience) apporteraient un avantage certain. Ces derniers sont capables de produire des reads très longs (10 000 pb en moyenne) et pourraient facilement séquencer l'intégralité de l'ADNr 16S. De plus, contrairement à Illumina, les fragments d'ADN sont directement lus (Technologie SMS: Single Molecule Sequencing) évitant ainsi tout biais d'amplification pouvant surévaluer les abondances.
 La qualité des reads de ces séquenceurs de 3e génération est en revanche de mauvaise qualité. Malgré cela, deux études\cite{Wagner2016,Benitez-Paez2016} ont déjà montré que leurs résolutions taxonomiques atteignent facilement celui de l’espèce.
@@ -897,9 +897,9 @@ La qualité des reads de ces séquenceurs de 3e génération est en revanche de 
 \end{figure}
 
 \subsubsection{Pipeline}
-La stratégie close-reference utilisée dans le pipeline mucobiome a permis d'assigner jusqu'au niveau du genre, plus de 99\% des reads analysés. La base de données \textit{Greengene} est donc assez exhaustive pour analyser le microbiote respiratoire, car tous les genres sont connus.
+La stratégie close-reference utilisée dans le pipeline mucobiome a permis d'assigner jusqu'au niveau du genre, plus de 99 \% des reads analysés. La base de données \textit{Greengene} est donc assez exhaustive pour analyser le microbiote respiratoire, car tous les genres sont connus.
 En revanche, la résolution taxonomique n'atteint pas le rang de l'espèce. Il a en effet déjà été montré que les régions hypervariables prises isolément ne sont pas assez discriminantes \cite{Yang2016}. Deux espèces peuvent par exemple varier d'un seul nucléotide dans une région hypervariable.
-D'autre part, l'assignation taxonomique dépend d'une similarité fixée arbitrairement à 97\%. D'autres algorithmes permettent de s'affranchir de ce seuil. Il s'agit par exemple de la clusterisation par calcul d'entropie maxium \textit{Maximum entropy clusterisation} \cite{Bobadilla2015}.
+D'autre part, l'assignation taxonomique dépend d'une similarité fixée arbitrairement à 97 \%. D'autres algorithmes permettent de s'affranchir de ce seuil. Il s'agit par exemple de la clusterisation par calcul d'entropie maxium \textit{Maximum entropy clusterisation} \cite{Bobadilla2015}.
 
 
 \begin{figure}
@@ -921,7 +921,7 @@ La distance UniFrac\cite{Lozupone2005} pourrait alors remplacer la distance de B
 
 \subsection{Analyse des données}
 \subsubsection{Principaux phyla bactériens}
-Par rapport aux données chez les sujets sains \cite{Marsland2014}, nos résultats chez les patients mucoviscidosiques montrent une augmentation des \textit{Proteobacteria} (31.48\%) aux dépens des \textit{Bacteroidetes} (11.11\%). Et dans une moindre mesure, une augmentation des \textit{Actinobacteria} (7.41\%). Ces résultats sont en accord avec ceux présentés dans la méta-analyse de \textit{Nature} retrouvant ces proportions dans la mucoviscidose, l'asthme et la BPCO. Cet excès s’explique principalement par la dominance d’\textit{Haemophilus} et de \textit{Neisseria}.  
+Par rapport aux données chez les sujets sains \cite{Marsland2014}, nos résultats chez les patients mucoviscidosiques montrent une augmentation des \textit{Proteobacteria} (31.48 \%) aux dépens des \textit{Bacteroidetes} (11.11 \%). Et dans une moindre mesure, une augmentation des \textit{Actinobacteria} (7.41 \%). Ces résultats sont en accord avec ceux présentés dans la méta-analyse de \textit{Nature} retrouvant ces proportions dans la mucoviscidose, l'asthme et la BPCO. Cet excès s’explique principalement par la dominance d’\textit{Haemophilus} et de \textit{Neisseria}.  
 Par ailleurs, une large proportion d’anaérobies est retrouvée, avec notamment   \textit{Prevotella} et \textit{Veillonella}. La corrélation forte entre ces deux genres (coefficient de Pearson = 0.60) a été décrite dans le microbiote intestinal\cite{Dlugosz2015}. La signification clinique de la présence des anaérobies est encore incertaine \cite{Tunney2008}.
 
 \subsubsection{Dominance des pathogènes}
@@ -949,7 +949,7 @@ Enfin les nouvelles technologies de séquençage évoqué plus haut seraient id�
 
 
 \section{Conclusion}
-Le séquençage de l'ADNr 16S a été réalisé sur 188 expectorations bronchiques de x patients atteints de mucoviscidose avec un pipeline bio-informatique dédié. Malgré la faible qualité du séquençage MiSeq (Illumina) dans la version 3 du kit, plus de 99\% des reads ont reçu une assignation taxonomique jusqu'au genre bactérien. L'augmentation des \textit{Proteobacteria} évoquée dans d'autres études sur le microbiote respiratoire dans la mucoviscidose est retrouvée. Les analyses de diversité ont montré une grande hétérogénéité des microbiotes entre les patients et une variabilité dans le temps. 
+Le séquençage de l'ADNr 16S a été réalisé sur 188 expectorations bronchiques de x patients atteints de mucoviscidose avec un pipeline bio-informatique dédié. Malgré la faible qualité du séquençage MiSeq (Illumina) dans la version 3 du kit, plus de 99 \% des reads ont reçu une assignation taxonomique jusqu'au genre bactérien. L'augmentation des \textit{Proteobacteria} évoquée dans d'autres études sur le microbiote respiratoire dans la mucoviscidose est retrouvée. Les analyses de diversité ont montré une grande hétérogénéité des microbiotes entre les patients et une variabilité dans le temps. 
 Ni les données clinico-biologiques recueillies ni les catégories de Lee (statut vis à vis de P. aeruginosa) n'ont montré une différence significative en termes de diversité. 
 Une étude longitudinale avec une résolution temporelle plus importante serait intéressante pour évaluer la cinétique d'évolution du microbiote. Les séquenceurs de troisième génération permettraient l'assignation taxonomique jusqu'à l'espèce.
 Enfin d'autres approches seraient intéressantes pour évaluer la fonction du microbiote et aussi l'impact du virome respiratoire. La métagénomique fonctionnelle ou encore la PCR digitale apporteraient ces éléments de réponse au prix de calculs informatiques parfois très élevés.
