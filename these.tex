@@ -27,6 +27,7 @@
 \usepackage[margin=2.7cm]{geometry}
 %\usepackage{amsmath}
 \usepackage{caption}
+\renewcommand{\tablename}{Tableau}
 
 \DeclareCaptionType{mycapequ}[][List of equations]
 \captionsetup[mycapequ]{labelformat=empty}
@@ -102,7 +103,7 @@ FACULTE DE MEDECINE DE BREST}\\
 \textsc{\Large \textbf{DIPLÔME D'ÉTAT}}\\[0.1cm]
 \textsc{\large Par}\\[0.1cm]
 \textsc{\Large Sacha SCHUTZ} \\[0.1cm]
-\textsc{\normalsize Née le 18 Mai 1984} \\[0.1cm]
+\textsc{\normalsize Né le 18 Mai 1984} \\[0.1cm]
 \textsc{\normalsize Présentée et soutenue publiquement le 23 Mai 2017}\\[1.0cm]
 
 
@@ -128,7 +129,9 @@ FACULTE DE MEDECINE DE BREST}\\
 
 
  %----------------PAGE ENGAGEMENT ET LICENSE ---------------------------
-
+\thispagestyle{empty}
+\null
+\newpage
 \newpage
 \thispagestyle{empty}
 \setcounter{page}{0}
@@ -148,6 +151,8 @@ Date : 17/05/2017
 \vspace{0.5cm}
 
 Signature : \\
+\vspace{0.5cm}
+
 
 
 \vfill
@@ -163,7 +168,9 @@ distribuer et/ou modifier ce document sous les termes de la Licence de
 Documentation libre GNU, Version 1.2 ou toute version ultérieure publiée
 par la Free Software Foundation ; with no Invariant Sections, no
 Front-Cover Texts, and no Back-Cover Texts. Une copie de la licence est
-incluse dans la section intitulée « GNU Free Documentation License ».
+incluse dans la section intitulée « GNU Free Documentation License ». \\[1cm]
+Ce document a été rédigé en \LaTeX.\\ Le code source est disponible sur \url{https://github.com/dridk/these.}
+
 
 \newpage
 \includepdf[pages=-]{titulaire.pdf}
@@ -224,7 +231,8 @@ qui m'ont redonné une nouvelle jeunesse d'anarchiste libriste. Natir, Aluriak, 
 Je n'oublie pas de remercier toute l'équipe de biologie moléculaire qui a supporté ma maladresse. \\ 
 \vspace{0.5cm}
 
-Enfin, je remercie particulièrement mon ordinateur et toute la communauté open source qui m'a permis de produire cette thèse.
+Enfin, je remercie particulièrement mon ordinateur et toute la communauté open source qui m'a permis de produire cette thèse. 
+
 \vspace{0.5cm}
 
 \end{flushleft}
@@ -302,7 +310,7 @@ Il est encore trop tôt pour dire si cette science va révolutionner la médecin
 \begin{center}
 \includegraphics[scale=0.5]{img/mitochondrie.jpg}\hfill
 \end{center}
-\caption{La mitochondrie est l'exemple de symbiose ultime entre eucaryote et procaryote.}
+\caption{La mitochondrie: exemple de symbiose entre eucaryote et procaryote.}
 \label{mitochondrie}
 \end{figure}
 
@@ -324,15 +332,15 @@ Il est encore trop tôt pour dire si cette science va révolutionner la médecin
 \paragraph{L'OTU}(\textit{Operational Taxonomic Unit}) est un terme utilisé en phylogénie pour désigner un groupe d’individus semblables. Dans la majorité des cas, il s'agit de l'espèce dans la classification de Linné.
 En microbiologie, un OTU est défini par un groupe de bactéries ayant une similarité dans leurs séquences d'ADNr 16S supérieur ou égal à 97 \%.
 
-\paragraph{L'abondance} absolue est le nombre d'individu appartement au même OTU dans un échantillon. 
+\paragraph{L'abondance} absolue est le nombre d'individus appartement au même OTU dans un échantillon. 
 L’abondance relative est l'expression en pourcentage de l'abondance absolue. L'abondance est évaluée en calculant le nombre de séquence d'ADNr 16S appartenant à un OTU.
 
 \paragraph{La dominance} caractérise un OTU dont l'abondance est supérieure à 90 \% dans un échantillon.
 
 
-\paragraph{La table des OTUs} est à la base de toutes analyses en écologie. Elle correspond à un tableau à double entrée contenant l’abondance par échantillon et par OTU. Dans le tableau \ref{OTUTABLE}, l'abondance relative pour \textit{Staphylococcus aureus} est de 68 \%.
+\paragraph{La table des OTUs} est à la base de toute analyse en écologie. Elle correspond à un tableau à double entrée contenant l’abondance par échantillon et par OTU. Dans le tableau \ref{OTUTABLE}, l'abondance relative pour \textit{Staphylococcus aureus} est de 68 \%.
 
-\begin{figure}[h]
+\begin{table}[h]
 \begin{center}
 \begin{tabular}{|l|c|c|c|c}
   \hline
@@ -346,9 +354,10 @@ L’abondance relative est l'expression en pourcentage de l'abondance absolue. L
 \end{tabular}
 \end{center}
 \caption{Exemple d'une table des OTUs}
+\centering
 l'abondance relative de 3 espèces bactériennes pour 3 échantillon
 \label{OTUTABLE}
-\end{figure}
+\end{table}
 
 \paragraph{La diversité alpha} est une mesure de la biodiversité au sein d’un échantillon. Elle correspond à l'analyse d'une colonne de la table des OTUs. La richesse, l'indice de Chao1, de Shannon et de Simpson sont des indices de diversité alpha.
 
@@ -357,8 +366,8 @@ l'abondance relative de 3 espèces bactériennes pour 3 échantillon
 \paragraph{La richesse}(\textit{richness}) est le nombre d'OTUs présents dans un échantillon. Les deux échantillons suivants ont la même richesse (2), mais pas les mêmes abondances.
 
 \begin{description}
-\item[échantillon 1] : 4 \textit{Streptoccus}, 4 \textit{Escherichia}
-\item[échantillon 2] : 432 \textit{Streptoccus}, 12 \textit{Escherichia}
+\item[échantillon 1] : 4 \textit{Streptococcus}, 4 \textit{Escherichia}
+\item[échantillon 2] : 432 \textit{Streptococcus}, 12 \textit{Escherichia}
 \end{description}
 
 \paragraph{L'équitabilité}(\textit{evenness}) indique si les OTUs d’un échantillon sont répartis uniformément.
@@ -406,7 +415,7 @@ Une courbe s’aplatissant indique une bonne profondeur de séquençage (Figure 
 \begin{center}
 \includegraphics[scale=0.5]{img/rarefaction_example.png}\hfill
 \end{center}
-\caption{Exemple de courbes de raréfactions. La courbe bleue témoigne d'un bon échantillonnage en s’aplatissant précocement. Plus de reads ne permettraient pas de découvrir de nouveaux OTUs contrairement à la courbe rouge. }
+\caption{Exemple de courbes de raréfaction.} La courbe bleue témoigne d'un bon échantillonnage en s’aplatissant précocement. Plus de reads ne permettraient pas de découvrir de nouveaux OTUs contrairement à la courbe rouge.
 \label{rarefaction_demo}
 \end{figure}
 
@@ -445,7 +454,8 @@ La figure \ref{pcoatuto} illustre ce principe avec un exemple à deux dimensions
 \begin{center}
 \includegraphics[scale=0.6]{img/pcoatuto.png}\hfill
 \end{center}
-\caption{Représentation de plusieurs échantillons ne contenant que deux espèces A et B. Chaque échantillon est assimilable à un point de coordonnées (abondance A; abondance B). Il est alors possible de calculer des distances entre les échantillons. La plus connue étant la distance euclidienne. Mais d'autres existent comme la distance de Bray-Curtis. Sur cette figure, les échantillons 1 et 2 ont des microbiotes proches, car la distance d1 qui les sépare est petite. Dans la réalité, il y a plus d'espèces donc plus de dimensions. Une PCoA consiste à réduire cet espace multidimensionnelle en un espace 2D qui respecte les distances entre les points. }
+\caption{Exemple d'ordination.}
+Représentation de plusieurs échantillons ne contenant que deux espèces A et B. Chaque échantillon est assimilable à un point de coordonnées (abondance A; abondance B). Il est alors possible de calculer des distances entre les échantillons. La plus connue étant la distance euclidienne. Mais d'autres existent comme la distance de Bray-Curtis. Sur cette figure, les échantillons 1 et 2 ont des microbiotes proches, car la distance d1 qui les sépare est petite. Dans la réalité, il y a plus d'espèces donc plus de dimensions. Une PCoA consiste à réduire cet espace multidimensionnelle en un espace 2D qui respecte les distances entre les points. 
 \label{pcoatuto}
 \end{figure}
 \newpage
@@ -466,7 +476,8 @@ La figure \ref{pcoatuto} illustre ce principe avec un exemple à deux dimensions
 \begin{center}
 \includegraphics[scale=0.6]{img/fastq.jpg}\hfill
 \end{center}
-\caption{Exemple d'un read contenu dans un fichier FASTQ. Les scores de qualités sont encodés avec des symboles ASCII. Par exemple le quatorzième T  est associé au symbole « : » correspondant au score phred de 25, soit une probabilité de 0,3 \% d'erreur.}
+\caption{Exemple d'un  read dans fichier FASTQ.}
+Les scores de qualités sont encodés avec des symboles ASCII. Par exemple le quatorzième T  est associé au symbole « : » correspondant au score phred de 25, soit une probabilité de 0,3 \% d'erreur.
 \label{fastq}
 \end{figure}
 
@@ -487,7 +498,7 @@ Le gène \textit{CFTR} impacté se situe sur le chromosome 7 en position q31.2. 
 On dénombre à ce jour 2017 mutations \cite{cftrdb} mises en cause dans la mucoviscidose. La perte d’une phénylalanine en position 508 par délétion de trois nucléotides c.1521-1523delCTT (anciennement $\Delta$F508) cause à elle seule 80 \% des mucoviscidoses\cite{cftrdb}.
 Ces mutations sont responsables d’une protéine défectueuse ou d’une absence de canaux sur les membranes cellulaires. \\
 Cliniquement, la mutation entraîne une insuffisance pancréatique exocrine et une infertilité par disparition des canaux déférents. Des signes digestifs, hépatiques et articulaires sont également présents.
-L'atteinte de la fonction respiratoire est la plus bruyante cliniquement. En effet, au niveau de l’épithélium broncho-pulmonaire, l’absence d’une protéine CFTR fonctionnelle est responsable d’une déshydratation du mucus, le rendant plus visqueux et empêche les cils bronchiques de jouer leurs rôles.\\
+L'atteinte de la fonction respiratoire est la plus bruyante cliniquement. En effet, au niveau de l’épithélium broncho-pulmonaire, l’absence d’une protéine CFTR fonctionnelle est responsable d’une déshydratation du mucus, le rendant plus visqueux et empêche les cils bronchiques de jouer leur rôle.\\
 Du fait de la forte prévalence de la maladie, un dépistage précoce est réalisé systématiquement chez tous les nouveau-nés (test de Guthrie) afin d’adapter au plus tôt la prise en charge. Seul le test de la sueur permet de poser le diagnostic. Le dépistage prénatal basé sur l’ADN circulant est actuellement à l’étude\cite{Guissart2017}.\\\
 Le traitement repose avant tout sur une prise en charge respiratoire (kinésithérapie, dornase \footnote{Une DNase qui fluidifie les sécrétions trop riches en ADN provenant de l'afflux des neutrophiles in situ et de leur apoptose prématurée.}, antibiothérapie). Les recherches en thérapies génétiques sont encourageantes \cite{Montier2004}.
 Les traitements correcteurs/potentiateurs de la protéine CFTR, comme l'\textit{ivacaftor} sont les seuls traitements curateurs, mais concernent uniquement certaines mutations rares comme la G551D. La greffe pulmonaire est le dernier recours.
@@ -497,7 +508,7 @@ Les traitements correcteurs/potentiateurs de la protéine CFTR, comme l'\textit{
 L’atteinte pulmonaire dans la mucoviscidose est caractérisée par des réactions inflammatoires qui dégradent progressivement la fonction respiratoire. Cette inflammation est la conséquence d'un afflux excessif de polynucléaire avec libération de médiateurs\cite{Heijerman2005} probablement en réponse à une agression microbienne\footnote{D'autres hypothèses suggèrent que l'inflammation précède la colonisation\cite{Heijerman2005}}. Plusieurs pathogènes sont impliqués. Chez les jeunes enfants\cite{Davies}, \textit{Haemophilus influenzae} et \textit{Staphylococcus aureus} sont le plus souvent responsable. \textit{Achromobacter xylosoxidans}, \textit{Burkholderia cepacia complex} et \textit{Stenotrophomonas maltophilia} sont retrouvés parmi les sujets plus âgés \cite{Davies}.
 
 Mais c’est \textit{Pseudomonas aeruginosa} qui caractérise l’atteinte pulmonaire dans la mucoviscidose en marquant un tournant décisif dans l’évolution de la maladie. Ce bacille aérobie strict est une bactérie de l'environnement rarement retrouvée parmi les sujets sains\cite{Plesiat}. En revanche, dans la mucoviscidose, il est mis en évidence\cite{LeBourgeois} chez 60 \% des patients jeunes et plus de 90 \% des patients adultes.\\
-La primocolonisation à \textit{P. aeruginosa} semble avoir lieu tôt dans l’enfance\cite{Plesiat}. Il y a ensuite une phase de latence (Figure \ref{bach}), variable entre les individus, marquée par des épisodes de recolonisation intermittentes. À ce moment, l’éradication par des antibiotiques reste possible.
+La primocolonisation à \textit{P. aeruginosa} semble avoir lieu tôt dans l’enfance\cite{Plesiat}. Il y a ensuite une phase de latence (Figure \ref{bach}), variable entre les individus, marquée par des épisodes de recolonisation intermittente. À ce moment, l’éradication par des antibiotiques reste possible.
 Puis survient le passage à la chronicité. \textit{P. aeruginosa} s'adapte à son milieu et s’installe à long terme. Il perd certains caractères de virulence, mais devient résistant aux antibiotiques\cite{LeBourgeois}. Son phénotype change. Il se transforme pour devenir mucoïde en sécrétant un film d’alginate qui le protège du système immunitaire. Les mécanismes sous-jacents à cette adaptation sont ingénieux. La forte densité en bactéries est responsable de l’activation de certains gènes par un processus appelé \textit{quorum sensing}\cite{Ruimy2004}. Dans ce processus, chaque bactérie communique avec ses voisines par des signaux chimiques.
 Le génome de \textit{P. aeruginosa} devient également hyperpermutable\cite{Davies} pour présenter une plus grande diversité génétique au regard de la sélection naturelle\footnote{En biologie évolutive, il s'agit d'évolvabilité} et donc évoluer plus rapidement. \\
 À ce stade, le traitement antibiotique n’est plus curatif mais symptomatique et l'évolution tend inexorablement vers un déclin de la fonction respiratoire. \\
@@ -511,13 +522,13 @@ Une autre classification, celle de Lee\cite{Lee2003} définit 4 groupes (Tableau
      \caption{Classification de Lee \cite{Lee2003}}
      \begin{tabular}{|c|p{10cm}|}
       \hline
-          \textbf{chronique} & > 50 \% des cultures sont positives sur 12 mois \\
+          \textbf{Chronique} & > 50 \% des cultures sont positives sur 12 mois \\
          \hline
-         \textbf{intermédiaire} & $\leq$ 50 \% des cultures sont positives sur  12 mois\\
+         \textbf{Intermédiaire} & $\leq$ 50 \% des cultures sont positives sur  12 mois\\
           \hline
-          \textbf{Free} & Cultures nég. sur 12 mois avec des antécédents de positivité à \textit{P. aeruginosa}\\
+          \textbf{Free} & Cultures négatives sur 12 mois avec des antécédents de positivité à \textit{P. aeruginosa}\\
          \hline
-	    \textbf{Never} & Cultures nég. sur 12 mois sans antécédents de positivité à \textit{P. aeruginosa} \\
+	    \textbf{Never} & Cultures négatives sur 12 mois sans antécédents de positivité à \textit{P. aeruginosa} \\
 	      \hline
      \end{tabular}
      \label{lee}
@@ -542,7 +553,8 @@ Par exemple la production d'alanine et de lactate \cite{Boulette2009} est une so
 \textbf{Stimulation du système immunitaire}:
 \textit{P. aeruginosa} stimulerait le système immunitaire de façon à éliminer tous ses concurrents et ainsi se développer seul dans sa niche écologique\cite{Pernet2015}.
 
-\textbf{Une anomalie du microbiote \cite{Keravec2015,HoMan2017,Nguyen2015}}:
+% ADD KERAVEC - BERNARDE
+\textbf{Anomalie du microbiote\cite{Keravec2015,HoMan2017,Nguyen2015}}:
 A l'instar de ce qui est bien démontré au niveau intestinal, le microbiote respiratoire jouerait le rôle de barrière contre l'implantation d'agents pathogènes exogènes. La dysbiose induite par la mucoviscidose permettrait à \textit{P. aeruginosa} de s'installer
 
 
@@ -550,7 +562,8 @@ A l'instar de ce qui est bien démontré au niveau intestinal, le microbiote res
 \begin{center}
 \includegraphics[scale=0.8]{img/chronic.png}\hfill
 \end{center}
-\caption{Histoire naturelle de l'infection pulmonaire à \textit{P. aeruginosa} dans la mucoviscidose (P.Plésiat 2003\cite{Plesiat}).}
+\caption{Histoire naturelle de l'infection pulmonaire à \textit{P. aeruginosa}} 
+\centering (P. Plésiat 2003\cite{Plesiat}).
 \label{bach}
 \end{figure}
 
@@ -560,7 +573,7 @@ A l'instar de ce qui est bien démontré au niveau intestinal, le microbiote res
 Bien qu'il soit en contact avec le milieu extérieur, l’arbre respiratoire (comprenant la trachée, les bronches et les alvéoles) a longtemps été considéré stérile avec les méthodes de culture classique. Il a fallu attendre l’avènement du séquençage haut débit pour mettre en évidence le microbiote pulmonaire \cite{Hilty2010,HoMan2017,Beck,Dicksonb}.\\
 L'arbre respiratoire chez le fœtus\footnote{Un article récent critique l'idée d'un fœtus stérile \cite{Perez-Munoz2017}} est stérile. Il se colonise comme l'intestin, à la naissance lors du passage de la filière génitale puis se différencie au cours du temps. Il est beaucoup moins riche que le microbiote digestif, mais plus dynamique en raison d'un flux aérien bidirectionnel.  Les bactéries du microbiote respiratoire proviennent de l’air ambiant, des voies supérieures, mais aussi du tube digestif par un phénomène de micro aspirations \cite{Dickson}. Une étude a d'ailleurs montré une concordance entre le microbiote digestif et respiratoire\cite{Dickson}.\\
 Le microbiote pulmonaire est dominé par le phylum des \textit{Firmicutes} (\textit{Streptococcus}) et des \textit{Bacteroidetes} (\textit{Prevotella}). Les genres retrouvés majoritairement sont \textit{Streptococcus}, \textit{Prevotella}, \textit{Fusobacteria}, \textit{Veillonella}, \textit{Haemophilus}, \textit{Neisseria} et \textit{Porphyromonas}.
-L’arbre respiratoire étant en continuité directe avec les voies aériennes supérieures il y a un gradient microbien de l'oropharynx jusqu'aux alvéoles. Certains genres bactériens sont communs, comme \textit{Streptococcus}, \textit{Staphylococcus}, \textit{Haemophilus} et \textit{Moraxella}. Tandis que d’autres genres comme \textit{Corynebacterium} et \textit{Dolosigranulum} ne sont retrouvés essentiellement au niveau du nez et de l'oropharynx. \\
+L’arbre respiratoire étant en continuité directe avec les voies aériennes supérieures il y a un gradient microbien de l'oropharynx jusqu'aux alvéoles. Certains genres bactériens sont communs, comme \textit{Streptococcus}, \textit{Staphylococcus}, \textit{Haemophilus} et \textit{Moraxella}. Tandis que d’autres genres comme \textit{Corynebacterium} et \textit{Dolosigranulum} sont retrouvés essentiellement au niveau du nez et de l'oropharynx. \\
 Le microbiote pulmonaire est dynamique. Il peut varier dans l'espace à cause de la structure irrégulière de l'arbre bronchique. Un prélèvement au niveau d'un foyer infectieux, par exemple, se distinguera nécessairement d'un foyer sain. Il existe également des gradients physico-chimiques qui selon la région peuvent sélectionner des espèces. Les cavernes tuberculeuses par exemple se trouvent essentiellement dans le lobe supérieur en raison d'une concentration en oxygène plus élevée qui favorise ce bacille aérobie strict. D'autres études \cite{Frayman2017,Coburn2015} ont montré que la diversité diminue avec l'âge ou encore que la structure du microbiote change avec une exposition tabagique.
 Enfin, les pathologies respiratoires\cite{HoMan2017} sont une autre source de variabilité du microbiote. Il est par exemple démontré dans la mucoviscidose qu'il y une augmentation de richesse et une diminution de diversité. L'asthme et la BPCO sont également associés à des anomalies du microbiote pulmonaire\cite{Dicksona,Nguyen2015}.  \\
 Il semble cependant que ce soit l'individu lui-même qui soit la principale source de variabilité avant tout autre facteur\cite{Whelan2017}. 
@@ -572,7 +585,7 @@ Il semble cependant que ce soit l'individu lui-même qui soit la principale sour
 Le microbiote respiratoire est exploré en séquençant l'ADN des micro-organismes présents dans un échantillon.
 Toutes les méthodes de recueil sont possibles, mais les prélèvements protégés (combicath \footnote{Cette brosse télescopique est glissée au travers d’un fibroscope et dirigée sous contrôle de la vue dans une petite bronche. Le cathéter interne est alors poussé, expulsant le bouchon et permettant d’avancer la brosse de quelques centimètres, pour réaliser le prélèvement bactériologique.
 }, Liquide Broncho Alvéolaire (LBA)) sont recommandés afin
-d’éviter une contamination par les voies aériennes supérieures. En pratique, les patients atteints de mucoviscidose sont suivis par le recueil des prélèvements moins invasifs comme les prélèvements pharyngés ou les expectorations spontanées ou induites (examen cytobactériologique du crachat (ECBC)). Dans ces dernières, la qualité du prélèvement peut être évaluée en comptant le nombre de cellules épithélium (normalement < 25 par champ à l'objectif x10) et de polynucléaire (normalement > 10 par champ à l'objectif x10) selon le score de Bartlett adapté par Murray et Washington\cite{Microbiologie2015}. Des prélèvements sont également réalisables \textit{in situ}  sur les explants lors des greffes pulmonaires.
+d’éviter une contamination par les voies aériennes supérieures. En pratique, les patients atteints de mucoviscidose sont suivis par le recueil des prélèvements moins invasifs comme les prélèvements pharyngés ou les expectorations spontanées ou induites (examen cytobactériologique du crachat (ECBC)). Dans ces dernières, la qualité du prélèvement peut être évaluée en comptant le nombre de cellules épithéliales (normalement < 25 par champ à l'objectif x10) et de polynucléaires (normalement > 10 par champ à l'objectif x10) selon le score de Bartlett adapté par Murray et Washington\cite{Microbiologie2015}. Des prélèvements sont également réalisables \textit{in situ}  sur les explants lors des greffes pulmonaires.
 
 \subsubsection{Séquençage haut débit}
 % Baisse du coup du sequencage ... %
@@ -589,7 +602,7 @@ L'alignement des séquences d'ADNr 16S entre plusieurs espèces met en évidence
 \begin{center}
 \includegraphics[scale=0.8]{img/ARN_16S.png}\hfill
 \end{center}
-\caption{Structure secondaire de l'ARNr 16S}
+\caption{Structure secondaire de l'ADNr 16S.}
 \label{ARN16S}
 \end{figure}
 
@@ -597,7 +610,7 @@ L'alignement des séquences d'ADNr 16S entre plusieurs espèces met en évidence
 \begin{center}
 \includegraphics[scale=0.8]{img/ARN16S_variation.png}\hfill
 \end{center}
-\caption{Régions constantes et variables de l'ADNr 16S}
+\caption{Régions constantes et variables de l'ADNr 16S.}
 \label{ARN16SVariation}
 \end{figure}
 
@@ -620,15 +633,15 @@ Le comité de protection des personnes (CPP VI-Ouest) et le comité d’éthique
 Les expectorations des patients ont été recueillies lors des séances de kinésithérapie respiratoire, tous les 3 mois selon le calendrier des recommandations officielles. En pratique, sur l’ensemble de la cohorte suivie, l’intervalle médian entre 2 consultations a été de 3,4 mois.
 Les patients devaient avoir un génotypage \textit{CFTR} et un test à la sueur positif. Les transplantés pulmonaires ont été exclus de l’étude.
 Pour être inclus, le patient devait être exempt de \textit{P. aeruginosa} depuis au moins un an d’après les résultats de la culture bactérienne des expectorations. Le patient devait être en capacité d’expectorer spontanément (exclusion des prélèvements pharyngés).
-La première culture bactérienne positive à \textit{P. aeruginosa} était le « endpoint » de l’étude. À cette étape, le patient était sorti de l’étude pour être réinclus un an plus tard en cas de maintien de la négativité des cultures bactériennes obtenue par l’antibiothérapie d’éradication anti-\textit{P. aeruginosa}. D’autres données clinico-biologiques (Age, Sexe, IMC, type de mutation, Présence ou absence de P. aeruginosa en culture et en qPCR, score cytologique de Bartlett, Categorie Free ou Never selon Lee\cite{Lee2003}) ont également été recueillies. Au total, 707 expectorations ont été recueillies à l’issue de l’étude MUCOBIOME. Pour ce travail portant sur l’étude du microbiote broncho-pulmonaire, 188 ont été sélectionnées dont 22 expectorations positives à \textit{P. aeruginosa}. L'âge médian était de 20 ans (18 ans à 38 ans). 74 échantillons étaient catégorisés Free et 114 Never.
+La première culture bactérienne positive à \textit{P. aeruginosa} était le « endpoint » de l’étude. À cette étape, le patient était sorti de l’étude pour être réinclus un an plus tard en cas de maintien de la négativité des cultures bactériennes obtenue par l’antibiothérapie d’éradication anti-\textit{P. aeruginosa}. D’autres données clinico-biologiques (Age, Sexe, IMC, type de mutation, Présence ou absence de \textit{P. aeruginosa} en culture et en qPCR, score cytologique de Bartlett, Categorie Free ou Never selon Lee\cite{Lee2003}) ont également été recueillies. Au total, 707 expectorations ont été recueillies à l’issue de l’étude MUCOBIOME. Pour ce travail portant sur l’étude du microbiote broncho-pulmonaire, 188 ont été sélectionnées dont 22 expectorations positives à \textit{P. aeruginosa}. L'âge médian était de 20 ans (18 ans à 38 ans). 74 échantillons étaient catégorisés Free et 114 Never.
 
 %*citer qq exemples de données (que tu exploiteras après) %et préciser le score
 %cytologique (à mettre dans les résultats : impact oui ou %non sur les données du microbiote)
 
 
-La procédure d'extraction des ADN des échantillons est détaillée dans la publication de  F. Gall\cite{LeGall}. Brièvement les échantillons ont été liquéfiés avec du Dithiotréitol (DTT). Les protéines ont été dégradées avec de la protéinase K.
-Les parois bactériennes ont été fragmentées par sonication (DTT par sonication, Elamsonic S10, Singen, Germany). Après 10 min de centrifugation, L’ADN a été extrait à partir du culot à l'aide du kit QUIAamp DNA Minikit (Quagen).
-Les extraits d’ADN ont été envoyés pour séquençage par le prestataire GATC.
+La procédure d'extraction des ADN des échantillons est détaillée dans la publication de  F. Le Gall\cite{LeGall}. Brièvement les échantillons ont été liquéfiés avec du Dithiotréitol (DTT). Les protéines ont été dégradées avec de la protéinase K.
+Les parois bactériennes ont été fragmentées par sonication (DTT par sonication, Elamsonic S10, Singen, Germany). Après 10 min de centrifugation, l’ADN a été extrait à partir du culot à l'aide du kit QUIAamp DNA Minikit (Quagen).
+Les extraits d’ADN ont été envoyés pour séquençage chez le prestataire GATC.
 
 \subsection{Séquençage}
 La librairie a été générée en amplifiant la région V3-V5 à l’aide du couple d’amorces forward CCTACGGGAGGCAGCAG et reverse CCGTCAATTCMTTTRAGT et du kit MiSeq Reagent Kits v3. \\
@@ -639,7 +652,8 @@ Environ 25 millions de reads sont produits par run MiSeq. En multiplexant à l�
 \begin{center}
 \includegraphics[scale=0.6]{img/illumina.png}\hfill
 \end{center}
-\caption{le couple de séquence de 300 pb permet de recouvrir l'ensemble de la région V3-V5 de l'ARN 16S}
+\caption{Alignement d'un couple de reads sur l'ADNr 16S.}
+Le couple de séquence de 300 pb permet de recouvrir l'ensemble de la région V3-V5 de l'ARN 16S
 \label{illumina}
 \end{figure}
 
@@ -654,7 +668,8 @@ Le pipeline mucobiome prend en entrée, les 188 couples de fichiers FASTQ proven
 \begin{center}
 \includegraphics[scale=0.5]{img/pipeline_trio.png}\hfill
 \end{center}
-\caption{Graphe du pipeline simplifié sur 3 échantillons (1015, 1001 et 1003).\\ \textbf{Merging}: Les reads pairs de 300 pb sont fusionnés  pour produire un fichier fastq contenant des reads de 535 pb. \textbf{Cleaning}: Les reads de mauvaise qualité sont supprimés. \textbf{Reversing}: Les reads sont transformés en leurs séquences complémentaires pour pouvoir être alignés. \textbf{Trimming}: Seule la séquence entre les primers V3-V5 est conservée. \textbf{Dereplicating}: Les séquences dupliquées sont retirées. \textbf{Merging}: L'ensemble des séquences est regroupé dans un seul fichier. \textbf{Taxonomy assignement}: Les séquences sont alignées sur la base de données \textit{Greengene}. \textbf{create\_biom}: la table des OTUs est créée }
+\caption{Graphe du pipeline simplifié sur 3 échantillons}.
+Seul les échantillons 1015, 1001 et 1003 sont représentes.\\ \textbf{Merging}: Les reads pairs de 300 pb sont fusionnés  pour produire un fichier fastq contenant des reads de 535 pb. \textbf{Cleaning}: Les reads de mauvaise qualité sont supprimés. \textbf{Reversing}: Les reads sont transformés en leurs séquences complémentaires pour pouvoir être alignés. \textbf{Trimming}: Seule la séquence entre les primers V3-V5 est conservée. \textbf{Dereplicating}: Les séquences dupliquées sont retirées. \textbf{Merging}: L'ensemble des séquences est regroupé dans un seul fichier. \textbf{Taxonomy assignement}: Les séquences sont alignées sur la base de données \textit{Greengene}. \textbf{create\_biom}: la table des OTUs est créée 
 \label{pipeline_trio}
 \end{figure}
 
@@ -663,11 +678,12 @@ Le pipeline mucobiome prend en entrée, les 188 couples de fichiers FASTQ proven
 \begin{center}
 \includegraphics[scale=0.4]{img/dag.jpg}\hfill
 \end{center}
-\caption{le graphe du pipeline sur l'ensemble des échantillons. Le tournesol montre le niveau de parallélisation nécessaire.}
+\caption{Graphe du pipeline complet.}
+le graphe du pipeline sur l'ensemble des échantillons. Le tournesol montre le niveau de parallélisation nécessaire.
 \label{dag}
 \end{figure}
 
-\subsection{Étape du pipeline}
+\subsection{Étapes du pipeline}
 \subsubsection{Merging: Fusions des reads}
 \noindent\emph{ 2 fastq en entrée 1 fastq en sortie. }
 
@@ -704,14 +720,14 @@ Cette étape consiste à supprimer toutes les séquences doublons. En procédant
 \begin{center}
 \includegraphics[scale=0.4]{img/dereplication.png}\hfill
 \end{center}
-\caption{Exemple de déréplication d'un fichier fasta}
+\caption{Exemple de déréplication d'un fichier FASTA}
 \label{dereplication}
 \end{figure}
 
 \subsubsection{Assignation taxonomique}
 \noindent\emph{2 fasta en entrée,  1 fichier biom  en sortie. }
 
-L’assignation taxonomique consiste à associer chaque read à son taxon. Nous avons utilisé la stratégie \textit{close référence} dont le rôle est de comparer chaque read à une base de données avec un seuil de 97 \% de similarité. Cet algorithme est de complexité N. C'est-à-dire que le temps de calcul est directement proportionnel au nombre de reads testé. La base de données \textit{Greengene}\cite{DeSantis2006} version mai 2013  a été utilisée. C'est un fichier fasta contenant 1 262 986 séquences et 203 452 OTUs. \\
+L’assignation taxonomique consiste à associer chaque read à son taxon. Nous avons utilisé la stratégie \textit{close référence} dont le rôle est de comparer chaque read à une base de données avec un seuil de 97 \% de similarité. Cet algorithme est de complexité N, c'est-à-dire que le temps de calcul est directement proportionnel au nombre de reads testé. La base de données \textit{Greengene}\cite{DeSantis2006} version mai 2013  a été utilisée. C'est un fichier fasta contenant 1 262 986 séquences et 203 452 OTUs. \\
 La stratégie d'assignation \textit{de novo} n'a pas été utilisée. Cette dernière, de complexité $N^{2}$, consiste à comparer les reads entre eux pour former des groupes, sans utilisation d'une base de donnée.
 L'assignation taxonomique a été réalisé avec \textbf{vsearch} et sa fonction \textit{--usearch\_global}.
 
@@ -738,8 +754,9 @@ Au total, 115 002 297 reads ont été produits sur deux runs MiSeq (Figure \ref{
 \begin{center}
 \includegraphics[scale=0.6]{img/pipeline.png}\hfill
 \end{center}
-\caption{Nombre de reads par échantillon. En clair le nombre de reads bruts produits par le séquenceur. En sombre les reads. analysables.}
-\label{fastqt}
+\caption{Nombre de reads par échantillon.}
+En clair le nombre de reads bruts produits par le séquenceur. En sombre ,les reads analysables.
+\label{readcount}
 \end{figure}
 
 
@@ -756,7 +773,7 @@ Au total, seulement 37.7 \% des reads ont été conservés pour l'analyse (Figur
 \begin{center}
 \includegraphics[scale=0.45]{img/1003_forward.png}\hfill
 \end{center}
-\caption{Qualité par nucléotide des reads forward de l'échantillon 1003. \textbf{Axe X}: la position sur le read. \textbf{Axe Y}: La distribution des qualités}
+\caption{Qualité des reads forward de l'échantillon 1003.} \textbf{Axe X}: la position du nucléotide. \textbf{Axe Y}: la distribution des scores de qualités Phred qui chute.
 \label{fastqt}
 \end{figure}
 
@@ -765,7 +782,8 @@ Au total, seulement 37.7 \% des reads ont été conservés pour l'analyse (Figur
 \begin{center}
 \includegraphics[scale=0.45]{img/duo_merging.png}\hfill
 \end{center}
-\caption{Qualité par nucléotide des reads fusionnés pour l'échantillon 1003}
+\caption{Qualité des reads fusionnés pour l'échantillon 1003.}
+Après fusions des reads forward et reverse, le read produit est plus long.
 \label{fastqt_after}
 \end{figure}
 
@@ -778,14 +796,14 @@ Au total, seulement 37.7 \% des reads ont été conservés pour l'analyse (Figur
 \begin{center}
 \includegraphics[scale=0.7]{img/read_count_genus_all.png}\hfill
 \end{center}
-\caption{Nombre de reads par genre bactérien}
+\caption{Nombre de reads par genre bactérien.}
 \label{readgenus}
 \end{figure}
 
 
 \subsubsection{Profondeur de séquençage}
 La figure \ref{rarefaction} montre les courbes de raréfaction pour les 188 échantillons.
-Dans l'ensemble elles s’aplatissent précocement, témoignant d’un bon niveau d'échantillonnage. Les quelques échantillons n'ayant pas attend l'asymptote horizontale ont tout de même été conservés.
+Dans l'ensemble elles s’aplatissent précocement, témoignant d’un bon niveau d'échantillonnage. Les quelques échantillons n'ayant pas atteint l'asymptote horizontale ont tout de même été conservés.
 
 \begin{figure}[!h]
 \begin{center}
@@ -800,14 +818,14 @@ Dans l'ensemble elles s’aplatissent précocement, témoignant d’un bon nivea
 \begin{center}
 \includegraphics[scale=0.5]{img/phylum.png}\hfill
 \end{center}
-\caption{Phyla retrouvés dans les 188 échantillons}
+\caption{Phyla retrouvés dans les 188 échantillons.}
 \label{phylum}
 \end{figure}
 
 \subsection{Résultats descriptifs}
 \subsubsection{Composition du microbiote}
 Cinquante-quatre genres (Figure \ref{readgenus}) et sept phyla (Figure \ref{phylum}) bactériens sont retrouvés dans l'ensemble des échantillons analysés.
-Les deux phyla majoritaires sont \textit{Firmicute} (42.59 \%) et \textit{Proteobacteria} (31.48 \%). Parmi les \textit{Firmicutes} majoritaires, on trouve \textit{Streptococcus} et \textit{Staphylococcus}. Au sein des \textit{Proteobacteria}, \textit{Neisseria} et \textit{Haemophilus} sont les genres les plus abondants.
+Les deux phyla majoritaires sont \textit{Firmicutes} (42.59 \%) et \textit{Proteobacteria} (31.48 \%). Parmi les \textit{Firmicutes} majoritaires, on trouve \textit{Streptococcus} et \textit{Staphylococcus}. Au sein des \textit{Proteobacteria}, \textit{Neisseria} et \textit{Haemophilus} sont les genres les plus abondants.
 Le tableau \ref{alltable} résume l'ensemble des résultats en y associant la prévalence des genres bactériens parmi les 188 échantillons.
 Par exemple \textit{Streptococcus}, \textit{Neisseria}, \textit{Prevotella}, \textit{Granulicatella}, \textit{Gemella}, \textit{Veillonella} et \textit{Fusobacterium} sont très prévalents, car présents dans plus de 185 échantillons.
 D’autres genres sont dominants. Il s’agit de \textit{Streptococcus}, \textit{Neisseria}, \textit{Haemophilus} et \textit{Staphyloccoccus}. \textit{Stenotrophomonas} et \textit{Achromobacter} sont retrouvées dans 64 et 8 échantillons respectivement. \textit{Pseudomonas} est retrouvé dans 53 échantillons, dont un, au moins avec une abondance de 25.94 \%. \textit{Burkholderia} est retrouvé seulement dans deux échantillons à moins de 1 \%.\\
@@ -818,9 +836,10 @@ Les abondances de \textit{Staphylococcus} et \textit{Haemophilus} sont faibles d
 
 \begin{table}
 \begin{center}
+\caption{Détail de l'assignation taxonomique des reads.} \textbf{Légendes:} Nombre de reads - Moyenne des abondances relatives - écart-type des abondances relatives - plus petite abondance relative - plus grande abondance relative - Nombre d'échantillons où le genre est présent - Nombre d'échantillon où le genre est dominant
 \includegraphics[width=\textwidth]{img/alld.png}\hfill
 \end{center}
-\caption{Résumé détaillé de l'assignation taxonomique des reads. \textbf{Legende:} Nombre de reads - Moyenne des abondances relatives - écart-type des abondances relatives - plus petite abondance relative - plus grande abondance relative - Nombre d'échantillons où le genre est présent - Nombre d'échantillon où le genre est dominant}
+
 \label{alltable}
 \end{table}
 
@@ -829,7 +848,7 @@ Les abondances de \textit{Staphylococcus} et \textit{Haemophilus} sont faibles d
 \begin{center}
 \includegraphics[scale=0.5]{img/core.png}\hfill
 \end{center}
-\caption{Distribution du core microbiota dans l'ensemble des échantillons}
+\caption{Distribution du core microbiota sur les 188 échantillons}
 \label{core}
 \end{figure}
 
@@ -839,7 +858,8 @@ Les abondances de \textit{Staphylococcus} et \textit{Haemophilus} sont faibles d
 \begin{center}
 \includegraphics[scale=0.6]{img/variability.png}\hfill
 \end{center}
-\caption{Variation du core microbiota dans l'ensemble des échantillons}
+\caption{Variation du core microbiota sur les 188 échantillons.}
+En ordonnée les abondances relatives de chaque genre. L’épaisseur des violons exprime la proportion d'échantillon.
 \label{violon}
 \end{figure}
 
@@ -856,14 +876,15 @@ La perte de diversité du 3e prélèvement du patient 223 est causée par l'appa
 Le patient 3 montre une diminution progressive \textit{d’Haemophilus} parallèlement à une augmentation de \textit{Streptococcus}. \\
 Le patient 256 présente une dominance à \textit{Stenotrophomonas} sur l'ensemble de ses échantillons. \textit{Achromobacter} est dominant dans le premier échantillon du patient 211.
 D’autres montrent un phénomène de résilience. Par exemple, le patient 223 récupère un microbiote identique après une colonisation quasi omnisciente à \textit{Haemophilus}. \\
-Dans l’ensemble, il existe deux types de population bactérienne: une population de bactéries constantes et minoritaires (\textit{Fusobacterium}, \textit{Granulicatella}, \textit{Gemella}, \textit{Veillonella}, \textit{Parvimonas}, \textit{Leptotrichia},\textit{Oribacterium}, \textit{Capnoctophaga},\textit{Catonella}); une autre population de bactéries très fluctuantes dans le temps jouant alternativement le rôle de genre dominant ou au contraire de genre absent. (\textit{Haemophilus}, \textit{Streptococcus}, \textit{Neisseria} et \textit{Prevotella}).
+Dans l’ensemble, il existe deux types de populations bactériennes: une population de bactéries constantes et minoritaires (\textit{Fusobacterium}, \textit{Granulicatella}, \textit{Gemella}, \textit{Veillonella}, \textit{Parvimonas}, \textit{Leptotrichia},\textit{Oribacterium}, \textit{Capnoctyophaga},\textit{Catonella}); une autre population de bactéries très fluctuantes dans le temps jouant alternativement le rôle de genre dominant ou au contraire de genre absent (\textit{Haemophilus}, \textit{Streptococcus}, \textit{Neisseria} et \textit{Prevotella}).
 La figure \ref{evolution43} zoome sur le patient 43 pour montrer ces deux populations. La figure du patient \ref{evolution54} est mise également à titre exemple, car elle montre l’apparition de \textit{P. aeruginosa}. \\
 
 \begin{figure}
 \begin{center}
 \includegraphics[scale=0.60]{img/curve_043.png}\hfill
 \end{center}
-\caption{Évolution des abondances pour le patient 43. Notez la population stable et la population fluctuante}.
+\caption{Évolution des abondances pour le patient 43.}
+Notez la population stable et la population fluctuante.
 \label{evolution43}
 \end{figure}
 
@@ -871,14 +892,15 @@ La figure \ref{evolution43} zoome sur le patient 43 pour montrer ces deux popula
 \begin{center}
 \includegraphics[scale=0.60]{img/curve_054.png}\hfill
 \end{center}
-\caption{Évolution des abondances pour le patient 54. Notez l'apparition de \textit{Pseudomonas} dans le dernier échantillon}.
+\caption{Évolution des abondances pour le patient 54.}
+Notez l'apparition de \textit{Pseudomonas} dans le dernier échantillon.
 \label{evolution54}
 \end{figure}
 
-\subsubsection{Bêta Diversité}
-La bêta diversité sur l’ensemble des échantillons a été réalisée par une méthode d’ordination de type PCoA en utilisant les distances de Bray-Curtis (Figure \ref{ordination2},\ref{ordination}).
+\subsubsection{Bêta diversité}
+La bêta diversité sur l’ensemble des échantillons a été réalisée par une méthode d’ordination de type PCoA en utilisant les distances de Bray-Curtis (Figures \ref{ordination2},\ref{ordination}).
 Les deux axes principaux expliquent respectivement 28.5 \% et 17.4 \% de la variabilité.
-Certains échantillons d’un même patient sont très proches sur le graphique d’ordination. Par exemple le patient 69 et 003 ont des échantillons dont les points se confondent.
+Certains échantillons d’un même patient sont très proches sur le graphique d’ordination. Par exemple, le patient 69 et 003 ont des échantillons dont les points se confondent.
 Aucune des analyses tenant compte des paramètres biocliniques colligés pendant l'étude MUCOBIOME comme l'âge, le sexe, le poids, la prise d'antibiotique et le type de mutation du gène \textit{CFTR} n’a mis en évidence des groupes distincts de microbiote. Le score cytologique n'a pas non plus montré de différence.
 La variabilité est expliquée principalement par la dominance des genres \textit{Neisseria}, \textit{Streptococcus} et \textit{Haemophilus} comme le montre la figure \ref{ordination2}.
 
@@ -887,7 +909,8 @@ La variabilité est expliquée principalement par la dominance des genres \texti
 \begin{center}
 \includegraphics[scale=0.50]{img/Capture.png}\hfill
 \end{center}
-\caption{Analyse en coordonnées principales sur les 188 échantillons en utilisant les distances de Bray-Curtis. Chaque point est un échantillon labellisé par l'identifiant du patient. La variabilité s'explique principalement par \textit{Haemophilus}, \textit{Streptococcus} et \textit{Neisseria}}
+\caption{Analyse PCoA + Bray-Curtis des 188 échantillons.}
+Chaque point est un échantillon labellisé par l'identifiant du patient. La variabilité s'explique principalement par \textit{Haemophilus}, \textit{Streptococcus} et \textit{Neisseria}
 \label{ordination2}
 \end{figure}
 
@@ -896,12 +919,13 @@ La variabilité est expliquée principalement par la dominance des genres \texti
 \begin{center}
 \includegraphics[scale=0.62]{img/oordination_new.png}\hfill
 \end{center}
-\caption{Analyse en coordonnées principales sur les 188 échantillons en utilisant les distances de Bray-Curtis. A gauche les échantillons Free, à droite les échantillons Never. Le sexe est mis en couleur à titre indicatif.}
+\caption{Analyse en coordonnées principales sur les 188 échantillons avec les distances de Bray-Curtis.}
+A gauche les échantillons Free, à droite les échantillons Never. Le sexe est mis en couleur à titre indicatif.
 \label{ordination}
 \end{figure}
 
-\subsubsection{Présence de P. aeruginosa}
-Sur les 188 échantillons, 22 étaient positifs à \textit{P.aeruginosa} en culture. L'ADNr 16S de Pseudomonas est détecté dans 48 échantillons. Dans la majorité des cas, l'abondance relative de P. aeruginosa est faible. Sur les 48 échantillons, 39 ont une abondance relative en dessous de 3 \%. L'abondance la plus forte est de 27,4 \% et correspond au « end point » positif en culture du patient 10.
+\subsubsection{Présence de \textit{Pseudomonas aeruginosa}}
+Sur les 188 échantillons, 22 étaient positifs à \textit{P.aeruginosa} en culture. L'ADNr 16S de \textit{Pseudomonas} est détecté dans 48 échantillons. Dans la majorité des cas, l'abondance relative de \textit{P. aeruginosa} est faible. Sur les 48 échantillons, 39 ont une abondance relative en dessous de 3 \%. L'abondance la plus forte est de 27,4 \% et correspond au « end point » positif en culture du patient 10.
 Les tableaux \ref{pyopcr} et \ref{pyoculture} comparent le nombre d'échantillons arborant des reads ADNr 16S de \textit{Pseudomonas} avec ceux détectés par qPCR (données de l'étude de Héry-Arnaud et al., 2017\cite{Hery-Arnaud2017}) et par culture. 
 En considérant arbitrairement la méthode 16S comme un gold standard, ces deux tableaux nous permettent de mesurer la sensibilité et la spécificité de la détection par qPCR ou par culture. 
 Ainsi la qPCR oprL est très sensible et peu spécifique  avec un seul vrai négatif pour 31 faux positifs. 
@@ -909,6 +933,8 @@ La culture est en revanche très spécifique avec 9 faux positifs.
 
   \begin{table}[!h]
       \centering
+            \caption{Concordance entre la présence d'ADNr 16S de \textit{Pseudomonas} et sa détection en qPCR oprL}
+
       \begin{tabular}{r|c|c}
            & qPCR négative  & qPCR positive \\
            \hline
@@ -916,19 +942,19 @@ La culture est en revanche très spécifique avec 9 faux positifs.
            16S présent & 1 & 15   \\
 
       \end{tabular}
-      \caption{Concordance entre la présence d'ADNr 16S de Pseudomonas et sa détection en qPCR oprL}
       \label{pyopcr}
   \end{table}
 
   \begin{table}[!h]
       \centering
+         \caption{Concordance entre la présence d'ADNr 16S de \textit{Pseudomonas} et sa détection en culture}
       \begin{tabular}{r|c|c}
            & Culture négative  & Culture positive \\
            \hline
            16S absent & 163 & 9 \\
-           16S present & 3 & 13   \\
+           16S présent & 3 & 13   \\
       \end{tabular}
-      \caption{Concordance entre la présence d'ADNr 16S de Pseudomonas et sa détection en culture}
+   
       \label{pyoculture}
   \end{table}
 
@@ -942,19 +968,20 @@ La figure \ref{correlation} montre les corrélations linéaires réalisées entr
 \begin{center}
 \includegraphics[scale=0.50]{img/small_correlation.png}\hfill
 \end{center}
-\caption{Corrélation des abondances entre les genres du core microbiota. En diagonale, la distribution des genres par échantillon. A gauche, les corrélations entre deux genres. A droite, le score de Pearson entre deux genres. \textit{Prevotella} et \textit{Veillonella} sont fortement corrélés.}
+\caption{Corrélation des abondances du core microbiota.}
+En diagonale, la distribution des genres par échantillon. A gauche, les corrélations entre deux genres. A droite, le score de Pearson entre deux genres. \textit{Prevotella} et \textit{Veillonella} sont fortement corrélés.
 \label{correlation}
 \end{figure}
 
-\subsubsection{Comparaison entre échantillons Free et Never}
+\subsubsection{Comparaison entre les échantillons Free et Never}
 La figure \ref{compare} compare les indices de Shannon entre les échantillons Free et Never. Le T-test / ANOVA n'a pas montré de différence significative (p-value > 0.05). \\
-La figure  \ref{pcoa} est une autre PCoA réalisée avec microbiomeanalyst\footnote{http://www.microbiomeanalyst.ca} tenant de discriminer les groupes Free et Never. Les échantillons Never ont plus de différences entre eux que les échantillons Free qui semblent converger. Les deux groupes sont significativement différents avec une PERMANOVA p-value < 0.001.
+La figure  \ref{pcoa} est une autre PCoA réalisée avec microbiomeanalyst\footnote{http://www.microbiomeanalyst.ca} pour de discriminer les groupes Free et Never. Les échantillons Never ont plus de différences entre eux que les échantillons Free qui semblent converger. Les deux groupes sont significativement différents avec une PERMANOVA p-value < 0.001.
 
 \begin{figure}
 \begin{center}
 \includegraphics[scale=0.70]{img/compare.png}\hfill
 \end{center}
-\caption{Comparaison des diversités de Shannon entre les échantillons Free et Never}
+\caption{Comparaison des diversités de Shannon entre les échantillons Free et Never.}
 \label{compare}
 \end{figure}
 
@@ -963,7 +990,7 @@ La figure  \ref{pcoa} est une autre PCoA réalisée avec microbiomeanalyst\footn
 \begin{center}
 \includegraphics[scale=0.50]{img/pcoa.png}\hfill
 \end{center}
-\caption{Permanova entre les échantillons Free et Never sur une PCoA en utilisant la distance de Bray-Curtis}
+\caption{Permanova entre les échantillons Free et Never sur une PCoA+ Bray-Curtis}
 \label{pcoa}
 \end{figure}
 
@@ -973,14 +1000,14 @@ La figure  \ref{pcoa} est une autre PCoA réalisée avec microbiomeanalyst\footn
 \subsubsection{Séquençage}
 La version 3 du kit MiSeq Reagent Kit produit des reads plus longs (300 pb) que dans la version précédente (250 pb) afin d'augmenter la précision de l'assignation taxonomique (Figure \ref{rnasens}). En contrepartie, la qualité du séquençage est médiocre aux extrémités avec des scores qui chutent en dessous de 20. À cause de cela, seulement 43 \% de reads sont exploitables.
 C'est un problème connu lié à la chimie du kit que Illumina n'a pas corrigé à ce jour. La profondeur de séquençage reste toutefois suffisante comme l'attestent les courbes de raréfaction. En utilisant d'autres amorces ciblant des régions de l'ADNr 16S différentes, nous pourrions augmenter la taille du chevauchement pour gagner en profondeur, mais en diminuant la longueur des reads. \\
-Les séquenceurs de 3e générations comme le Mini Ion (Oxford Nanopore) ou le PacBio (Pacific Bioscience) apporteraient un avantage certain. Ces derniers sont capables de produire des reads très longs (10 000 pb en moyenne) et pourraient facilement séquencer l'intégralité de l'ADNr 16S. De plus, contrairement à Illumina, les fragments d'ADN sont directement lus (Technologie SMS: Single Molecule Sequencing) évitant ainsi tout biais d'amplification pouvant surévaluer les abondances.
+Les séquenceurs de 3e génération comme le Mini Ion (Oxford Nanopore) ou le PacBio (Pacific Bioscience) apporteraient un avantage certain. Ces derniers sont capables de produire des reads très longs (10 000 pb en moyenne) et pourraient facilement séquencer l'intégralité de l'ADNr 16S. De plus, contrairement à Illumina, les fragments d'ADN sont directement lus (Technologie SMS: Single Molecule Sequencing) évitant ainsi tout biais d'amplification pouvant surévaluer les abondances.
 La qualité des reads de ces séquenceurs de 3e génération est en revanche de mauvaise qualité. Malgré cela, deux études\cite{Wagner2016,Benitez-Paez2016} ont déjà montré que leurs résolutions taxonomiques atteignent facilement celui de l’espèce.
 
 \begin{figure}
 \begin{center}
 \includegraphics[scale=3]{img/zam.jpg}\hfill
 \end{center}
-\caption{Sensibilité de détection de la stratégie 16S en fonction de la longueur des reads. (Wang et al. Naïve Bayesian Classifier for Rapid Assignment of rRNA Sequences into the New Bacterial Taxonomy) }
+\caption{Sensibilité de détection de la stratégie 16S en fonction de la longueur des reads.} (Wang et al. Naïve Bayesian Classifier for Rapid Assignment of rRNA Sequences into the New Bacterial Taxonomy) 
 \label{rnasens}
 \end{figure}
 
@@ -995,11 +1022,11 @@ D'autre part, l'assignation taxonomique dépend d'une similarité que nous avons
 \begin{center}
 \includegraphics[scale=0.65]{img/entropy.png}\hfill
 \end{center}
-\caption{Principe de la décomposition par entropie minimum\cite{Bobadilla2015}. Étape 1: les reads sont alignés. L'entropie H est calculée pour chaque position nucléotidique. Étape 2: La position ayant la plus forte entropie est utilisée pour discriminer deux groupes. Étape 3 : Le processus est répété jusqu'à atteindre une entropie totale de 0 }
+\caption{Principe de la décomposition par entropie minimum.}\cite{Bobadilla2015}. Étape 1: les reads sont alignés. L'entropie H est calculée pour chaque position nucléotidique. Étape 2: La position ayant la plus forte entropie est utilisée pour discriminer deux groupes. Étape 3 : Le processus est répété jusqu'à atteindre une entropie totale de 0 
 \label{entropy}
 \end{figure}
 \subsubsection{Méthodes d'analyse}
-Parmi les analyses de bêta diversité, seule l'analyse en coordonnées principales a été présentée en utilisant la distance de Bray-Curtis.
+Parmi les analyses de bêta diversité, seule l'analyse en coordonnées principales (PCoA) a été présentée en utilisant la distance de Bray-Curtis.
 Nous avons également réalisé d'autres ordinations (données non montrées) qui n'ont pas été concluantes. Par exemple, en changeant le type de distance ou en utilisant un positionnement multidimensionnel (MDS) au lieu de la PCoA. \\
 Par ailleurs, la proximité phylogénétique des bactéries n'a pas été prise en compte. Un microbiote contenant trois bactéries proches n'est pas la même chose qu'un microbiote contenant trois bactéries très éloignées.
 La distance UniFrac\cite{Lozupone2005} pourrait alors remplacer la distance de Bray-Curtis en prenant en considération la phylogénie des bactéries.
@@ -1021,24 +1048,24 @@ Les autres pathogènes associés à la mucoviscidose sont tous retrouvés (\text
 Ces résultats confirment les résultats déjà décrits au laboratoire{\cite{LeGall} avec les marqueurs oprL et la nécessité de coupler une PCR plus spécifique avec les marqueurs gyrB/ecfX. \\
 Ces résultats doivent être nuancés, car la résolution taxonomique de notre méthode s'arrête au genre \textit{Pseudomonas} et non à l'espèce \textit{P. aeruginosa}.
 
-\subsubsection{Patient Free et Never}
+\subsubsection{Patients Free et Never}
 Les patients selon leur appartenance aux catégories Never et Free\cite{Lee2003}, qui permettent de distinguer les patients selon leur anamnèse vis-à-vis de P. aeruginosa (totalement exempts ou colonisation datant d'au moins 1 an), n'ont pas montré de différence statistiquement significative, ni dans leur diversité alpha ni dans la composition de leur microbiote. Les analyses de bêta diversité montre en revanche une homogénisation des microbiotes chez les patients Free, probablement causé par l'antibiothérapie d'éradication.
  
 \subsubsection{Hétérogénéité des microbiotes}
 Nos résultats de diversité alpha et bêta montrent la grande variabilité du microbiote respiratoire. Ils sont différents entre les patients et changent rapidement au cours du temps. Aucune des données recueillies (sexe, âge, IMC , type de mutation, score cytologique, prise d'antibiotique) n'a permis de distinguer des catégories de microbiote. Il semble donc que ce soit l'individu lui-même la principale source de variabilité. La proximité, sur le graphique d'ordination, de certains échantillons d'un même patient va dans ce sens. 
 
 \subsubsection{Limites de l'étude}
-Plusieurs points sont à prendre en considération pour critiquer la justesse des résultats. Premièrement, les ADN séquencés proviennent d'expectorations bronchiques ayant traversé les voies aériennes supérieures. Une contamination est toujours possible. Le score cytologique de Bartlett, n'a pas permis de mettre en évidence des différences dans la structure du microbiote qui soient imputables aux contaminations de l'oropharynx. Mais la présence de \textit{Corynebacterium} dans certains échantillons est évocatrice. 
+Plusieurs points sont à prendre en considération pour critiquer la justesse des résultats. Premièrement, les ADN séquencés proviennent d'expectorations bronchiques ayant traversé les voies aériennes supérieures. Une contamination est toujours possible. Le score cytologique de Bartlett n'a pas permis de mettre en évidence des différences dans la structure du microbiote qui soient imputables aux contaminations de l'oropharynx. Néanmoins la présence de \textit{Corynebacterium} dans certains échantillons est évocatrice. 
 De plus, la stratégie 16S ne fait pas la distinction entre des bactéries mortes et vivantes ce qui biaise encore l'estimation des abondances. 
 Dans l'idéal il faudrait réaliser des prélèvements invasifs assez difficiles à mettre en pratique. Une autre idée serait de réaliser parallèlement à l'ECBC l'analyse d'un prélèvement de l'oropharynx pour calculer un différentiel. \\
-D'un point de vue du recueil, l'analyse longitudinale ne contient pas assez d'échantillons (en moyenne 3 échantillons par patient sur 3 ans). Et comme nous avons pu le voir, l'hétérogénéité du microbiote rend difficilement comparables les patients entre eux. Il serait intéressant d'augmenter la résolution temporelle, en augmentant le nombre d'échantillons par patient. Ce qui d'autant plus faisable car tous les échantillons sont conservés au laboratoire à -80 degrés. 
+D'un point de vue du recueil, l'analyse longitudinale ne contient pas assez d'échantillons (en moyenne 3 échantillons par patient sur 3 ans). Et comme nous avons pu le voir, l'hétérogénéité du microbiote rend difficilement comparables les patients entre eux. Il serait intéressant d'augmenter la résolution temporelle, en augmentant le nombre d'échantillons par patient. Ceci pourrai être réalisé à l'avenir car tous les échantillons sont conservés au laboratoire à -80\degre C. 
 Enfin les nouvelles technologies de séquençage évoqué plus haut seraient idéales pour atteindre le niveau taxonomique de l'espèce. 
 
 
 \section{Conclusion}
-Le séquençage de l'ADNr 16S a été réalisé sur 188 expectorations bronchiques de 47 patients atteints de mucoviscidose avec un pipeline bio-informatique dédié. Malgré la faible qualité du séquençage MiSeq (Illumina) dans la version 3 du kit, plus de 99 \% des reads ont reçu une assignation taxonomique jusqu'au genre bactérien. L'augmentation des \textit{Proteobacteria} évoquée dans d'autres études sur le microbiote respiratoire dans la mucoviscidose est retrouvée. Les analyses de diversité ont montré une grande hétérogénéité des microbiotes entre les patients et une variabilité dans le temps. Ni les données clinico-biologiques recueillies ni les catégories de Lee (statut vis à vis de \textit{P. aeruginosa}) n'ont montré une différence significative en termes de diversité alpha. Toutefois en terme de bêta diversité, le microbiote des patients Free est moins divers que celui des patient Never, probablement à cause de l'antibiothérapie d'éradiction de \textit{P. aeruginosa}. 
+Le séquençage de l'ADNr 16S a été réalisé sur 188 expectorations bronchiques de 47 patients atteints de mucoviscidose avec un pipeline bio-informatique dédié. Malgré la faible qualité du séquençage MiSeq (Illumina) dans la version 3 du kit, plus de 99 \% des reads ont reçu une assignation taxonomique jusqu'au genre bactérien. L'augmentation des \textit{Proteobacteria} évoquée dans d'autres études sur le microbiote respiratoire dans la mucoviscidose est retrouvée. Les analyses de diversité ont montré une grande hétérogénéité des microbiotes entre les patients et une variabilité dans le temps. Ni les données clinico-biologiques recueillies ni les catégories de Lee (statut vis à vis de \textit{P. aeruginosa}) n'ont montré une différence significative en termes de diversité alpha. Toutefois en terme de bêta diversité, le microbiote des patients Free est moins divers que celui des patient Never, probablement à cause de l'antibiothérapie d'éradication de \textit{P. aeruginosa}. 
 Une étude longitudinale avec une résolution temporelle plus importante serait intéressante pour évaluer la cinétique d'évolution du microbiote. Les séquenceurs de troisième génération permettraient l'assignation taxonomique jusqu'à l'espèce.
-Enfin d'autres approches seraient intéressantes pour évaluer la fonction du microbiote et aussi l'impact du virome respiratoire, qui ne l'oublions pas est tout aussi important. La métagénomique fonctionnelle ou encore la PCR digitale apporteraient ces éléments de réponse au prix de calculs informatiques parfois très élevés.
+Enfin d'autres approches seraient intéressantes pour évaluer la fonction du microbiote et aussi l'impact du virome respiratoire, qui est tout aussi important. La métagénomique fonctionnelle ou encore la PCR digitale apporteraient ces éléments de réponse au prix de calculs informatiques parfois très élevés.
 
 
 \begin{figure}[h]
@@ -1070,8 +1097,9 @@ Enfin d'autres approches seraient intéressantes pour évaluer la fonction du mi
 \begin{figure}[h]
 \begin{center}
 \includegraphics[width=\textwidth]{img/enfin_barplot_phylum_norm.png}\hfill
+\caption{Évolution des abondances par phylum.} Les échantillons sont ordonnés par patient dans le temps
+
 \end{center}
-\caption{Évolution des abondances par phylum. Les échantillon sont ordonnés par patient dans le temps}
 \label{plotabundancephylum}
 \end{figure}
 
@@ -1079,8 +1107,10 @@ Enfin d'autres approches seraient intéressantes pour évaluer la fonction du mi
 \begin{figure}[h]
 \begin{center}
 \includegraphics[scale=0.44,angle=90]{img/evolution_abundance.png}\hfill
+\caption{Évolution des abondances par genre.}
+Les échantillons sont ordonnés par patient dans le temps.
 \end{center}
-\caption{Évolution des abondances par genre. Les échantillons sont ordonnés par patient dans le temps.}
+
 \label{plotabundancecurve}
 \end{figure}
 
@@ -1117,12 +1147,12 @@ L'objectif principal de l'étude prospective multicentrique MUCOBIOME était de 
 
 \begin{minipage}[t][4.9cm]{15cm}
 \textbf{\underline{MOTS CLEFS:}} \\
-Microbiote respiratoire\\
-Mucoviscidose\\
-Pseudomonas aeruginosa\\
-ARNr 16S\\
-Bioinformatique\\
-Séquençage haut-débit\\
+MICROBIOTE RESPIRATOIRE\\
+MUCOVISCIDOSE\\
+PSEUDOMONAS AERUGINOSA\\
+ARNR 16S\\
+BIOINFORMATIQUE\\
+SÉQUENÇAGE HAUT-DÉBIT\\
  \end{minipage}
 
 
