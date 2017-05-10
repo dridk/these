@@ -519,7 +519,7 @@ A l'instar de ce qui est bien démontré au niveau intestinal, le microbiote res
 
 \subsection{Le microbiote pulmonaire}
 
-Bien qu'il soit en contact avec le milieu extérieur, l’arbre respiratoire (comprenant la trachée, les bronches et les alvéoles) a longtemps été considéré stérile avec les méthodes de culture classique. Il a fallu attendre l’avènement du séquençage haut débit pour mettre en évidence le microbiote pulmonaire \cite{HoMan2017,Beck,Dicksonb}.\\
+Bien qu'il soit en contact avec le milieu extérieur, l’arbre respiratoire (comprenant la trachée, les bronches et les alvéoles) a longtemps été considéré stérile avec les méthodes de culture classique. Il a fallu attendre l’avènement du séquençage haut débit pour mettre en évidence le microbiote pulmonaire \cite{Hilty2010,HoMan2017,Beck,Dicksonb}.\\
 L'arbre respiratoire chez le fœtus\footnote{Un article récent critique l'idée d'un fœtus stérile \cite{Perez-Munoz2017}} est stérile. Il se colonise comme l'intestin, à la naissance lors du passage de la filière génitale puis se différencie au cours du temps. Il est beaucoup moins riche que le microbiote digestif, mais plus dynamique en raison d'un flux aérien bidirectionnel.  Les bactéries du microbiote respiratoire proviennent de l’air ambiant, des voies supérieures, mais aussi du tube digestif par un phénomène de micro aspirations \cite{Dickson}. Une étude a d'ailleurs montré une concordance entre le microbiote digestif et respiratoire\cite{Dickson}.\\
 Le microbiote pulmonaire est dominé par le phylum des \textit{Firmicutes} (\textit{Streptococcus}) et des \textit{Bacteroidetes} (\textit{Prevotella}). Les genres retrouvés majoritairement sont \textit{Streptococcus}, \textit{Prevotella}, \textit{Fusobacteria}, \textit{Veillonella}, \textit{Haemophilus}, \textit{Neisseria} et \textit{Porphyromonas}.
 L’arbre respiratoire étant en continuité directe avec les voies aériennes supérieures il y a un gradient microbien de l'oropharynx jusqu'aux alvéoles. Certains genres bactériens sont communs, comme \textit{Streptococcus}, \textit{Staphylococcus}, \textit{Haemophilus} et \textit{Moraxella}. Tandis que d’autres genres comme \textit{Corynebacterium} et \textit{Dolosigranulum} ne sont retrouvés essentiellement au niveau du nez et de l'oropharynx. \\
@@ -700,7 +700,7 @@ Au total, 115 002 297 reads ont été produits sur deux runs MiSeq (Figure \ref{
 \begin{center}
 \includegraphics[scale=0.6]{img/pipeline.png}\hfill
 \end{center}
-\caption{Nombre de reads par échantillon. En clair le nombre de reads bruts produits par le séquenceur. En sombre les reads analysables.}
+\caption{Nombre de reads par échantillon. En clair le nombre de reads bruts produits par le séquenceur. En sombre les reads. analysables.}
 \label{fastqt}
 \end{figure}
 
@@ -708,9 +708,9 @@ Au total, 115 002 297 reads ont été produits sur deux runs MiSeq (Figure \ref{
 
 \subsubsection{Qualité des reads}
 La figure \ref{fastqt} montre la qualité typique d'un fichier fastq produit par le séquenceur. Une baisse de qualité importante est observée à hauteur du 250e nucléotide. Tous les fichiers fastq présentaient le même profil.
-À cause de cette baisse de qualité, en moyenne 37,8 \% des reads pairs n'ont pas pu être fusionnés.
-L'étape de filtrage a permis de ramener la qualité médiane au-dessus de 20 (Figure \ref{fastqt_after}).
-Au total, seulement 49.24 \% des reads ont été conservés pour l'analyse (Figure \ref{readcount}) avec des bornes allant de 37,30 \% à 61,13 \%.
+À cause de cette baisse de qualité, seulement 60.9 \% des reads ont pu être fusionnés.
+L'étape de filtrage a permis de ramener la qualité médiane au-dessus de 20 (Figure \ref{fastqt_after}) mais en perdant beaucoup de reads.
+Au total, seulement 37.7 \% des reads ont été conservés pour l'analyse (Figure \ref{readcount}) avec des bornes allant de 26,50 \% à 49,93 \%.
 
 
 
