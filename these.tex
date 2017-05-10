@@ -15,11 +15,13 @@
 \usepackage[final]{pdfpages}
 \usepackage{caption}
 \usepackage{svg}
+\usepackage{lastpage}
 \usepackage{listings}
-
+\usepackage[final]{pdfpages} 
 \usepackage{eurosym}
 \usepackage{wrapfig}
 \usepackage{subfig}
+\usepackage[figure,table]{totalcount}
 \usepackage[margin=2.7cm]{geometry}
 
 \usepackage{amsmath}
@@ -159,6 +161,10 @@ par la Free Software Foundation ; with no Invariant Sections, no
 Front-Cover Texts, and no Back-Cover Texts. Une copie de la licence est
 incluse dans la section intitulée « GNU Free Documentation License ».
 
+\newpage
+\includepdf[pages=-]{titulaire.pdf}
+
+
  %----------------PAGE REMERCIEMENT: A FAIRE.. ---------------------------
 \thispagestyle{empty}
 \setcounter{page}{0}
@@ -169,13 +175,14 @@ incluse dans la section intitulée « GNU Free Documentation License ».
 \section*{Remerciements}
 Au Professeur Claude FERREC, qui me fait le grand honneur de présider le jury de cette thèse. Qu'il en soit chaleureusement remercié. \\ 
 
-Au Docteur Geneviève HERY-ARNAUD, Praticien Hospitalier et Professeur des université et directrice de thèse, qui m'a fait découvrir toute la magie et la complexité du microbiote.\\ 
+Au Docteur Geneviève HERY-ARNAUD, directrice de thèse, qui m'a fait découvrir toute la magie et la complexité du microbiote.\\ 
 
 Au Professeur Cedric LE MARECHAL ansi que le Docteur Paul GUEUGEN pour m'avoir accueilli dans le service de biologie moléculaire et m'avoir tant apprit. \\
 
-Au Docteur Emmanuelle GENIN, qui me fait le plaisir d'être membre de ce jury. Et qui sans son autorisation, aucun des calculs bio-informatiques n'auraient pu être réalisé.
+Au Docteur Emmanuelle GENIN, qui me fait le plaisir d'être membre de ce jury. Et qui sans son autorisation, aucun des calculs bio-informatiques n'auraient pu être réalisé.\\
 
-Au Docteur Philippe LANOTTE, pour avoir accepter d'être présent par les voies du numériques
+
+Au Docteur Philippe LANOTTE, pour avoir accepté d'être présent par les voies du numériques
 
 \newpage
 
@@ -688,17 +695,14 @@ La longueur des reads dans l'ensemble est de 301 paires de bases.
 Au total, 115 002 297 reads ont été produits sur deux runs MiSeq (Figure \ref{readcount}). Avec en moyenne 616 900 reads par échantillon. Un minimum de 61 422 reads pour l’échantillon 2154 et un maximum de 1 071 188 pour l’échantillon 3165.
 
 
-
-
 \begin{figure}[ht]
 \begin{center}
-
-\includegraphics[scale=0.7]{img/pipeline.png}\hfill}%
-
+\includegraphics[scale=0.6]{img/pipeline.png}\hfill
 \end{center}
 \caption{Nombre de reads par échantillon. En clair le nombre de reads bruts produits par le séquenceur. En sombre les reads analysables.}
-\label{readcount}
+\label{fastqt}
 \end{figure}
+
 
 
 \subsubsection{Qualité des reads}
@@ -775,7 +779,7 @@ Les abondances de \textit{Staphylococcus} et \textit{Haemophilus} sont faibles d
 
 \begin{table}
 \begin{center}
-\includegraphics[scale=0.4]{img/alld.png}\hfill
+\includegraphics[width=\textwidth]{img/alld.png}\hfill
 \end{center}
 \caption{Résumé détaillé de l'assignation taxonomique des reads. \textbf{Legende:} Nombre de reads - Moyenne des abondances relatives - écart-type des abondances relatives - plus petite abondance relative - plus grande abondance relative - Nombre d'échantillons où le genre est présent - Nombre d'échantillon où le genre est dominant}
 \label{alltable}
@@ -950,7 +954,7 @@ D'autre part, l'assignation taxonomique dépend d'une similarité que nous avons
 
 \begin{figure}
 \begin{center}
-\includegraphics[scale=0.7]{img/entropy.png}\hfill
+\includegraphics[scale=0.65]{img/entropy.png}\hfill
 \end{center}
 \caption{Principe de la décomposition par entropie minimum\cite{Bobadilla2015}. Étape 1: les reads sont alignés. L'entropie H est calculée pour chaque position nucléotidique. Étape 2: La position ayant la plus forte entropie est utilisée pour discriminer deux groupes. Étape 3 : Le processus est répété jusqu'à atteindre une entropie totale de 0 }
 \label{entropy}
@@ -993,63 +997,61 @@ Enfin les nouvelles technologies de séquençage évoqué plus haut seraient id�
 
 
 \section{Conclusion}
-Le séquençage de l'ADNr 16S a été réalisé sur 188 expectorations bronchiques de 47 patients atteints de mucoviscidose avec un pipeline bio-informatique dédié. Malgré la faible qualité du séquençage MiSeq (Illumina) dans la version 3 du kit, plus de 99 \% des reads ont reçu une assignation taxonomique jusqu'au genre bactérien. L'augmentation des \textit{Proteobacteria} évoquée dans d'autres études sur le microbiote respiratoire dans la mucoviscidose est retrouvée. Les analyses de diversité ont montré une grande hétérogénéité des microbiotes entre les patients et une variabilité dans le temps. 
-Ni les données clinico-biologiques recueillies ni les catégories de Lee (statut vis à vis de \textit{P. aeruginosa}) n'ont montré une différence significative en termes de diversité alpha. Toutefois en terme de bêta diversité, le microbiote des patients Free est moins divers que celui des patient Never, probablement à cause de l'antibiothérapie d'éradiction de \textit{P. aeruginosa}. 
+Le séquençage de l'ADNr 16S a été réalisé sur 188 expectorations bronchiques de 47 patients atteints de mucoviscidose avec un pipeline bio-informatique dédié. Malgré la faible qualité du séquençage MiSeq (Illumina) dans la version 3 du kit, plus de 99 \% des reads ont reçu une assignation taxonomique jusqu'au genre bactérien. L'augmentation des \textit{Proteobacteria} évoquée dans d'autres études sur le microbiote respiratoire dans la mucoviscidose est retrouvée. Les analyses de diversité ont montré une grande hétérogénéité des microbiotes entre les patients et une variabilité dans le temps. Ni les données clinico-biologiques recueillies ni les catégories de Lee (statut vis à vis de \textit{P. aeruginosa}) n'ont montré une différence significative en termes de diversité alpha. Toutefois en terme de bêta diversité, le microbiote des patients Free est moins divers que celui des patient Never, probablement à cause de l'antibiothérapie d'éradiction de \textit{P. aeruginosa}. 
 Une étude longitudinale avec une résolution temporelle plus importante serait intéressante pour évaluer la cinétique d'évolution du microbiote. Les séquenceurs de troisième génération permettraient l'assignation taxonomique jusqu'à l'espèce.
 Enfin d'autres approches seraient intéressantes pour évaluer la fonction du microbiote et aussi l'impact du virome respiratoire, qui ne l'oublions pas est tout aussi important. La métagénomique fonctionnelle ou encore la PCR digitale apporteraient ces éléments de réponse au prix de calculs informatiques parfois très élevés.
 
-\begin{figure}
+
+\begin{figure}[h]
 \begin{center}
-\includegraphics[scale=0.80]{img/alpha_observed.png}\hfill
+\includegraphics[scale=0.8]{img/alpha_observed.png}\hfill
 \end{center}
 \caption{Évolution du nombre d'espèces par patient en fonction du temps}
 \label{alphaObs}
 \end{figure}
 
 
-\begin{figure}
+\begin{figure}[h]
 \begin{center}
-\includegraphics[scale=0.80]{img/alpha_chao1.png}\hfill
+\includegraphics[scale=0.8]{img/alpha_chao1.png}\hfill
 \end{center}
 \caption{Évolution de l'indice de Chao1 par patient en fonction du temps}
 \label{alphaChao1}
 \end{figure}
 
-\begin{figure}
+\begin{figure}[h]
 \begin{center}
-\includegraphics[scale=0.80]{img/alpha_shannon.png}\hfill
+\includegraphics[scale=0.8]{img/alpha_shannon.png}\hfill
 \end{center}
 \caption{Évolution de l'indice de Shanon par patient en fonction du temps}
 \label{alphaShannon}
 \end{figure}
 
 
-\begin{figure}
+\begin{figure}[h]
 \begin{center}
-\includegraphics[scale=0.70]{img/enfin_barplot_genus_norm.png}\hfill
+\includegraphics[width=\textwidth]{img/enfin_barplot_genus_norm.png}\hfill
 \end{center}
-\caption{Évolution des abondances par genre}
+\caption{Évolution des abondances par genre. Les échantillon sont ordonnés dans le temps}
 \label{plotabundancegenre}
 \end{figure}
 
-\begin{figure}
+\begin{figure}[h]
 \begin{center}
-\includegraphics[scale=0.70]{img/enfin_barplot_phylum_norm.png}\hfill
+\includegraphics[width=\textwidth]{img/enfin_barplot_phylum_norm.png}\hfill
 \end{center}
-\caption{Évolution des abondances par phylum}
+\caption{Évolution des abondances par phylum. Les échantillon sont ordonnés dans le temps}
 \label{plotabundancephylum}
 \end{figure}
 
 
-\begin{figure}
+\begin{figure}[h]
 \begin{center}
-\includegraphics[scale=0.50,angle=90]{img/evolution_abundance.png}\hfill
+\includegraphics[scale=0.44,angle=90]{img/evolution_abundance.png}\hfill
 \end{center}
 \caption{Évolution des abondances par genre}
 \label{plotabundancecurve}
 \end{figure}
-
-
 
 
 
@@ -1059,10 +1061,66 @@ Enfin d'autres approches seraient intéressantes pour évaluer la fonction du mi
 %antibiotic treatments primarily result in a reduction in bacterial %diversity, but this effect disappears after
 %some weeks, with the recovery of the previous microbial composition [57]
 
-\newpage
 
 
+\clearpage
 \bibliographystyle{ieeetr}
 \bibliography{biblio}
+\newpage
+\pagestyle{empty}
+\newgeometry{left=1cm,right=1cm,bottom=1cm, top=1cm}
+
+\noindent
+\centering
+
+\begin{minipage}[t][2cm]{15cm}
+\paragraph{SCHUTZ (Sacha)} - Description du Microbiote réspiratoire chez des patients atteind de mucovicidoses - \pageref{LastPage} pages, \totalfigures\ figures, \totaltables\ tableaux \\
+\end{minipage}
+
+
+\begin{minipage}[t][9.5cm]{15cm}
+\textbf{\underline{RESUME:}}
+Les nouvelles technologies de séquençage haut débit ont révélé l'existence du microbiote pulmonaire, y compris chez le sujet sain. COMPLETER UN PEU LE RATIONNEL, c'est trop short. Dire un mot sur infection pulmonaire microbiote et muco
+L'objectif principal de l'étude prospective multicentrique MUCOBIOME était de définir l'impact du microbiote respiratoire dans la primocolonisation à Pseudomonas aeruginosa. Une cohorte de 96 patients atteints de mucoviscidose et exempts de P. aeruginosa depuis au moins un an a été incluse dans trois centres (Brest, Roscoff et Nantes). Sur les trois ans de suivi, 707 expectorations ont été recueillies itérativement. L'exploration du microbiote respiratoire a été réalisée par le séquençage de l'ADNr 16S sur Illumina MiSeq à l'aide du kit V3. L'objectif précis de ce travail de thèse a été de mettre en place un pipeline bio-informatique spécialement dédié à l'analyse de ces données. COMPLETER SUR LE PIPELINE MIS EN PLACE et le nb de données analysées (188 prélèvements de x patients d'âge moyen =  etc ...)
+ \end{minipage}
+
+
+\begin{minipage}[t][4.5cm]{15cm}
+\textbf{\underline{MOTS CLEFS:}} \\
+Microbiote respiratoire\\
+Mucoviscidose\\
+Pseudomonas aeruginosa\\
+ARNr 16S\\
+Bioinformatique\\
+Séquençage haut débit\\
+ \end{minipage}
+
+
+
+\begin{minipage}[t][5cm]{15cm}
+\textbf{\underline{JURY:}} \\
+ Président : M. FEREC \\ 
+ Membres  :  G. HERY-ARNAUD \\
+ \hspace*{1.9cm} E. GENIN\\
+ \hspace*{1.9cm} C. LE MARECHAL\\
+ \hspace*{1.9cm} P. LANOTTE\\
+
+ \end{minipage}
+
+
+
+\begin{minipage}[t][2cm]{15cm}
+\textbf{\underline{DATE DE SOUTENANCE:}} \\
+ 23 Avril 2017
+ \end{minipage}
+
+
+
+\begin{minipage}[t][3cm]{15cm}
+\textbf{\underline{ADRESSE DE L'AUTEUR:}} \\
+33 Rue d'aiguillon, 29200 Brest 
+\end{minipage}
+
+
 
 \end{document}
