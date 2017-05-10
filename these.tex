@@ -279,7 +279,7 @@ Les avancées majeures dans les domaines de l'hygiène, la vaccination et les an
 \begin{center}
 \includegraphics[scale=0.5]{img/allergie_infection.jpg}\hfill
 \end{center}
-\caption{Incidence des maladies infectieuses et auto-immunes en Europe. }
+\caption{Incidence des maladies infectieuses et auto-immunes en Europe }
 \label{hyigienisme}
 \end{figure}
 
@@ -302,7 +302,7 @@ Il est encore trop tôt pour dire si cette science va révolutionner la médecin
 \begin{center}
 \includegraphics[scale=0.5]{img/mitochondrie.jpg}\hfill
 \end{center}
-\caption{La mitochondrie: Symbiose ultime entre eucaryote et procaryote.}
+\caption{La mitochondrie est l'exemple de symbiose ultime entre eucaryote et procaryote.}
 \label{mitochondrie}
 \end{figure}
 
@@ -406,8 +406,7 @@ Une courbe s’aplatissant indique une bonne profondeur de séquençage (Figure 
 \begin{center}
 \includegraphics[scale=0.5]{img/rarefaction_example.png}\hfill
 \end{center}
-\caption{Exemple de courbes de raréfactions.}
-La courbe bleue témoigne d'un bon échantillonnage en s’aplatissant précocement. Plus de reads ne permettraient pas de découvrir de nouveaux OTUs contrairement à la courbe rouge.
+\caption{Exemple de courbes de raréfactions. La courbe bleue témoigne d'un bon échantillonnage en s’aplatissant précocement. Plus de reads ne permettraient pas de découvrir de nouveaux OTUs contrairement à la courbe rouge. }
 \label{rarefaction_demo}
 \end{figure}
 
@@ -446,8 +445,7 @@ La figure \ref{pcoatuto} illustre ce principe avec un exemple à deux dimensions
 \begin{center}
 \includegraphics[scale=0.6]{img/pcoatuto.png}\hfill
 \end{center}
-\caption{Exemple d'une ordination]
-Représentation de plusieurs échantillons ne contenant que deux espèces A et B. Chaque échantillon est assimilable à un point de coordonnées (abondance A; abondance B). Il est alors possible de calculer des distances entre les échantillons. La plus connue étant la distance euclidienne. Mais d'autres existent comme la distance de Bray-Curtis. Sur cette figure, les échantillons 1 et 2 ont des microbiotes proches, car la distance d1 qui les sépare est petite. Dans la réalité, il y a plus d'espèces donc plus de dimensions. Une PCoA consiste à réduire cet espace multidimensionnelle en un espace 2D qui respecte les distances entre les points.
+\caption{Représentation de plusieurs échantillons ne contenant que deux espèces A et B. Chaque échantillon est assimilable à un point de coordonnées (abondance A; abondance B). Il est alors possible de calculer des distances entre les échantillons. La plus connue étant la distance euclidienne. Mais d'autres existent comme la distance de Bray-Curtis. Sur cette figure, les échantillons 1 et 2 ont des microbiotes proches, car la distance d1 qui les sépare est petite. Dans la réalité, il y a plus d'espèces donc plus de dimensions. Une PCoA consiste à réduire cet espace multidimensionnelle en un espace 2D qui respecte les distances entre les points. }
 \label{pcoatuto}
 \end{figure}
 \newpage
@@ -468,8 +466,7 @@ Représentation de plusieurs échantillons ne contenant que deux espèces A et B
 \begin{center}
 \includegraphics[scale=0.6]{img/fastq.jpg}\hfill
 \end{center}
-\caption{Exemple d'un fichier FASTQ.}
-Les scores de qualités sont encodés avec des symboles ASCII. Par exemple le quatorzième T  est associé au symbole « : » correspondant au score phred de 25, soit une probabilité de 0,3 \% d'erreur.}
+\caption{Exemple d'un read contenu dans un fichier FASTQ. Les scores de qualités sont encodés avec des symboles ASCII. Par exemple le quatorzième T  est associé au symbole « : » correspondant au score phred de 25, soit une probabilité de 0,3 \% d'erreur.}
 \label{fastq}
 \end{figure}
 
@@ -553,7 +550,7 @@ A l'instar de ce qui est bien démontré au niveau intestinal, le microbiote res
 \begin{center}
 \includegraphics[scale=0.8]{img/chronic.png}\hfill
 \end{center}
-\caption{Histoire naturelle de l'infection pulmonaire à \textit{P. aeruginosa} dans la mucoviscidose} (P. Plésiat 2003\cite{Plesiat}).
+\caption{Histoire naturelle de l'infection pulmonaire à \textit{P. aeruginosa} dans la mucoviscidose (P.Plésiat 2003\cite{Plesiat}).}
 \label{bach}
 \end{figure}
 
@@ -592,7 +589,7 @@ L'alignement des séquences d'ADNr 16S entre plusieurs espèces met en évidence
 \begin{center}
 \includegraphics[scale=0.8]{img/ARN_16S.png}\hfill
 \end{center}
-\caption{Structure secondaire de l'ARNr 16S.}
+\caption{Structure secondaire de l'ARNr 16S}
 \label{ARN16S}
 \end{figure}
 
@@ -600,7 +597,7 @@ L'alignement des séquences d'ADNr 16S entre plusieurs espèces met en évidence
 \begin{center}
 \includegraphics[scale=0.8]{img/ARN16S_variation.png}\hfill
 \end{center}
-\caption{Régions constantes et variables de l'ADNr 16S.}
+\caption{Régions constantes et variables de l'ADNr 16S}
 \label{ARN16SVariation}
 \end{figure}
 
@@ -642,7 +639,7 @@ Environ 25 millions de reads sont produits par run MiSeq. En multiplexant à l�
 \begin{center}
 \includegraphics[scale=0.6]{img/illumina.png}\hfill
 \end{center}
-\caption{Alignement du couple de reads sur l'ADNr 16S}le couple de séquence de 300 pb permet de recouvrir l'ensemble de la région V3-V5 de l'ARN 16S
+\caption{le couple de séquence de 300 pb permet de recouvrir l'ensemble de la région V3-V5 de l'ARN 16S}
 \label{illumina}
 \end{figure}
 
@@ -657,7 +654,7 @@ Le pipeline mucobiome prend en entrée, les 188 couples de fichiers FASTQ proven
 \begin{center}
 \includegraphics[scale=0.5]{img/pipeline_trio.png}\hfill
 \end{center}
-\caption{Graphe du pipeline simplifié sur 3 échantillons (1015, 1001 et 1003).}\\ \textbf{Merging}: Les reads pairs de 300 pb sont fusionnés  pour produire un fichier fastq contenant des reads de 535 pb. \textbf{Cleaning}: Les reads de mauvaise qualité sont supprimés. \textbf{Reversing}: Les reads sont transformés en leurs séquences complémentaires pour pouvoir être alignés. \textbf{Trimming}: Seule la séquence entre les primers V3-V5 est conservée. \textbf{Dereplicating}: Les séquences dupliquées sont retirées. \textbf{Merging}: L'ensemble des séquences est regroupé dans un seul fichier. \textbf{Taxonomy assignement}: Les séquences sont alignées sur la base de données \textit{Greengene}. \textbf{create\_biom}: la table des OTUs est créée 
+\caption{Graphe du pipeline simplifié sur 3 échantillons (1015, 1001 et 1003).\\ \textbf{Merging}: Les reads pairs de 300 pb sont fusionnés  pour produire un fichier fastq contenant des reads de 535 pb. \textbf{Cleaning}: Les reads de mauvaise qualité sont supprimés. \textbf{Reversing}: Les reads sont transformés en leurs séquences complémentaires pour pouvoir être alignés. \textbf{Trimming}: Seule la séquence entre les primers V3-V5 est conservée. \textbf{Dereplicating}: Les séquences dupliquées sont retirées. \textbf{Merging}: L'ensemble des séquences est regroupé dans un seul fichier. \textbf{Taxonomy assignement}: Les séquences sont alignées sur la base de données \textit{Greengene}. \textbf{create\_biom}: la table des OTUs est créée }
 \label{pipeline_trio}
 \end{figure}
 
@@ -741,9 +738,8 @@ Au total, 115 002 297 reads ont été produits sur deux runs MiSeq (Figure \ref{
 \begin{center}
 \includegraphics[scale=0.6]{img/pipeline.png}\hfill
 \end{center}
-\caption{Nombre de reads par échantillon.}
-En clair le nombre de reads bruts produits par le séquenceur. En sombre les reads. analysables.
-\label{readcount}
+\caption{Nombre de reads par échantillon. En clair le nombre de reads bruts produits par le séquenceur. En sombre les reads. analysables.}
+\label{fastqt}
 \end{figure}
 
 
@@ -769,8 +765,7 @@ Au total, seulement 37.7 \% des reads ont été conservés pour l'analyse (Figur
 \begin{center}
 \includegraphics[scale=0.45]{img/duo_merging.png}\hfill
 \end{center}
-\caption{Qualité des des reads fusionnés pour l'échantillon 1003}
-En abscisse la position du nucléotide dans le reads. En ordonnée la distribution des scores de qualité Phred.
+\caption{Qualité par nucléotide des reads fusionnés pour l'échantillon 1003}
 \label{fastqt_after}
 \end{figure}
 
@@ -783,7 +778,7 @@ En abscisse la position du nucléotide dans le reads. En ordonnée la distributi
 \begin{center}
 \includegraphics[scale=0.7]{img/read_count_genus_all.png}\hfill
 \end{center}
-\caption{Nombre de reads par genre bactérien.}
+\caption{Nombre de reads par genre bactérien}
 \label{readgenus}
 \end{figure}
 
@@ -825,7 +820,7 @@ Les abondances de \textit{Staphylococcus} et \textit{Haemophilus} sont faibles d
 \begin{center}
 \includegraphics[width=\textwidth]{img/alld.png}\hfill
 \end{center}
-\caption{Détail de l'assignation taxonomique des reads.} \textbf{Legende:} Nombre de reads - Moyenne des abondances relatives - écart-type des abondances relatives - plus petite abondance relative - plus grande abondance relative - Nombre d'échantillons où le genre est présent - Nombre d'échantillon où le genre est dominant
+\caption{Résumé détaillé de l'assignation taxonomique des reads. \textbf{Legende:} Nombre de reads - Moyenne des abondances relatives - écart-type des abondances relatives - plus petite abondance relative - plus grande abondance relative - Nombre d'échantillons où le genre est présent - Nombre d'échantillon où le genre est dominant}
 \label{alltable}
 \end{table}
 
